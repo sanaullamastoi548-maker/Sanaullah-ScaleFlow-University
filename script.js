@@ -1,3 +1,5 @@
+
+console.log("script.js loaded");
 /==========================================
 Sanaullah ScaleFlow University
 script.js — Core Logic
@@ -177,6 +179,7 @@ function initKeyboard() {
 // ==========================================  
 // 12. MAIN INIT  
 // ==========================================  
+console.log("init started");
 function init() {  
     loadTheme();  
     hideLoader();  
