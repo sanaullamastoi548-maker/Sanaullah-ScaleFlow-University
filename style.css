@@ -1035,3 +1035,61 @@ body.dark-mode .activity-item span{
 }
 
 }
+
+/* ==========================================
+   TODAY'S LEARNING TASKS
+========================================== */
+
+.today-tasks{
+    margin:30px 0;
+}
+
+.today-tasks h2{
+    font-size:22px;
+    margin-bottom:18px;
+}
+
+.task-list{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.task-item{
+    background:#fff;
+    border:2px solid var(--border);
+    border-radius:14px;
+    padding:16px 20px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    transition:.3s;
+}
+
+.task-item:hover{
+    border-color:var(--primary);
+    transform:translateX(5px);
+}
+
+.task-item input{
+    width:22px;
+    height:22px;
+    cursor:pointer;
+}
+
+.task-item label{
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+}
+
+/* Dark Mode */
+
+body.dark-mode .task-item{
+    background:#1e293b;
+    border-color:#334155;
+}
+
+body.dark-mode .task-item label{
+    color:#f1f5f9;
+}
