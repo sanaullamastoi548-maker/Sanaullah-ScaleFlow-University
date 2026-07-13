@@ -140,6 +140,43 @@ function initHeroButtons() {
         });  
     }  
 }  
+    initHeroButtons();
+initTasks();
+initScrollTop();
+initKeyboard();
+
+    // ==========================================
+// TODAY TASKS
+// ==========================================
+function initTasks() {
+
+    const tasks = document.querySelectorAll(".task-item input");
+
+    tasks.forEach(task => {
+
+        task.addEventListener("change", function () {
+
+            if (this.checked) {
+
+                this.parentElement.style.opacity = "0.7";
+
+                this.nextElementSibling.style.textDecoration = "line-through";
+
+                showToast("🎉 Task Completed!", "success");
+
+            } else {
+
+                this.parentElement.style.opacity = "1";
+
+                this.nextElementSibling.style.textDecoration = "none";
+
+            }
+
+        });
+
+    });
+
+}
 
 // ==========================================  
 // 10. FOOTER (Version & Year)  
