@@ -851,3 +851,98 @@ body.dark-mode .progress-bar{
 }
 
 }
+
+/* ==========================================
+   TODAY'S LEARNING TASKS
+========================================== */
+
+.today-tasks{
+    margin:30px 0;
+}
+
+.today-tasks h2{
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:18px;
+    color:var(--black);
+}
+
+.task-list{
+    background:#ffffff;
+    border:2px solid var(--border);
+    border-radius:20px;
+    padding:25px;
+    box-shadow:var(--shadow);
+}
+
+.task-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px 0;
+    border-bottom:1px solid #eeeeee;
+}
+
+.task-item:last-child{
+    border-bottom:none;
+}
+
+.task-item input[type="checkbox"]{
+    width:22px;
+    height:22px;
+    cursor:pointer;
+    accent-color:#FFC107;
+}
+
+.task-item label{
+    font-size:17px;
+    font-weight:600;
+    color:var(--text);
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.task-item:hover label{
+    color:var(--primary);
+}
+
+/* ===== DARK MODE ===== */
+
+body.dark-mode .today-tasks h2{
+    color:#f1f5f9;
+}
+
+body.dark-mode .task-list{
+    background:#1e293b;
+    border-color:#334155;
+}
+
+body.dark-mode .task-item{
+    border-bottom:1px solid #334155;
+}
+
+body.dark-mode .task-item label{
+    color:#e2e8f0;
+}
+
+body.dark-mode .task-item:hover label{
+    color:#FFC107;
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width:768px){
+
+.task-list{
+    padding:18px;
+}
+
+.task-item label{
+    font-size:15px;
+}
+
+.today-tasks h2{
+    font-size:20px;
+}
+
+}
