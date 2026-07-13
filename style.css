@@ -287,19 +287,18 @@ box-shadow: 0 0 0 4px rgba(255,193,7,0.15);
 }
 
 /* ==========================================
-   GATEWAY CARDS (بڑے اور مکمل)
+   GATEWAY CARDS (پرانی والی شکل — 3 کالم)
 ========================================== */
-
 .gateway-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
-    margin-top: 30px;
+    margin: 30px 0;
 }
 
 .gateway-card {
     background: #ffffff;
-    border: 2px solid var(--border);
+    border: 2px solid var(--border, #FFE082);
     border-radius: var(--radius-lg, 18px);
     padding: 28px 24px;
     transition: var(--transition, 0.35s ease);
@@ -325,6 +324,78 @@ box-shadow: 0 0 0 4px rgba(255,193,7,0.15);
     line-height: 1.7;
     font-size: 15px;
 }
+
+/* ===== QUICK ACTIONS BOTTOM (تین بٹن سائیڈ میں) ===== */
+.quick-actions-bottom {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.quick-btn {
+    background: var(--primary, #FFC107);
+    border: none;
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: var(--transition, 0.35s ease);
+    color: #000;
+    box-shadow: 0 4px 15px rgba(255,193,7,0.3);
+}
+
+.quick-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255,193,7,0.5);
+    background: var(--primary-hover, #FFB300);
+}
+
+/* ===== RESPONSIVE (کارڈز اور بٹنز کو چھوٹی سکرین پر ایڈجسٹ کرنا) ===== */
+@media (max-width: 992px) {
+    .gateway-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 576px) {
+    .gateway-grid {
+        grid-template-columns: 1fr;
+    }
+    .quick-actions-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+    .quick-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ===== DARK MODE SUPPORT ===== */
+body.dark-mode .gateway-card {
+    background: var(--dark-card, #1e293b);
+    border-color: var(--dark-border, #334155);
+    color: var(--dark-text, #f1f5f9);
+}
+body.dark-mode .gateway-card p {
+    color: var(--dark-muted, #94a3b8);
+}
+body.dark-mode .gateway-card h3 {
+    color: var(--dark-text, #f1f5f9);
+}
+body.dark-mode .gateway-card:hover {
+    border-color: var(--primary, #FFC107);
+}
+body.dark-mode .quick-btn {
+    background: var(--primary, #FFC107);
+    color: #000;
+}
+body.dark-mode .quick-btn:hover {
+    background: var(--primary-hover, #FFB300);
+}
+
 
 /* ===== DARK MODE SUPPORT ===== */
 body.dark-mode .gateway-card {
