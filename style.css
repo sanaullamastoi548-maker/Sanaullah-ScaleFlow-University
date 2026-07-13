@@ -286,38 +286,60 @@ border-color: var(--primary);
 box-shadow: 0 0 0 4px rgba(255,193,7,0.15);
 }
 
-/* ===== DASHBOARD CARDS ===== */
-.dashboard-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-gap: 20px;
+/* ==========================================
+   GATEWAY CARDS (بڑے اور مکمل)
+========================================== */
+
+.gateway-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
 }
-.card {
-background: #fff;
-border: 2px solid var(--border);
-border-radius: var(--radius);
-padding: 24px 20px;
-text-align: center;
-transition: var(--transition);
-cursor: pointer;
-box-shadow: var(--shadow);
+
+.gateway-card {
+    background: #ffffff;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-lg, 18px);
+    padding: 28px 24px;
+    transition: var(--transition, 0.35s ease);
+    cursor: pointer;
+    box-shadow: var(--shadow, 0 8px 25px rgba(0,0,0,0.08));
 }
-.card:hover {
-transform: translateY(-6px);
-border-color: var(--primary);
-box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+
+.gateway-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary, #FFC107);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
 }
-.card-icon {
-font-size: 36px;
-margin-bottom: 10px;
+
+.gateway-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--black, #111827);
 }
-.card h3 {
-font-size: 16px;
-margin-bottom: 4px;
+
+.gateway-card p {
+    color: var(--text, #374151);
+    line-height: 1.7;
+    font-size: 15px;
 }
-.card p {
-font-size: 14px;
-color: var(--text);
+
+/* ===== DARK MODE SUPPORT ===== */
+body.dark-mode .gateway-card {
+    background: var(--dark-card, #1e293b);
+    border-color: var(--dark-border, #334155);
+    color: var(--dark-text, #f1f5f9);
+}
+body.dark-mode .gateway-card p {
+    color: var(--dark-muted, #94a3b8);
+}
+body.dark-mode .gateway-card h3 {
+    color: var(--dark-text, #f1f5f9);
+}
+body.dark-mode .gateway-card:hover {
+    border-color: var(--primary, #FFC107);
 }
 
 /* ===== FOOTER ===== */
