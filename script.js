@@ -148,34 +148,26 @@ initKeyboard();
     // ==========================================
 // TODAY TASKS
 // ==========================================
-function initTasks() {
+function init() {
 
-    const tasks = document.querySelectorAll(".task-item input");
+    loadTheme();
+    hideLoader();
+    updateFooter();
 
-    tasks.forEach(task => {
+    initSearch();
+    initSidebar();
+    initCards();
+    initHeroButtons();
+    initScrollTop();
+    initKeyboard();
 
-        task.addEventListener("change", function () {
+    initTasks();   // 👈 یہ لائن ضرور شامل کریں
 
-            if (this.checked) {
+    if (darkBtn) {
+        darkBtn.addEventListener('click', toggleDarkMode);
+    }
 
-                this.parentElement.style.opacity = "0.7";
-
-                this.nextElementSibling.style.textDecoration = "line-through";
-
-                showToast("🎉 Task Completed!", "success");
-
-            } else {
-
-                this.parentElement.style.opacity = "1";
-
-                this.nextElementSibling.style.textDecoration = "none";
-
-            }
-
-        });
-
-    });
-
+    showToast('🎓 Welcome to ScaleFlow University', 'success');
 }
 
 // ==========================================  
