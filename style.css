@@ -413,6 +413,105 @@ box-shadow: 0 0 0 4px rgba(255,193,7,0.15);
 }
 
 /* ==========================================
+   LEARNING DASHBOARD (Stats Boxes)
+========================================== */
+.learning-dashboard {
+    margin: 30px 0 25px;
+}
+
+.learning-dashboard h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: var(--black, #111827);
+}
+
+.dashboard-boxes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.dashboard-box {
+    background: #ffffff;
+    border: 2px solid var(--border, #FFE082);
+    border-radius: var(--radius, 16px);
+    padding: 20px 16px;
+    text-align: center;
+    transition: var(--transition, 0.35s ease);
+    box-shadow: var(--shadow, 0 8px 25px rgba(0,0,0,0.08));
+}
+
+.dashboard-box:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary, #FFC107);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+}
+
+.dashboard-box h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text, #374151);
+    margin-bottom: 6px;
+}
+
+.dashboard-box span {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--primary, #FFC107);
+    display: block;
+}
+
+/* ===== DARK MODE ===== */
+body.dark-mode .learning-dashboard h2 {
+    color: var(--dark-text, #f1f5f9);
+}
+
+body.dark-mode .dashboard-box {
+    background: var(--dark-card, #1e293b);
+    border-color: var(--dark-border, #334155);
+}
+
+body.dark-mode .dashboard-box h3 {
+    color: var(--dark-muted, #94a3b8);
+}
+
+body.dark-mode .dashboard-box span {
+    color: var(--primary, #FFC107);
+}
+
+body.dark-mode .dashboard-box:hover {
+    border-color: var(--primary, #FFC107);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .dashboard-boxes {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    .dashboard-box span {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-boxes {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+    .dashboard-box {
+        padding: 14px 10px;
+    }
+    .dashboard-box span {
+        font-size: 22px;
+    }
+    .learning-dashboard h2 {
+        font-size: 18px;
+    }
+}
+
+/* ==========================================
    GATEWAY CARDS (پرانی والی شکل — 3 کالم)
 ========================================== */
 .gateway-grid {
