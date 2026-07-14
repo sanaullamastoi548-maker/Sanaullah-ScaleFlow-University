@@ -29,6 +29,11 @@ body {
 }
 
 /* ===== DARK MODE ===== */
+body.dark-mode .btn-secondary{
+    background:#1e293b;
+    color:#ffffff;
+    border-color:#fbbf24;
+}
 body.dark-mode {
     background: #0f172a;
     color: #f1f5f9;
