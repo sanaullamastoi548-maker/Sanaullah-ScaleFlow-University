@@ -34,14 +34,18 @@
 
         <!-- ===== SIDEBAR ===== -->
         <aside class="sidebar">
-            <nav class="sidebar-menu">
-                <a href="#" class="active" id="navHome" data-page="home">🏠 Home</a>
-                <a href="#" id="navCourses" data-page="courses">📚 Courses</a>
-                <a href="#" id="navAchievements" data-page="achievements">🏆 Achievements</a>
-                <a href="#" id="navCertificates" data-page="certificates">📜 Certificates</a>
-                <a href="#" id="navProfile" data-page="profile">👤 Profile</a>
-            </nav>
-        </aside>
+    <nav class="sidebar-menu">
+        <a href="#" class="active" id="navHome" data-page="home">🏠 Home</a>
+        <a href="#" id="navLearning" data-page="learning">📚 Learning Hub</a>
+        <a href="#" id="navAI" data-page="ai">🤖 AI Mentor</a>
+        <a href="#" id="navAutomation" data-page="automation">⚡ Automation Hub</a>
+        <a href="#" id="navTools" data-page="tools">🛠 Tools Hub</a>
+        <a href="#" id="navBusiness" data-page="business">💼 Business Hub</a>
+        <a href="#" id="navFreelancing" data-page="freelancing">💻 Freelancing</a>
+        <a href="#" id="navCertificates" data-page="certificates">🏆 Certificates</a>
+        <a href="#" id="navDashboard" data-page="dashboard">👤 Dashboard</a>
+    </nav>
+</aside>
 
         <!-- ===== MAIN CONTENT ===== -->
         <main class="main-content">
@@ -65,6 +69,42 @@
                         <div class="hero-stat"><span>🏆 Level</span><strong id="currentLevel">Level 5</strong></div>
                         <div class="hero-stat"><span>🔥 Streak</span><strong id="learningStreak">7 Days</strong></div>
                         <div class="hero-stat"><span>📈 Progress</span><strong id="overallProgress">75%</strong></div>
+                    </div>
+                </section>
+
+                  <!-- GATEWAY CARDS -->
+                <section class="gateway-grid">
+                    <div class="gateway-card" id="learningHubCard" data-module="learning">
+                        <h3>🎓 Learning Hub</h3>
+                        <p>Professional courses with quizzes, projects and certificates.</p>
+                    </div>
+                    <div class="gateway-card" id="aiHubCard" data-module="ai">
+                        <h3>🤖 AI Mentor</h3>
+                        <p>Learn with your personal AI teacher and assistant.</p>
+                    </div>
+                    <div class="gateway-card" id="automationHubCard" data-module="automation">
+                        <h3>⚡ Automation Hub</h3>
+                        <p>Google Workspace, Apps Script and automation projects.</p>
+                    </div>
+                    <div class="gateway-card" id="toolsHubCard" data-module="tools">
+                        <h3>🛠 Tools Hub</h3>
+                        <p>Free professional tools for productivity and development.</p>
+                    </div>
+                    <div class="gateway-card" id="businessHubCard" data-module="business">
+                        <h3>💼 Business Hub</h3>
+                        <p>Build and manage your digital business from one dashboard.</p>
+                    </div>
+                    <div class="gateway-card" id="freelancingHubCard" data-module="freelancing">
+                        <h3>💻 Freelancing</h3>
+                        <p>Learn Fiverr, Upwork, proposals and client handling.</p>
+                    </div>
+                    <div class="gateway-card" id="certificateHubCard" data-module="certificate">
+                        <h3>🏆 Certificates</h3>
+                        <p>View, verify and download your certificates.</p>
+                    </div>
+                    <div class="gateway-card" id="dashboardHubCard" data-module="dashboard">
+                        <h3>👤 Dashboard</h3>
+                        <p>Track your progress, Brain XP and achievements.</p>
                     </div>
                 </section>
 
@@ -150,41 +190,7 @@
                     </div>
                 </section>
 
-                <!-- GATEWAY CARDS -->
-                <section class="gateway-grid">
-                    <div class="gateway-card" id="learningHubCard" data-module="learning">
-                        <h3>🎓 Learning Hub</h3>
-                        <p>Professional courses with quizzes, projects and certificates.</p>
-                    </div>
-                    <div class="gateway-card" id="aiHubCard" data-module="ai">
-                        <h3>🤖 AI Mentor</h3>
-                        <p>Learn with your personal AI teacher and assistant.</p>
-                    </div>
-                    <div class="gateway-card" id="automationHubCard" data-module="automation">
-                        <h3>⚡ Automation Hub</h3>
-                        <p>Google Workspace, Apps Script and automation projects.</p>
-                    </div>
-                    <div class="gateway-card" id="toolsHubCard" data-module="tools">
-                        <h3>🛠 Tools Hub</h3>
-                        <p>Free professional tools for productivity and development.</p>
-                    </div>
-                    <div class="gateway-card" id="businessHubCard" data-module="business">
-                        <h3>💼 Business Hub</h3>
-                        <p>Build and manage your digital business from one dashboard.</p>
-                    </div>
-                    <div class="gateway-card" id="freelancingHubCard" data-module="freelancing">
-                        <h3>💻 Freelancing</h3>
-                        <p>Learn Fiverr, Upwork, proposals and client handling.</p>
-                    </div>
-                    <div class="gateway-card" id="certificateHubCard" data-module="certificate">
-                        <h3>🏆 Certificates</h3>
-                        <p>View, verify and download your certificates.</p>
-                    </div>
-                    <div class="gateway-card" id="dashboardHubCard" data-module="dashboard">
-                        <h3>👤 Dashboard</h3>
-                        <p>Track your progress, Brain XP and achievements.</p>
-                    </div>
-                </section>
+                
 
                 <!-- QUICK ACTIONS -->
                 <div class="quick-actions-bottom">
