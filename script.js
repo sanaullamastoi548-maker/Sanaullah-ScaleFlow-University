@@ -109,7 +109,67 @@
             });
         });
     }
+        // ==========================================
+// PAGE NAVIGATION (Sidebar سے صفحات سوئچ کریں)
+// ==========================================
+function initPageNavigation() {
+    const links = document.querySelectorAll('.sidebar-menu a[data-page]');
+    const sections = {
+        home: document.getElementById('homePage'),
+        courses: document.getElementById('coursesPage'),
+        achievements: document.getElementById('achievementsPage'),
+        certificates: document.getElementById('certificatesPage'),
+        profile: document.getElementById('profilePage')
+    };
 
+    // چیک کریں کہ تمام سیکشنز موجود ہیں
+    const allExist = Object.values(sections).every(el => el !== null);
+    if (!allExist) {
+        console.warn('⚠️ Some page sections are missing in HTML');
+        return;
+    }
+
+    // پہلے صرف homePage کو ظاہر کریں
+    function showPage(pageId) {
+        // تمام سیکشنز چھپائیں
+        Object.values(sections).forEach(section => {
+            section.classList.remove('active');
+            section.style.display = 'none';
+        });
+        // مطلوبہ سیکشن ظاہر کریں
+        const target = sections[pageId];
+        if (target) {
+            target.style.display = 'block';
+            // تھوڑی دیر بعد کلاس شامل کریں تاکہ animation چلے
+            requestAnimationFrame(() => {
+                target.classList.add('active');
+            });
+        }
+    }
+
+    // پہلے ہوم پیج کو فعال کریں
+    showPage('home');
+
+    // لنکس پر کلک کا ایونٹ
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const page = this.dataset.page;
+            if (page && sections[page]) {
+                showPage(page);
+                // سائیڈبار میں active کلاس اپ ڈیٹ کریں
+                document.querySelectorAll('.sidebar-menu a').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                showToast(`📄 ${page.charAt(0).toUpperCase() + page.slice(1)}`, 'info');
+            }
+        });
+    });
+}
+
+// اسے init() فنکشن میں شامل کریں
+// init() کے اندر یہ لائن ڈالیں:
+// initPageNavigation();
+   
     // ==========================================
     // 8. CARDS CLICK
     // ==========================================
