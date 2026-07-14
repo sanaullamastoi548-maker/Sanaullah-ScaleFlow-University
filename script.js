@@ -265,6 +265,29 @@
         console.log('🚀 ScaleFlow University loaded successfully');
     }
 
+   // ==========================================
+// WEEKLY PROGRESS CHART
+// ==========================================
+function initWeeklyProgress() {
+
+    const bars = document.querySelectorAll(".progress-chart .bar");
+
+    if (bars.length === 0) return;
+
+    bars.forEach(bar => {
+
+        const finalHeight = bar.style.height;
+
+        bar.style.height = "0px";
+
+        setTimeout(() => {
+            bar.style.height = finalHeight;
+        }, 300);
+
+    });
+
+}
+
     // ==========================================
     // 15. START
     // ==========================================
