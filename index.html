@@ -1,329 +1,266 @@
-<!DOCTYPE html>  <html lang="en" dir="ltr">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Sanaullah ScaleFlow University</title>  
-    <meta name="description" content="Learn • Build • Earn • Grow">  
-    <link rel="stylesheet" href="style.css">  
-</head>  
-<body>  <!-- ===== LOADER ===== -->  
-<div id="loader">  
-    <div class="loader-spinner"></div>  
-    <h2>Loading ScaleFlow...</h2>  
-</div>  
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanaullah ScaleFlow University</title>
+    <meta name="description" content="Learn • Build • Earn • Grow">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<!-- ===== TOAST CONTAINER ===== -->  
-<div id="toast-container"></div>  
-
-<!-- ===== MAIN APP ===== -->  
-<div id="app">  
-
-    <!-- ===== HEADER ===== -->
-<header class="header">
-    <div class="logo">
-        <h1>Sanaullah</h1>
-        <span>ScaleFlow University</span>
-    </div>
-    <div class="header-actions">
-        <button id="darkModeBtn" class="icon-btn">🌙</button>
-    </div>
-</header>
-
-    <!-- ==========================================
-     SIDEBAR (8 آئیٹمز — کارڈز کے مطابق)
-========================================== -->
-<aside class="sidebar">
-    <nav class="sidebar-menu">
-        <a href="#" class="active" id="navHome" data-page="home">🏠 Home</a>
-        <a href="#" id="navLearning" data-page="learning">📚 Learning Hub</a>
-        <a href="#" id="navAI" data-page="ai">🤖 AI Mentor</a>
-        <a href="#" id="navAutomation" data-page="automation">⚡ Automation Hub</a>
-        <a href="#" id="navTools" data-page="tools">🛠 Tools Hub</a>
-        <a href="#" id="navBusiness" data-page="business">💼 Business Hub</a>
-        <a href="#" id="navFreelancing" data-page="freelancing">💻 Freelancing</a>
-        <a href="#" id="navCertificates" data-page="certificate">🏆 Certificates</a>
-        <a href="#" id="navDashboard" data-page="dashboard">👤 Dashboard</a>
-    </nav>
-</aside>
-
-    <main class="main-content">
-
-<section id="homePage">
-
-    <!-- یہاں آپ کا موجودہ پورا Dashboard رہے گا -->
-    <!-- Hero -->
-    <!-- Learning Dashboard -->
-    <!-- Continue Learning -->
-    <!-- Today's Tasks -->
-    <!-- Recent Activity -->
-
-</section>
-
-<section id="coursesPage" style="display:none;">
-    <h2>📚 My Courses</h2>
-    <p>Courses Module Coming Soon...</p>
-</section>
-
-<section id="achievementsPage" style="display:none;">
-    <h2>🏆 Achievements</h2>
-    <p>Achievements Module Coming Soon...</p>
-</section>
-
-<section id="certificatesPage" style="display:none;">
-    <h2>📜 Certificates</h2>
-    <p>Certificates Module Coming Soon...</p>
-</section>
-
-<section id="profilePage" style="display:none;">
-    <h2>👤 Student Profile</h2>
-    <p>Profile Module Coming Soon...</p>
-</section>
-
-</main>
-
-        <!-- ===== HERO SECTION ===== -->  
-        <section class="hero">  
-            <div class="hero-left">  
-                <span class="hero-tag">👋 Welcome Back</span>  
-                <h1 id="studentName">Sanaullah</h1>  
-                <p>Continue your learning journey. Every lesson makes you stronger.</p>  
-                <div class="hero-buttons">  
-                    <button id="continueLearningBtn" class="btn-primary">▶ Continue Learning</button>  
-                    <button id="browseCoursesBtn" class="btn-secondary">📚 Browse Courses</button>  
-                </div>  
-            </div>  
-            <div class="hero-right">  
-                <div class="hero-stat"><span>⭐ Brain XP</span><strong id="brainXP">250 XP</strong></div>  
-                <div class="hero-stat"><span>🏆 Level</span><strong id="currentLevel">Level 5</strong></div>  
-                <div class="hero-stat"><span>🔥 Streak</span><strong id="learningStreak">7 Days</strong></div>  
-                <div class="hero-stat"><span>📈 Progress</span><strong id="overallProgress">75%</strong></div>  
-            </div>  
-        </section>  
-
-        <!-- ✅ ===== LEARNING DASHBOARD (یہاں لگائیں) ===== -->
-    <section class="learning-dashboard">
-
-        <h2>📚 Learning Dashboard</h2>
-
-        <div class="dashboard-boxes">
-
-            <div class="dashboard-box">
-                <h3>Courses</h3>
-                <span id="courseCount">12</span>
-            </div>
-
-            <div class="dashboard-box">
-                <h3>Certificates</h3>
-                <span id="certificateCount">4</span>
-            </div>
-
-            <div class="dashboard-box">
-                <h3>Achievements</h3>
-                <span id="achievementCount">8</span>
-            </div>
-
-            <div class="dashboard-box">
-                <h3>Projects</h3>
-                <span id="projectCount">3</span>
-            </div>
-
-        </div>
-
-    </section>
-
-        <!-- ===== CONTINUE LEARNING ===== -->
-<section class="continue-learning">
-
-    <div class="continue-card">
-
-        <div class="continue-info">
-            <span class="continue-tag">📖 Continue Learning</span>
-
-            <h2>Google Apps Script Masterclass</h2>
-
-            <p>
-                Lesson 12 of 20 • Database & Automation
-            </p>
-
-            <div class="progress-bar">
-                <div class="progress-fill" style="width:60%;"></div>
-            </div>
-
-            <small>60% Completed</small>
-
-            <br><br>
-
-            <button id="continueCourseBtn" class="btn-primary">
-                ▶ Continue Course
-            </button>
-
-        </div>
-
+    <!-- ===== LOADER ===== -->
+    <div id="loader">
+        <div class="loader-spinner"></div>
+        <h2>Loading ScaleFlow...</h2>
     </div>
 
-</section>
+    <!-- ===== TOAST CONTAINER ===== -->
+    <div id="toast-container"></div>
 
-        
-        <!-- ===== TODAY'S LEARNING TASKS ===== -->
-<section class="task-section">
-    <h2>📋 Today's Learning Tasks</h2>
-    <div class="task-list">
-        <div class="task-item">
-            <input type="checkbox" id="task1">
-            <label for="task1">Complete Lesson 13</label>
-        </div>
-        <div class="task-item">
-            <input type="checkbox" id="task2">
-            <label for="task2">AI Quiz: Module 5</label>
-        </div>
-        <div class="task-item">
-            <input type="checkbox" id="task3">
-            <label for="task3">Review JavaScript Notes</label>
-        </div>
-        <div class="task-item">
-            <input type="checkbox" id="task4">
-            <label for="task4">Submit Project Proposal</label>
-        </div>
-    </div>
-</section>
+    <!-- ===== MAIN APP ===== -->
+    <div id="app">
+
+        <!-- ===== HEADER ===== -->
+        <header class="header">
+            <div class="logo">
+                <h1>Sanaullah</h1>
+                <span>ScaleFlow University</span>
+            </div>
+            <div class="header-actions">
+                <button id="darkModeBtn" class="icon-btn">🌙</button>
+            </div>
+        </header>
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar">
+            <nav class="sidebar-menu">
+                <a href="#" class="active" id="navHome" data-page="home">🏠 Home</a>
+                <a href="#" id="navCourses" data-page="courses">📚 Courses</a>
+                <a href="#" id="navAchievements" data-page="achievements">🏆 Achievements</a>
+                <a href="#" id="navCertificates" data-page="certificates">📜 Certificates</a>
+                <a href="#" id="navProfile" data-page="profile">👤 Profile</a>
+            </nav>
+        </aside>
 
         <!-- ===== MAIN CONTENT ===== -->
-<main class="main-content">
+        <main class="main-content">
 
-    <!-- ===== HERO SECTION ===== -->
-    <section class="hero">
-        <!-- ... hero content ... -->
-    </section>
+            <!-- ===== HOME PAGE ===== -->
+            <section id="homePage" class="page-section active">
 
-    <!-- ===== SEARCH ===== -->
-    <div class="search-section">
-        <input id="searchInput" type="text" placeholder="Search courses, tools, mentors..." autocomplete="off">
+                <!-- HERO SECTION -->
+                <section class="hero">
+                    <div class="hero-left">
+                        <span class="hero-tag">👋 Welcome Back</span>
+                        <h1 id="studentName">Sanaullah</h1>
+                        <p>Continue your learning journey. Every lesson makes you stronger.</p>
+                        <div class="hero-buttons">
+                            <button id="continueLearningBtn" class="btn-primary">▶ Continue Learning</button>
+                            <button id="browseCoursesBtn" class="btn-secondary">📚 Browse Courses</button>
+                        </div>
+                    </div>
+                    <div class="hero-right">
+                        <div class="hero-stat"><span>⭐ Brain XP</span><strong id="brainXP">250 XP</strong></div>
+                        <div class="hero-stat"><span>🏆 Level</span><strong id="currentLevel">Level 5</strong></div>
+                        <div class="hero-stat"><span>🔥 Streak</span><strong id="learningStreak">7 Days</strong></div>
+                        <div class="hero-stat"><span>📈 Progress</span><strong id="overallProgress">75%</strong></div>
+                    </div>
+                </section>
+
+                <!-- SEARCH -->
+                <div class="search-section">
+                    <input id="searchInput" type="text" placeholder="Search courses, tools, mentors..." autocomplete="off">
+                </div>
+
+                <!-- LEARNING DASHBOARD -->
+                <section class="learning-dashboard">
+                    <h2>📚 Learning Dashboard</h2>
+                    <div class="dashboard-boxes">
+                        <div class="dashboard-box">
+                            <h3>Courses</h3>
+                            <span id="courseCount">12</span>
+                        </div>
+                        <div class="dashboard-box">
+                            <h3>Certificates</h3>
+                            <span id="certificateCount">4</span>
+                        </div>
+                        <div class="dashboard-box">
+                            <h3>Achievements</h3>
+                            <span id="achievementCount">8</span>
+                        </div>
+                        <div class="dashboard-box">
+                            <h3>Projects</h3>
+                            <span id="projectCount">3</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CONTINUE LEARNING -->
+                <section class="continue-learning">
+                    <div class="continue-card">
+                        <div class="continue-tag">📖 Continue Where You Left Off</div>
+                        <div class="continue-info">
+                            <h2>JavaScript Fundamentals</h2>
+                            <p>Module 4 • Functions & Scope</p>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width:65%;"></div>
+                            </div>
+                            <small>65% Complete</small>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- TODAY'S TASKS -->
+                <section class="today-tasks">
+                    <h2>📋 Today's Learning Tasks</h2>
+                    <div class="task-list">
+                        <div class="task-item">
+                            <input type="checkbox" id="task1">
+                            <label for="task1">Complete Lesson 13</label>
+                        </div>
+                        <div class="task-item">
+                            <input type="checkbox" id="task2">
+                            <label for="task2">AI Quiz: Module 5</label>
+                        </div>
+                        <div class="task-item">
+                            <input type="checkbox" id="task3">
+                            <label for="task3">Review JavaScript Notes</label>
+                        </div>
+                        <div class="task-item">
+                            <input type="checkbox" id="task4">
+                            <label for="task4">Submit Project Proposal</label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- RECENT ACTIVITY -->
+                <section class="recent-activity">
+                    <h2>🕐 Recent Activity</h2>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            Completed "AI Fundamentals" <span>2 hours ago</span>
+                        </div>
+                        <div class="activity-item">
+                            Started "Web Development" <span>Yesterday</span>
+                        </div>
+                        <div class="activity-item">
+                            Earned "JavaScript Badge" <span>3 days ago</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- GATEWAY CARDS -->
+                <section class="gateway-grid">
+                    <div class="gateway-card" id="learningHubCard" data-module="learning">
+                        <h3>🎓 Learning Hub</h3>
+                        <p>Professional courses with quizzes, projects and certificates.</p>
+                    </div>
+                    <div class="gateway-card" id="aiHubCard" data-module="ai">
+                        <h3>🤖 AI Mentor</h3>
+                        <p>Learn with your personal AI teacher and assistant.</p>
+                    </div>
+                    <div class="gateway-card" id="automationHubCard" data-module="automation">
+                        <h3>⚡ Automation Hub</h3>
+                        <p>Google Workspace, Apps Script and automation projects.</p>
+                    </div>
+                    <div class="gateway-card" id="toolsHubCard" data-module="tools">
+                        <h3>🛠 Tools Hub</h3>
+                        <p>Free professional tools for productivity and development.</p>
+                    </div>
+                    <div class="gateway-card" id="businessHubCard" data-module="business">
+                        <h3>💼 Business Hub</h3>
+                        <p>Build and manage your digital business from one dashboard.</p>
+                    </div>
+                    <div class="gateway-card" id="freelancingHubCard" data-module="freelancing">
+                        <h3>💻 Freelancing</h3>
+                        <p>Learn Fiverr, Upwork, proposals and client handling.</p>
+                    </div>
+                    <div class="gateway-card" id="certificateHubCard" data-module="certificate">
+                        <h3>🏆 Certificates</h3>
+                        <p>View, verify and download your certificates.</p>
+                    </div>
+                    <div class="gateway-card" id="dashboardHubCard" data-module="dashboard">
+                        <h3>👤 Dashboard</h3>
+                        <p>Track your progress, Brain XP and achievements.</p>
+                    </div>
+                </section>
+
+                <!-- QUICK ACTIONS -->
+                <div class="quick-actions-bottom">
+                    <button id="btnTheme" class="quick-btn">🌙 Theme</button>
+                    <button id="btnLanguage" class="quick-btn">🌐 Language</button>
+                    <button id="btnSupport" class="quick-btn">📞 Support</button>
+                </div>
+
+            </section>
+
+            <!-- ===== COURSES PAGE ===== -->
+            <section id="coursesPage" class="page-section">
+                <h2>📚 My Courses</h2>
+                <div class="placeholder-grid">
+                    <div class="placeholder-card"><div class="icon">📘</div><h4>AI Fundamentals</h4><p>12 Lessons • 65% Complete</p></div>
+                    <div class="placeholder-card"><div class="icon">📙</div><h4>Web Development</h4><p>8 Lessons • 40% Complete</p></div>
+                    <div class="placeholder-card"><div class="icon">📗</div><h4>Data Science</h4><p>6 Lessons • 20% Complete</p></div>
+                </div>
+            </section>
+
+            <!-- ===== ACHIEVEMENTS PAGE ===== -->
+            <section id="achievementsPage" class="page-section">
+                <h2>🏆 Achievements</h2>
+                <div class="placeholder-grid">
+                    <div class="placeholder-card"><div class="icon">⭐</div><h4>First Course</h4><p>Earned Jan 2026</p></div>
+                    <div class="placeholder-card"><div class="icon">🔥</div><h4>5 Day Streak</h4><p>Earned Feb 2026</p></div>
+                    <div class="placeholder-card"><div class="icon">🏅</div><h4>Top Performer</h4><p>Earned Mar 2026</p></div>
+                </div>
+            </section>
+
+            <!-- ===== CERTIFICATES PAGE ===== -->
+            <section id="certificatesPage" class="page-section">
+                <h2>📜 Certificates</h2>
+                <div class="placeholder-grid">
+                    <div class="placeholder-card"><div class="icon">📄</div><h4>AI Mastery</h4><p>Issued Jan 2026</p></div>
+                    <div class="placeholder-card"><div class="icon">📄</div><h4>Web Dev Pro</h4><p>Issued Feb 2026</p></div>
+                </div>
+            </section>
+
+            <!-- ===== PROFILE PAGE ===== -->
+            <section id="profilePage" class="page-section">
+                <h2>👤 Student Profile</h2>
+                <div class="placeholder-grid">
+                    <div class="placeholder-card"><div class="icon">👤</div><h4>Sanaullah</h4><p>Student • Level 5</p></div>
+                    <div class="placeholder-card"><div class="icon">📧</div><h4>Email</h4><p>sanaullah@university.com</p></div>
+                    <div class="placeholder-card"><div class="icon">🎯</div><h4>Goal</h4><p>Complete 20 Courses</p></div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer">
+            <div class="footer-left">
+                <h3>Sanaullah ScaleFlow University</h3>
+                <p>Learn • Build • Earn • Grow</p>
+            </div>
+            <div class="footer-center">
+                <a href="#" id="footerAbout">About</a>
+                <a href="#" id="footerPrivacy">Privacy</a>
+                <a href="#" id="footerTerms">Terms</a>
+                <a href="#" id="footerSupport">Support</a>
+            </div>
+            <div class="footer-right">
+                <p id="footerVersion">Version 1.0</p>
+                <p>© <span id="currentYear">2026</span></p>
+            </div>
+        </footer>
+
     </div>
 
-    
+    <!-- ===== SCROLL TOP ===== -->
+    <button id="scrollTopBtn">⬆</button>
 
-    <!-- ===== RECENT ACTIVITY ===== -->
+    <!-- ===== SCRIPT ===== -->
+    <script src="script.js"></script>
 
-<section class="recent-activity">
-
-    <h2>📈 Recent Activity</h2>
-
-    <div class="activity-list">
-
-        <div class="activity-item">
-            ✅ Completed Lesson 12
-            <span>2 Hours Ago</span>
-        </div>
-
-        <div class="activity-item">
-            🏆 Achievement Unlocked
-            <span>Yesterday</span>
-        </div>
-
-        <div class="activity-item">
-            📚 Enrolled in Google Apps Script
-            <span>2 Days Ago</span>
-        </div>
-
-        <div class="activity-item">
-            ⭐ Earned 50 XP
-            <span>2 Days Ago</span>
-        </div>
-
-    </div>
-
-</section>
-    
-
-    
-
-    
-
-    <!-- ===== GATEWAY CARDS ===== -->
-    <section class="gateway-grid">
-        <!-- ... gateway cards ... -->
-    </section>
-
-</main>
-        
-         <!-- ==========================================
-     GATEWAY CARDS (بڑے اور سائیڈ میں 3 کالم)
-========================================== -->
-<section class="gateway-grid">
-    <div class="gateway-card" id="learningHubCard" data-module="learning">
-        <h3>🎓 Learning Hub</h3>
-        <p>Professional courses with quizzes, projects and certificates.</p>
-    </div>
-    <div class="gateway-card" id="aiHubCard" data-module="ai">
-        <h3>🤖 AI Mentor</h3>
-        <p>Learn with your personal AI teacher and assistant.</p>
-    </div>
-    <div class="gateway-card" id="automationHubCard" data-module="automation">
-        <h3>⚡ Automation Hub</h3>
-        <p>Google Workspace, Apps Script and automation projects.</p>
-    </div>
-    <div class="gateway-card" id="toolsHubCard" data-module="tools">
-        <h3>🛠 Tools Hub</h3>
-        <p>Free professional tools for productivity and development.</p>
-    </div>
-    <div class="gateway-card" id="businessHubCard" data-module="business">
-        <h3>💼 Business Hub</h3>
-        <p>Build and manage your digital business from one dashboard.</p>
-    </div>
-    <div class="gateway-card" id="freelancingHubCard" data-module="freelancing">
-        <h3>💻 Freelancing</h3>
-        <p>Learn Fiverr, Upwork, proposals and client handling.</p>
-    </div>
-    <div class="gateway-card" id="certificateHubCard" data-module="certificate">
-        <h3>🏆 Certificates</h3>
-        <p>View, verify and download your certificates.</p>
-    </div>
-    <div class="gateway-card" id="dashboardHubCard" data-module="dashboard">
-        <h3>👤 Dashboard</h3>
-        <p>Track your progress, Brain XP and achievements.</p>
-    </div>
-</section>
-        
-
-<!-- ==========================================
-     QUICK ACTIONS (نیچے والے تین بٹن — Theme, Language, Support)
-========================================== -->
-<div class="quick-actions-bottom">
-    <button id="btnTheme" class="quick-btn">🌙 Theme</button>
-    <button id="btnLanguage" class="quick-btn">🌐 Language</button>
-    <button id="btnSupport" class="quick-btn">📞 Support</button>
-</div>
-
-    </main>  
-
-    <!-- ===== FOOTER ===== -->  
-    <footer class="footer">  
-        <div class="footer-left">  
-            <h3>ثناءاللہ اسکیل یونیورسٹی</h3>  
-            <p>Learn • Build • Earn • Grow</p>  
-        </div>  
-        <div class="footer-center">  
-            <a href="#" id="footerAbout">About</a>  
-            <a href="#" id="footerPrivacy">Privacy</a>  
-            <a href="#" id="footerTerms">Terms</a>  
-            <a href="#" id="footerSupport">Support</a>  
-        </div>  
-        <div class="footer-right">  
-            <p id="footerVersion">Version 1.0</p>  
-            <p>© <span id="currentYear">2026</span></p>  
-        </div>  
-    </footer>  
-
-</div>  
-
-<!-- ===== SCROLL TOP ===== -->  
-<button id="scrollTopBtn">⬆</button>  
-
-<script>
-document.getElementById("loader").style.display = "none";
-</script>
-
-<script src="script.js"></script>
-
-</body>  
+</body>
 </html>
