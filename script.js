@@ -1,8 +1,8 @@
-/*==========================================
-  Sanaullah ScaleFlow University
-  script.js — Core Logic
-  Version: 1.0
-==========================================*/
+/* ==========================================
+   Sanaullah ScaleFlow University
+   script.js — Core Logic
+   Version: 1.0
+========================================== */
 
 (function() {
     "use strict";
@@ -140,10 +140,11 @@
     }
 
     // ==========================================
-    // 10. TODAY TASKS (نیا فیچر)
+    // 10. TODAY TASKS (نیا فیچر — اگر HTML میں موجود ہوں)
     // ==========================================
     function initTasks() {
         const tasks = document.querySelectorAll(".task-item input");
+        if (tasks.length === 0) return; // اگر کوئی ٹاسک نہ ہو تو خاموشی سے واپس آ جائیں
         tasks.forEach(task => {
             task.addEventListener("change", function() {
                 if (this.checked) {
@@ -191,7 +192,7 @@
     }
 
     // ==========================================
-    // 13. MAIN INIT — اب سب شامل ہے
+    // 13. MAIN INIT (اب سب شامل ہے)
     // ==========================================
     function init() {
         loadTheme();
@@ -203,7 +204,7 @@
         initHeroButtons();
         initScrollTop();
         initKeyboard();
-        initTasks();   // ✅ نیا فنکشن اب یہاں شامل ہے
+        initTasks();   // ✅ یہ اب کام کرے گا (اگر HTML میں task-item موجود ہوں)
 
         if (darkBtn) {
             darkBtn.addEventListener('click', toggleDarkMode);
