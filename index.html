@@ -34,18 +34,18 @@
 
         <!-- ===== SIDEBAR ===== -->
         <aside class="sidebar">
-    <nav class="sidebar-menu">
-        <a href="#" class="active" id="navHome" data-page="home">🏠 Home</a>
-        <a href="#" id="navLearning" data-page="learning">📚 Learning Hub</a>
-        <a href="#" id="navAI" data-page="ai">🤖 AI Mentor</a>
-        <a href="#" id="navAutomation" data-page="automation">⚡ Automation Hub</a>
-        <a href="#" id="navTools" data-page="tools">🛠 Tools Hub</a>
-        <a href="#" id="navBusiness" data-page="business">💼 Business Hub</a>
-        <a href="#" id="navFreelancing" data-page="freelancing">💻 Freelancing</a>
-        <a href="#" id="navCertificates" data-page="certificates">🏆 Certificates</a>
-        <a href="#" id="navDashboard" data-page="dashboard">👤 Dashboard</a>
-    </nav>
-</aside>
+            <nav class="sidebar-menu">
+                <a href="#" class="active" id="navHome" data-page="home">🏠 Home</a>
+                <a href="#" id="navLearning" data-page="learning">📚 Learning Hub</a>
+                <a href="#" id="navAI" data-page="ai">🤖 AI Mentor</a>
+                <a href="#" id="navAutomation" data-page="automation">⚡ Automation Hub</a>
+                <a href="#" id="navTools" data-page="tools">🛠 Tools Hub</a>
+                <a href="#" id="navBusiness" data-page="business">💼 Business Hub</a>
+                <a href="#" id="navFreelancing" data-page="freelancing">💻 Freelancing</a>
+                <a href="#" id="navCertificates" data-page="certificates">🏆 Certificates</a>
+                <a href="#" id="navDashboard" data-page="dashboard">👤 Dashboard</a>
+            </nav>
+        </aside>
 
         <!-- ===== MAIN CONTENT ===== -->
         <main class="main-content">
@@ -111,7 +111,7 @@
                 <!-- SEARCH -->
                 <div class="search-section">
                     <input id="searchInput" type="text" placeholder="Search courses, tools, mentors..." autocomplete="off">
-                </div>           
+                </div>
 
                 <!-- LEARNING DASHBOARD -->
                 <section class="learning-dashboard">
@@ -138,20 +138,20 @@
 
                 <!-- CONTINUE LEARNING -->
                 <section class="continue-learning">
-    <div class="continue-card">
-        <div class="continue-tag">📖 Continue Where You Left Off</div>
-        <div class="continue-info">
-            <h2>JavaScript Fundamentals</h2>
-            <p>Module 4 • Functions & Scope</p>
-            <div class="progress-bar">
-                <div class="progress-fill" id="continueProgress" style="width:65%;"></div>
-            </div>
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:12px;">
-                <small id="progressText">65% Complete</small>
-                <button id="continueProgressBtn" class="btn-primary" style="padding:8px 20px; font-size:14px;">▶ Continue</button>
-            </div>
-        </div>
-    </div>
+                    <div class="continue-card">
+                        <div class="continue-tag">📖 Continue Where You Left Off</div>
+                        <div class="continue-info">
+                            <h2>JavaScript Fundamentals</h2>
+                            <p>Module 4 • Functions & Scope</p>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="continueProgress" style="width:65%;"></div>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:12px;">
+                                <small id="progressText">65% Complete</small>
+                                <button id="continueProgressBtn" class="btn-primary" style="padding:8px 20px; font-size:14px;">▶ Continue</button>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
                 <!-- TODAY'S TASKS -->
@@ -193,112 +193,87 @@
                     </div>
                 </section>
 
-<!-- ==========================================
-     QUICK ACTIONS
-========================================== -->
-<button class="quick-card" id="resumeLearningBtn">
-    <span>▶</span>
-    <h3>Resume Learning</h3>
-</button>
-
-<button class="quick-card" id="browseAllCoursesBtn">
-    <span>📚</span>
-    <h3>Browse Courses</h3>
-</button>
-
-<button class="quick-card" id="aiMentorBtn">
-    <span>🤖</span>
-    <h3>Ask AI Mentor</h3>
-</button>
-
-<button class="quick-card" id="automationHubBtn">
-    <span>⚡</span>
-    <h3>Automation Hub</h3>
-</button>
-
-<button class="quick-card" id="businessHubBtn">
-    <span>💼</span>
-    <h3>Business Hub</h3>
-</button>
-
-<button class="quick-card" id="freelancingBtn">
-    <span>💻</span>
-    <h3>Freelancing</h3>
-</button>
-
-<button class="quick-card" id="myCertificatesBtn">
-    <span>📜</span>
-    <h3>Certificates</h3>
-</button>
-
-<button class="quick-card" id="myAchievementsBtn">
-    <span>🏆</span>
-    <h3>Achievements</h3>
-</button>
-
-<button class="quick-card" id="settingsQuickBtn">
-    <span>⚙️</span>
-    <h3>Settings</h3>
-</button>
-
- <button class="quick-card" id="dashboardBtn">
-    <span>👤</span>
-    <h3>Dashboard</h3>
-                    
-                </button>
-
-</section>
+                <!-- ===== QUICK CARDS (کنٹینر میں رکھے گئے) ===== -->
+                <div class="quick-cards-grid">
+                    <button class="quick-card" id="resumeLearningBtn">
+                        <span>▶</span>
+                        <h3>Resume Learning</h3>
+                    </button>
+                    <button class="quick-card" id="browseAllCoursesBtn">
+                        <span>📚</span>
+                        <h3>Browse Courses</h3>
+                    </button>
+                    <button class="quick-card" id="aiMentorBtn">
+                        <span>🤖</span>
+                        <h3>Ask AI Mentor</h3>
+                    </button>
+                    <button class="quick-card" id="automationHubBtn">
+                        <span>⚡</span>
+                        <h3>Automation Hub</h3>
+                    </button>
+                    <button class="quick-card" id="businessHubBtn">
+                        <span>💼</span>
+                        <h3>Business Hub</h3>
+                    </button>
+                    <button class="quick-card" id="freelancingBtn">
+                        <span>💻</span>
+                        <h3>Freelancing</h3>
+                    </button>
+                    <button class="quick-card" id="myCertificatesBtn">
+                        <span>📜</span>
+                        <h3>Certificates</h3>
+                    </button>
+                    <button class="quick-card" id="myAchievementsBtn">
+                        <span>🏆</span>
+                        <h3>Achievements</h3>
+                    </button>
+                    <button class="quick-card" id="settingsQuickBtn">
+                        <span>⚙️</span>
+                        <h3>Settings</h3>
+                    </button>
+                    <button class="quick-card" id="dashboardBtn">
+                        <span>👤</span>
+                        <h3>Dashboard</h3>
+                    </button>
+                </div>
 
                 <!-- ===== WEEKLY PROGRESS ===== -->
-<section class="weekly-progress">
-
-    <div class="section-header">
-        <h2>📈 Weekly Progress</h2>
-        <span>This Week</span>
-    </div>
-
-    <div class="progress-chart">
-
-        <div class="day">
-            <div class="bar" style="height:45%;"></div>
-            <p>Mon</p>
-        </div>
-
-        <div class="day">
-            <div class="bar" style="height:70%;"></div>
-            <p>Tue</p>
-        </div>
-
-        <div class="day">
-            <div class="bar" style="height:60%;"></div>
-            <p>Wed</p>
-        </div>
-
-        <div class="day">
-            <div class="bar" style="height:90%;"></div>
-            <p>Thu</p>
-        </div>
-
-        <div class="day">
-            <div class="bar" style="height:75%;"></div>
-            <p>Fri</p>
-        </div>
-
-        <div class="day">
-            <div class="bar" style="height:100%;"></div>
-            <p>Sat</p>
-        </div>
-
-        <div class="day">
-            <div class="bar" style="height:55%;"></div>
-            <p>Sun</p>
-        </div>
-
-    </div>
-
-</section>
-
-                
+                <section class="weekly-progress">
+                    <div class="section-header">
+                        <h2>📈 Weekly Progress</h2>
+                        <span>This Week</span>
+                    </div>
+                    <div class="progress-chart">
+                        <div class="day">
+                            <div class="bar" style="height:45%;"></div>
+                            <p>Mon</p>
+                        </div>
+                        <div class="day">
+                            <div class="bar" style="height:70%;"></div>
+                            <p>Tue</p>
+                        </div>
+                        <div class="day">
+                            <div class="bar" style="height:60%;"></div>
+                            <p>Wed</p>
+                        </div>
+                        <div class="day">
+                            <div class="bar" style="height:90%;"></div>
+                            <p>Thu</p>
+                        </div>
+                        <div class="day">
+                            <div class="bar" style="height:75%;"></div>
+                            <p>Fri</p>
+                        </div>
+                        <div class="day">
+                            <div class="bar" style="height:100%;"></div>
+                            <p>Sat</p>
+                        </div>
+                        <div class="day">
+                            <div class="bar" style="height:55%;"></div>
+                            <p>Sun</p>
+                        </div>
+                    </div>
+                </section>
 
                 <!-- QUICK ACTIONS -->
                 <div class="quick-actions-bottom">
@@ -308,62 +283,32 @@
                 </div>
 
             </section>
+            <!-- ===== END HOME PAGE ===== -->
 
             <!-- ===== COURSES PAGE ===== -->
-                <section id="coursesPage" class="page-section">
-
-    <h2>🎓 Learning Hub</h2>
-
-    <div class="learning-header">
-
-        <input
-            type="text"
-            id="courseSearch"
-            placeholder="🔍 Search Courses...">
-
-    </div>
-
-    <div class="course-grid">
-
-        <div class="course-card" id="courseAppsScript">
-
-            <h3>Google Apps Script</h3>
-
-            <p>Database • Automation • Gmail • Drive</p>
-
-            <button class="btn-primary">
-                Open Course
-            </button>
-
-        </div>
-
-        <div class="course-card" id="courseJavaScript">
-
-            <h3>JavaScript Masterclass</h3>
-
-            <p>Variables • Functions • DOM • API</p>
-
-            <button class="btn-primary">
-                Open Course
-            </button>
-
-        </div>
-
-        <div class="course-card" id="courseHTML">
-
-            <h3>HTML & CSS</h3>
-
-            <p>Frontend Development</p>
-
-            <button class="btn-primary">
-                Open Course
-            </button>
-
-         </div>
- 
-        </div>
-
-     </section>
+            <section id="coursesPage" class="page-section">
+                <h2>🎓 Learning Hub</h2>
+                <div class="learning-header">
+                    <input type="text" id="courseSearch" placeholder="🔍 Search Courses...">
+                </div>
+                <div class="course-grid">
+                    <div class="course-card" id="courseAppsScript">
+                        <h3>Google Apps Script</h3>
+                        <p>Database • Automation • Gmail • Drive</p>
+                        <button class="btn-primary">Open Course</button>
+                    </div>
+                    <div class="course-card" id="courseJavaScript">
+                        <h3>JavaScript Masterclass</h3>
+                        <p>Variables • Functions • DOM • API</p>
+                        <button class="btn-primary">Open Course</button>
+                    </div>
+                    <div class="course-card" id="courseHTML">
+                        <h3>HTML & CSS</h3>
+                        <p>Frontend Development</p>
+                        <button class="btn-primary">Open Course</button>
+                    </div>
+                </div>
+            </section>
 
             <!-- ===== ACHIEVEMENTS PAGE ===== -->
             <section id="achievementsPage" class="page-section">
@@ -421,8 +366,6 @@
 
     <!-- ===== SCRIPT ===== -->
     <script src="script.js"></script>
-
-     <link rel="stylesheet" href="style.css">
 
 </body>
 </html>
