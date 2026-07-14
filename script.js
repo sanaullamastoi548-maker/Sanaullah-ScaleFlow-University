@@ -264,7 +264,28 @@ function initPageNavigation() {
         initHeroButtons();
         initScrollTop();
         initKeyboard();
-        initTasks();   // ✅ یہ اب کام کرے گا (اگر HTML میں task-item موجود ہوں)
+        initTasks(); 
+       function init() {
+    loadTheme();
+    hideLoader();
+    updateFooter();
+    initSearch();
+    initSidebar();
+    initCards();
+    initHeroButtons();
+    initScrollTop();
+    initKeyboard();
+    initTasks();
+    initPageNavigation();   // 👈 یہ نئی لائن شامل کریں
+
+    if (darkBtn) {
+        darkBtn.addEventListener('click', toggleDarkMode);
+    }
+
+    showToast('🎓 Welcome to ScaleFlow University', 'success');
+    console.log('🚀 ScaleFlow University loaded successfully');
+       }
+       // ✅ یہ اب کام کرے گا (اگر HTML میں task-item موجود ہوں)
 
         if (darkBtn) {
             darkBtn.addEventListener('click', toggleDarkMode);
