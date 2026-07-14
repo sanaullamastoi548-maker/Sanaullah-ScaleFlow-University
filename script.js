@@ -1,8 +1,8 @@
-/* ==========================================
+/*==========================================
    Sanaullah ScaleFlow University
    script.js — Core Logic
    Version: 1.0
-========================================== */
+==========================================*/
 
 (function() {
     "use strict";
@@ -109,67 +109,7 @@
             });
         });
     }
-        // ==========================================
-// PAGE NAVIGATION (Sidebar سے صفحات سوئچ کریں)
-// ==========================================
-function initPageNavigation() {
-    const links = document.querySelectorAll('.sidebar-menu a[data-page]');
-    const sections = {
-        home: document.getElementById('homePage'),
-        courses: document.getElementById('coursesPage'),
-        achievements: document.getElementById('achievementsPage'),
-        certificates: document.getElementById('certificatesPage'),
-        profile: document.getElementById('profilePage')
-    };
 
-    // چیک کریں کہ تمام سیکشنز موجود ہیں
-    const allExist = Object.values(sections).every(el => el !== null);
-    if (!allExist) {
-        console.warn('⚠️ Some page sections are missing in HTML');
-        return;
-    }
-
-    // پہلے صرف homePage کو ظاہر کریں
-    function showPage(pageId) {
-        // تمام سیکشنز چھپائیں
-        Object.values(sections).forEach(section => {
-            section.classList.remove('active');
-            section.style.display = 'none';
-        });
-        // مطلوبہ سیکشن ظاہر کریں
-        const target = sections[pageId];
-        if (target) {
-            target.style.display = 'block';
-            // تھوڑی دیر بعد کلاس شامل کریں تاکہ animation چلے
-            requestAnimationFrame(() => {
-                target.classList.add('active');
-            });
-        }
-    }
-
-    // پہلے ہوم پیج کو فعال کریں
-    showPage('home');
-
-    // لنکس پر کلک کا ایونٹ
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const page = this.dataset.page;
-            if (page && sections[page]) {
-                showPage(page);
-                // سائیڈبار میں active کلاس اپ ڈیٹ کریں
-                document.querySelectorAll('.sidebar-menu a').forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
-                showToast(`📄 ${page.charAt(0).toUpperCase() + page.slice(1)}`, 'info');
-            }
-        });
-    });
-}
-
-// اسے init() فنکشن میں شامل کریں
-// init() کے اندر یہ لائن ڈالیں:
-// initPageNavigation();
-   
     // ==========================================
     // 8. CARDS CLICK
     // ==========================================
@@ -200,11 +140,11 @@ function initPageNavigation() {
     }
 
     // ==========================================
-    // 10. TODAY TASKS (نیا فیچر — اگر HTML میں موجود ہوں)
+    // 10. TODAY TASKS
     // ==========================================
     function initTasks() {
         const tasks = document.querySelectorAll(".task-item input");
-        if (tasks.length === 0) return; // اگر کوئی ٹاسک نہ ہو تو خاموشی سے واپس آ جائیں
+        if (tasks.length === 0) return;
         tasks.forEach(task => {
             task.addEventListener("change", function() {
                 if (this.checked) {
@@ -220,7 +160,57 @@ function initPageNavigation() {
     }
 
     // ==========================================
-    // 11. FOOTER (Version & Year)
+    // 11. PAGE NAVIGATION
+    // ==========================================
+    function initPageNavigation() {
+        const links = document.querySelectorAll('.sidebar-menu a[data-page]');
+        const sections = {
+            home: document.getElementById('homePage'),
+            courses: document.getElementById('coursesPage'),
+            achievements: document.getElementById('achievementsPage'),
+            certificates: document.getElementById('certificatesPage'),
+            profile: document.getElementById('profilePage')
+        };
+
+        const allExist = Object.values(sections).every(el => el !== null);
+        if (!allExist) {
+            console.warn('⚠️ Some page sections are missing in HTML');
+            return;
+        }
+
+        function showPage(pageId) {
+            Object.values(sections).forEach(section => {
+                section.classList.remove('active');
+                section.style.display = 'none';
+            });
+            const target = sections[pageId];
+            if (target) {
+                target.style.display = 'block';
+                requestAnimationFrame(() => {
+                    target.classList.add('active');
+                });
+            }
+        }
+
+        // Home page active by default
+        showPage('home');
+
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const page = this.dataset.page;
+                if (page && sections[page]) {
+                    showPage(page);
+                    document.querySelectorAll('.sidebar-menu a').forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    showToast(`📄 ${page.charAt(0).toUpperCase() + page.slice(1)}`, 'info');
+                }
+            });
+        });
+    }
+
+    // ==========================================
+    // 12. FOOTER
     // ==========================================
     function updateFooter() {
         if (yearEl) {
@@ -232,7 +222,7 @@ function initPageNavigation() {
     }
 
     // ==========================================
-    // 12. KEYBOARD SHORTCUTS
+    // 13. KEYBOARD SHORTCUTS
     // ==========================================
     function initKeyboard() {
         document.addEventListener('keydown', function(e) {
@@ -252,7 +242,7 @@ function initPageNavigation() {
     }
 
     // ==========================================
-    // 13. MAIN INIT (اب سب شامل ہے)
+    // 14. MAIN INIT
     // ==========================================
     function init() {
         loadTheme();
@@ -264,28 +254,8 @@ function initPageNavigation() {
         initHeroButtons();
         initScrollTop();
         initKeyboard();
-        initTasks(); 
-       function init() {
-    loadTheme();
-    hideLoader();
-    updateFooter();
-    initSearch();
-    initSidebar();
-    initCards();
-    initHeroButtons();
-    initScrollTop();
-    initKeyboard();
-    initTasks();
-    initPageNavigation();   // 👈 یہ نئی لائن شامل کریں
-
-    if (darkBtn) {
-        darkBtn.addEventListener('click', toggleDarkMode);
-    }
-
-    showToast('🎓 Welcome to ScaleFlow University', 'success');
-    console.log('🚀 ScaleFlow University loaded successfully');
-       }
-       // ✅ یہ اب کام کرے گا (اگر HTML میں task-item موجود ہوں)
+        initTasks();
+        initPageNavigation();
 
         if (darkBtn) {
             darkBtn.addEventListener('click', toggleDarkMode);
@@ -296,7 +266,7 @@ function initPageNavigation() {
     }
 
     // ==========================================
-    // 14. START
+    // 15. START
     // ==========================================
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
