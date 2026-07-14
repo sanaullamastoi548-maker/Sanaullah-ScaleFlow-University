@@ -102,17 +102,20 @@
 
                 <!-- CONTINUE LEARNING -->
                 <section class="continue-learning">
-                    <div class="continue-card">
-                        <div class="continue-tag">📖 Continue Where You Left Off</div>
-                        <div class="continue-info">
-                            <h2>JavaScript Fundamentals</h2>
-                            <p>Module 4 • Functions & Scope</p>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width:65%;"></div>
-                            </div>
-                            <small>65% Complete</small>
-                        </div>
-                    </div>
+    <div class="continue-card">
+        <div class="continue-tag">📖 Continue Where You Left Off</div>
+        <div class="continue-info">
+            <h2>JavaScript Fundamentals</h2>
+            <p>Module 4 • Functions & Scope</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="continueProgress" style="width:65%;"></div>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:12px;">
+                <small id="progressText">65% Complete</small>
+                <button id="continueProgressBtn" class="btn-primary" style="padding:8px 20px; font-size:14px;">▶ Continue</button>
+            </div>
+        </div>
+    </div>
                 </section>
 
                 <!-- TODAY'S TASKS -->
