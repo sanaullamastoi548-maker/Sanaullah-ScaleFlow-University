@@ -28,37 +28,76 @@ body {
     --sidebar-width: 220px;
 }
 
-/* ===== DARK MODE ===== */
-body.dark-mode {
-    background: #0f172a;
-    color: #f1f5f9;
+/* ===== SECONDARY BUTTON ===== */
+
+.btn-secondary{
+    background:#ffffff;
+    color:#111827;
+    border:2px solid var(--primary);
+    padding:12px 24px;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:var(--transition);
+    box-shadow:var(--shadow);
 }
+
+.btn-secondary:hover{
+    background:var(--primary);
+    color:#000;
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+
+
+/* ===== DARK MODE ===== */
+
+body.dark-mode{
+    background:#0f172a;
+    color:#f1f5f9;
+}
+
 body.dark-mode .header,
 body.dark-mode .sidebar,
 body.dark-mode .footer,
 body.dark-mode .card,
-body.dark-mode .hero {
-    background: #1e293b;
-    border-color: #334155;
-    color: #f1f5f9;
+body.dark-mode .hero{
+    background:#1e293b;
+    border-color:#334155;
+    color:#f1f5f9;
 }
-body.dark-mode .hero-stat {
-    background: rgba(255,255,255,0.05);
-    border-color: #334155;
+
+body.dark-mode .hero-stat{
+    background:rgba(255,255,255,.05);
+    border-color:#334155;
 }
-body.dark-mode .search-section input {
-    background: #1e293b;
-    border-color: #334155;
-    color: #f1f5f9;
+
+body.dark-mode .search-section input{
+    background:#1e293b;
+    border-color:#334155;
+    color:#f1f5f9;
 }
-body.dark-mode .btn-secondary {
-    background: transparent;
-    color: #f1f5f9;
-    border-color: #334155;
+
+body.dark-mode .btn-secondary{
+    background:transparent;
+    color:#f1f5f9;
+    border:2px solid #334155;
 }
-body.dark-mode .btn-secondary:hover {
-    background: var(--primary);
-    color: #000;
+
+body.dark-mode .btn-secondary:hover{
+    background:var(--primary);
+    color:#000;
+    border-color:var(--primary);
+}
+
+body.dark-mode .btn-primary{
+    background:var(--primary);
+    color:#000;
+}
+
+body.dark-mode .btn-primary:hover{
+    background:var(--primary-hover);
 }
 
 /* ===== LOADER ===== */
