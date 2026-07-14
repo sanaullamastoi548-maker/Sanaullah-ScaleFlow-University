@@ -1093,3 +1093,114 @@ body.dark-mode .task-item{
 body.dark-mode .task-item label{
     color:#f1f5f9;
 }
+
+/* ==========================================
+   PAGE SECTIONS (Home, Courses, Achievements, Certificates, Profile)
+========================================== */
+.page-section {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.page-section.active {
+    display: block;
+}
+
+.page-section h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--black, #111827);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--primary, #FFC107);
+}
+
+.page-section p {
+    font-size: 16px;
+    color: var(--text, #374151);
+    line-height: 1.7;
+}
+
+/* ===== PLACEHOLDER CARDS FOR COMING SOON ===== */
+.placeholder-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.placeholder-card {
+    background: #ffffff;
+    border: 2px solid var(--border, #FFE082);
+    border-radius: var(--radius, 16px);
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: var(--shadow, 0 8px 25px rgba(0,0,0,0.08));
+    transition: var(--transition, 0.35s ease);
+}
+
+.placeholder-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary, #FFC107);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+}
+
+.placeholder-card .icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.placeholder-card h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--black, #111827);
+}
+
+.placeholder-card p {
+    font-size: 14px;
+    color: var(--text, #374151);
+    margin-top: 6px;
+}
+
+/* ===== DARK MODE ===== */
+body.dark-mode .page-section h2 {
+    color: var(--dark-text, #f1f5f9);
+    border-bottom-color: var(--primary, #FFC107);
+}
+
+body.dark-mode .page-section p {
+    color: var(--dark-muted, #94a3b8);
+}
+
+body.dark-mode .placeholder-card {
+    background: var(--dark-card, #1e293b);
+    border-color: var(--dark-border, #334155);
+}
+
+body.dark-mode .placeholder-card h4 {
+    color: var(--dark-text, #f1f5f9);
+}
+
+body.dark-mode .placeholder-card p {
+    color: var(--dark-muted, #94a3b8);
+}
+
+body.dark-mode .placeholder-card:hover {
+    border-color: var(--primary, #FFC107);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .page-section h2 {
+        font-size: 22px;
+    }
+    .placeholder-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .placeholder-grid {
+        grid-template-columns: 1fr;
+    }
+}
