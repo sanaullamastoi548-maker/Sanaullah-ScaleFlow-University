@@ -24,6 +24,14 @@
     const continueBtn = document.getElementById('continueLearningBtn');
     const browseBtn = document.getElementById('browseCoursesBtn');
 
+   const learningHubCard = document.getElementById("learningHubCard");
+const aiHubCard = document.getElementById("aiHubCard");
+const automationHubCard = document.getElementById("automationHubCard");
+const toolsHubCard = document.getElementById("toolsHubCard");
+const businessHubCard = document.getElementById("businessHubCard");
+const freelancingHubCard = document.getElementById("freelancingHubCard");
+const certificateHubCard = document.getElementById("certificateHubCard");
+const dashboardHubCard = document.getElementById("dashboardHubCard");
     // ==========================================
     // 2. TOAST
     // ==========================================
