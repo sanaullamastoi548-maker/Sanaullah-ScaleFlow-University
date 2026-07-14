@@ -66,6 +66,24 @@ const dashboardHubCard = document.getElementById("dashboardHubCard");
         darkBtn.textContent = isDark ? '☀️' : '🌙';
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
         showToast(isDark ? '🌙 Dark mode enabled' : '☀️ Light mode enabled', 'info');
+       .btn-secondary{
+    background:#ffffff;
+    color:#111827;
+    border:2px solid #fbbf24;
+    padding:12px 24px;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn-secondary:hover{
+    background:#fbbf24;
+    color:#ffffff;
+    transform:translateY(-3px);
+}
+       
     }
 
     function loadTheme() {
