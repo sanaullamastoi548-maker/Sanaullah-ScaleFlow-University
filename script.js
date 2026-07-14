@@ -260,6 +260,26 @@
         if (darkBtn) {
             darkBtn.addEventListener('click', toggleDarkMode);
         }
+       // Continue Learning Progress Button
+function initContinueProgress() {
+    const btn = document.getElementById('continueProgressBtn');
+    const fill = document.getElementById('continueProgress');
+    const text = document.getElementById('progressText');
+    if (!btn || !fill || !text) return;
+
+    let progress = parseInt(fill.style.width) || 65;
+
+    btn.addEventListener('click', function() {
+        if (progress >= 100) {
+            showToast('🎉 Course Complete!', 'success');
+            return;
+        }
+        progress = Math.min(progress + 5, 100);
+        fill.style.width = progress + '%';
+        text.textContent = progress + '% Complete';
+        showToast(`📈 Progress updated to ${progress}%`, 'info');
+    });
+}
 
         showToast('🎓 Welcome to ScaleFlow University', 'success');
         console.log('🚀 ScaleFlow University loaded successfully');
