@@ -287,6 +287,30 @@ function initContinueProgress() {
         console.log('🚀 ScaleFlow University loaded successfully');
     }
 
+   // ==========================================
+// QUICK ACTIONS BUTTONS
+// ==========================================
+function initQuickActions() {
+    const actions = {
+        startLearningBtn: '🚀 Starting your learning journey...',
+        askAIBtn: '🤖 Opening AI Mentor...',
+        browseCoursesQuickBtn: '📚 Opening course catalog...',
+        certificatesQuickBtn: '📜 Opening your certificates...'
+    };
+
+    Object.keys(actions).forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) {
+            btn.addEventListener('click', function() {
+                showToast(actions[id], 'info');
+            });
+        }
+    });
+}
+
+// اسے init() فنکشن میں شامل کریں:
+// initQuickActions();
+
     // ==========================================
     // 15. START
     // ==========================================
