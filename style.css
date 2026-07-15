@@ -471,6 +471,114 @@ body.dark-mode .main-content {
     transition: 0.3s;
 }
 
+/* ==========================================
+   QUICK ACTIONS SECTION (4 بڑے بٹن)
+========================================== */
+
+.quick-actions-section {
+    margin: 30px 0;
+}
+
+.quick-actions-section h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: var(--black, #111827);
+}
+
+.quick-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.quick-action-btn {
+    background: #ffffff;
+    border: 2px solid var(--border, #FFE082);
+    border-radius: 18px;
+    padding: 28px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition, 0.35s ease);
+    box-shadow: var(--shadow, 0 8px 25px rgba(0,0,0,0.08));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.quick-action-btn:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary, #FFC107);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+
+.quick-action-btn .icon {
+    font-size: 42px;
+    line-height: 1;
+}
+
+.quick-action-btn .label {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--black, #111827);
+}
+
+.quick-action-btn .desc {
+    font-size: 14px;
+    color: var(--text, #374151);
+    font-weight: 500;
+}
+
+/* ===== DARK MODE ===== */
+body.dark-mode .quick-actions-section h2 {
+    color: var(--dark-text, #f1f5f9);
+}
+
+body.dark-mode .quick-action-btn {
+    background: var(--dark-card, #1e293b);
+    border-color: var(--dark-border, #334155);
+}
+
+body.dark-mode .quick-action-btn .label {
+    color: var(--dark-text, #f1f5f9);
+}
+
+body.dark-mode .quick-action-btn .desc {
+    color: var(--dark-muted, #94a3b8);
+}
+
+body.dark-mode .quick-action-btn:hover {
+    border-color: var(--primary, #FFC107);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .quick-actions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .quick-actions-grid {
+        grid-template-columns: 1fr;
+    }
+    .quick-action-btn {
+        padding: 20px 16px;
+        flex-direction: row;
+        gap: 16px;
+        justify-content: flex-start;
+        text-align: left;
+    }
+    .quick-action-btn .icon {
+        font-size: 32px;
+    }
+    .quick-action-btn .label {
+        font-size: 16px;
+    }
+}
+
 /* ===== GATEWAY CARDS ===== */
 .gateway-grid {
     display: grid;
