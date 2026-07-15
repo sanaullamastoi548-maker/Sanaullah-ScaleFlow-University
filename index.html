@@ -1334,38 +1334,19 @@
     <!-- ===== SCROLL TOP ===== -->
     <button id="scrollTopBtn" type="button" aria-label="Scroll to top">⬆</button>
 
-    <!-- ==========================================
-    ✅ FIX 4: Login Form Validation (Inline Script)
-    ========================================== -->
-    <script>
-        function validateLoginForm() {
-            const email = document.getElementById('loginEmail').value.trim();
-            const password = document.getElementById('loginPassword').value.trim();
-
-            if (!email || !password) {
-                alert('⚠️ Please fill in both fields.');
-                return false;
-            }
-
-            if (!email.includes('@')) {
-                alert('⚠️ Please enter a valid email address.');
-                return false;
-            }
-
-            if (password.length < 6) {
-                alert('⚠️ Password must be at least 6 characters.');
-                return false;
-            }
-
-            // اگر سب ٹھیک ہے تو یہاں API کال یا نیویگیشن ہوگی
-            alert('✅ Login successful! Redirecting...');
-            // بعد میں یہاں navigateTo('page1') یا API call ہوگی
-            return false; // ابھی روک دیا تاکہ page reload نہ ہو
-        }
-    </script>
-
+    
     <!-- ===== EXTERNAL SCRIPT ===== -->
     <script src="script.js"></script>
+
+    <script src="js/app.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/api.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/forms.js"></script>
+<script src="js/security.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
