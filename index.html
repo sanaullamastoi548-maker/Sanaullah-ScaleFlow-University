@@ -9,16 +9,40 @@
 </head>
 <body>
 
-    <!-- ===== LOADER (صرف ایک بار) ===== -->
+    <!-- ===== LOADER ===== -->
+    <div id="loader" role="status" aria-label="Loading"><div class="loader-spinner"></div><h2>Loading...</h2></div>
     <div id="loader" role="status" aria-label="Loading">
         <div class="loader-spinner"></div>
         <h2>Loading...</h2>
     </div>
 
-    <!-- ===== TOAST CONTAINER (صرف ایک بار) ===== -->
+        
+    <!-- ===== TOAST CONTAINER ===== -->
     <div id="toast-container" role="alert" aria-live="polite"></div>
+    
+     <!-- ===== TOAST CONTAINER ===== -->  <div id="toast-container" role="alert" aria-live="polite"></div>  
+  
+<!-- ===== TOAST CONTAINER ===== -->  
+<div id="toast-container" role="alert" aria-live="polite"></div>  
 
-    <!-- ===== MODAL CONTAINER (صرف ایک بار) ===== -->
+<!-- ===== MODAL CONTAINER ===== -->  
+<div id="modal-container" role="dialog" aria-modal="true" aria-labelledby="modalTitle">  
+    <div class="modal">  
+        <div class="modal-header">  
+            <h2 id="modalTitle">Modal Title</h2>  
+            <button id="modalCloseBtn" class="modal-close" type="button" aria-label="Close modal">&times;</button>  
+        </div>  
+        <div class="modal-body" id="modalBody">  
+            <p>Modal content goes here.</p>  
+        </div>  
+        <div class="modal-footer">  
+            <button id="modalCancelBtn" class="btn-secondary" type="button">Cancel</button>  
+            <button id="modalConfirmBtn" class="btn-primary" type="button">Confirm</button>  
+        </div>  
+    </div>  
+</div>
+    
+    <!-- ===== MODAL CONTAINER ===== -->
     <div id="modal-container" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal">
             <div class="modal-header">
@@ -35,7 +59,7 @@
         </div>
     </div>
 
-    <!-- ===== NOTIFICATION PANEL ===== -->
+           <!-- ===== NOTIFICATION PANEL ===== -->
     <div id="notificationPanel" class="notification-panel">
         <div class="notification-header">
             <h3>🔔 Notifications</h3>
@@ -62,7 +86,7 @@
     <!-- ===== MAIN APP ===== -->
     <div id="app" data-page="home">
 
-        <!-- ===== HEADER ===== -->
+         <!-- ===== HEADER ===== -->
         <header class="header" role="banner">
             <div class="logo">
                 <h1>Sanaullah</h1>
@@ -75,7 +99,7 @@
             </div>
         </header>
 
-        <!-- ===== SIDEBAR (responsive) ===== -->
+          <!-- ===== SIDEBAR (responsive) ===== -->
         <aside class="sidebar" role="navigation" id="mainSidebar" aria-label="Main Navigation">
             <button id="sidebarClose" class="sidebar-close" type="button" aria-label="Close sidebar">&times;</button>
             <nav class="sidebar-menu">
@@ -89,15 +113,20 @@
             </nav>
         </aside>
 
-        <!-- ===== OVERLAY (for mobile sidebar) ===== -->
+          <!-- ===== OVERLAY (for mobile sidebar) ===== -->
         <div id="sidebarOverlay" class="overlay"></div>
 
         <!-- ===== MAIN CONTENT ===== -->
         <main class="main-content" role="main">
 
-            <!-- ===================================================
+            <!--
+            ===================================================
             PAGE 1: HOME (index.html)
-            =================================================== -->
+            Purpose : Main Landing Dashboard
+            Developer : ScaleFlow University
+            Version : 1.0
+            ===================================================
+            -->
             <section id="page1" class="page-section active" aria-label="Home Dashboard">
                 <h2>🏠 Home</h2>
                 <!-- Hero -->
@@ -111,6 +140,671 @@
                             <button id="browseCoursesBtn" class="btn-secondary" type="button">📚 Browse Courses</button>
                         </div>
                     </div>
+
+                      <!-- ===================================================================
+            PHASE 1: SETTINGS SYSTEM (Complete Enterprise)
+            =================================================================== -->
+            <section id="pageSettings" class="page-section" aria-labelledby="settingsHeading">
+                <h2 id="settingsHeading">⚙️ Settings Dashboard</h2>
+
+                <!-- 1.1 Theme -->
+                <div class="setting-card" role="group" aria-labelledby="themeLabel">
+                    <h4 id="themeLabel">🎨 Theme</h4>
+                    <button class="btn-secondary" id="settingsThemeLight" type="button">Light</button>
+                    <button class="btn-secondary" id="settingsThemeDark" type="button">Dark</button>
+                    <button class="btn-secondary" id="settingsThemeSystem" type="button">System</button>
+                </div>
+
+                <!-- 1.2 Language -->
+                <div class="setting-card" role="group" aria-labelledby="langLabel">
+                    <h4 id="langLabel">🌐 Language</h4>
+                    <select id="settingsLanguage" aria-describedby="langDesc">
+                        <option>English</option><option>Urdu</option><option>Arabic</option><option>Hindi</option><option>Spanish</option>
+                    </select>
+                    <span id="langDesc" class="sr-only">Choose your preferred language</span>
+                    <button class="btn-primary" id="settingsLanguageSave" type="button">Save Language</button>
+                </div>
+
+                <!-- 1.3 Accessibility -->
+                <div class="setting-card" role="group" aria-labelledby="accLabel">
+                    <h4 id="accLabel">♿ Accessibility</h4>
+                    <label><input type="checkbox" id="accHighContrast" aria-describedby="accDesc"> High Contrast</label>
+                    <label><input type="checkbox" id="accLargeText"> Large Text</label>
+                    <label><input type="checkbox" id="accScreenReader" checked> Screen Reader Support</label>
+                    <span id="accDesc" class="sr-only">Enable accessibility features</span>
+                    <button class="btn-primary" id="accSave" type="button">Save Accessibility</button>
+                </div>
+
+                <!-- 1.4 Notifications -->
+                <div class="setting-card" role="group" aria-labelledby="notifLabel">
+                    <h4 id="notifLabel">🔔 Notifications</h4>
+                    <label><input type="checkbox" id="notifEmail" checked> Email</label>
+                    <label><input type="checkbox" id="notifPush" checked> Push</label>
+                    <label><input type="checkbox" id="notifSMS"> SMS</label>
+                    <label><input type="checkbox" id="notifAI" checked> AI Suggestions</label>
+                    <button class="btn-primary" id="notifSave" type="button">Save Notifications</button>
+                </div>
+
+                <!-- 1.5 Privacy -->
+                <div class="setting-card" role="group" aria-labelledby="privLabel">
+                    <h4 id="privLabel">🛡️ Privacy</h4>
+                    <label><input type="checkbox" id="privShare" checked> Share progress with community</label>
+                    <label><input type="checkbox" id="privAnalytics" checked> Allow analytics</label>
+                    <label><input type="checkbox" id="privPersonalize" checked> Personalized content</label>
+                    <button class="btn-primary" id="privSave" type="button">Save Privacy</button>
+                </div>
+
+                <!-- 1.6 AI Preferences -->
+                <div class="setting-card" role="group" aria-labelledby="aiPrefLabel">
+                    <h4 id="aiPrefLabel">🤖 AI Preferences</h4>
+                    <label><input type="checkbox" id="aiPersonalized" checked> Personalized AI</label>
+                    <label><input type="checkbox" id="aiAutoSuggest" checked> Auto-suggest lessons</label>
+                    <label><input type="checkbox" id="aiVoice" checked> Voice enabled</label>
+                    <button class="btn-primary" id="aiPrefSave" type="button">Save AI Preferences</button>
+                </div>
+
+                <!-- 1.7 Backup -->
+                <div class="setting-card" role="group" aria-labelledby="backupLabel">
+                    <h4 id="backupLabel">💾 Backup</h4>
+                    <button class="btn-secondary" id="backupNow" type="button">Backup Now</button>
+                    <button class="btn-secondary" id="restoreBackup" type="button">Restore Backup</button>
+                    <p>Last backup: <span id="lastBackup">Never</span></p>
+                </div>
+
+                <!-- 1.8 Export Data -->
+                <div class="setting-card" role="group" aria-labelledby="exportLabel">
+                    <h4 id="exportLabel">📤 Export Data</h4>
+                    <button class="btn-secondary" id="exportData" type="button">Export All Data</button>
+                    <button class="btn-secondary" id="exportSettings" type="button">Export Settings</button>
+                </div>
+
+                <!-- 1.9 Connected Accounts -->
+                <div class="setting-card" role="group" aria-labelledby="connLabel">
+                    <h4 id="connLabel">🔗 Connected Accounts</h4>
+                    <p>Google: <span id="googleStatus">Not connected</span> <button class="btn-secondary" id="connectGoogle" type="button">Connect</button></p>
+                    <p>GitHub: <span id="githubStatus">Connected</span> <button class="btn-secondary" id="disconnectGitHub" type="button">Disconnect</button></p>
+                    <p>LinkedIn: <span id="linkedinStatus">Not connected</span> <button class="btn-secondary" id="connectLinkedIn" type="button">Connect</button></p>
+                </div>
+
+                <!-- 1.10 Personalization -->
+                <div class="setting-card" role="group" aria-labelledby="persLabel">
+                    <h4 id="persLabel">🎯 Personalization</h4>
+                    <label>Preferred Learning Style:
+                        <select id="learnStyle"><option>Visual</option><option>Auditory</option><option>Reading</option><option>Kinesthetic</option></select>
+                    </label>
+                    <label>Daily Goal: <input type="number" id="dailyGoal" value="30" min="5" max="120" aria-describedby="goalDesc"> minutes</label>
+                    <span id="goalDesc" class="sr-only">Enter your daily learning goal in minutes</span>
+                    <button class="btn-primary" id="personalizationSave" type="button">Save Personalization</button>
+                </div>
+            </section>
+
+                      <!-- ===================================================================
+            PHASE 2: SECURITY SYSTEM (Complete Enterprise)
+            =================================================================== -->
+            <section id="pageSecurity" class="page-section" aria-labelledby="secHeading">
+                <h2 id="secHeading">🔐 Security System</h2>
+
+                <!-- 2.1 Change Password -->
+                <div class="setting-card" role="group" aria-labelledby="pwdLabel">
+                    <h4 id="pwdLabel">Change Password</h4>
+                    <input type="password" placeholder="Current Password" id="secCurrentPwd" autocomplete="current-password" maxlength="30" aria-describedby="pwdDesc">
+                    <input type="password" placeholder="New Password" id="secNewPwd" autocomplete="new-password" maxlength="30" pattern=".{8,}" aria-describedby="pwdDesc">
+                    <input type="password" placeholder="Confirm New Password" id="secConfirmPwd" autocomplete="new-password" maxlength="30">
+                    <div id="pwdStrength" class="pwd-strength"><span>Password strength: </span><span id="pwdStrengthText">Weak</span></div>
+                    <span id="pwdDesc" class="sr-only">Password must be at least 8 characters</span>
+                    <button class="btn-primary" id="secChangePwdBtn" type="button">Update Password</button>
+                </div>
+
+                <!-- 2.2 Two-Factor Authentication -->
+                <div class="setting-card" role="group" aria-labelledby="tfaLabel">
+                    <h4 id="tfaLabel">Two-Factor Authentication</h4>
+                    <button class="btn-secondary" id="secEnable2FA" type="button">Enable 2FA</button>
+                    <button class="btn-secondary" id="secDisable2FA" type="button">Disable 2FA</button>
+                    <p>Status: <span id="sec2FAStatus">Disabled</span></p>
+                    <div id="sec2FABackupCodes" style="display:none;">
+                        <p>Backup Codes: <span id="secBackupCodes">1234-5678-9012</span></p>
+                        <button class="btn-secondary" id="secRegenerateCodes" type="button">Regenerate Codes</button>
+                    </div>
+                </div>
+
+                <!-- 2.3 Face Login -->
+                <div class="setting-card" role="group" aria-labelledby="faceLabel">
+                    <h4 id="faceLabel">👤 Face Login</h4>
+                    <button class="btn-secondary" id="secFaceSetup" type="button">Setup Face Login</button>
+                    <button class="btn-secondary" id="secFaceRemove" type="button">Remove</button>
+                    <p>Status: <span id="secFaceStatus">Not configured</span></p>
+                </div>
+
+                <!-- 2.4 Fingerprint Login -->
+                <div class="setting-card" role="group" aria-labelledby="fingerLabel">
+                    <h4 id="fingerLabel">🖐️ Fingerprint Login</h4>
+                    <button class="btn-secondary" id="secFingerprintSetup" type="button">Setup Fingerprint</button>
+                    <button class="btn-secondary" id="secFingerprintRemove" type="button">Remove</button>
+                    <p>Status: <span id="secFingerprintStatus">Not configured</span></p>
+                </div>
+
+                <!-- 2.5 Device Manager -->
+                <div class="setting-card" role="group" aria-labelledby="deviceLabel">
+                    <h4 id="deviceLabel">📱 Device Manager</h4>
+                    <ul>
+                        <li>Chrome on Windows (Current) <button class="btn-danger" id="secRemoveCurrent" type="button">Remove</button></li>
+                        <li>Mobile App (Last active: 1 hour ago) <button class="btn-secondary" id="secRemoveMobile" type="button">Remove</button></li>
+                    </ul>
+                    <button class="btn-secondary" id="secAddDevice" type="button">Add Trusted Device</button>
+                </div>
+
+                <!-- 2.6 Active Sessions -->
+                <div class="setting-card" role="group" aria-labelledby="sessionLabel">
+                    <h4 id="sessionLabel">Active Sessions</h4>
+                    <ul>
+                        <li>Chrome on Windows (Current) <button class="btn-secondary" id="secEndCurrent" type="button">End Session</button></li>
+                        <li>Mobile App <button class="btn-secondary" id="secEndMobile" type="button">End Session</button></li>
+                    </ul>
+                    <button class="btn-secondary" id="secEndAll" type="button">End All Sessions</button>
+                </div>
+
+                <!-- 2.7 Login History -->
+                <div class="setting-card" role="group" aria-labelledby="historyLabel">
+                    <h4 id="historyLabel">Login History</h4>
+                    <ul>
+                        <li>Today 10:30 AM - Chrome on Windows</li>
+                        <li>Yesterday 8:15 PM - Mobile App</li>
+                        <li>2 days ago 9:00 AM - Chrome on Mac</li>
+                    </ul>
+                    <button class="btn-secondary" id="secClearHistory" type="button">Clear History</button>
+                </div>
+
+                <!-- 2.8 Emergency Lock -->
+                <div class="setting-card" role="group" aria-labelledby="emergencyLabel">
+                    <h4 id="emergencyLabel">🛑 Emergency Lock</h4>
+                    <p>Immediately lock your account and logout all devices.</p>
+                    <button class="btn-danger" id="secEmergencyLock" type="button">🔒 Lock Account Now</button>
+                    <p>Status: <span id="secLockStatus">Unlocked</span></p>
+                </div>
+
+                <!-- 2.9 OTP & Recovery -->
+                <div class="setting-card" role="group" aria-labelledby="recoveryLabel">
+                    <h4 id="recoveryLabel">📧 OTP & Recovery</h4>
+                    <input type="email" placeholder="Recovery Email" id="secRecoveryEmail" value="recovery@example.com" autocomplete="email" aria-describedby="recDesc">
+                    <span id="recDesc" class="sr-only">Enter your recovery email address</span>
+                    <button class="btn-primary" id="secSaveRecovery" type="button">Save Recovery</button>
+                    <button class="btn-secondary" id="secSendOTP" type="button">Send OTP</button>
+                </div>
+
+                <!-- 2.10 AI Threat Detection -->
+                <div class="setting-card" role="group" aria-labelledby="threatLabel">
+                    <h4 id="threatLabel">🧠 AI Threat Detection</h4>
+                    <p>Status: <span id="secThreatStatus">Active</span></p>
+                    <p>Last scan: <span id="secLastScan">Today, 09:00 AM</span></p>
+                    <button class="btn-secondary" id="secScanNow" type="button">Scan Now</button>
+                    <button class="btn-secondary" id="secViewThreats" type="button">View Threats</button>
+                </div>
+
+                <!-- 2.11 Security Dashboard -->
+                <div class="setting-card" role="group" aria-labelledby="secDashLabel">
+                    <h4 id="secDashLabel">📊 Security Dashboard</h4>
+                    <p>Overall Security Score: <strong id="secScore">85%</strong></p>
+                    <ul>
+                        <li>✅ Password Strength: Strong</li>
+                        <li>❌ 2FA: Disabled</li>
+                        <li>✅ Trusted Devices: 2</li>
+                        <li>✅ Recent Activity: No suspicious</li>
+                    </ul>
+                </div>
+            </section>
+
+                     <!-- ===================================================================
+            PHASE 3: AI MENTOR (Complete Enterprise)
+            =================================================================== -->
+            <section id="pageAI" class="page-section" aria-labelledby="aiHeading">
+                <h2 id="aiHeading">🤖 AI Mentor</h2>
+
+                <!-- 3.1 Chat Interface -->
+                <div class="ai-chat-container" role="application" aria-label="AI Chat">
+                    <div class="chat-messages" id="aiChatMessages" role="log" aria-live="polite">
+                        <div class="message ai">Hello! I'm your AI Mentor. How can I help you today?</div>
+                    </div>
+                    <div class="chat-input">
+                        <input id="aiChatInput" type="text" placeholder="Ask me anything..." aria-label="Type your message">
+                        <button id="aiChatSend" class="btn-primary" type="button">Send</button>
+                        <button id="aiChatVoice" class="btn-secondary" type="button" aria-label="Voice input">🎤</button>
+                        <button id="aiChatClear" class="btn-secondary" type="button" aria-label="Clear chat">🗑️</button>
+                    </div>
+                    <div style="display:flex; gap:8px; margin-top:8px; flex-wrap:wrap;">
+                        <button class="btn-secondary ai-suggestion" data-text="Explain JavaScript closures" type="button">Closures</button>
+                        <button class="btn-secondary ai-suggestion" data-text="What is React?" type="button">React</button>
+                        <button class="btn-secondary ai-suggestion" data-text="Help with Python list comprehension" type="button">Python</button>
+                    </div>
+                </div>
+
+                <!-- 3.2 Memory Engine -->
+                <div class="setting-card" role="group" aria-labelledby="memLabel">
+                    <h4 id="memLabel">🧠 Memory Engine</h4>
+                    <p>AI remembers your learning history to provide personalized help.</p>
+                    <button class="btn-secondary" id="aiMemoryView" type="button">View Memory</button>
+                    <button class="btn-secondary" id="aiMemoryClear" type="button">Clear Memory</button>
+                </div>
+
+                <!-- 3.3 Learning History -->
+                <div class="setting-card" role="group" aria-labelledby="learnHistLabel">
+                    <h4 id="learnHistLabel">📚 Learning History</h4>
+                    <ul>
+                        <li>JavaScript Fundamentals (Completed 65%)</li>
+                        <li>React Basics (Started)</li>
+                        <li>Data Science (Not started)</li>
+                    </ul>
+                    <button class="btn-secondary" id="aiHistoryDetails" type="button">View Details</button>
+                </div>
+
+                <!-- 3.4 Weakness Detection -->
+                <div class="setting-card" role="group" aria-labelledby="weakLabel">
+                    <h4 id="weakLabel">📉 Weakness Detection</h4>
+                    <p>AI has identified these areas for improvement:</p>
+                    <ul>
+                        <li>JavaScript Closures (Low score)</li>
+                        <li>React Hooks (Needs practice)</li>
+                    </ul>
+                    <button class="btn-primary" id="aiWeaknessAction" type="button">Get Recommended Lessons</button>
+                </div>
+
+                <!-- 3.5 AI Reflection -->
+                <div class="setting-card" role="group" aria-labelledby="reflLabel">
+                    <h4 id="reflLabel">🤔 AI Reflection</h4>
+                    <input type="text" placeholder="What did you learn today?" id="aiReflectionInput" aria-describedby="reflDesc">
+                    <span id="reflDesc" class="sr-only">Share what you learned today for AI reflection</span>
+                    <button class="btn-primary" id="aiReflectionSubmit" type="button">Get Reflection</button>
+                    <div id="aiReflectionResult"></div>
+                </div>
+
+                <!-- 3.6 Homework Checker -->
+                <div class="setting-card" role="group" aria-labelledby="hwLabel">
+                    <h4 id="hwLabel">📝 Homework Checker</h4>
+                    <textarea placeholder="Paste your homework here..." id="aiHomeworkInput" aria-describedby="hwDesc"></textarea>
+                    <span id="hwDesc" class="sr-only">Paste your homework text for AI review</span>
+                    <button class="btn-primary" id="aiHomeworkCheck" type="button">Check Homework</button>
+                </div>
+
+                <!-- 3.7 Quiz Generator -->
+                <div class="setting-card" role="group" aria-labelledby="quizLabel">
+                    <h4 id="quizLabel">📝 Quiz Generator</h4>
+                    <input type="text" placeholder="Topic (e.g., JavaScript)" id="aiQuizTopic">
+                    <button class="btn-primary" id="aiQuizGenerate" type="button">Generate Quiz</button>
+                    <button class="btn-secondary" id="aiQuizExplain" type="button">Explain Answers</button>
+                </div>
+
+                <!-- 3.8 Coding Assistant -->
+                <div class="setting-card" role="group" aria-labelledby="codeLabel">
+                    <h4 id="codeLabel">💻 Coding Assistant</h4>
+                    <textarea placeholder="Write your code or describe the problem..." id="aiCodeInput" aria-describedby="codeDesc"></textarea>
+                    <span id="codeDesc" class="sr-only">Paste your code or describe the problem</span>
+                    <button class="btn-primary" id="aiCodeHelp" type="button">Get Help</button>
+                    <button class="btn-secondary" id="aiCodeReview" type="button">Review Code</button>
+                </div>
+
+                <!-- 3.9 Career Advisor -->
+                <div class="setting-card" role="group" aria-labelledby="careerLabel">
+                    <h4 id="careerLabel">🚀 Career Advisor</h4>
+                    <button class="btn-secondary" id="aiCareerPath" type="button">Suggest Career Path</button>
+                    <button class="btn-secondary" id="aiCareerSkills" type="button">Skills to Learn</button>
+                </div>
+
+                <!-- 3.10 Voice Chat -->
+                <div class="setting-card" role="group" aria-labelledby="voiceLabel">
+                    <h4 id="voiceLabel">🎤 Voice Chat</h4>
+                    <button class="btn-primary" id="aiVoiceStart" type="button">Start Voice Chat</button>
+                    <button class="btn-secondary" id="aiVoiceStop" type="button">Stop Voice Chat</button>
+                    <p>Status: <span id="aiVoiceStatus">Idle</span></p>
+                </div>
+
+                <!-- 3.11 Image Upload -->
+                <div class="setting-card" role="group" aria-labelledby="imgLabel">
+                    <h4 id="imgLabel">🖼️ Image Upload</h4>
+                    <input type="file" id="aiImageUpload" accept="image/*" aria-describedby="imgDesc">
+                    <span id="imgDesc" class="sr-only">Upload an image for AI analysis</span>
+                    <button class="btn-primary" id="aiImageAnalyze" type="button">Analyze Image</button>
+                </div>
+
+                <!-- 3.12 PDF Reader -->
+                <div class="setting-card" role="group" aria-labelledby="pdfLabel">
+                    <h4 id="pdfLabel">📄 PDF Reader</h4>
+                    <input type="file" id="aiPDFUpload" accept=".pdf" aria-describedby="pdfDesc">
+                    <span id="pdfDesc" class="sr-only">Upload a PDF for AI to read</span>
+                    <button class="btn-primary" id="aiPDFRead" type="button">Read PDF</button>
+                </div>
+
+                <!-- 3.13 Conversation History -->
+                <div class="setting-card" role="group" aria-labelledby="convLabel">
+                    <h4 id="convLabel">📜 Conversation History</h4>
+                    <ul>
+                        <li>Today: "Explain closures"</li>
+                        <li>Yesterday: "Help with React"</li>
+                    </ul>
+                    <button class="btn-secondary" id="aiHistoryClear" type="button">Clear History</button>
+                </div>
+
+                <!-- 3.14 AI Personality -->
+                <div class="setting-card" role="group" aria-labelledby="persLabelAI">
+                    <h4 id="persLabelAI">🧑‍🏫 AI Personality</h4>
+                    <select id="aiPersonality" aria-describedby="persAIDesc">
+                        <option>Friendly</option><option>Professional</option><option>Motivational</option><option>Technical</option>
+                    </select>
+                    <span id="persAIDesc" class="sr-only">Choose the AI's personality style</span>
+                    <button class="btn-primary" id="aiPersonalitySave" type="button">Save Personality</button>
+                </div>
+
+                <!-- 3.15 AI Mood -->
+                <div class="setting-card" role="group" aria-labelledby="moodLabel">
+                    <h4 id="moodLabel">😊 AI Mood</h4>
+                    <button class="btn-secondary" id="aiMoodHappy" type="button">😊 Happy</button>
+                    <button class="btn-secondary" id="aiMoodSerious" type="button">😐 Serious</button>
+                    <button class="btn-secondary" id="aiMoodEncouraging" type="button">💪 Encouraging</button>
+                    <p>Current Mood: <span id="aiMoodCurrent">Friendly</span></p>
+                </div>
+
+                <!-- 3.16 Multi Language -->
+                <div class="setting-card" role="group" aria-labelledby="multiLangLabel">
+                    <h4 id="multiLangLabel">🌐 Multi Language</h4>
+                    <select id="aiLanguage" aria-describedby="multiLangDesc">
+                        <option>English</option><option>Urdu</option><option>Arabic</option><option>Hindi</option>
+                    </select>
+                    <span id="multiLangDesc" class="sr-only">Choose the AI's response language</span>
+                    <button class="btn-primary" id="aiLanguageSave" type="button">Set Language</button>
+                </div>
+
+                <!-- 3.17 AI Teacher -->
+                <div class="setting-card" role="group" aria-labelledby="teacherLabel">
+                    <h4 id="teacherLabel">👨‍🏫 AI Teacher</h4>
+                    <button class="btn-secondary" id="aiTeacherStart" type="button">Start Teaching Session</button>
+                    <button class="btn-secondary" id="aiTeacherStop" type="button">Stop Session</button>
+                </div>
+            </section>
+
+                    <!-- ===================================================================
+            PHASE 4: FEEDBACK & SUPPORT (Complete Enterprise)
+            =================================================================== -->
+            <section id="pageFeedback" class="page-section" aria-labelledby="fbHeading">
+                <h2 id="fbHeading">💬 Feedback & Support</h2>
+
+                <!-- 4.1 Ticket System -->
+                <div class="setting-card" role="group" aria-labelledby="ticketLabel">
+                    <h4 id="ticketLabel">🎫 Ticket System</h4>
+                    <button class="btn-primary" id="fbNewTicket" type="button">New Ticket</button>
+                    <ul>
+                        <li>#TKT-001: AI Mentor not responding (Open) <button class="btn-secondary" id="fbViewTicket1" type="button">View</button></li>
+                        <li>#TKT-002: Video player issue (Resolved) <button class="btn-secondary" id="fbViewTicket2" type="button">View</button></li>
+                    </ul>
+                    <button class="btn-secondary" id="fbAllTickets" type="button">View All Tickets</button>
+                </div>
+
+                <!-- 4.2 AI Auto Reply -->
+                <div class="setting-card" role="group" aria-labelledby="autoLabel">
+                    <h4 id="autoLabel">🤖 AI Auto Reply</h4>
+                    <label><input type="checkbox" id="fbAutoReply" checked> Enable AI auto-reply</label>
+                    <p>AI will respond to common queries instantly.</p>
+                </div>
+
+                <!-- 4.3 WhatsApp Support -->
+                <div class="setting-card" role="group" aria-labelledby="whatsappLabel">
+                    <h4 id="whatsappLabel">📱 WhatsApp Support</h4>
+                    <button class="btn-secondary" id="fbWhatsApp" type="button">Chat on WhatsApp</button>
+                    <p>Number: <span id="fbWhatsAppNumber">+92-XXX-XXXXXXX</span></p>
+                </div>
+
+                <!-- 4.4 Email Support -->
+                <div class="setting-card" role="group" aria-labelledby="emailSuppLabel">
+                    <h4 id="emailSuppLabel">📧 Email Support</h4>
+                    <input type="text" placeholder="Subject" id="fbEmailSubject" required aria-required="true">
+                    <textarea placeholder="Message" id="fbEmailBody" required aria-required="true"></textarea>
+                    <button class="btn-primary" id="fbEmailSend" type="button">Send Email</button>
+                </div>
+
+                <!-- 4.5 Rating -->
+                <div class="setting-card" role="group" aria-labelledby="ratingLabel">
+                    <h4 id="ratingLabel">⭐ Rate Us</h4>
+                    <div id="fbRating" role="radiogroup" aria-label="Rating stars">
+                        <button class="btn-secondary rating-star" data-value="1" role="radio" aria-checked="false">⭐</button>
+                        <button class="btn-secondary rating-star" data-value="2" role="radio" aria-checked="false">⭐⭐</button>
+                        <button class="btn-secondary rating-star" data-value="3" role="radio" aria-checked="false">⭐⭐⭐</button>
+                        <button class="btn-secondary rating-star" data-value="4" role="radio" aria-checked="false">⭐⭐⭐⭐</button>
+                        <button class="btn-secondary rating-star" data-value="5" role="radio" aria-checked="false">⭐⭐⭐⭐⭐</button>
+                    </div>
+                    <p>Your Rating: <span id="fbRatingValue">Not rated</span></p>
+                    <button class="btn-primary" id="fbRatingSubmit" type="button">Submit Rating</button>
+                </div>
+
+                <!-- 4.6 Bug Report -->
+                <div class="setting-card" role="group" aria-labelledby="bugLabel">
+                    <h4 id="bugLabel">🐛 Bug Report</h4>
+                    <input type="text" placeholder="Bug Title" id="fbBugTitle" required>
+                    <textarea placeholder="Describe the bug..." id="fbBugDesc" required></textarea>
+                    <input type="file" id="fbBugAttachment" aria-label="Attach screenshot">
+                    <button class="btn-primary" id="fbBugSubmit" type="button">Submit Bug</button>
+                </div>
+
+                <!-- 4.7 Feature Request -->
+                <div class="setting-card" role="group" aria-labelledby="featureLabel">
+                    <h4 id="featureLabel">💡 Feature Request</h4>
+                    <input type="text" placeholder="Feature name" id="fbFeatureTitle" required>
+                    <textarea placeholder="Describe your idea..." id="fbFeatureDesc" required></textarea>
+                    <button class="btn-primary" id="fbFeatureSubmit" type="button">Submit Feature</button>
+                </div>
+
+                <!-- 4.8 Live Chat -->
+                <div class="setting-card" role="group" aria-labelledby="liveLabel">
+                    <h4 id="liveLabel">💬 Live Chat</h4>
+                    <button class="btn-primary" id="fbLiveChatStart" type="button">Start Live Chat</button>
+                    <button class="btn-secondary" id="fbLiveChatEnd" type="button">End Chat</button>
+                    <p>Status: <span id="fbLiveChatStatus">Offline</span></p>
+                </div>
+            </section>
+
+                     <!-- ===================================================================
+            PHASE 5: 3D LEARNING (Complete Enterprise)
+            =================================================================== -->
+            <section id="page3D" class="page-section" aria-labelledby="d3Heading">
+                <h2 id="d3Heading">🌐 3D Learning</h2>
+
+                <!-- 5.1 Three.js Viewer -->
+                <div class="setting-card" role="group" aria-labelledby="viewerLabel">
+                    <h4 id="viewerLabel">🎨 3D Viewer (Three.js)</h4>
+                    <div id="threeDViewer" style="width:100%;height:350px;background:#1a1a2e;border-radius:16px;display:flex;align-items:center;justify-content:center;color:#fff;">
+                        <p>🖼️ 3D Model Loaded</p>
+                    </div>
+                    <button class="btn-secondary" id="d3LoadModel" type="button">Load Model</button>
+                    <button class="btn-secondary" id="d3ResetView" type="button">Reset View</button>
+                </div>
+
+                <!-- 5.2 Interactive Controls -->
+                <div class="setting-card" role="group" aria-labelledby="controlsLabel">
+                    <h4 id="controlsLabel">🖱️ Interactive Controls</h4>
+                    <button class="btn-secondary" id="d3RotateLeft" type="button">⬅️ Rotate</button>
+                    <button class="btn-secondary" id="d3RotateRight" type="button">Rotate ➡️</button>
+                    <button class="btn-secondary" id="d3ZoomIn" type="button">🔍+ Zoom</button>
+                    <button class="btn-secondary" id="d3ZoomOut" type="button">🔍− Zoom</button>
+                    <button class="btn-secondary" id="d3Pan" type="button">✋ Pan</button>
+                </div>
+
+                <!-- 5.3 Labels -->
+                <div class="setting-card" role="group" aria-labelledby="labelsLabel">
+                    <h4 id="labelsLabel">🏷️ Labels</h4>
+                    <label><input type="checkbox" id="d3Labels" checked> Show Labels</label>
+                    <button class="btn-secondary" id="d3ToggleLabels" type="button">Toggle Labels</button>
+                </div>
+
+                <!-- 5.4 Animation -->
+                <div class="setting-card" role="group" aria-labelledby="animLabel">
+                    <h4 id="animLabel">🎬 Animation</h4>
+                    <button class="btn-secondary" id="d3PlayAnim" type="button">▶️ Play</button>
+                    <button class="btn-secondary" id="d3PauseAnim" type="button">⏸️ Pause</button>
+                    <button class="btn-secondary" id="d3StopAnim" type="button">⏹️ Stop</button>
+                    <button class="btn-secondary" id="d3SpeedUp" type="button">⏩ Speed Up</button>
+                    <button class="btn-secondary" id="d3SlowDown" type="button">⏪ Slow Down</button>
+                </div>
+
+                <!-- 5.5 Exploded View -->
+                <div class="setting-card" role="group" aria-labelledby="explodeLabel">
+                    <h4 id="explodeLabel">💥 Exploded View</h4>
+                    <button class="btn-secondary" id="d3Explode" type="button">Explode</button>
+                    <button class="btn-secondary" id="d3Assemble" type="button">Assemble</button>
+                </div>
+
+                <!-- 5.6 Quiz Integration -->
+                <div class="setting-card" role="group" aria-labelledby="d3QuizLabel">
+                    <h4 id="d3QuizLabel">📝 3D Quiz</h4>
+                    <button class="btn-primary" id="d3QuizStart" type="button">Start Quiz</button>
+                    <p>Answer questions based on the 3D model.</p>
+                </div>
+
+                <!-- 5.7 AI Explain -->
+                <div class="setting-card" role="group" aria-labelledby="d3AILabel">
+                    <h4 id="d3AILabel">🤖 AI Explain</h4>
+                    <button class="btn-secondary" id="d3AIExplain" type="button">Ask AI to Explain</button>
+                    <p id="d3AIExplanation">AI will analyze the 3D model.</p>
+                </div>
+
+                <!-- 5.8 Progress Tracking -->
+                <div class="setting-card" role="group" aria-labelledby="d3ProgLabel">
+                    <h4 id="d3ProgLabel">📊 Progress Tracking</h4>
+                    <p>Module Progress: <span id="d3Progress">45%</span></p>
+                    <div class="progress-bar"><div class="progress-fill" id="d3ProgressFill" style="width:45%;"></div></div>
+                    <button class="btn-secondary" id="d3UpdateProgress" type="button">Update Progress</button>
+                </div>
+
+                <!-- 5.9 VR Ready -->
+                <div class="setting-card" role="group" aria-labelledby="vrLabel">
+                    <h4 id="vrLabel">🥽 VR Ready</h4>
+                    <p>VR support coming soon! (Future expansion)</p>
+                </div>
+
+                <!-- 5.10 AR Ready -->
+                <div class="setting-card" role="group" aria-labelledby="arLabel">
+                    <h4 id="arLabel">📱 AR Ready</h4>
+                    <p>AR support coming soon! (Future expansion)</p>
+                </div>
+            </section>
+
+                    <!-- ===================================================================
+            PHASE 6: DIGITAL CV GENERATOR (Complete Enterprise)
+            =================================================================== -->
+            <section id="pageCV" class="page-section" aria-labelledby="cvHeading">
+                <h2 id="cvHeading">📄 Digital CV Generator</h2>
+
+                <!-- 6.1 Personal Info -->
+                <div class="setting-card" role="group" aria-labelledby="cvPersLabel">
+                    <h4 id="cvPersLabel">👤 Personal Information</h4>
+                    <input type="text" placeholder="Full Name" id="cvName" value="Sanaullah" autocomplete="name">
+                    <input type="text" placeholder="Job Title" id="cvTitle" value="Full Stack Developer">
+                    <input type="email" placeholder="Email" id="cvEmail" value="sanaullah@university.com" autocomplete="email">
+                    <input type="text" placeholder="Phone" id="cvPhone" value="+92-XXX-XXXXXXX" autocomplete="tel">
+                    <input type="text" placeholder="Location" id="cvLocation" value="Pakistan">
+                </div>
+
+                <!-- 6.2 Experience -->
+                <div class="setting-card" role="group" aria-labelledby="expLabel">
+                    <h4 id="expLabel">💼 Experience</h4>
+                    <textarea placeholder="Add your experience..." id="cvExperience" aria-describedby="expDesc">Full Stack Developer at ScaleFlow (2024-Present)</textarea>
+                    <span id="expDesc" class="sr-only">Describe your professional experience</span>
+                    <button class="btn-secondary" id="cvAddExperience" type="button">Add Experience</button>
+                </div>
+
+                <!-- 6.3 Education -->
+                <div class="setting-card" role="group" aria-labelledby="eduLabel">
+                    <h4 id="eduLabel">🎓 Education</h4>
+                    <textarea placeholder="Add your education..." id="cvEducation">BS Computer Science - University of ScaleFlow</textarea>
+                    <button class="btn-secondary" id="cvAddEducation" type="button">Add Education</button>
+                </div>
+
+                <!-- 6.4 Skills -->
+                <div class="setting-card" role="group" aria-labelledby="skillLabel">
+                    <h4 id="skillLabel">🛠️ Skills</h4>
+                    <input type="text" placeholder="JavaScript, React, Python" id="cvSkills" value="JavaScript, React, Python, Node.js">
+                    <button class="btn-secondary" id="cvAddSkill" type="button">Add Skill</button>
+                </div>
+
+                <!-- 6.5 Certificates -->
+                <div class="setting-card" role="group" aria-labelledby="certLabel">
+                    <h4 id="certLabel">📜 Certificates</h4>
+                    <input type="text" placeholder="AI Mastery, Web Dev Pro" id="cvCerts" value="AI Mastery, Web Dev Pro">
+                    <button class="btn-secondary" id="cvAddCert" type="button">Add Certificate</button>
+                </div>
+
+                <!-- 6.6 Projects -->
+                <div class="setting-card" role="group" aria-labelledby="projLabel">
+                    <h4 id="projLabel">📁 Projects</h4>
+                    <input type="text" placeholder="Project 1, Project 2" id="cvProjects" value="AI Chatbot, Weather App, E-commerce Site">
+                    <button class="btn-secondary" id="cvAddProject" type="button">Add Project</button>
+                </div>
+
+                <!-- 6.7 Portfolio -->
+                <div class="setting-card" role="group" aria-labelledby="portLabel">
+                    <h4 id="portLabel">🌐 Portfolio</h4>
+                    <input type="url" placeholder="Portfolio URL" id="cvPortfolio" value="https://sanaullah.dev" autocomplete="url">
+                    <button class="btn-primary" id="cvSavePortfolio" type="button">Save Portfolio</button>
+                </div>
+
+                <!-- 6.8 GitHub & LinkedIn -->
+                <div class="setting-card" role="group" aria-labelledby="socialLabel">
+                    <h4 id="socialLabel">🔗 GitHub & LinkedIn</h4>
+                    <input type="url" placeholder="GitHub URL" id="cvGitHub" value="https://github.com/sanaullah" autocomplete="url">
+                    <input type="url" placeholder="LinkedIn URL" id="cvLinkedIn" value="https://linkedin.com/in/sanaullah" autocomplete="url">
+                    <button class="btn-primary" id="cvSaveSocial" type="button">Save Social Links</button>
+                </div>
+
+                <!-- 6.9 Achievements -->
+                <div class="setting-card" role="group" aria-labelledby="achieveLabel">
+                    <h4 id="achieveLabel">🏆 Achievements</h4>
+                    <input type="text" placeholder="Top Performer, 5 Day Streak" id="cvAchievements" value="Top Performer, 5 Day Streak">
+                    <button class="btn-secondary" id="cvAddAchievement" type="button">Add Achievement</button>
+                </div>
+
+                <!-- 6.10 AI CV Builder -->
+                <div class="setting-card" role="group" aria-labelledby="cvAILabel">
+                    <h4 id="cvAILabel">🤖 AI CV Builder</h4>
+                    <button class="btn-primary" id="cvAIBuild" type="button">✨ Build CV with AI</button>
+                    <button class="btn-secondary" id="cvAISuggest" type="button">Get AI Suggestions</button>
+                </div>
+
+                <!-- 6.11 Multiple Templates -->
+                <div class="setting-card" role="group" aria-labelledby="templateLabel">
+                    <h4 id="templateLabel">📄 Multiple Templates</h4>
+                    <select id="cvTemplate" aria-describedby="templateDesc">
+                        <option>Modern</option><option>Classic</option><option>Professional</option><option>Creative</option>
+                    </select>
+                    <span id="templateDesc" class="sr-only">Choose a CV template style</span>
+                    <button class="btn-primary" id="cvApplyTemplate" type="button">Apply Template</button>
+                </div>
+
+                <!-- 6.12 Preview & Download -->
+                <div class="setting-card" role="group" aria-labelledby="previewLabel">
+                    <h4 id="previewLabel">📥 Preview & Download</h4>
+                    <button class="btn-primary" id="cvPreview" type="button">Preview CV</button>
+                    <button class="btn-primary" id="cvDownloadPDF" type="button">⬇ Download PDF</button>
+                    <button class="btn-secondary" id="cvShareLink" type="button">🔗 Share Link</button>
+                    <button class="btn-secondary" id="cvGenerateQR" type="button">📱 Generate QR</button>
+                </div>
+            </section>
+
+             </main>
+                    <!-- ===== FOOTER ===== -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-left">
+                <h3>Sanaullah ScaleFlow University</h3>
+                <p>Learn • Build • Earn • Grow</p>
+            </div>
+            <div class="footer-center">
+                <a href="#">About</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Support</a>
+            </div>
+            <div class="footer-right">
+                <p id="footerVersion">Version 1.0</p>
+                <p>© <span id="currentYear">2026</span> ScaleFlow University</p>
+            </div>
+        </footer>
+
+    </div>
+                    
                     <div class="hero-right">
                         <article class="hero-stat"><span>⭐ Brain XP</span><strong id="brainXP">250 XP</strong></article>
                         <article class="hero-stat"><span>🏆 Level</span><strong id="currentLevel">Level 5</strong></article>
@@ -218,580 +912,391 @@
                     <button id="btnSupport" class="quick-btn" type="button">📞 Support</button>
                 </div>
             </section>
-            <!-- ===== END PAGE 1 ===== -->
 
-            <!-- ===================================================
-            PAGE: SETTINGS (pageSettings)
-            =================================================== -->
-            <section id="pageSettings" class="page-section" aria-labelledby="settingsHeading">
-                <h2 id="settingsHeading">⚙️ Settings Dashboard</h2>
-
-                <div class="setting-card" role="group" aria-labelledby="themeLabel">
-                    <h4 id="themeLabel">🎨 Theme</h4>
-                    <button class="btn-secondary" id="settingsThemeLight" type="button">Light</button>
-                    <button class="btn-secondary" id="settingsThemeDark" type="button">Dark</button>
-                    <button class="btn-secondary" id="settingsThemeSystem" type="button">System</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="langLabel">
-                    <h4 id="langLabel">🌐 Language</h4>
-                    <select id="settingsLanguage" aria-describedby="langDesc">
-                        <option>English</option><option>Urdu</option><option>Arabic</option><option>Hindi</option><option>Spanish</option>
-                    </select>
-                    <span id="langDesc" class="sr-only">Choose your preferred language</span>
-                    <button class="btn-primary" id="settingsLanguageSave" type="button">Save Language</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="accLabel">
-                    <h4 id="accLabel">♿ Accessibility</h4>
-                    <label><input type="checkbox" id="accHighContrast" aria-describedby="accDesc"> High Contrast</label>
-                    <label><input type="checkbox" id="accLargeText"> Large Text</label>
-                    <label><input type="checkbox" id="accScreenReader" checked> Screen Reader Support</label>
-                    <span id="accDesc" class="sr-only">Enable accessibility features</span>
-                    <button class="btn-primary" id="accSave" type="button">Save Accessibility</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="notifLabel">
-                    <h4 id="notifLabel">🔔 Notifications</h4>
-                    <label><input type="checkbox" id="notifEmail" checked> Email</label>
-                    <label><input type="checkbox" id="notifPush" checked> Push</label>
-                    <label><input type="checkbox" id="notifSMS"> SMS</label>
-                    <label><input type="checkbox" id="notifAI" checked> AI Suggestions</label>
-                    <button class="btn-primary" id="notifSave" type="button">Save Notifications</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="privLabel">
-                    <h4 id="privLabel">🛡️ Privacy</h4>
-                    <label><input type="checkbox" id="privShare" checked> Share progress with community</label>
-                    <label><input type="checkbox" id="privAnalytics" checked> Allow analytics</label>
-                    <label><input type="checkbox" id="privPersonalize" checked> Personalized content</label>
-                    <button class="btn-primary" id="privSave" type="button">Save Privacy</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="aiPrefLabel">
-                    <h4 id="aiPrefLabel">🤖 AI Preferences</h4>
-                    <label><input type="checkbox" id="aiPersonalized" checked> Personalized AI</label>
-                    <label><input type="checkbox" id="aiAutoSuggest" checked> Auto-suggest lessons</label>
-                    <label><input type="checkbox" id="aiVoice" checked> Voice enabled</label>
-                    <button class="btn-primary" id="aiPrefSave" type="button">Save AI Preferences</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="backupLabel">
-                    <h4 id="backupLabel">💾 Backup</h4>
-                    <button class="btn-secondary" id="backupNow" type="button">Backup Now</button>
-                    <button class="btn-secondary" id="restoreBackup" type="button">Restore Backup</button>
-                    <p>Last backup: <span id="lastBackup">Never</span></p>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="exportLabel">
-                    <h4 id="exportLabel">📤 Export Data</h4>
-                    <button class="btn-secondary" id="exportData" type="button">Export All Data</button>
-                    <button class="btn-secondary" id="exportSettings" type="button">Export Settings</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="connLabel">
-                    <h4 id="connLabel">🔗 Connected Accounts</h4>
-                    <p>Google: <span id="googleStatus">Not connected</span> <button class="btn-secondary" id="connectGoogle" type="button">Connect</button></p>
-                    <p>GitHub: <span id="githubStatus">Connected</span> <button class="btn-secondary" id="disconnectGitHub" type="button">Disconnect</button></p>
-                    <p>LinkedIn: <span id="linkedinStatus">Not connected</span> <button class="btn-secondary" id="connectLinkedIn" type="button">Connect</button></p>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="persLabel">
-                    <h4 id="persLabel">🎯 Personalization</h4>
-                    <label>Preferred Learning Style:
-                        <select id="learnStyle"><option>Visual</option><option>Auditory</option><option>Reading</option><option>Kinesthetic</option></select>
-                    </label>
-                    <label>Daily Goal: <input type="number" id="dailyGoal" value="30" min="5" max="120" aria-describedby="goalDesc"> minutes</label>
-                    <span id="goalDesc" class="sr-only">Enter your daily learning goal in minutes</span>
-                    <button class="btn-primary" id="personalizationSave" type="button">Save Personalization</button>
-                </div>
-            </section>
-
-            <!-- ===================================================
-            PAGE: SECURITY (pageSecurity)
-            =================================================== -->
-            <section id="pageSecurity" class="page-section" aria-labelledby="secHeading">
-                <h2 id="secHeading">🔐 Security System</h2>
-
-                <div class="setting-card" role="group" aria-labelledby="pwdLabel">
-                    <h4 id="pwdLabel">Change Password</h4>
-                    <input type="password" placeholder="Current Password" id="secCurrentPwd" autocomplete="current-password" maxlength="30" aria-describedby="pwdDesc">
-                    <input type="password" placeholder="New Password" id="secNewPwd" autocomplete="new-password" maxlength="30" pattern=".{8,}" aria-describedby="pwdDesc">
-                    <input type="password" placeholder="Confirm New Password" id="secConfirmPwd" autocomplete="new-password" maxlength="30">
-                    <div id="pwdStrength" class="pwd-strength"><span>Password strength: </span><span id="pwdStrengthText">Weak</span></div>
-                    <span id="pwdDesc" class="sr-only">Password must be at least 8 characters</span>
-                    <button class="btn-primary" id="secChangePwdBtn" type="button">Update Password</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="tfaLabel">
-                    <h4 id="tfaLabel">Two-Factor Authentication</h4>
-                    <button class="btn-secondary" id="secEnable2FA" type="button">Enable 2FA</button>
-                    <button class="btn-secondary" id="secDisable2FA" type="button">Disable 2FA</button>
-                    <p>Status: <span id="sec2FAStatus">Disabled</span></p>
-                    <div id="sec2FABackupCodes" style="display:none;">
-                        <p>Backup Codes: <span id="secBackupCodes">1234-5678-9012</span></p>
-                        <button class="btn-secondary" id="secRegenerateCodes" type="button">Regenerate Codes</button>
+            <!--
+            ===================================================
+            PAGE 2: DASHBOARD
+            Purpose : Student Dashboard with Stats & Analytics
+            Developer : ScaleFlow University
+            Version : 1.0
+            ===================================================
+            -->
+            <section id="page2" class="page-section" aria-label="Student Dashboard">
+                <h2>📊 Student Dashboard</h2>
+                <div class="dashboard-profile">
+                    <div class="profile-card">
+                        <!-- ✅ FIX 1: Unique ID for Dashboard Profile Image -->
+                        <img id="dashboardProfileImage" src="assets/avatar.png" alt="Profile Avatar" class="avatar-large" style="width:80px;height:80px;border-radius:50%;display:block;margin:0 auto 12px;">
+                        <h3 id="dashName">Sanaullah</h3>
+                        <p>Level <span id="dashLevel">5</span> • <span id="dashXP">250</span> XP</p>
+                        <div class="streak">🔥 <span id="dashStreak">7</span> Day Streak</div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box"><span>📚 Courses</span><strong id="dashCourses">12</strong></div>
+                        <div class="stat-box"><span>📜 Certificates</span><strong id="dashCerts">4</strong></div>
+                        <div class="stat-box"><span>🏆 Achievements</span><strong id="dashAchievements">8</strong></div>
+                        <div class="stat-box"><span>📈 Progress</span><strong id="dashProgress">75%</strong></div>
                     </div>
                 </div>
-
-                <div class="setting-card" role="group" aria-labelledby="faceLabel">
-                    <h4 id="faceLabel">👤 Face Login</h4>
-                    <button class="btn-secondary" id="secFaceSetup" type="button">Setup Face Login</button>
-                    <button class="btn-secondary" id="secFaceRemove" type="button">Remove</button>
-                    <p>Status: <span id="secFaceStatus">Not configured</span></p>
+                <div class="weekly-progress">
+                    <div class="section-header"><h2>📈 Weekly Analytics</h2><span>This Week</span></div>
+                    <div class="progress-chart">
+                        <div class="day"><div class="bar" style="height:45%;"></div><p>Mon</p></div>
+                        <div class="day"><div class="bar" style="height:70%;"></div><p>Tue</p></div>
+                        <div class="day"><div class="bar" style="height:60%;"></div><p>Wed</p></div>
+                        <div class="day"><div class="bar" style="height:90%;"></div><p>Thu</p></div>
+                        <div class="day"><div class="bar" style="height:75%;"></div><p>Fri</p></div>
+                        <div class="day"><div class="bar" style="height:100%;"></div><p>Sat</p></div>
+                        <div class="day"><div class="bar" style="height:55%;"></div><p>Sun</p></div>
+                    </div>
                 </div>
-
-                <div class="setting-card" role="group" aria-labelledby="fingerLabel">
-                    <h4 id="fingerLabel">🖐️ Fingerprint Login</h4>
-                    <button class="btn-secondary" id="secFingerprintSetup" type="button">Setup Fingerprint</button>
-                    <button class="btn-secondary" id="secFingerprintRemove" type="button">Remove</button>
-                    <p>Status: <span id="secFingerprintStatus">Not configured</span></p>
+                <div class="quick-actions-grid">
+                    <button id="dashResumeLearning" class="quick-action-btn" type="button"><span class="icon">📖</span><span class="label">Resume Learning</span></button>
+                    <button id="dashBrowseCourses" class="quick-action-btn" type="button"><span class="icon">📚</span><span class="label">Browse Courses</span></button>
+                    <button id="dashAskAI" class="quick-action-btn" type="button"><span class="icon">🤖</span><span class="label">Ask AI</span></button>
+                    <button id="dashCertificates" class="quick-action-btn" type="button"><span class="icon">📜</span><span class="label">Certificates</span></button>
                 </div>
+                <section class="recent-courses" aria-label="Recent Courses">
+                    <h3>📘 Recent Courses</h3>
+                    <div class="course-grid">
+                        <article class="course-card" id="recentCourse1"><h4>AI Fundamentals</h4><p>65% complete</p><div class="progress-bar"><div class="progress-fill" style="width:65%;"></div></div></article>
+                        <article class="course-card" id="recentCourse2"><h4>Web Development</h4><p>40% complete</p><div class="progress-bar"><div class="progress-fill" style="width:40%;"></div></div></article>
+                        <article class="course-card" id="recentCourse3"><h4>Data Science</h4><p>20% complete</p><div class="progress-bar"><div class="progress-fill" style="width:20%;"></div></div></article>
+                    </div>
+                </section>
+            </section>
 
-                <div class="setting-card" role="group" aria-labelledby="deviceLabel">
-                    <h4 id="deviceLabel">📱 Device Manager</h4>
+            <!--
+            ===================================================
+            PAGE 3: COURSES
+            Purpose : Browse and Filter Courses
+            Developer : ScaleFlow University
+            Version : 1.0
+            ===================================================
+            -->
+            <section id="page3" class="page-section" aria-label="All Courses">
+                <h2>📚 All Courses</h2>
+                <div class="learning-header">
+                    <input id="courseSearchInput" type="text" placeholder="🔍 Search courses..." aria-label="Search courses">
+                </div>
+                <div class="filter-buttons">
+                    <button id="filterAll" class="btn-secondary" type="button">All</button>
+                    <button id="filterBeginner" class="btn-secondary" type="button">Beginner</button>
+                    <button id="filterIntermediate" class="btn-secondary" type="button">Intermediate</button>
+                    <button id="filterAdvanced" class="btn-secondary" type="button">Advanced</button>
+                </div>
+                <div class="course-grid" id="courseGrid">
+                    <article class="course-card" id="courseCard001" data-difficulty="beginner"><h3>AI Fundamentals</h3><p>Beginner • 12 Lessons</p><button id="startCourse1" class="btn-primary" type="button">Start</button></article>
+                    <article class="course-card" id="courseCard002" data-difficulty="intermediate"><h3>JavaScript Masterclass</h3><p>Intermediate • 20 Lessons</p><button id="startCourse2" class="btn-primary" type="button">Start</button></article>
+                    <article class="course-card" id="courseCard003" data-difficulty="advanced"><h3>Data Science Pro</h3><p>Advanced • 15 Lessons</p><button id="startCourse3" class="btn-primary" type="button">Start</button></article>
+                    <article class="course-card" id="courseCard004" data-difficulty="beginner"><h3>HTML & CSS</h3><p>Beginner • 8 Lessons</p><button id="startCourse4" class="btn-primary" type="button">Start</button></article>
+                    <article class="course-card" id="courseCard005" data-difficulty="intermediate"><h3>React Development</h3><p>Intermediate • 18 Lessons</p><button id="startCourse5" class="btn-primary" type="button">Start</button></article>
+                    <article class="course-card" id="courseCard006" data-difficulty="advanced"><h3>Machine Learning</h3><p>Advanced • 22 Lessons</p><button id="startCourse6" class="btn-primary" type="button">Start</button></article>
+                </div>
+                <div class="pagination">
+                    <button id="paginationPrev" class="btn-secondary" type="button">Previous</button>
+                    <button id="pagination1" class="btn-primary" type="button">1</button>
+                    <button id="pagination2" class="btn-secondary" type="button">2</button>
+                    <button id="pagination3" class="btn-secondary" type="button">3</button>
+                    <button id="paginationNext" class="btn-secondary" type="button">Next</button>
+                </div>
+                <section class="featured-courses" aria-label="Featured Courses">
+                    <h3>⭐ Featured Courses</h3>
+                    <div class="course-grid">
+                        <article class="course-card" id="featuredCourse1"><h3>AI for Everyone</h3><p>Featured • 10 Lessons</p><button id="enrollFeatured1" class="btn-primary" type="button">Enroll</button></article>
+                        <article class="course-card" id="featuredCourse2"><h3>Web Dev Bootcamp</h3><p>Featured • 30 Lessons</p><button id="enrollFeatured2" class="btn-primary" type="button">Enroll</button></article>
+                    </div>
+                </section>
+                <section class="recommended-courses" aria-label="Recommended Courses">
+                    <h3>📌 Recommended for You</h3>
+                    <div class="course-grid">
+                        <article class="course-card" id="recommendedCourse1"><h3>Python for Data Science</h3><p>Recommended • 14 Lessons</p><button id="startRec1" class="btn-primary" type="button">Start</button></article>
+                        <article class="course-card" id="recommendedCourse2"><h3>Cloud Computing</h3><p>Recommended • 12 Lessons</p><button id="startRec2" class="btn-primary" type="button">Start</button></article>
+                    </div>
+                </section>
+            </section>
+
+            <!--
+            ===================================================
+            PAGE 4: LEARNING
+            Purpose : Lesson Player with Video, PDF, Notes, Quiz
+            Developer : ScaleFlow University
+            Version : 1.0
+            ===================================================
+            -->
+            <section id="page4" class="page-section" aria-label="Learning Module">
+                <h2>📖 JavaScript Fundamentals</h2>
+                <div class="learning-container">
+                    <div class="learning-main">
+                        <div class="video-container">
+                            <div class="video-placeholder">▶️</div>
+                            <p>Video Player (Lesson 4: Functions & Scope)</p>
+                        </div>
+                        <div class="pdf-viewer">
+                            <p>📄 PDF Viewer: Lesson Notes</p>
+                            <button id="downloadPdfBtn" class="btn-secondary" type="button">Download PDF</button>
+                        </div>
+                        <div class="notes-section">
+                            <h4>📝 Your Notes</h4>
+                            <textarea id="notesInput" rows="4" placeholder="Write your notes here..." aria-label="Your notes"></textarea>
+                            <button id="saveNotesBtn" class="btn-primary" type="button">Save Notes</button>
+                        </div>
+                        <div class="ai-reflection">
+                            <h4>🤖 AI Reflection</h4>
+                            <p>What did you learn today? Share your thoughts and get AI feedback.</p>
+                            <input id="reflectionInput" type="text" placeholder="Type your reflection..." aria-label="Reflection input">
+                            <button id="getReflectionBtn" class="btn-primary" type="button">Get Reflection</button>
+                        </div>
+                        <div class="quiz-section">
+                            <h4>📝 Quick Quiz</h4>
+                            <p>What is a closure in JavaScript?</p>
+                            <input id="quizAnswerInput" type="text" placeholder="Your answer..." aria-label="Quiz answer">
+                            <button id="submitQuizBtn" class="btn-primary" type="button">Submit</button>
+                        </div>
+                    </div>
+                    <aside class="learning-sidebar">
+                        <div class="progress-card">
+                            <h4>📊 Lesson Progress</h4>
+                            <div class="progress-bar"><div class="progress-fill" style="width:65%;"></div></div>
+                            <p>65% Complete</p>
+                            <div class="lesson-nav">
+                                <button id="prevLessonBtn" class="btn-secondary" type="button">◀ Previous</button>
+                                <button id="nextLessonBtn" class="btn-primary" type="button">Next ▶</button>
+                            </div>
+                        </div>
+                        <div class="recommended-lessons">
+                            <h4>📌 Related Lessons</h4>
+                            <ul>
+                                <li>Lesson 3: Arrays & Objects</li>
+                                <li>Lesson 5: DOM Manipulation</li>
+                                <li>Lesson 6: Events</li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <!--
+            ===================================================
+            PAGE 5: CERTIFICATES
+            Purpose : List, Download, Verify, Share Certificates
+            Developer : ScaleFlow University
+            Version : 1.0
+            ===================================================
+            -->
+            <section id="page5" class="page-section" aria-label="My Certificates">
+                <h2>📜 My Certificates</h2>
+                <div class="certificate-list">
+                    <article class="certificate-card" id="certCard1">
+                        <div class="icon">📄</div>
+                        <h3>AI Mastery</h3>
+                        <p>Issued: Jan 2026</p>
+                        <div class="actions">
+                            <button id="certDownload1" class="btn-primary" type="button">⬇ Download</button>
+                            <button id="certVerify1" class="btn-secondary" type="button">✅ Verify</button>
+                            <button id="certQR1" class="btn-secondary" type="button">📱 QR</button>
+                            <button id="certShare1" class="btn-secondary" type="button">📤 Share</button>
+                        </div>
+                    </article>
+                    <article class="certificate-card" id="certCard2">
+                        <div class="icon">📄</div>
+                        <h3>Web Dev Pro</h3>
+                        <p>Issued: Feb 2026</p>
+                        <div class="actions">
+                            <button id="certDownload2" class="btn-primary" type="button">⬇ Download</button>
+                            <button id="certVerify2" class="btn-secondary" type="button">✅ Verify</button>
+                            <button id="certQR2" class="btn-secondary" type="button">📱 QR</button>
+                            <button id="certShare2" class="btn-secondary" type="button">📤 Share</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!--
+            ===================================================
+            PAGE 6: ACHIEVEMENTS
+            Purpose : XP, Badges, Levels, Rewards, Timeline
+            Developer : ScaleFlow University
+            Version : 1.0
+            ===================================================
+            -->
+            <section id="page6" class="page-section" aria-label="Achievements">
+                <h2>🏆 Achievements</h2>
+                <div class="achievement-summary">
+                    <div class="stat-box"><span>⭐ XP</span><strong id="xpTotal">250</strong></div>
+                    <div class="stat-box"><span>🏅 Badges</span><strong id="badgeTotal">8</strong></div>
+                    <div class="stat-box"><span>📈 Level</span><strong id="levelTotal">5</strong></div>
+                    <div class="stat-box"><span>🎁 Rewards</span><strong id="rewardTotal">3</strong></div>
+                </div>
+                <div class="achievement-grid">
+                    <article class="achievement-card earned" id="achieveFirstCourse"><div class="icon">⭐</div><h4>First Course</h4><p>Earned Jan 2026</p></article>
+                    <article class="achievement-card earned" id="achieveFiveDayStreak"><div class="icon">🔥</div><h4>5 Day Streak</h4><p>Earned Feb 2026</p></article>
+                    <article class="achievement-card earned" id="achieveTopPerformer"><div class="icon">🏅</div><h4>Top Performer</h4><p>Earned Mar 2026</p></article>
+                    <article class="achievement-card locked" id="achieveTenDayStreak"><div class="icon">🔒</div><h4>10 Day Streak</h4><p>Locked</p></article>
+                    <article class="achievement-card locked" id="achieveExpertLevel"><div class="icon">🔒</div><h4>Expert Level</h4><p>Locked</p></article>
+                </div>
+                <div class="progress-timeline">
+                    <h3>📈 Progress Timeline</h3>
                     <ul>
-                        <li>Chrome on Windows (Current) <button class="btn-danger" id="secRemoveCurrent" type="button">Remove</button></li>
-                        <li>Mobile App (Last active: 1 hour ago) <button class="btn-secondary" id="secRemoveMobile" type="button">Remove</button></li>
-                    </ul>
-                    <button class="btn-secondary" id="secAddDevice" type="button">Add Trusted Device</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="sessionLabel">
-                    <h4 id="sessionLabel">Active Sessions</h4>
-                    <ul>
-                        <li>Chrome on Windows (Current) <button class="btn-secondary" id="secEndCurrent" type="button">End Session</button></li>
-                        <li>Mobile App <button class="btn-secondary" id="secEndMobile" type="button">End Session</button></li>
-                    </ul>
-                    <button class="btn-secondary" id="secEndAll" type="button">End All Sessions</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="historyLabel">
-                    <h4 id="historyLabel">Login History</h4>
-                    <ul>
-                        <li>Today 10:30 AM - Chrome on Windows</li>
-                        <li>Yesterday 8:15 PM - Mobile App</li>
-                        <li>2 days ago 9:00 AM - Chrome on Mac</li>
-                    </ul>
-                    <button class="btn-secondary" id="secClearHistory" type="button">Clear History</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="emergencyLabel">
-                    <h4 id="emergencyLabel">🛑 Emergency Lock</h4>
-                    <p>Immediately lock your account and logout all devices.</p>
-                    <button class="btn-danger" id="secEmergencyLock" type="button">🔒 Lock Account Now</button>
-                    <p>Status: <span id="secLockStatus">Unlocked</span></p>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="recoveryLabel">
-                    <h4 id="recoveryLabel">📧 OTP & Recovery</h4>
-                    <input type="email" placeholder="Recovery Email" id="secRecoveryEmail" value="recovery@example.com" autocomplete="email" aria-describedby="recDesc">
-                    <span id="recDesc" class="sr-only">Enter your recovery email address</span>
-                    <button class="btn-primary" id="secSaveRecovery" type="button">Save Recovery</button>
-                    <button class="btn-secondary" id="secSendOTP" type="button">Send OTP</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="threatLabel">
-                    <h4 id="threatLabel">🧠 AI Threat Detection</h4>
-                    <p>Status: <span id="secThreatStatus">Active</span></p>
-                    <p>Last scan: <span id="secLastScan">Today, 09:00 AM</span></p>
-                    <button class="btn-secondary" id="secScanNow" type="button">Scan Now</button>
-                    <button class="btn-secondary" id="secViewThreats" type="button">View Threats</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="secDashLabel">
-                    <h4 id="secDashLabel">📊 Security Dashboard</h4>
-                    <p>Overall Security Score: <strong id="secScore">85%</strong></p>
-                    <ul>
-                        <li>✅ Password Strength: Strong</li>
-                        <li>❌ 2FA: Disabled</li>
-                        <li>✅ Trusted Devices: 2</li>
-                        <li>✅ Recent Activity: No suspicious</li>
+                        <li>✅ Completed AI Fundamentals (Jan 2026)</li>
+                        <li>✅ Earned JavaScript Badge (Feb 2026)</li>
+                        <li>⏳ Working on Web Development (Current)</li>
                     </ul>
                 </div>
             </section>
 
-            <!-- ===================================================
-            PAGE: AI MENTOR (pageAI)
-            =================================================== -->
-            <section id="pageAI" class="page-section" aria-labelledby="aiHeading">
-                <h2 id="aiHeading">🤖 AI Mentor</h2>
-
-                <div class="ai-chat-container" role="application" aria-label="AI Chat">
-                    <div class="chat-messages" id="aiChatMessages" role="log" aria-live="polite">
-                        <div class="message ai">Hello! I'm your AI Mentor. How can I help you today?</div>
+            <!--
+            ===================================================
+            PAGE 7: AI MENTOR
+            Purpose : AI Chat, Prompt Suggestions, Voice, History
+            Developer : ScaleFlow University
+            Version : 1.0
+            ===================================================
+            -->
+            <section id="page7" class="page-section" aria-label="AI Mentor Chat">
+                <h2>🤖 AI Mentor</h2>
+                <div class="ai-chat-container">
+                    <div class="chat-messages" id="chatMessages" role="log" aria-live="polite">
+                        <div class="message ai">Hello! How can I assist you today?</div>
+                        <div class="message user">I need help with JavaScript closures.</div>
+                        <div class="message ai">Sure! A closure is a function that retains access to its outer scope even after the outer function has returned. Would you like an example?</div>
                     </div>
                     <div class="chat-input">
-                        <input id="aiChatInput" type="text" placeholder="Ask me anything..." aria-label="Type your message">
-                        <button id="aiChatSend" class="btn-primary" type="button">Send</button>
-                        <button id="aiChatVoice" class="btn-secondary" type="button" aria-label="Voice input">🎤</button>
-                        <button id="aiChatClear" class="btn-secondary" type="button" aria-label="Clear chat">🗑️</button>
+                        <input id="chatInput" type="text" placeholder="Ask anything..." aria-label="Chat input">
+                        <button id="chatSendBtn" class="btn-primary" type="button">Send</button>
+                        <button id="chatVoiceBtn" class="btn-secondary" type="button">🎤</button>
+                        <button id="chatClearBtn" class="btn-secondary" type="button">🗑️</button>
                     </div>
-                    <div style="display:flex; gap:8px; margin-top:8px; flex-wrap:wrap;">
-                        <button class="btn-secondary ai-suggestion" data-text="Explain JavaScript closures" type="button">Closures</button>
-                        <button class="btn-secondary ai-suggestion" data-text="What is React?" type="button">React</button>
-                        <button class="btn-secondary ai-suggestion" data-text="Help with Python list comprehension" type="button">Python</button>
+                    <div class="prompt-suggestions">
+                        <button id="promptClosure" class="btn-secondary" type="button">Explain closures</button>
+                        <button id="promptHoisting" class="btn-secondary" type="button">What is hoisting?</button>
+                        <button id="promptAsync" class="btn-secondary" type="button">Help with async/await</button>
                     </div>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="memLabel">
-                    <h4 id="memLabel">🧠 Memory Engine</h4>
-                    <p>AI remembers your learning history to provide personalized help.</p>
-                    <button class="btn-secondary" id="aiMemoryView" type="button">View Memory</button>
-                    <button class="btn-secondary" id="aiMemoryClear" type="button">Clear Memory</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="learnHistLabel">
-                    <h4 id="learnHistLabel">📚 Learning History</h4>
-                    <ul>
-                        <li>JavaScript Fundamentals (Completed 65%)</li>
-                        <li>React Basics (Started)</li>
-                        <li>Data Science (Not started)</li>
-                    </ul>
-                    <button class="btn-secondary" id="aiHistoryDetails" type="button">View Details</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="weakLabel">
-                    <h4 id="weakLabel">📉 Weakness Detection</h4>
-                    <p>AI has identified these areas for improvement:</p>
-                    <ul>
-                        <li>JavaScript Closures (Low score)</li>
-                        <li>React Hooks (Needs practice)</li>
-                    </ul>
-                    <button class="btn-primary" id="aiWeaknessAction" type="button">Get Recommended Lessons</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="reflLabel">
-                    <h4 id="reflLabel">🤔 AI Reflection</h4>
-                    <input type="text" placeholder="What did you learn today?" id="aiReflectionInput" aria-describedby="reflDesc">
-                    <span id="reflDesc" class="sr-only">Share what you learned today for AI reflection</span>
-                    <button class="btn-primary" id="aiReflectionSubmit" type="button">Get Reflection</button>
-                    <div id="aiReflectionResult"></div>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="hwLabel">
-                    <h4 id="hwLabel">📝 Homework Checker</h4>
-                    <textarea placeholder="Paste your homework here..." id="aiHomeworkInput" aria-describedby="hwDesc"></textarea>
-                    <span id="hwDesc" class="sr-only">Paste your homework text for AI review</span>
-                    <button class="btn-primary" id="aiHomeworkCheck" type="button">Check Homework</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="quizLabel">
-                    <h4 id="quizLabel">📝 Quiz Generator</h4>
-                    <input type="text" placeholder="Topic (e.g., JavaScript)" id="aiQuizTopic">
-                    <button class="btn-primary" id="aiQuizGenerate" type="button">Generate Quiz</button>
-                    <button class="btn-secondary" id="aiQuizExplain" type="button">Explain Answers</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="codeLabel">
-                    <h4 id="codeLabel">💻 Coding Assistant</h4>
-                    <textarea placeholder="Write your code or describe the problem..." id="aiCodeInput" aria-describedby="codeDesc"></textarea>
-                    <span id="codeDesc" class="sr-only">Paste your code or describe the problem</span>
-                    <button class="btn-primary" id="aiCodeHelp" type="button">Get Help</button>
-                    <button class="btn-secondary" id="aiCodeReview" type="button">Review Code</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="careerLabel">
-                    <h4 id="careerLabel">🚀 Career Advisor</h4>
-                    <button class="btn-secondary" id="aiCareerPath" type="button">Suggest Career Path</button>
-                    <button class="btn-secondary" id="aiCareerSkills" type="button">Skills to Learn</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="voiceLabel">
-                    <h4 id="voiceLabel">🎤 Voice Chat</h4>
-                    <button class="btn-primary" id="aiVoiceStart" type="button">Start Voice Chat</button>
-                    <button class="btn-secondary" id="aiVoiceStop" type="button">Stop Voice Chat</button>
-                    <p>Status: <span id="aiVoiceStatus">Idle</span></p>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="imgLabel">
-                    <h4 id="imgLabel">🖼️ Image Upload</h4>
-                    <input type="file" id="aiImageUpload" accept="image/*" aria-describedby="imgDesc">
-                    <span id="imgDesc" class="sr-only">Upload an image for AI analysis</span>
-                    <button class="btn-primary" id="aiImageAnalyze" type="button">Analyze Image</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="pdfLabel">
-                    <h4 id="pdfLabel">📄 PDF Reader</h4>
-                    <input type="file" id="aiPDFUpload" accept=".pdf" aria-describedby="pdfDesc">
-                    <span id="pdfDesc" class="sr-only">Upload a PDF for AI to read</span>
-                    <button class="btn-primary" id="aiPDFRead" type="button">Read PDF</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="convLabel">
-                    <h4 id="convLabel">📜 Conversation History</h4>
-                    <ul>
-                        <li>Today: "Explain closures"</li>
-                        <li>Yesterday: "Help with React"</li>
-                    </ul>
-                    <button class="btn-secondary" id="aiHistoryClear" type="button">Clear History</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="persLabelAI">
-                    <h4 id="persLabelAI">🧑‍🏫 AI Personality</h4>
-                    <select id="aiPersonality" aria-describedby="persAIDesc">
-                        <option>Friendly</option><option>Professional</option><option>Motivational</option><option>Technical</option>
-                    </select>
-                    <span id="persAIDesc" class="sr-only">Choose the AI's personality style</span>
-                    <button class="btn-primary" id="aiPersonalitySave" type="button">Save Personality</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="moodLabel">
-                    <h4 id="moodLabel">😊 AI Mood</h4>
-                    <button class="btn-secondary" id="aiMoodHappy" type="button">😊 Happy</button>
-                    <button class="btn-secondary" id="aiMoodSerious" type="button">😐 Serious</button>
-                    <button class="btn-secondary" id="aiMoodEncouraging" type="button">💪 Encouraging</button>
-                    <p>Current Mood: <span id="aiMoodCurrent">Friendly</span></p>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="multiLangLabel">
-                    <h4 id="multiLangLabel">🌐 Multi Language</h4>
-                    <select id="aiLanguage" aria-describedby="multiLangDesc">
-                        <option>English</option><option>Urdu</option><option>Arabic</option><option>Hindi</option>
-                    </select>
-                    <span id="multiLangDesc" class="sr-only">Choose the AI's response language</span>
-                    <button class="btn-primary" id="aiLanguageSave" type="button">Set Language</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="teacherLabel">
-                    <h4 id="teacherLabel">👨‍🏫 AI Teacher</h4>
-                    <button class="btn-secondary" id="aiTeacherStart" type="button">Start Teaching Session</button>
-                    <button class="btn-secondary" id="aiTeacherStop" type="button">Stop Session</button>
                 </div>
             </section>
 
-            <!-- ===================================================
-            PAGE: FEEDBACK (pageFeedback)
-            =================================================== -->
-            <section id="pageFeedback" class="page-section" aria-labelledby="fbHeading">
-                <h2 id="fbHeading">💬 Feedback & Support</h2>
-
-                <div class="setting-card" role="group" aria-labelledby="ticketLabel">
-                    <h4 id="ticketLabel">🎫 Ticket System</h4>
-                    <button class="btn-primary" id="fbNewTicket" type="button">New Ticket</button>
-                    <ul>
-                        <li>#TKT-001: AI Mentor not responding (Open) <button class="btn-secondary" id="fbViewTicket1" type="button">View</button></li>
-                        <li>#TKT-002: Video player issue (Resolved) <button class="btn-secondary" id="fbViewTicket2" type="button">View</button></li>
-                    </ul>
-                    <button class="btn-secondary" id="fbAllTickets" type="button">View All Tickets</button>
+            <!--
+            ===================================================
+            PAGE 8: MARKETPLACE
+            Purpose : Products, Categories, Search, Cart, Checkout
+            Developer : ScaleFlow University
+            Version : 1.0
+            ===================================================
+            -->
+            <section id="page8" class="page-section" aria-label="Marketplace">
+                <h2>🛒 Marketplace</h2>
+                <div class="marketplace-header">
+                    <input id="marketplaceSearch" type="text" placeholder="Search products..." aria-label="Search products">
+                    <button id="marketplaceCategories" class="btn-secondary" type="button">Categories</button>
+                    <button id="marketplaceCart" class="btn-primary" type="button">🛒 Cart (0)</button>
+                    <button id="marketplaceCheckout" class="btn-primary" type="button">Checkout</button>
                 </div>
-
-                <div class="setting-card" role="group" aria-labelledby="autoLabel">
-                    <h4 id="autoLabel">🤖 AI Auto Reply</h4>
-                    <label><input type="checkbox" id="fbAutoReply" checked> Enable AI auto-reply</label>
-                    <p>AI will respond to common queries instantly.</p>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="whatsappLabel">
-                    <h4 id="whatsappLabel">📱 WhatsApp Support</h4>
-                    <button class="btn-secondary" id="fbWhatsApp" type="button">Chat on WhatsApp</button>
-                    <p>Number: <span id="fbWhatsAppNumber">+92-XXX-XXXXXXX</span></p>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="emailSuppLabel">
-                    <h4 id="emailSuppLabel">📧 Email Support</h4>
-                    <input type="text" placeholder="Subject" id="fbEmailSubject" required aria-required="true">
-                    <textarea placeholder="Message" id="fbEmailBody" required aria-required="true"></textarea>
-                    <button class="btn-primary" id="fbEmailSend" type="button">Send Email</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="ratingLabel">
-                    <h4 id="ratingLabel">⭐ Rate Us</h4>
-                    <div id="fbRating" role="radiogroup" aria-label="Rating stars">
-                        <button class="btn-secondary rating-star" data-value="1" role="radio" aria-checked="false">⭐</button>
-                        <button class="btn-secondary rating-star" data-value="2" role="radio" aria-checked="false">⭐⭐</button>
-                        <button class="btn-secondary rating-star" data-value="3" role="radio" aria-checked="false">⭐⭐⭐</button>
-                        <button class="btn-secondary rating-star" data-value="4" role="radio" aria-checked="false">⭐⭐⭐⭐</button>
-                        <button class="btn-secondary rating-star" data-value="5" role="radio" aria-checked="false">⭐⭐⭐⭐⭐</button>
-                    </div>
-                    <p>Your Rating: <span id="fbRatingValue">Not rated</span></p>
-                    <button class="btn-primary" id="fbRatingSubmit" type="button">Submit Rating</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="bugLabel">
-                    <h4 id="bugLabel">🐛 Bug Report</h4>
-                    <input type="text" placeholder="Bug Title" id="fbBugTitle" required>
-                    <textarea placeholder="Describe the bug..." id="fbBugDesc" required></textarea>
-                    <input type="file" id="fbBugAttachment" aria-label="Attach screenshot">
-                    <button class="btn-primary" id="fbBugSubmit" type="button">Submit Bug</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="featureLabel">
-                    <h4 id="featureLabel">💡 Feature Request</h4>
-                    <input type="text" placeholder="Feature name" id="fbFeatureTitle" required>
-                    <textarea placeholder="Describe your idea..." id="fbFeatureDesc" required></textarea>
-                    <button class="btn-primary" id="fbFeatureSubmit" type="button">Submit Feature</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="liveLabel">
-                    <h4 id="liveLabel">💬 Live Chat</h4>
-                    <button class="btn-primary" id="fbLiveChatStart" type="button">Start Live Chat</button>
-                    <button class="btn-secondary" id="fbLiveChatEnd" type="button">End Chat</button>
-                    <p>Status: <span id="fbLiveChatStatus">Offline</span></p>
+                <div class="product-grid">
+                    <article class="product-card" id="product1"><div class="product-icon">📘</div><h3>E-book: AI Guide</h3><p>$9.99</p><button id="addToCart1" class="btn-primary" type="button">Add to Cart</button></article>
+                    <article class="product-card" id="product2"><div class="product-icon">🎓</div><h3>Course Bundle</h3><p>$49.99</p><button id="addToCart2" class="btn-primary" type="button">Add to Cart</button></article>
+                    <article class="product-card" id="product3"><div class="product-icon">🛠️</div><h3>Pro Tools Kit</h3><p>$19.99</p><button id="addToCart3" class="btn-primary" type="button">Add to Cart</button></article>
                 </div>
             </section>
 
-            <!-- ===================================================
-            PAGE: 3D LEARNING (page3D)
-            =================================================== -->
-            <section id="page3D" class="page-section" aria-labelledby="d3Heading">
-                <h2 id="d3Heading">🌐 3D Learning</h2>
-
-                <div class="setting-card" role="group" aria-labelledby="viewerLabel">
-                    <h4 id="viewerLabel">🎨 3D Viewer (Three.js)</h4>
-                    <div id="threeDViewer" style="width:100%;height:350px;background:#1a1a2e;border-radius:16px;display:flex;align-items:center;justify-content:center;color:#fff;">
-                        <p>🖼️ 3D Model Loaded</p>
-                    </div>
-                    <button class="btn-secondary" id="d3LoadModel" type="button">Load Model</button>
-                    <button class="btn-secondary" id="d3ResetView" type="button">Reset View</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="controlsLabel">
-                    <h4 id="controlsLabel">🖱️ Interactive Controls</h4>
-                    <button class="btn-secondary" id="d3RotateLeft" type="button">⬅️ Rotate</button>
-                    <button class="btn-secondary" id="d3RotateRight" type="button">Rotate ➡️</button>
-                    <button class="btn-secondary" id="d3ZoomIn" type="button">🔍+ Zoom</button>
-                    <button class="btn-secondary" id="d3ZoomOut" type="button">🔍− Zoom</button>
-                    <button class="btn-secondary" id="d3Pan" type="button">✋ Pan</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="labelsLabel">
-                    <h4 id="labelsLabel">🏷️ Labels</h4>
-                    <label><input type="checkbox" id="d3Labels" checked> Show Labels</label>
-                    <button class="btn-secondary" id="d3ToggleLabels" type="button">Toggle Labels</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="animLabel">
-                    <h4 id="animLabel">🎬 Animation</h4>
-                    <button class="btn-secondary" id="d3PlayAnim" type="button">▶️ Play</button>
-                    <button class="btn-secondary" id="d3PauseAnim" type="button">⏸️ Pause</button>
-                    <button class="btn-secondary" id="d3StopAnim" type="button">⏹️ Stop</button>
-                    <button class="btn-secondary" id="d3SpeedUp" type="button">⏩ Speed Up</button>
-                    <button class="btn-secondary" id="d3SlowDown" type="button">⏪ Slow Down</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="explodeLabel">
-                    <h4 id="explodeLabel">💥 Exploded View</h4>
-                    <button class="btn-secondary" id="d3Explode" type="button">Explode</button>
-                    <button class="btn-secondary" id="d3Assemble" type="button">Assemble</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="d3QuizLabel">
-                    <h4 id="d3QuizLabel">📝 3D Quiz</h4>
-                    <button class="btn-primary" id="d3QuizStart" type="button">Start Quiz</button>
-                    <p>Answer questions based on the 3D model.</p>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="d3AILabel">
-                    <h4 id="d3AILabel">🤖 AI Explain</h4>
-                    <button class="btn-secondary" id="d3AIExplain" type="button">Ask AI to Explain</button>
-                    <p id="d3AIExplanation">AI will analyze the 3D model.</p>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="d3ProgLabel">
-                    <h4 id="d3ProgLabel">📊 Progress Tracking</h4>
-                    <p>Module Progress: <span id="d3Progress">45%</span></p>
-                    <div class="progress-bar"><div class="progress-fill" id="d3ProgressFill" style="width:45%;"></div></div>
-                    <button class="btn-secondary" id="d3UpdateProgress" type="button">Update Progress</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="vrLabel">
-                    <h4 id="vrLabel">🥽 VR Ready</h4>
-                    <p>VR support coming soon! (Future expansion)</p>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="arLabel">
-                    <h4 id="arLabel">📱 AR Ready</h4>
-                    <p>AR support coming soon! (Future expansion)</p>
+            <!--
+            ===================================================
+            PAGE 9: BUSINESS
+            Purpose : CRM, Projects, Clients, Income, Reports
+            Developer : ScaleFlow University
+            Version : 1.0
+            ===================================================
+            -->
+            <section id="page9" class="page-section" aria-label="Business Hub">
+                <h2>💼 Business Hub</h2>
+                <div class="business-grid">
+                    <div class="business-card" id="businessCRM"><div class="business-icon">📋</div><h3>CRM</h3><p>Manage clients</p><button id="openCRM" class="btn-primary" type="button">Open</button></div>
+                    <div class="business-card" id="businessProjects"><div class="business-icon">📁</div><h3>Projects</h3><p>Track progress</p><button id="openProjects" class="btn-primary" type="button">Open</button></div>
+                    <div class="business-card" id="businessClients"><div class="business-icon">👥</div><h3>Clients</h3><p>Client list</p><button id="openClients" class="btn-primary" type="button">Open</button></div>
+                    <div class="business-card" id="businessIncome"><div class="business-icon">💰</div><h3>Income</h3><p>Revenue tracker</p><button id="openIncome" class="btn-primary" type="button">Open</button></div>
+                    <div class="business-card" id="businessReports"><div class="business-icon">📊</div><h3>Reports</h3><p>Analytics</p><button id="openReports" class="btn-primary" type="button">Open</button></div>
                 </div>
             </section>
 
-            <!-- ===================================================
-            PAGE: DIGITAL CV (pageCV)
-            =================================================== -->
-            <section id="pageCV" class="page-section" aria-labelledby="cvHeading">
-                <h2 id="cvHeading">📄 Digital CV Generator</h2>
-
-                <div class="setting-card" role="group" aria-labelledby="cvPersLabel">
-                    <h4 id="cvPersLabel">👤 Personal Information</h4>
-                    <input type="text" placeholder="Full Name" id="cvName" value="Sanaullah" autocomplete="name">
-                    <input type="text" placeholder="Job Title" id="cvTitle" value="Full Stack Developer">
-                    <input type="email" placeholder="Email" id="cvEmail" value="sanaullah@university.com" autocomplete="email">
-                    <input type="text" placeholder="Phone" id="cvPhone" value="+92-XXX-XXXXXXX" autocomplete="tel">
-                    <input type="text" placeholder="Location" id="cvLocation" value="Pakistan">
+            <!--
+            ===================================================
+            PAGE 10: PROFILE
+            Purpose : Personal Info, Skills, Portfolio, Certificates, Activity
+            Developer : ScaleFlow University
+            Version : 1.0
+            ===================================================
+            -->
+            <section id="page10" class="page-section" aria-label="Student Profile">
+                <h2>👤 Student Profile</h2>
+                <div class="profile-container">
+                    <aside class="profile-sidebar">
+                        <!-- ✅ FIX 1: Unique ID for Profile Page Image -->
+                        <img id="studentProfileImage" src="assets/avatar.png" alt="Profile Avatar" class="profile-avatar" style="width:80px;height:80px;border-radius:50%;display:block;margin:0 auto 12px;">
+                        <h3>Sanaullah</h3>
+                        <p>Student • Level 5</p>
+                        <p>📧 sanaullah@university.com</p>
+                        <p>🎯 Goal: Complete 20 Courses</p>
+                        <button id="editProfileBtn" class="btn-primary" type="button">Edit Profile</button>
+                    </aside>
+                    <div class="profile-details">
+                        <section class="info-card"><h4>📋 Personal Info</h4><p><strong>Full Name:</strong> Sanaullah</p><p><strong>Email:</strong> sanaullah@university.com</p><p><strong>Joined:</strong> Jan 2026</p></section>
+                        <section class="info-card"><h4>🛠️ Skills</h4><span class="badge">JavaScript</span><span class="badge">Python</span><span class="badge">React</span></section>
+                        <section class="info-card"><h4>📁 Portfolio</h4><p>AI Chatbot Project • Weather App • E-commerce Site</p></section>
+                        <section class="info-card"><h4>📜 Certificates</h4><p>AI Mastery • Web Dev Pro • Data Science</p></section>
+                        <section class="info-card"><h4>🕐 Recent Activity</h4><p>Completed "AI Fundamentals" • Started "Web Development"</p></section>
+                    </div>
                 </div>
+            </section>
 
-                <div class="setting-card" role="group" aria-labelledby="expLabel">
-                    <h4 id="expLabel">💼 Experience</h4>
-                    <textarea placeholder="Add your experience..." id="cvExperience" aria-describedby="expDesc">Full Stack Developer at ScaleFlow (2024-Present)</textarea>
-                    <span id="expDesc" class="sr-only">Describe your professional experience</span>
-                    <button class="btn-secondary" id="cvAddExperience" type="button">Add Experience</button>
+            <!--
+            ===================================================
+            PAGE 11: SETTINGS
+            Purpose : Theme, Language, Security, Notifications, Backup
+            Developer : ScaleFlow University
+            Version : 1.0
+            ===================================================
+            -->
+            <section id="page11" class="page-section" aria-label="Settings">
+                <h2>⚙️ Settings</h2>
+                <div class="settings-grid">
+                    <div class="setting-card"><h4>🎨 Theme</h4><button id="settingsThemeBtn" class="btn-secondary" type="button">Toggle Dark/Light</button></div>
+                    <div class="setting-card"><h4>🌐 Language</h4><select id="settingsLanguage" aria-label="Select language"><option>English</option><option>Urdu</option><option>Arabic</option></select></div>
+                    <div class="setting-card"><h4>🔐 Security</h4><button id="settingsChangePassword" class="btn-secondary" type="button">Change Password</button><button id="settingsEnable2FA" class="btn-secondary" type="button">Enable 2FA</button></div>
+                    <div class="setting-card"><h4>🔔 Notifications</h4><label><input type="checkbox" id="notifEmail" checked aria-label="Email notifications"> Email</label><label><input type="checkbox" id="notifPush" checked aria-label="Push notifications"> Push</label><label><input type="checkbox" id="notifSMS" aria-label="SMS notifications"> SMS</label></div>
+                    <div class="setting-card full-width"><h4>💾 Backup</h4><button id="settingsBackupBtn" class="btn-primary" type="button">Backup Now</button></div>
                 </div>
+            </section>
 
-                <div class="setting-card" role="group" aria-labelledby="eduLabel">
-                    <h4 id="eduLabel">🎓 Education</h4>
-                    <textarea placeholder="Add your education..." id="cvEducation">BS Computer Science - University of ScaleFlow</textarea>
-                    <button class="btn-secondary" id="cvAddEducation" type="button">Add Education</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="skillLabel">
-                    <h4 id="skillLabel">🛠️ Skills</h4>
-                    <input type="text" placeholder="JavaScript, React, Python" id="cvSkills" value="JavaScript, React, Python, Node.js">
-                    <button class="btn-secondary" id="cvAddSkill" type="button">Add Skill</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="certLabel">
-                    <h4 id="certLabel">📜 Certificates</h4>
-                    <input type="text" placeholder="AI Mastery, Web Dev Pro" id="cvCerts" value="AI Mastery, Web Dev Pro">
-                    <button class="btn-secondary" id="cvAddCert" type="button">Add Certificate</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="projLabel">
-                    <h4 id="projLabel">📁 Projects</h4>
-                    <input type="text" placeholder="Project 1, Project 2" id="cvProjects" value="AI Chatbot, Weather App, E-commerce Site">
-                    <button class="btn-secondary" id="cvAddProject" type="button">Add Project</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="portLabel">
-                    <h4 id="portLabel">🌐 Portfolio</h4>
-                    <input type="url" placeholder="Portfolio URL" id="cvPortfolio" value="https://sanaullah.dev" autocomplete="url">
-                    <button class="btn-primary" id="cvSavePortfolio" type="button">Save Portfolio</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="socialLabel">
-                    <h4 id="socialLabel">🔗 GitHub & LinkedIn</h4>
-                    <input type="url" placeholder="GitHub URL" id="cvGitHub" value="https://github.com/sanaullah" autocomplete="url">
-                    <input type="url" placeholder="LinkedIn URL" id="cvLinkedIn" value="https://linkedin.com/in/sanaullah" autocomplete="url">
-                    <button class="btn-primary" id="cvSaveSocial" type="button">Save Social Links</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="achieveLabel">
-                    <h4 id="achieveLabel">🏆 Achievements</h4>
-                    <input type="text" placeholder="Top Performer, 5 Day Streak" id="cvAchievements" value="Top Performer, 5 Day Streak">
-                    <button class="btn-secondary" id="cvAddAchievement" type="button">Add Achievement</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="cvAILabel">
-                    <h4 id="cvAILabel">🤖 AI CV Builder</h4>
-                    <button class="btn-primary" id="cvAIBuild" type="button">✨ Build CV with AI</button>
-                    <button class="btn-secondary" id="cvAISuggest" type="button">Get AI Suggestions</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="templateLabel">
-                    <h4 id="templateLabel">📄 Multiple Templates</h4>
-                    <select id="cvTemplate" aria-describedby="templateDesc">
-                        <option>Modern</option><option>Classic</option><option>Professional</option><option>Creative</option>
-                    </select>
-                    <span id="templateDesc" class="sr-only">Choose a CV template style</span>
-                    <button class="btn-primary" id="cvApplyTemplate" type="button">Apply Template</button>
-                </div>
-
-                <div class="setting-card" role="group" aria-labelledby="previewLabel">
-                    <h4 id="previewLabel">📥 Preview & Download</h4>
-                    <button class="btn-primary" id="cvPreview" type="button">Preview CV</button>
-                    <button class="btn-primary" id="cvDownloadPDF" type="button">⬇ Download PDF</button>
-                    <button class="btn-secondary" id="cvShareLink" type="button">🔗 Share Link</button>
-                    <button class="btn-secondary" id="cvGenerateQR" type="button">📱 Generate QR</button>
+            <!--
+            ===================================================
+            PAGE 12: LOGIN
+            Purpose : Login, Register, Forgot Password, OTP, Remember Me
+            Developer : ScaleFlow University
+            Version : 1.0
+            ===================================================
+            -->
+            <section id="page12" class="page-section" aria-label="Login">
+                <div class="login-container">
+                    <div class="login-card">
+                        <h2>🔐 Welcome Back</h2>
+                        <!-- ✅ FIX 4: Form Validation added via onsubmit -->
+                        <form id="loginForm" onsubmit="return validateLoginForm()" aria-label="Login form">
+                            <div class="form-group">
+                                <label for="loginEmail">Email</label>
+                                <input id="loginEmail" type="email" placeholder="student@university.com" required aria-label="Email address">
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword">Password</label>
+                                <input id="loginPassword" type="password" placeholder="••••••••" required aria-label="Password">
+                            </div>
+                            <div class="form-options">
+                                <label><input type="checkbox" id="loginRemember" aria-label="Remember me"> Remember Me</label>
+                                <a href="#" id="forgotPasswordLink">Forgot Password?</a>
+                            </div>
+                            <button id="loginSubmitBtn" type="submit" class="btn-primary">Sign In</button>
+                        </form>
+                        <p class="login-register">Don't have an account? <a href="#" id="registerLink">Register</a></p>
+                        <button id="loginOTPBtn" class="btn-secondary" type="button">Send OTP</button>
+                    </div>
                 </div>
             </section>
 
@@ -829,7 +1334,8 @@
     <!-- ===== SCROLL TOP ===== -->
     <button id="scrollTopBtn" type="button" aria-label="Scroll to top">⬆</button>
 
-    <!-- ===== EXTERNAL SCRIPT (صرف ایک بار) ===== -->
+    
+    <!-- ===== EXTERNAL SCRIPT ===== -->
     <script src="script.js"></script>
 
 </body>
