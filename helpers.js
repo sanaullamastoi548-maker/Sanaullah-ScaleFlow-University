@@ -10,7 +10,7 @@ Status  : Enterprise Foundation
 /*=========================================
 Global Helper Object
 =========================================*/
-const SF = Object.freeze({});
+const SF = {};
 
 /*=========================================
 Console Logger
