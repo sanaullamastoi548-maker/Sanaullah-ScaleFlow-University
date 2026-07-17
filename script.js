@@ -1,9 +1,9 @@
-/============================================================
+/*============================================================
 Sanaullah ScaleFlow University
 style.css — Core Styles
 Part 4: Responsive, Animations, Scrollbar, Print, Final Polish
 Version: 1.0
-============================================================/
+============================================================*/
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1200px) {
@@ -193,12 +193,12 @@ outline-offset: 2px;
 }
 ::selection { background: var(--primary); color: #000; }
 
-/============================================================
+/*============================================================
 Sanaullah ScaleFlow University
 script.js — Complete JavaScript
 Part 2: Dashboard & Home Features
 Version: 1.0
-============================================================/
+============================================================*/
 
 (function(global) {
 "use strict";
@@ -441,12 +441,12 @@ console.log('📦 [Part 2] Dashboard & Home Features loaded');
 
 })(window);
 
-/============================================================
+/*============================================================
 Sanaullah ScaleFlow University
 script.js — Complete JavaScript
 Part 3: All Page Modules
 Version: 1.0
-============================================================/
+============================================================*/
 
 (function(global) {
 "use strict";
@@ -702,12 +702,12 @@ console.log('📦 [Part 3] All Page Modules loaded');
 
 })(window);
 
-/============================================================
+/*============================================================
 Sanaullah ScaleFlow University
 script.js — Complete JavaScript
 Part 4: Login, Validation, Generic Handlers, Start
 Version: 1.0
-============================================================/
+============================================================*/
 
 (function(global) {
 "use strict";
