@@ -923,4 +923,198 @@ console.log('✅ ScaleFlow University JavaScript complete!');
  
 
 })(window);
+/============================================================
+Sanaullah ScaleFlow University
+script.js — Complete JavaScript
+Part 4: Login, Validation, Generic Handlers, Start
+Version: 1.0
+============================================================/
 
+(function(global) {
+"use strict";
+
+ 
+const SF = global.ScaleFlow || {};
+const showToast = SF.showToast || function() {};
+const openModal = SF.openModal || function() {};
+const closeModal = SF.closeModal || function() {};
+const navigateTo = SF.navigateTo || function() {};
+const hideLoader = SF.hideLoader || function() {};
+
+// ============================================================
+// 31. LOGIN FORM — ویلڈیشن
+// ============================================================
+document.getElementById('loginForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value.trim();
+    const password = document.getElementById('loginPassword').value.trim();
+
+    if (!email || !password) {
+        showToast('⚠️ Please fill in both fields.', 'warning');
+        return;
+    }
+    if (!email.includes('@')) {
+        showToast('⚠️ Please enter a valid email address.', 'warning');
+        return;
+    }
+    if (password.length < 6) {
+        showToast('⚠️ Password must be at least 6 characters.', 'warning');
+        return;
+    }
+
+    showToast('✅ Login successful! Redirecting...', 'success');
+    setTimeout(() => navigateTo('page1'), 1500);
+});
+
+// ============================================================
+// 32. FORGOT PASSWORD & REGISTER — موڈل میں
+// ============================================================
+document.getElementById('forgotPasswordLink')?.addEventListener('click', function(e) {
+    e.preventDefault();
+    openModal('🔑 Forgot Password', `
+        <p>Enter your email to receive OTP.</p>
+        <div class="form-group">
+            <input type="email" placeholder="student@university.com" id="otpEmail" class="w-full">
+        </div>
+        <button id="otpSendBtn" class="btn-primary w-full">Send OTP</button>
+    `);
+    document.getElementById('otpSendBtn')?.addEventListener('click', function() {
+        showToast('📧 OTP sent to your email!', 'success');
+        closeModal();
+    });
+});
+
+document.getElementById('registerLink')?.addEventListener('click', function(e) {
+    e.preventDefault();
+    openModal('📝 Register', `
+        <form id="registerForm">
+            <div class="form-group"><label>Full Name</label><input type="text" placeholder="Sanaullah" class="w-full" required></div>
+            <div class="form-group"><label>Email</label><input type="email" placeholder="student@university.com" class="w-full" required></div>
+            <div class="form-group"><label>Password</label><input type="password" placeholder="••••••••" class="w-full" required></div>
+            <button type="submit" class="btn-primary w-full">Create Account</button>
+        </form>
+    `);
+    document.getElementById('registerForm')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        showToast('✅ Account created! Please login.', 'success');
+        closeModal();
+    });
+});
+
+// ============================================================
+// 33. LOGIN OTP BUTTON
+// ============================================================
+document.getElementById('loginOTPBtn')?.addEventListener('click', function() {
+    showToast('📧 OTP sent to your email!', 'info');
+});
+
+// ============================================================
+// 34. GENERIC BUTTON HANDLER — باقی بٹنز کے لیے ٹوسٹ
+// ============================================================
+document.querySelectorAll('.btn-primary, .btn-secondary, .btn-danger').forEach(btn => {
+    // ان بٹنز کو چھوڑیں جن کا پہلے سے ہینڈلر ہے
+    const skipIds = [
+        'darkModeBtn', 'modalCloseBtn', 'modalCancelBtn', 'modalConfirmBtn',
+        'continueProgressBtn', 'quickStartLearning', 'quickAskAI', 'quickBrowseCourses',
+        'quickMyCertificates', 'dashResumeLearning', 'dashBrowseCourses',
+        'dashAskAI', 'dashCertificates', 'btnTheme', 'btnLanguage', 'btnSupport',
+        'menuToggle', 'sidebarClose', 'notificationBell', 'markAllReadBtn',
+        'scrollTopBtn', 'settingsThemeBtn', 'loginSubmitBtn', 'loginOTPBtn',
+        'saveNotesBtn', 'getReflectionBtn', 'submitQuizBtn', 'downloadPdfBtn',
+        'prevLessonBtn', 'nextLessonBtn', 'certDownload1', 'certVerify1',
+        'certQR1', 'certShare1', 'certDownload2', 'certVerify2', 'certQR2',
+        'certShare2', 'marketplaceCart', 'marketplaceCheckout', 'marketplaceCategories',
+        'addToCart1', 'addToCart2', 'addToCart3', 'openCRM', 'openProjects',
+        'openClients', 'openIncome', 'openReports', 'editProfileBtn',
+        'settingsChangePassword', 'settingsEnable2FA', 'settingsBackupBtn',
+        'forgotPasswordLink', 'registerLink', 'chatSendBtn', 'chatClearBtn',
+        'chatVoiceBtn', 'promptClosure', 'promptHoisting', 'promptAsync'
+    ];
+    if (skipIds.includes(btn.id)) return;
+    // اگر بٹن کسی فارم کا سبمٹ نہیں ہے
+    if (btn.type !== 'submit' && !btn.closest('form')) {
+        btn.addEventListener('click', function(e) {
+            const text = this.textContent.trim();
+            if (text && !this.closest('.chat-input') && !this.closest('.modal-footer')) {
+                showToast('🔄 ' + text, 'info');
+            }
+        });
+    }
+});
+
+// ============================================================
+// 35. ANIMATIONS — اسکرول پر عناصر کو ظاہر کریں
+// ============================================================
+if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fade-up');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.gateway-card, .course-card, .achievement-card, .stat-box, .dashboard-box').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+// بٹنوں پر کلک اینیمیشن
+document.querySelectorAll('.btn-primary, .btn-secondary, .quick-btn, .quick-action-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => { this.style.transform = ''; }, 150);
+    });
+});
+
+// ============================================================
+// 36. RTL SUPPORT — اگر صفحہ RTL میں ہو
+// ============================================================
+if (document.documentElement.getAttribute('dir') === 'rtl') {
+    // RTL کے لیے کوئی خاص تبدیلی (جاوا اسکرپٹ کی ضرورت نہیں، CSS سنبھال لے گی)
+    console.log('📄 RTL mode detected');
+}
+
+// ============================================================
+// 37. BOOT — سب کچھ شروع کریں
+// ============================================================
+document.addEventListener('DOMContentLoaded', function() {
+    // لوڈر چھپائیں
+    hideLoader();
+    // خوش آمدید
+    showToast('🎓 Welcome to ScaleFlow University', 'success');
+    // ڈیفالٹ پیج (page1) کو یقینی بنائیں
+    navigateTo('page1');
+    console.log('🚀 ScaleFlow University loaded successfully');
+});
+
+// ============================================================
+// 38. GLOBAL — اگر کسی اور فائل کو ضرورت ہو
+// ============================================================
+global.ScaleFlow = {
+    showToast,
+    openModal,
+    closeModal,
+    navigateTo,
+    toggleDarkMode: function() {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        document.getElementById('darkModeBtn').textContent = isDark ? '☀️' : '🌙';
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        showToast(isDark ? '🌙 Dark mode enabled' : '☀️ Light mode enabled', 'info');
+    },
+    hideLoader,
+    updateDashboardStats: function() {
+        // یہ فنکشن Part 2 میں موجود ہے، یہاں صرف ریفرنس کے لیے
+    }
+};
+
+console.log('📦 [Part 4] Login, Validation & Final Polish loaded');
+console.log('✅ ScaleFlow University JavaScript complete!');
+ 
+
+})(window);
+
+window.addEventListener("load", function () {
+    hideLoader();
+});
