@@ -665,25 +665,35 @@ document.getElementById('marketplaceCategories')?.addEventListener('click', func
 // ============================================================
 // 29. PROFILE — ایڈٹ پروفائل
 // ============================================================
-document.getElementById('editProfileBtn')?.addEventListener('click', function() {
+    document.getElementById('editProfileBtn')?.addEventListener('click', function () {
+
     openModal(
- '✏️ Edit Profile',
- `
- <form>
-   ...
-  </form>
-   `
-    );
-            <div class="form-group"><label>Full Name</label><input type="text" value="Sanaullah" id="editName" class="w-full"></div>
-            <div class="form-group"><label>Email</label><input type="email" value="sanaullah@university.com" id="editEmail" class="w-full"></div>
-            <button type="submit" class="btn-primary w-full">Save Changes</button>
+        '✏️ Edit Profile',
+        `
+        <form id="profileEditForm">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" value="Sanaullah" id="editName" class="w-full">
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" value="sanaullah@university.com" id="editEmail" class="w-full">
+            </div>
+
+            <button type="submit" class="btn-primary w-full">
+                Save Changes
+            </button>
         </form>
-    `);
-    document.getElementById('profileEditForm')?.addEventListener('submit', function(e) {
+        `
+    );
+
+    document.getElementById('profileEditForm')?.addEventListener('submit', function (e) {
         e.preventDefault();
         showToast('✅ Profile updated!', 'success');
         closeModal();
     });
+
 });
 
 // ============================================================
@@ -705,24 +715,44 @@ document.getElementById('settingsLanguage')?.addEventListener('change', function
     showToast('🌐 Language set to ' + this.value, 'info');
 });
 
-document.getElementById('settingsChangePassword')?.addEventListener('click', function() {
-     openModal(
-'🔐 Change Password',
-<form ...
+    document.getElementById('settingsChangePassword')?.addEventListener('click', function () {
+
+    openModal(
+        '🔐 Change Password',
+        `
         <form id="changePwdForm">
-            <div class="form-group"><label>Current Password</label><input type="password" placeholder="••••••••" class="w-full"></div>
-            <div class="form-group"><label>New Password</label><input type="password" placeholder="••••••••" class="w-full"></div>
-            <div class="form-group"><label>Confirm Password</label><input type="password" placeholder="••••••••" class="w-full"></div>
-            <button type="submit" class="btn-primary w-full">Update Password</button>
+
+            <div class="form-group">
+                <label>Current Password</label>
+                <input type="password" class="w-full">
+            </div>
+
+            <div class="form-group">
+                <label>New Password</label>
+                <input type="password" class="w-full">
+            </div>
+
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" class="w-full">
+            </div>
+
+            <button type="submit" class="btn-primary w-full">
+                Update Password
+            </button>
+
         </form>
-    `);
-    document.getElementById('changePwdForm')?.addEventListener('submit', function(e) {
+        `
+    );
+
+    document.getElementById('changePwdForm')?.addEventListener('submit', function (e) {
         e.preventDefault();
         showToast('✅ Password updated!', 'success');
         closeModal();
     });
-});
 
+});
+  
 document.getElementById('settingsEnable2FA')?.addEventListener('click', function() {
     showToast('✅ Two-Factor Authentication enabled!', 'success');
 });
