@@ -785,12 +785,22 @@ Version: 1.0
 "use strict";
 
  
-const SF = global.ScaleFlow || {};
-const showToast = SF.showToast || function() {};
-const openModal = SF.openModal || function() {};
-const closeModal = SF.closeModal || function() {};
-const navigateTo = SF.navigateTo || function() {};
-const hideLoader = SF.hideLoader || function() {};
+const SF = global.ScaleFlow;
+
+if (!SF) {
+    console.error("❌ ScaleFlow Core (Part 1) is not loaded.");
+    return;
+}
+
+const {
+    showToast,
+    openModal,
+    closeModal,
+    navigateTo,
+    hideLoader,
+    toggleDarkMode,
+    updateDashboardStats
+} = SF;
 
 // ============================================================
 // 31. LOGIN FORM — ویلڈیشن
