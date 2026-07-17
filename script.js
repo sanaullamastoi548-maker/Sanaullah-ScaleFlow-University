@@ -1,9 +1,9 @@
-/============================================================
+/*============================================================
 Sanaullah ScaleFlow University
 script.js — Complete JavaScript
 Part 1: Core Foundation
 Version: 1.0
-============================================================/
+============================================================*/
 
 (function(global) {
 "use strict";
@@ -223,12 +223,12 @@ console.log('📦 [Part 1] Core Foundation loaded');
 })(window);
 
 
-/============================================================
+/*============================================================
 Sanaullah ScaleFlow University
 script.js — Complete JavaScript
 Part 2: Dashboard & Home Features
 Version: 1.0
-============================================================/
+============================================================*/
 
 (function(global) {
 "use strict";
@@ -471,12 +471,12 @@ console.log('📦 [Part 2] Dashboard & Home Features loaded');
 
 })(window);
 
-/============================================================
+/*============================================================
 Sanaullah ScaleFlow University
 script.js — Complete JavaScript
 Part 3: All Page Modules
 Version: 1.0
-============================================================/
+============================================================*/
 
 (function(global) {
 "use strict";
@@ -732,12 +732,12 @@ console.log('📦 [Part 3] All Page Modules loaded');
 
 })(window);
 
-/============================================================
+/*============================================================
 Sanaullah ScaleFlow University
 script.js — Complete JavaScript
 Part 4: Login, Validation, Generic Handlers, Start
 Version: 1.0
-============================================================/
+============================================================*/
 
 (function(global) {
 "use strict";
@@ -923,12 +923,12 @@ console.log('✅ ScaleFlow University JavaScript complete!');
  
 
 })(window);
-/============================================================
+/*============================================================
 Sanaullah ScaleFlow University
 script.js — Complete JavaScript
 Part 4: Login, Validation, Generic Handlers, Start
 Version: 1.0
-============================================================/
+============================================================*/
 
 (function(global) {
 "use strict";
