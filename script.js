@@ -1,208 +1,234 @@
-/*============================================================
+/============================================================
 Sanaullah ScaleFlow University
-style.css — Core Styles
-Part 4: Responsive, Animations, Scrollbar, Print, Final Polish
+script.js — Complete JavaScript
+Part 1: Core Foundation
 Version: 1.0
-============================================================*/
+============================================================/
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 1200px) {
-.quick-actions-grid { grid-template-columns: repeat(2, 1fr); }
-.stats-grid { grid-template-columns: repeat(2, 1fr); }
-.achievement-summary { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 992px) {
-.hero { grid-template-columns: 1fr; }
-.gateway-grid { grid-template-columns: repeat(2, 1fr); }
-.learning-container { grid-template-columns: 1fr; }
-.profile-container { grid-template-columns: 1fr; }
-.settings-grid { grid-template-columns: 1fr; }
-.full-width { grid-column: span 1; }
-.dashboard-boxes { grid-template-columns: repeat(2, 1fr); }
-.stats-grid { grid-template-columns: repeat(2, 1fr); }
-.achievement-summary { grid-template-columns: repeat(2, 1fr); }
-.learning-sidebar { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-}
-@media (max-width: 768px) {
-#app { display: flex; flex-direction: column; }
-.sidebar {
-position: relative;
-top: 0;
-height: auto;
-border-right: none;
-border-bottom: 2px solid var(--border);
-padding: 16px;
-}
-.sidebar-menu { flex-direction: row; flex-wrap: wrap; justify-content: center; }
-.sidebar-menu a { font-size: 14px; padding: 8px 14px; }
-.main-content { padding: 20px; }
-.header { padding: 12px 16px; }
-.logo h1 { font-size: 20px; }
-.hero { padding: 24px; }
-.hero-left h1 { font-size: 28px; }
-.hero-buttons { flex-direction: column; }
-.hero-buttons button { width: 100%; justify-content: center; }
-.dashboard-boxes { grid-template-columns: repeat(2, 1fr); }
-.quick-actions-grid { grid-template-columns: 1fr 1fr; }
-.quick-actions-bottom { flex-direction: column; align-items: center; }
-.quick-btn { width: 100%; text-align: center; }
-.gateway-grid { grid-template-columns: 1fr; }
-.course-grid { grid-template-columns: 1fr; }
-.certificate-list { grid-template-columns: 1fr; }
-.achievement-grid { grid-template-columns: 1fr 1fr; }
-.product-grid { grid-template-columns: 1fr 1fr; }
-.business-grid { grid-template-columns: 1fr 1fr; }
-.stats-grid { grid-template-columns: repeat(2, 1fr); }
-.achievement-summary { grid-template-columns: repeat(2, 1fr); }
-.profile-container { grid-template-columns: 1fr; }
-.settings-grid { grid-template-columns: 1fr; }
-.full-width { grid-column: span 1; }
-.learning-sidebar { grid-template-columns: 1fr; }
-.footer { flex-direction: column; align-items: center; text-align: center; }
-.footer-right { text-align: center; }
-.progress-chart { height: 170px; gap: 8px; }
-.day .bar { max-width: 28px; }
-.page-section h2 { font-size: 22px; }
-.login-container { min-height: auto; padding: 20px 0; }
-.marketplace-header { flex-direction: column; align-items: stretch; }
-.marketplace-header input { flex: unset; width: 100%; }
-.chat-messages { height: 220px; }
-.chat-input { flex-direction: column; }
-.chat-input input { width: 100%; }
-.chat-input button { width: 100%; justify-content: center; }
-.certificate-card .actions { flex-direction: column; }
-.certificate-card .actions button { min-width: unset; width: 100%; }
-}
-@media (max-width: 480px) {
-.dashboard-boxes { grid-template-columns: 1fr 1fr; gap: 12px; }
-.dashboard-box { padding: 14px 10px; }
-.dashboard-box span { font-size: 22px; }
-.hero-stat strong { font-size: 18px; }
-.quick-actions-grid { grid-template-columns: 1fr; gap: 12px; }
-.quick-action-btn { padding: 16px 12px; flex-direction: row; gap: 12px; text-align: left; }
-.quick-action-btn .icon { font-size: 28px; }
-.quick-action-btn .label { font-size: 15px; }
-.quick-action-btn .desc { font-size: 12px; }
-.achievement-grid { grid-template-columns: 1fr 1fr; }
-.product-grid { grid-template-columns: 1fr; }
-.business-grid { grid-template-columns: 1fr; }
-.stats-grid { grid-template-columns: 1fr; }
-.achievement-summary { grid-template-columns: 1fr 1fr; }
-.stat-box strong { font-size: 22px; }
-.stat-box { padding: 14px; }
-.gateway-card { padding: 18px; }
-.gateway-card h3 { font-size: 18px; }
-.continue-card { padding: 18px; }
-.continue-info h2 { font-size: 20px; }
-.continue-actions { flex-direction: column; gap: 10px; }
-.continue-actions .btn-primary { width: 100%; justify-content: center; }
-.task-list { padding: 16px; }
-.task-item label { font-size: 14px; }
-.activity-list { padding: 16px; }
-.activity-item { flex-direction: column; align-items: flex-start; gap: 4px; font-size: 14px; }
-.weekly-progress { padding: 16px; }
-.section-header h2 { font-size: 18px; }
-.section-header span { font-size: 12px; padding: 2px 10px; }
-.progress-chart { height: 120px; gap: 4px; }
-.day .bar { max-width: 18px; }
-.day p { font-size: 10px; margin-top: 4px; }
-.filter-buttons { gap: 6px; }
-.filter-buttons .btn-secondary { padding: 6px 14px; font-size: 12px; }
-.pagination { gap: 6px; }
-.pagination .btn-primary, .pagination .btn-secondary { min-width: 34px; padding: 4px 8px; font-size: 12px; }
-.login-card { padding: 20px; }
-.login-card h2 { font-size: 22px; }
-.modal { margin: 10px; }
-.modal-header { padding: 14px 18px; }
-.modal-body { padding: 16px; }
-.modal-footer { padding: 12px 18px; flex-direction: column; }
-.modal-footer .btn-primary, .modal-footer .btn-secondary { width: 100%; justify-content: center; }
-.setting-card { padding: 14px; }
-.setting-card input, .setting-card select, .setting-card textarea { font-size: 14px; padding: 8px 12px; }
-.info-card { padding: 14px; }
-.profile-sidebar { padding: 14px; }
-.profile-avatar { width: 60px; height: 60px; font-size: 60px; }
-.profile-sidebar h3 { font-size: 20px; }
+(function(global) {
+"use strict";
+
+ 
+// ============================================================
+// 1. DOM REFS — تمام اہم عناصر
+// ============================================================
+const loader = document.getElementById('loader');
+const toastContainer = document.getElementById('toast-container');
+const modalContainer = document.getElementById('modal-container');
+const modalTitle = document.getElementById('modalTitle');
+const modalBody = document.getElementById('modalBody');
+const modalCloseBtn = document.getElementById('modalCloseBtn');
+const modalCancelBtn = document.getElementById('modalCancelBtn');
+const modalConfirmBtn = document.getElementById('modalConfirmBtn');
+const darkModeBtn = document.getElementById('darkModeBtn');
+const notificationBell = document.getElementById('notificationBell');
+const notificationPanel = document.getElementById('notificationPanel');
+const notificationCount = document.getElementById('notificationCount');
+const markAllReadBtn = document.getElementById('markAllReadBtn');
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+const currentYear = document.getElementById('currentYear');
+const globalSearch = document.getElementById('globalSearchInput');
+const navLinks = document.querySelectorAll('.sidebar-menu a[data-page]');
+const pageSections = {
+    page1: document.getElementById('page1'),
+    page2: document.getElementById('page2'),
+    page3: document.getElementById('page3'),
+    page4: document.getElementById('page4'),
+    page5: document.getElementById('page5'),
+    page6: document.getElementById('page6'),
+    page7: document.getElementById('page7'),
+    page8: document.getElementById('page8'),
+    page9: document.getElementById('page9'),
+    page10: document.getElementById('page10'),
+    page11: document.getElementById('page11'),
+    page12: document.getElementById('page12')
+};
+
+// ============================================================
+// 2. TOAST — نوٹیفکیشن دکھانے کا فنکشن
+// ============================================================
+function showToast(message, type = 'info') {
+    if (!toastContainer) return;
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.textContent = message;
+    toastContainer.appendChild(toast);
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
 }
 
-/* ===== SCROLLBAR ===== */
-::-webkit-scrollbar { width: 8px; height: 8px; }
-::-webkit-scrollbar-track { background: var(--border-light, #f3f4f6); border-radius: 50px; }
-::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 50px; }
-::-webkit-scrollbar-thumb:hover { background: var(--primary-hover); }
-body.dark-mode ::-webkit-scrollbar-track { background: var(--dark-border); }
-body.dark-mode ::-webkit-scrollbar-thumb { background: var(--primary); }
-
-/* ===== PRINT STYLES ===== */
-@media print {
-.sidebar, .header-actions, #scrollTopBtn, #toast-container, #modal-container, #notificationPanel,
-.quick-actions-bottom, .quick-actions-section, .search-section, .footer-center, .footer-right,
-.icon-btn, .btn-secondary, .btn-primary, .btn-danger, .filter-buttons, .pagination,
-.chat-input, .prompt-suggestions, .lesson-nav {
-display: none !important;
-}
-#app { display: block !important; }
-.main-content { padding: 20px !important; background: #fff !important; }
-.page-section { display: block !important; page-break-inside: avoid; }
-.page-section.active { display: block !important; }
-.header { border-bottom: 2px solid #000 !important; box-shadow: none !important; position: static !important; }
-.logo h1 { color: #000 !important; }
-.logo span { color: #000 !important; -webkit-text-fill-color: #000 !important; background: none !important; }
-.certificate-card { border: 2px solid #000 !important; box-shadow: none !important; }
-.certificate-card .actions { display: none !important; }
-.card, .setting-card, .dashboard-box, .gateway-card, .course-card, .achievement-card,
-.product-card, .business-card, .stat-box, .info-card, .profile-sidebar, .continue-card,
-.task-list, .activity-list, .weekly-progress, .progress-timeline {
-border: 1px solid #000 !important; box-shadow: none !important;
-}
-.hero { border: 1px solid #000 !important; box-shadow: none !important; grid-template-columns: 1fr !important; }
-.hero-stat { border: 1px solid #000 !important; }
-.progress-bar { border: 1px solid #000 !important; background: #eee !important; }
-.progress-fill { background: #000 !important; }
-.footer { border-top: 2px solid #000 !important; box-shadow: none !important; }
-.footer-left p { color: #000 !important; }
-.footer-left h3 { color: #000 !important; }
-.footer-right p { color: #000 !important; }
-.video-container { background: #eee !important; color: #000 !important; border: 1px solid #000 !important; }
-.ai-chat-container { border: 1px solid #000 !important; box-shadow: none !important; }
-.chat-messages { background: #f9f9f9 !important; border: 1px solid #ccc !important; }
-.message { border: 1px solid #000 !important; box-shadow: none !important; }
-.message.ai { background: #f5f5f5 !important; color: #000 !important; }
-.message.user { background: #e0e0e0 !important; color: #000 !important; }
-input, select, textarea { border: 1px solid #000 !important; background: #fff !important; color: #000 !important; }
+// ============================================================
+// 3. LOADER — صفحہ لوڈ ہونے پر چھپائیں
+// ============================================================
+function hideLoader() {
+    if (loader) {
+        loader.classList.add('hidden');
+        setTimeout(() => { loader.style.display = 'none'; }, 500);
+    }
 }
 
-/* ===== UTILITY CLASSES ===== */
-.hidden { display: none !important; }
-.text-center { text-align: center !important; }
-.text-muted { color: var(--text) !important; opacity: 0.7; }
-.flex { display: flex !important; }
-.flex-center { display: flex !important; align-items: center !important; justify-content: center !important; }
-.flex-between { display: flex !important; align-items: center !important; justify-content: space-between !important; }
-.flex-wrap { flex-wrap: wrap !important; }
-.gap-1 { gap: 4px !important; }
-.gap-2 { gap: 8px !important; }
-.gap-3 { gap: 12px !important; }
-.gap-4 { gap: 16px !important; }
-.w-full { width: 100% !important; }
-
-/* ===== ACCESSIBILITY ===== */
-button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
-outline: 3px solid var(--primary);
-outline-offset: 2px;
+// ============================================================
+// 4. MODAL — کھلنا / بند ہونا
+// ============================================================
+function openModal(title, bodyHTML, options = {}) {
+    modalTitle.textContent = title || 'Modal';
+    modalBody.innerHTML = bodyHTML || '<p>No content</p>';
+    modalContainer.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (options.onOpen) options.onOpen();
 }
-::selection { background: var(--primary); color: #000; }
 
+function closeModal() {
+    modalContainer.classList.remove('open');
+    document.body.style.overflow = '';
+}
 
-window.addEventListener("load", function () {
-    hideLoader();
+modalCloseBtn?.addEventListener('click', closeModal);
+modalCancelBtn?.addEventListener('click', closeModal);
+modalConfirmBtn?.addEventListener('click', function() {
+    showToast('✅ Confirmed!', 'success');
+    closeModal();
 });
-/*============================================================
+modalContainer?.addEventListener('click', function(e) {
+    if (e.target === modalContainer) closeModal();
+});
+
+// ============================================================
+// 5. DARK MODE — تھیم تبدیل کریں اور محفوظ کریں
+// ============================================================
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    darkModeBtn.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    showToast(isDark ? '🌙 Dark mode enabled' : '☀️ Light mode enabled', 'info');
+}
+
+// پہلے سے محفوظ تھیم لوڈ کریں
+(function loadTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+        document.body.classList.add('dark-mode');
+        darkModeBtn.textContent = '☀️';
+    }
+})();
+
+darkModeBtn?.addEventListener('click', toggleDarkMode);
+
+// ============================================================
+// 6. NAVIGATION — صفحات کا تبادلہ
+// ============================================================
+function navigateTo(pageId) {
+    // تمام صفحات چھپائیں
+    Object.values(pageSections).forEach(section => {
+        if (section) section.classList.remove('active');
+    });
+    // مطلوبہ صفحہ دکھائیں
+    const target = pageSections[pageId];
+    if (target) target.classList.add('active');
+    // سائیڈبار میں فعال لنک کو نمایاں کریں
+    navLinks.forEach(link => link.classList.remove('active'));
+    const activeLink = document.querySelector(`.sidebar-menu a[data-page="${pageId}"]`);
+    if (activeLink) activeLink.classList.add('active');
+    // اوپر سکرول کریں
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // نوٹیفکیشن پینل بند کریں
+    if (notificationPanel) notificationPanel.classList.remove('open');
+}
+
+navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const page = this.dataset.page;
+        if (page && pageSections[page]) {
+            navigateTo(page);
+        }
+    });
+});
+
+// ============================================================
+// 7. NOTIFICATION PANEL — گھنٹی کا پینل
+// ============================================================
+notificationBell?.addEventListener('click', function(e) {
+    e.stopPropagation();
+    notificationPanel.classList.toggle('open');
+});
+
+document.addEventListener('click', function(e) {
+    if (notificationPanel && !notificationPanel.contains(e.target) && !notificationBell.contains(e.target)) {
+        notificationPanel.classList.remove('open');
+    }
+});
+
+markAllReadBtn?.addEventListener('click', function() {
+    document.querySelectorAll('.notification-item.unread').forEach(item => {
+        item.classList.remove('unread');
+    });
+    if (notificationCount) notificationCount.textContent = '0';
+    showToast('✅ All notifications marked as read', 'success');
+});
+
+// ============================================================
+// 8. SCROLL TOP — بٹن ظاہر/چھپائیں
+// ============================================================
+window.addEventListener('scroll', function() {
+    if (scrollTopBtn) {
+        scrollTopBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+    }
+});
+scrollTopBtn?.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ============================================================
+// 9. KEYBOARD SHORTCUTS — Ctrl+K سرچ، Escape موڈل/پینل بند
+// ============================================================
+document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        if (globalSearch) globalSearch.focus();
+    }
+    if (e.key === 'Escape') {
+        if (modalContainer && modalContainer.classList.contains('open')) closeModal();
+        if (notificationPanel && notificationPanel.classList.contains('open')) {
+            notificationPanel.classList.remove('open');
+        }
+    }
+});
+
+// ============================================================
+// 10. CURRENT YEAR — فوٹر میں سال
+// ============================================================
+if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+}
+
+// ============================================================
+// 11. GLOBAL EXPOSE — دوسرے حصوں کے لیے
+// ============================================================
+global.ScaleFlow = {
+    showToast,
+    openModal,
+    closeModal,
+    navigateTo,
+    toggleDarkMode,
+    hideLoader
+};
+
+console.log('📦 [Part 1] Core Foundation loaded');
+ 
+
+})(window);
+
+
+/============================================================
 Sanaullah ScaleFlow University
 script.js — Complete JavaScript
 Part 2: Dashboard & Home Features
 Version: 1.0
-============================================================*/
+============================================================/
 
 (function(global) {
 "use strict";
@@ -445,12 +471,12 @@ console.log('📦 [Part 2] Dashboard & Home Features loaded');
 
 })(window);
 
-/*============================================================
+/============================================================
 Sanaullah ScaleFlow University
 script.js — Complete JavaScript
 Part 3: All Page Modules
 Version: 1.0
-============================================================*/
+============================================================/
 
 (function(global) {
 "use strict";
@@ -706,12 +732,12 @@ console.log('📦 [Part 3] All Page Modules loaded');
 
 })(window);
 
-/*============================================================
+/============================================================
 Sanaullah ScaleFlow University
 script.js — Complete JavaScript
 Part 4: Login, Validation, Generic Handlers, Start
 Version: 1.0
-============================================================*/
+============================================================/
 
 (function(global) {
 "use strict";
@@ -897,3 +923,4 @@ console.log('✅ ScaleFlow University JavaScript complete!');
  
 
 })(window);
+
