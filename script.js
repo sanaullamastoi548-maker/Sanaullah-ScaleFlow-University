@@ -1,1 +1,895 @@
+/============================================================
+Sanaullah ScaleFlow University
+style.css — Core Styles
+Part 4: Responsive, Animations, Scrollbar, Print, Final Polish
+Version: 1.0
+============================================================/
 
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+.quick-actions-grid { grid-template-columns: repeat(2, 1fr); }
+.stats-grid { grid-template-columns: repeat(2, 1fr); }
+.achievement-summary { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 992px) {
+.hero { grid-template-columns: 1fr; }
+.gateway-grid { grid-template-columns: repeat(2, 1fr); }
+.learning-container { grid-template-columns: 1fr; }
+.profile-container { grid-template-columns: 1fr; }
+.settings-grid { grid-template-columns: 1fr; }
+.full-width { grid-column: span 1; }
+.dashboard-boxes { grid-template-columns: repeat(2, 1fr); }
+.stats-grid { grid-template-columns: repeat(2, 1fr); }
+.achievement-summary { grid-template-columns: repeat(2, 1fr); }
+.learning-sidebar { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+}
+@media (max-width: 768px) {
+#app { display: flex; flex-direction: column; }
+.sidebar {
+position: relative;
+top: 0;
+height: auto;
+border-right: none;
+border-bottom: 2px solid var(--border);
+padding: 16px;
+}
+.sidebar-menu { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+.sidebar-menu a { font-size: 14px; padding: 8px 14px; }
+.main-content { padding: 20px; }
+.header { padding: 12px 16px; }
+.logo h1 { font-size: 20px; }
+.hero { padding: 24px; }
+.hero-left h1 { font-size: 28px; }
+.hero-buttons { flex-direction: column; }
+.hero-buttons button { width: 100%; justify-content: center; }
+.dashboard-boxes { grid-template-columns: repeat(2, 1fr); }
+.quick-actions-grid { grid-template-columns: 1fr 1fr; }
+.quick-actions-bottom { flex-direction: column; align-items: center; }
+.quick-btn { width: 100%; text-align: center; }
+.gateway-grid { grid-template-columns: 1fr; }
+.course-grid { grid-template-columns: 1fr; }
+.certificate-list { grid-template-columns: 1fr; }
+.achievement-grid { grid-template-columns: 1fr 1fr; }
+.product-grid { grid-template-columns: 1fr 1fr; }
+.business-grid { grid-template-columns: 1fr 1fr; }
+.stats-grid { grid-template-columns: repeat(2, 1fr); }
+.achievement-summary { grid-template-columns: repeat(2, 1fr); }
+.profile-container { grid-template-columns: 1fr; }
+.settings-grid { grid-template-columns: 1fr; }
+.full-width { grid-column: span 1; }
+.learning-sidebar { grid-template-columns: 1fr; }
+.footer { flex-direction: column; align-items: center; text-align: center; }
+.footer-right { text-align: center; }
+.progress-chart { height: 170px; gap: 8px; }
+.day .bar { max-width: 28px; }
+.page-section h2 { font-size: 22px; }
+.login-container { min-height: auto; padding: 20px 0; }
+.marketplace-header { flex-direction: column; align-items: stretch; }
+.marketplace-header input { flex: unset; width: 100%; }
+.chat-messages { height: 220px; }
+.chat-input { flex-direction: column; }
+.chat-input input { width: 100%; }
+.chat-input button { width: 100%; justify-content: center; }
+.certificate-card .actions { flex-direction: column; }
+.certificate-card .actions button { min-width: unset; width: 100%; }
+}
+@media (max-width: 480px) {
+.dashboard-boxes { grid-template-columns: 1fr 1fr; gap: 12px; }
+.dashboard-box { padding: 14px 10px; }
+.dashboard-box span { font-size: 22px; }
+.hero-stat strong { font-size: 18px; }
+.quick-actions-grid { grid-template-columns: 1fr; gap: 12px; }
+.quick-action-btn { padding: 16px 12px; flex-direction: row; gap: 12px; text-align: left; }
+.quick-action-btn .icon { font-size: 28px; }
+.quick-action-btn .label { font-size: 15px; }
+.quick-action-btn .desc { font-size: 12px; }
+.achievement-grid { grid-template-columns: 1fr 1fr; }
+.product-grid { grid-template-columns: 1fr; }
+.business-grid { grid-template-columns: 1fr; }
+.stats-grid { grid-template-columns: 1fr; }
+.achievement-summary { grid-template-columns: 1fr 1fr; }
+.stat-box strong { font-size: 22px; }
+.stat-box { padding: 14px; }
+.gateway-card { padding: 18px; }
+.gateway-card h3 { font-size: 18px; }
+.continue-card { padding: 18px; }
+.continue-info h2 { font-size: 20px; }
+.continue-actions { flex-direction: column; gap: 10px; }
+.continue-actions .btn-primary { width: 100%; justify-content: center; }
+.task-list { padding: 16px; }
+.task-item label { font-size: 14px; }
+.activity-list { padding: 16px; }
+.activity-item { flex-direction: column; align-items: flex-start; gap: 4px; font-size: 14px; }
+.weekly-progress { padding: 16px; }
+.section-header h2 { font-size: 18px; }
+.section-header span { font-size: 12px; padding: 2px 10px; }
+.progress-chart { height: 120px; gap: 4px; }
+.day .bar { max-width: 18px; }
+.day p { font-size: 10px; margin-top: 4px; }
+.filter-buttons { gap: 6px; }
+.filter-buttons .btn-secondary { padding: 6px 14px; font-size: 12px; }
+.pagination { gap: 6px; }
+.pagination .btn-primary, .pagination .btn-secondary { min-width: 34px; padding: 4px 8px; font-size: 12px; }
+.login-card { padding: 20px; }
+.login-card h2 { font-size: 22px; }
+.modal { margin: 10px; }
+.modal-header { padding: 14px 18px; }
+.modal-body { padding: 16px; }
+.modal-footer { padding: 12px 18px; flex-direction: column; }
+.modal-footer .btn-primary, .modal-footer .btn-secondary { width: 100%; justify-content: center; }
+.setting-card { padding: 14px; }
+.setting-card input, .setting-card select, .setting-card textarea { font-size: 14px; padding: 8px 12px; }
+.info-card { padding: 14px; }
+.profile-sidebar { padding: 14px; }
+.profile-avatar { width: 60px; height: 60px; font-size: 60px; }
+.profile-sidebar h3 { font-size: 20px; }
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--border-light, #f3f4f6); border-radius: 50px; }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 50px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary-hover); }
+body.dark-mode ::-webkit-scrollbar-track { background: var(--dark-border); }
+body.dark-mode ::-webkit-scrollbar-thumb { background: var(--primary); }
+
+/* ===== PRINT STYLES ===== */
+@media print {
+.sidebar, .header-actions, #scrollTopBtn, #toast-container, #modal-container, #notificationPanel,
+.quick-actions-bottom, .quick-actions-section, .search-section, .footer-center, .footer-right,
+.icon-btn, .btn-secondary, .btn-primary, .btn-danger, .filter-buttons, .pagination,
+.chat-input, .prompt-suggestions, .lesson-nav {
+display: none !important;
+}
+#app { display: block !important; }
+.main-content { padding: 20px !important; background: #fff !important; }
+.page-section { display: block !important; page-break-inside: avoid; }
+.page-section.active { display: block !important; }
+.header { border-bottom: 2px solid #000 !important; box-shadow: none !important; position: static !important; }
+.logo h1 { color: #000 !important; }
+.logo span { color: #000 !important; -webkit-text-fill-color: #000 !important; background: none !important; }
+.certificate-card { border: 2px solid #000 !important; box-shadow: none !important; }
+.certificate-card .actions { display: none !important; }
+.card, .setting-card, .dashboard-box, .gateway-card, .course-card, .achievement-card,
+.product-card, .business-card, .stat-box, .info-card, .profile-sidebar, .continue-card,
+.task-list, .activity-list, .weekly-progress, .progress-timeline {
+border: 1px solid #000 !important; box-shadow: none !important;
+}
+.hero { border: 1px solid #000 !important; box-shadow: none !important; grid-template-columns: 1fr !important; }
+.hero-stat { border: 1px solid #000 !important; }
+.progress-bar { border: 1px solid #000 !important; background: #eee !important; }
+.progress-fill { background: #000 !important; }
+.footer { border-top: 2px solid #000 !important; box-shadow: none !important; }
+.footer-left p { color: #000 !important; }
+.footer-left h3 { color: #000 !important; }
+.footer-right p { color: #000 !important; }
+.video-container { background: #eee !important; color: #000 !important; border: 1px solid #000 !important; }
+.ai-chat-container { border: 1px solid #000 !important; box-shadow: none !important; }
+.chat-messages { background: #f9f9f9 !important; border: 1px solid #ccc !important; }
+.message { border: 1px solid #000 !important; box-shadow: none !important; }
+.message.ai { background: #f5f5f5 !important; color: #000 !important; }
+.message.user { background: #e0e0e0 !important; color: #000 !important; }
+input, select, textarea { border: 1px solid #000 !important; background: #fff !important; color: #000 !important; }
+}
+
+/* ===== UTILITY CLASSES ===== */
+.hidden { display: none !important; }
+.text-center { text-align: center !important; }
+.text-muted { color: var(--text) !important; opacity: 0.7; }
+.flex { display: flex !important; }
+.flex-center { display: flex !important; align-items: center !important; justify-content: center !important; }
+.flex-between { display: flex !important; align-items: center !important; justify-content: space-between !important; }
+.flex-wrap { flex-wrap: wrap !important; }
+.gap-1 { gap: 4px !important; }
+.gap-2 { gap: 8px !important; }
+.gap-3 { gap: 12px !important; }
+.gap-4 { gap: 16px !important; }
+.w-full { width: 100% !important; }
+
+/* ===== ACCESSIBILITY ===== */
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+outline: 3px solid var(--primary);
+outline-offset: 2px;
+}
+::selection { background: var(--primary); color: #000; }
+
+/============================================================
+Sanaullah ScaleFlow University
+script.js — Complete JavaScript
+Part 2: Dashboard & Home Features
+Version: 1.0
+============================================================/
+
+(function(global) {
+"use strict";
+
+ 
+// پہلے سے موجود ScaleFlow کو استعمال کریں
+const SF = global.ScaleFlow || {};
+const showToast = SF.showToast || function() {};
+const navigateTo = SF.navigateTo || function() {};
+
+// ============================================================
+// 12. SEARCH — گلوبل سرچ
+// ============================================================
+const globalSearch = document.getElementById('globalSearchInput');
+if (globalSearch) {
+    globalSearch.addEventListener('input', function() {
+        const query = this.value.toLowerCase().trim();
+        const cards = document.querySelectorAll('.gateway-card, .course-card, .product-card');
+        cards.forEach(card => {
+            const text = card.textContent.toLowerCase();
+            card.style.display = text.includes(query) ? 'block' : 'none';
+        });
+    });
+}
+
+// ============================================================
+// 13. DASHBOARD STATS — ڈیمو ڈیٹا اپ ڈیٹ
+// ============================================================
+function updateDashboardStats() {
+    const data = {
+        name: 'Sanaullah',
+        xp: '250 XP',
+        level: 'Level 5',
+        streak: '7 Days',
+        progress: '75%',
+        courses: 12,
+        certificates: 4,
+        achievements: 8,
+        projects: 3,
+        todayLearning: '65%'
+    };
+
+    const els = {
+        studentName: document.getElementById('studentName'),
+        brainXP: document.getElementById('brainXP'),
+        currentLevel: document.getElementById('currentLevel'),
+        learningStreak: document.getElementById('learningStreak'),
+        overallProgress: document.getElementById('overallProgress'),
+        courseCount: document.getElementById('courseCount'),
+        certificateCount: document.getElementById('certificateCount'),
+        achievementCount: document.getElementById('achievementCount'),
+        projectCount: document.getElementById('projectCount'),
+        dashName: document.getElementById('dashName'),
+        dashLevel: document.getElementById('dashLevel'),
+        dashXP: document.getElementById('dashXP'),
+        dashStreak: document.getElementById('dashStreak'),
+        dashCourses: document.getElementById('dashCourses'),
+        dashCerts: document.getElementById('dashCerts'),
+        dashAchievements: document.getElementById('dashAchievements'),
+        dashProgress: document.getElementById('dashProgress'),
+        sidebarXP: document.getElementById('sidebarXP'),
+        sidebarUserName: document.getElementById('sidebarUserName'),
+        sidebarUserLevel: document.getElementById('sidebarUserLevel'),
+        continueProgress: document.getElementById('continueProgress'),
+        progressText: document.getElementById('progressText')
+    };
+
+    if (els.studentName) els.studentName.textContent = data.name;
+    if (els.brainXP) els.brainXP.textContent = data.xp;
+    if (els.currentLevel) els.currentLevel.textContent = data.level;
+    if (els.learningStreak) els.learningStreak.textContent = data.streak;
+    if (els.overallProgress) els.overallProgress.textContent = data.progress;
+    if (els.courseCount) els.courseCount.textContent = data.courses;
+    if (els.certificateCount) els.certificateCount.textContent = data.certificates;
+    if (els.achievementCount) els.achievementCount.textContent = data.achievements;
+    if (els.projectCount) els.projectCount.textContent = data.projects;
+    if (els.dashName) els.dashName.textContent = data.name;
+    if (els.dashLevel) els.dashLevel.textContent = data.level.replace('Level ', '');
+    if (els.dashXP) els.dashXP.textContent = data.xp.replace(' XP', '');
+    if (els.dashStreak) els.dashStreak.textContent = data.streak.replace(' Days', '');
+    if (els.dashCourses) els.dashCourses.textContent = data.courses;
+    if (els.dashCerts) els.dashCerts.textContent = data.certificates;
+    if (els.dashAchievements) els.dashAchievements.textContent = data.achievements;
+    if (els.dashProgress) els.dashProgress.textContent = data.progress;
+    if (els.sidebarXP) els.sidebarXP.textContent = data.xp;
+    if (els.sidebarUserName) els.sidebarUserName.textContent = data.name;
+    if (els.sidebarUserLevel) els.sidebarUserLevel.textContent = data.level + ' • Advanced';
+
+    const progress = parseInt(data.progress) || 65;
+    if (els.continueProgress) els.continueProgress.style.width = progress + '%';
+    if (els.progressText) els.progressText.textContent = progress + '% Complete';
+}
+
+// ============================================================
+// 14. CONTINUE LEARNING — پروگریس بڑھائیں
+// ============================================================
+const continueProgressBtn = document.getElementById('continueProgressBtn');
+const continueProgress = document.getElementById('continueProgress');
+const progressText = document.getElementById('progressText');
+
+if (continueProgressBtn) {
+    continueProgressBtn.addEventListener('click', function() {
+        let progress = parseInt(continueProgress.style.width) || 65;
+        if (progress >= 100) {
+            showToast('🎉 Course Complete!', 'success');
+            return;
+        }
+        progress = Math.min(progress + 5, 100);
+        continueProgress.style.width = progress + '%';
+        if (progressText) progressText.textContent = progress + '% Complete';
+        showToast('📈 Progress updated to ' + progress + '%', 'info');
+    });
+}
+
+// ============================================================
+// 15. TODAY'S TASKS — چیک باکس پر کلک
+// ============================================================
+document.querySelectorAll('.task-item input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        const label = this.nextElementSibling;
+        if (this.checked) {
+            label.style.textDecoration = 'line-through';
+            label.style.opacity = '0.6';
+            showToast('🎉 Task completed!', 'success');
+        } else {
+            label.style.textDecoration = 'none';
+            label.style.opacity = '1';
+        }
+    });
+});
+
+// ============================================================
+// 16. QUICK ACTIONS — نیویگیشن شارٹ کٹس
+// ============================================================
+const quickActions = {
+    quickStartLearning: 'page4',
+    quickAskAI: 'page7',
+    quickBrowseCourses: 'page3',
+    quickMyCertificates: 'page5',
+    dashResumeLearning: 'page4',
+    dashBrowseCourses: 'page3',
+    dashAskAI: 'page7',
+    dashCertificates: 'page5'
+};
+
+Object.keys(quickActions).forEach(id => {
+    const btn = document.getElementById(id);
+    if (btn) {
+        btn.addEventListener('click', function() {
+            navigateTo(quickActions[id]);
+        });
+    }
+});
+
+// ============================================================
+// 17. QUICK ACTIONS BOTTOM — تھیم، لینگویج، سپورٹ
+// ============================================================
+document.getElementById('btnTheme')?.addEventListener('click', function() {
+    if (typeof global.ScaleFlow?.toggleDarkMode === 'function') {
+        global.ScaleFlow.toggleDarkMode();
+    } else {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        document.getElementById('darkModeBtn').textContent = isDark ? '☀️' : '🌙';
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        showToast(isDark ? '🌙 Dark mode enabled' : '☀️ Light mode enabled', 'info');
+    }
+});
+
+document.getElementById('btnLanguage')?.addEventListener('click', function() {
+    showToast('🌐 Language settings opened', 'info');
+});
+
+document.getElementById('btnSupport')?.addEventListener('click', function() {
+    showToast('📞 Support opened', 'info');
+});
+
+// ============================================================
+// 18. GATEWAY CARDS — کلک پر ٹوسٹ
+// ============================================================
+document.querySelectorAll('.gateway-card').forEach(card => {
+    card.addEventListener('click', function() {
+        const title = this.querySelector('h3')?.textContent || 'Module';
+        showToast('🔍 Opening ' + title, 'info');
+    });
+});
+
+// ============================================================
+// 19. COURSE SEARCH (Courses Page)
+// ============================================================
+const courseSearch = document.getElementById('courseSearchInput');
+if (courseSearch) {
+    courseSearch.addEventListener('input', function() {
+        const query = this.value.toLowerCase().trim();
+        document.querySelectorAll('#courseGrid .course-card').forEach(card => {
+            const text = card.textContent.toLowerCase();
+            card.style.display = text.includes(query) ? 'block' : 'none';
+        });
+    });
+}
+
+// ============================================================
+// 20. COURSE FILTERS
+// ============================================================
+document.querySelectorAll('.filter-buttons .btn-secondary').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const filter = this.dataset.filter;
+        document.querySelectorAll('#courseGrid .course-card').forEach(card => {
+            const diff = card.dataset.difficulty || 'all';
+            card.style.display = (filter === 'all' || diff === filter) ? 'block' : 'none';
+        });
+        showToast('Filter: ' + filter, 'info');
+    });
+});
+
+// ============================================================
+// 21. COURSE START BUTTONS
+// ============================================================
+document.querySelectorAll('#courseGrid .course-card .btn-primary, .course-start, .course-enroll').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        navigateTo('page4');
+    });
+});
+
+// ============================================================
+// 22. PAGINATION BUTTONS
+// ============================================================
+document.querySelectorAll('.pagination .btn-primary, .pagination .btn-secondary').forEach(btn => {
+    btn.addEventListener('click', function() {
+        showToast('📄 Page ' + this.textContent.trim(), 'info');
+    });
+});
+
+// ڈیٹا اپ ڈیٹ کریں
+updateDashboardStats();
+
+console.log('📦 [Part 2] Dashboard & Home Features loaded');
+ 
+
+})(window);
+
+/============================================================
+Sanaullah ScaleFlow University
+script.js — Complete JavaScript
+Part 3: All Page Modules
+Version: 1.0
+============================================================/
+
+(function(global) {
+"use strict";
+
+ 
+const SF = global.ScaleFlow || {};
+const showToast = SF.showToast || function() {};
+const openModal = SF.openModal || function() {};
+const closeModal = SF.closeModal || function() {};
+const navigateTo = SF.navigateTo || function() {};
+
+// ============================================================
+// 23. LEARNING PAGE — نوٹس، ریفلیکشن، کوئز، پی ڈی ایف
+// ============================================================
+document.getElementById('saveNotesBtn')?.addEventListener('click', function() {
+    const notes = document.getElementById('notesInput')?.value;
+    if (notes && notes.trim()) {
+        showToast('✅ Notes saved!', 'success');
+    } else {
+        showToast('⚠️ Please write some notes.', 'warning');
+    }
+});
+
+document.getElementById('getReflectionBtn')?.addEventListener('click', function() {
+    const input = document.getElementById('reflectionInput');
+    if (input && input.value.trim()) {
+        showToast('🤖 Reflection received! Check AI response.', 'info');
+    } else {
+        showToast('⚠️ Please type your reflection.', 'warning');
+    }
+});
+
+document.getElementById('submitQuizBtn')?.addEventListener('click', function() {
+    const input = document.getElementById('quizAnswerInput');
+    if (input && input.value.trim()) {
+        showToast('✅ Quiz submitted!', 'success');
+    } else {
+        showToast('⚠️ Please provide an answer.', 'warning');
+    }
+});
+
+document.getElementById('downloadPdfBtn')?.addEventListener('click', function() {
+    showToast('📄 Downloading PDF...', 'info');
+});
+
+document.getElementById('prevLessonBtn')?.addEventListener('click', function() {
+    showToast('◀ Previous lesson', 'info');
+});
+
+document.getElementById('nextLessonBtn')?.addEventListener('click', function() {
+    showToast('▶ Next lesson', 'info');
+});
+
+// ============================================================
+// 24. CERTIFICATES — ڈاؤن لوڈ، تصدیق، کیو آر، شیئر
+// ============================================================
+const certActions = [
+    'certDownload1', 'certVerify1', 'certQR1', 'certShare1',
+    'certDownload2', 'certVerify2', 'certQR2', 'certShare2'
+];
+certActions.forEach(id => {
+    document.getElementById(id)?.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const action = this.textContent.trim();
+        showToast('📄 ' + action + ' clicked', 'info');
+    });
+});
+
+// ============================================================
+// 25. ACHIEVEMENTS — کارڈ پر کلک
+// ============================================================
+document.querySelectorAll('.achievement-card').forEach(card => {
+    card.addEventListener('click', function() {
+        const name = this.querySelector('h4')?.textContent || 'Achievement';
+        const status = this.classList.contains('locked') ? '🔒 Locked' : '✅ Earned';
+        openModal(name, '<p>Status: ' + status + '</p><p>Details about this achievement.</p>');
+    });
+});
+
+// ============================================================
+// 26. AI CHAT — میسج بھیجنا، وائس، کلئیر
+// ============================================================
+const chatMessages = document.getElementById('chatMessages');
+const chatInput = document.getElementById('chatInput');
+const chatSendBtn = document.getElementById('chatSendBtn');
+const chatClearBtn = document.getElementById('chatClearBtn');
+const chatVoiceBtn = document.getElementById('chatVoiceBtn');
+
+if (chatSendBtn && chatInput && chatMessages) {
+    chatSendBtn.addEventListener('click', function() {
+        const msg = chatInput.value.trim();
+        if (!msg) return;
+        // یوزر میسج
+        const userMsg = document.createElement('div');
+        userMsg.className = 'message user';
+        userMsg.textContent = msg;
+        chatMessages.appendChild(userMsg);
+        chatInput.value = '';
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        // مصنوعی AI جواب
+        setTimeout(() => {
+            const aiMsg = document.createElement('div');
+            aiMsg.className = 'message ai';
+            const responses = [
+                '🤖 That\'s a great question! Let me think about it...',
+                '🤖 I understand. Here\'s what I can help you with.',
+                '🤖 Good point! Let me explain it step by step.',
+                '🤖 Excellent! You\'re on the right track.'
+            ];
+            aiMsg.textContent = responses[Math.floor(Math.random() * responses.length)];
+            chatMessages.appendChild(aiMsg);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 600);
+    });
+
+    chatInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') chatSendBtn.click();
+    });
+}
+
+if (chatClearBtn && chatMessages) {
+    chatClearBtn.addEventListener('click', function() {
+        chatMessages.innerHTML = '';
+        const welcome = document.createElement('div');
+        welcome.className = 'message ai';
+        welcome.textContent = 'Hello! How can I assist you today?';
+        chatMessages.appendChild(welcome);
+        showToast('Chat cleared', 'info');
+    });
+}
+
+if (chatVoiceBtn) {
+    chatVoiceBtn.addEventListener('click', function() {
+        showToast('🎤 Voice input activated (demo)', 'info');
+    });
+}
+
+// AI Prompt Suggestions
+document.getElementById('promptClosure')?.addEventListener('click', function() {
+    if (chatInput) { chatInput.value = 'Explain closures in JavaScript.'; chatInput.focus(); }
+});
+document.getElementById('promptHoisting')?.addEventListener('click', function() {
+    if (chatInput) { chatInput.value = 'What is hoisting?'; chatInput.focus(); }
+});
+document.getElementById('promptAsync')?.addEventListener('click', function() {
+    if (chatInput) { chatInput.value = 'Help with async/await.'; chatInput.focus(); }
+});
+
+// ============================================================
+// 27. MARKETPLACE — کارٹ، چیک آؤٹ، کیٹیگریز، ایڈ ٹو کارٹ
+// ============================================================
+document.getElementById('marketplaceCart')?.addEventListener('click', function() {
+    showToast('🛒 Cart opened (0 items)', 'info');
+});
+
+document.getElementById('marketplaceCheckout')?.addEventListener('click', function() {
+    showToast('💳 Checkout initiated', 'success');
+});
+
+document.getElementById('marketplaceCategories')?.addEventListener('click', function() {
+    showToast('📂 Categories opened', 'info');
+});
+
+['addToCart1', 'addToCart2', 'addToCart3'].forEach(id => {
+    document.getElementById(id)?.addEventListener('click', function(e) {
+        e.stopPropagation();
+        showToast('✅ Added to cart!', 'success');
+    });
+});
+
+// ============================================================
+// 28. BUSINESS — اوپن بٹنز
+// ============================================================
+['openCRM', 'openProjects', 'openClients', 'openIncome', 'openReports'].forEach(id => {
+    document.getElementById(id)?.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const module = this.closest('.business-card')?.querySelector('h3')?.textContent || 'Module';
+        openModal('💼 ' + module, '<p>This module is under development. Stay tuned!</p>');
+    });
+});
+
+// ============================================================
+// 29. PROFILE — ایڈٹ پروفائل
+// ============================================================
+document.getElementById('editProfileBtn')?.addEventListener('click', function() {
+    openModal('✏️ Edit Profile', `
+        <form id="profileEditForm">
+            <div class="form-group"><label>Full Name</label><input type="text" value="Sanaullah" id="editName" class="w-full"></div>
+            <div class="form-group"><label>Email</label><input type="email" value="sanaullah@university.com" id="editEmail" class="w-full"></div>
+            <button type="submit" class="btn-primary w-full">Save Changes</button>
+        </form>
+    `);
+    document.getElementById('profileEditForm')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        showToast('✅ Profile updated!', 'success');
+        closeModal();
+    });
+});
+
+// ============================================================
+// 30. SETTINGS — تھیم، لینگویج، سیکیورٹی، بیک اپ
+// ============================================================
+document.getElementById('settingsThemeBtn')?.addEventListener('click', function() {
+    if (typeof global.ScaleFlow?.toggleDarkMode === 'function') {
+        global.ScaleFlow.toggleDarkMode();
+    } else {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        document.getElementById('darkModeBtn').textContent = isDark ? '☀️' : '🌙';
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        showToast(isDark ? '🌙 Dark mode enabled' : '☀️ Light mode enabled', 'info');
+    }
+});
+
+document.getElementById('settingsLanguage')?.addEventListener('change', function() {
+    showToast('🌐 Language set to ' + this.value, 'info');
+});
+
+document.getElementById('settingsChangePassword')?.addEventListener('click', function() {
+    openModal('🔐 Change Password', `
+        <form id="changePwdForm">
+            <div class="form-group"><label>Current Password</label><input type="password" placeholder="••••••••" class="w-full"></div>
+            <div class="form-group"><label>New Password</label><input type="password" placeholder="••••••••" class="w-full"></div>
+            <div class="form-group"><label>Confirm Password</label><input type="password" placeholder="••••••••" class="w-full"></div>
+            <button type="submit" class="btn-primary w-full">Update Password</button>
+        </form>
+    `);
+    document.getElementById('changePwdForm')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        showToast('✅ Password updated!', 'success');
+        closeModal();
+    });
+});
+
+document.getElementById('settingsEnable2FA')?.addEventListener('click', function() {
+    showToast('✅ Two-Factor Authentication enabled!', 'success');
+});
+
+document.getElementById('settingsBackupBtn')?.addEventListener('click', function() {
+    showToast('💾 Backup started...', 'info');
+    setTimeout(() => showToast('✅ Backup completed!', 'success'), 2000);
+});
+
+// نوٹیفکیشن سیٹنگز
+document.querySelectorAll('#notifEmail, #notifPush, #notifSMS').forEach(cb => {
+    cb.addEventListener('change', function() {
+        showToast('🔔 Notification setting updated', 'info');
+    });
+});
+
+console.log('📦 [Part 3] All Page Modules loaded');
+ 
+
+})(window);
+
+/============================================================
+Sanaullah ScaleFlow University
+script.js — Complete JavaScript
+Part 4: Login, Validation, Generic Handlers, Start
+Version: 1.0
+============================================================/
+
+(function(global) {
+"use strict";
+
+ 
+const SF = global.ScaleFlow || {};
+const showToast = SF.showToast || function() {};
+const openModal = SF.openModal || function() {};
+const closeModal = SF.closeModal || function() {};
+const navigateTo = SF.navigateTo || function() {};
+const hideLoader = SF.hideLoader || function() {};
+
+// ============================================================
+// 31. LOGIN FORM — ویلڈیشن
+// ============================================================
+document.getElementById('loginForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value.trim();
+    const password = document.getElementById('loginPassword').value.trim();
+
+    if (!email || !password) {
+        showToast('⚠️ Please fill in both fields.', 'warning');
+        return;
+    }
+    if (!email.includes('@')) {
+        showToast('⚠️ Please enter a valid email address.', 'warning');
+        return;
+    }
+    if (password.length < 6) {
+        showToast('⚠️ Password must be at least 6 characters.', 'warning');
+        return;
+    }
+
+    showToast('✅ Login successful! Redirecting...', 'success');
+    setTimeout(() => navigateTo('page1'), 1500);
+});
+
+// ============================================================
+// 32. FORGOT PASSWORD & REGISTER — موڈل میں
+// ============================================================
+document.getElementById('forgotPasswordLink')?.addEventListener('click', function(e) {
+    e.preventDefault();
+    openModal('🔑 Forgot Password', `
+        <p>Enter your email to receive OTP.</p>
+        <div class="form-group">
+            <input type="email" placeholder="student@university.com" id="otpEmail" class="w-full">
+        </div>
+        <button id="otpSendBtn" class="btn-primary w-full">Send OTP</button>
+    `);
+    document.getElementById('otpSendBtn')?.addEventListener('click', function() {
+        showToast('📧 OTP sent to your email!', 'success');
+        closeModal();
+    });
+});
+
+document.getElementById('registerLink')?.addEventListener('click', function(e) {
+    e.preventDefault();
+    openModal('📝 Register', `
+        <form id="registerForm">
+            <div class="form-group"><label>Full Name</label><input type="text" placeholder="Sanaullah" class="w-full" required></div>
+            <div class="form-group"><label>Email</label><input type="email" placeholder="student@university.com" class="w-full" required></div>
+            <div class="form-group"><label>Password</label><input type="password" placeholder="••••••••" class="w-full" required></div>
+            <button type="submit" class="btn-primary w-full">Create Account</button>
+        </form>
+    `);
+    document.getElementById('registerForm')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        showToast('✅ Account created! Please login.', 'success');
+        closeModal();
+    });
+});
+
+// ============================================================
+// 33. LOGIN OTP BUTTON
+// ============================================================
+document.getElementById('loginOTPBtn')?.addEventListener('click', function() {
+    showToast('📧 OTP sent to your email!', 'info');
+});
+
+// ============================================================
+// 34. GENERIC BUTTON HANDLER — باقی بٹنز کے لیے ٹوسٹ
+// ============================================================
+document.querySelectorAll('.btn-primary, .btn-secondary, .btn-danger').forEach(btn => {
+    // ان بٹنز کو چھوڑیں جن کا پہلے سے ہینڈلر ہے
+    const skipIds = [
+        'darkModeBtn', 'modalCloseBtn', 'modalCancelBtn', 'modalConfirmBtn',
+        'continueProgressBtn', 'quickStartLearning', 'quickAskAI', 'quickBrowseCourses',
+        'quickMyCertificates', 'dashResumeLearning', 'dashBrowseCourses',
+        'dashAskAI', 'dashCertificates', 'btnTheme', 'btnLanguage', 'btnSupport',
+        'menuToggle', 'sidebarClose', 'notificationBell', 'markAllReadBtn',
+        'scrollTopBtn', 'settingsThemeBtn', 'loginSubmitBtn', 'loginOTPBtn',
+        'saveNotesBtn', 'getReflectionBtn', 'submitQuizBtn', 'downloadPdfBtn',
+        'prevLessonBtn', 'nextLessonBtn', 'certDownload1', 'certVerify1',
+        'certQR1', 'certShare1', 'certDownload2', 'certVerify2', 'certQR2',
+        'certShare2', 'marketplaceCart', 'marketplaceCheckout', 'marketplaceCategories',
+        'addToCart1', 'addToCart2', 'addToCart3', 'openCRM', 'openProjects',
+        'openClients', 'openIncome', 'openReports', 'editProfileBtn',
+        'settingsChangePassword', 'settingsEnable2FA', 'settingsBackupBtn',
+        'forgotPasswordLink', 'registerLink', 'chatSendBtn', 'chatClearBtn',
+        'chatVoiceBtn', 'promptClosure', 'promptHoisting', 'promptAsync'
+    ];
+    if (skipIds.includes(btn.id)) return;
+    // اگر بٹن کسی فارم کا سبمٹ نہیں ہے
+    if (btn.type !== 'submit' && !btn.closest('form')) {
+        btn.addEventListener('click', function(e) {
+            const text = this.textContent.trim();
+            if (text && !this.closest('.chat-input') && !this.closest('.modal-footer')) {
+                showToast('🔄 ' + text, 'info');
+            }
+        });
+    }
+});
+
+// ============================================================
+// 35. ANIMATIONS — اسکرول پر عناصر کو ظاہر کریں
+// ============================================================
+if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fade-up');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.gateway-card, .course-card, .achievement-card, .stat-box, .dashboard-box').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+// بٹنوں پر کلک اینیمیشن
+document.querySelectorAll('.btn-primary, .btn-secondary, .quick-btn, .quick-action-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => { this.style.transform = ''; }, 150);
+    });
+});
+
+// ============================================================
+// 36. RTL SUPPORT — اگر صفحہ RTL میں ہو
+// ============================================================
+if (document.documentElement.getAttribute('dir') === 'rtl') {
+    // RTL کے لیے کوئی خاص تبدیلی (جاوا اسکرپٹ کی ضرورت نہیں، CSS سنبھال لے گی)
+    console.log('📄 RTL mode detected');
+}
+
+// ============================================================
+// 37. BOOT — سب کچھ شروع کریں
+// ============================================================
+document.addEventListener('DOMContentLoaded', function() {
+    // لوڈر چھپائیں
+    hideLoader();
+    // خوش آمدید
+    showToast('🎓 Welcome to ScaleFlow University', 'success');
+    // ڈیفالٹ پیج (page1) کو یقینی بنائیں
+    navigateTo('page1');
+    console.log('🚀 ScaleFlow University loaded successfully');
+});
+
+// ============================================================
+// 38. GLOBAL — اگر کسی اور فائل کو ضرورت ہو
+// ============================================================
+global.ScaleFlow = {
+    showToast,
+    openModal,
+    closeModal,
+    navigateTo,
+    toggleDarkMode: function() {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        document.getElementById('darkModeBtn').textContent = isDark ? '☀️' : '🌙';
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        showToast(isDark ? '🌙 Dark mode enabled' : '☀️ Light mode enabled', 'info');
+    },
+    hideLoader,
+    updateDashboardStats: function() {
+        // یہ فنکشن Part 2 میں موجود ہے، یہاں صرف ریفرنس کے لیے
+    }
+};
+
+console.log('📦 [Part 4] Login, Validation & Final Polish loaded');
+console.log('✅ ScaleFlow University JavaScript complete!');
+ 
+
+})(window);
