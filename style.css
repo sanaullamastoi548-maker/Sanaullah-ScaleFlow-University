@@ -1159,3 +1159,446 @@ outline: 3px solid var(--primary);
 outline-offset: 2px;
 }
 ::selection { background: var(--primary); color: #000; }
+
+/* =========================================
+   AI SMART CENTER
+   ScaleFlow University
+========================================= */
+
+.dashboard-section{
+    margin:40px 0;
+    padding:25px;
+    background:#ffffff;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.dashboard-section h2{
+    text-align:center;
+    font-size:28px;
+    color:#0b7a43;
+    margin-bottom:25px;
+}
+
+.tool-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.tool-card{
+    background:linear-gradient(135deg,#ffffff,#f4fff8);
+    border:2px solid #d7f5df;
+    border-radius:18px;
+    padding:25px 20px;
+    text-align:center;
+    transition:.35s;
+    cursor:pointer;
+}
+
+.tool-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 25px rgba(0,0,0,.15);
+    border-color:#00b96b;
+}
+
+.tool-card h3{
+    color:#0b7a43;
+    font-size:22px;
+    margin-bottom:12px;
+}
+
+.tool-card p{
+    color:#666;
+    font-size:15px;
+    margin-bottom:15px;
+}
+
+.tool-card span{
+    display:inline-block;
+    background:#00b96b;
+    color:#fff;
+    padding:8px 15px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+/* =====================================================
+   ScaleFlow University
+   AI SMART CENTER
+   CSS PART-2
+===================================================== */
+
+.dashboard-section{
+    margin-top:40px;
+}
+
+.dashboard-section h2{
+    font-size:28px;
+    font-weight:700;
+    text-align:center;
+    margin-bottom:25px;
+    color:#00d084;
+}
+
+.tool-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
+}
+
+.tool-card{
+    background:#111827;
+    border:1px solid rgba(0,208,132,.25);
+    border-radius:18px;
+    padding:25px;
+    text-align:center;
+    transition:.35s;
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+}
+
+.tool-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:linear-gradient(90deg,
+    transparent,
+    rgba(255,255,255,.08),
+    transparent);
+    transition:.6s;
+}
+
+.tool-card:hover::before{
+    left:100%;
+}
+
+.tool-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,208,132,.25);
+    border-color:#00d084;
+}
+
+.tool-card h3{
+    color:#ffffff;
+    font-size:20px;
+    margin-bottom:12px;
+}
+
+.tool-card p{
+    color:#bdbdbd;
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+.tool-card span{
+    display:inline-block;
+    background:#00d084;
+    color:#000;
+    padding:8px 16px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.tool-card:hover span{
+    background:#00ff99;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.tool-grid{
+grid-template-columns:1fr;
+}
+
+.dashboard-section h2{
+font-size:22px;
+}
+
+.tool-card{
+padding:20px;
+}
+
+}
+
+/* ==========================================
+   ScaleFlow University
+   CSS PART 3
+   AI SMART CENTER
+========================================== */
+
+.dashboard-section{
+    margin-top:40px;
+    padding:25px;
+    background:#ffffff;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.dashboard-section h2{
+    text-align:center;
+    color:#0f766e;
+    font-size:28px;
+    margin-bottom:25px;
+}
+
+.tool-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
+}
+
+.tool-card{
+    background:linear-gradient(135deg,#f8fffe,#eefdf9);
+    border:2px solid #d8f5ea;
+    border-radius:18px;
+    padding:22px;
+    text-align:center;
+    transition:.35s;
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+}
+
+.tool-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+    border-color:#16a34a;
+}
+
+.tool-card h3{
+    font-size:22px;
+    color:#065f46;
+    margin-bottom:12px;
+}
+
+.tool-card p{
+    color:#666;
+    font-size:15px;
+    margin-bottom:15px;
+}
+
+.tool-card span{
+    display:inline-block;
+    padding:8px 18px;
+    border-radius:30px;
+    background:#16a34a;
+    color:#fff;
+    font-size:13px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.tool-card::before{
+    content:"";
+    position:absolute;
+    width:140px;
+    height:140px;
+    background:rgba(22,163,74,.08);
+    border-radius:50%;
+    top:-60px;
+    right:-60px;
+}
+
+.tool-card::after{
+    content:"⚡";
+    position:absolute;
+    top:12px;
+    right:15px;
+    font-size:18px;
+    opacity:.30;
+}
+
+@media(max-width:768px){
+
+.dashboard-section{
+    padding:18px;
+}
+
+.dashboard-section h2{
+    font-size:22px;
+}
+
+.tool-grid{
+    grid-template-columns:1fr;
+}
+
+.tool-card h3{
+    font-size:19px;
+}
+
+}
+
+/* ==========================================
+   ScaleFlow University
+   AI SMART CENTER
+   CSS PART-4
+   Premium Effects
+========================================== */
+
+/* Premium Glow */
+
+.tool-card{
+    position:relative;
+}
+
+.tool-card:hover{
+    box-shadow:
+        0 0 15px rgba(0,255,150,.30),
+        0 0 35px rgba(0,255,150,.20),
+        0 15px 35px rgba(0,0,0,.18);
+}
+
+/* AI READY Badge */
+
+.tool-card span{
+    transition:.35s;
+}
+
+.tool-card:hover span{
+    transform:scale(1.08);
+    letter-spacing:1.5px;
+}
+
+/* Animated Border */
+
+.tool-card::before{
+    animation:aiGlow 4s linear infinite;
+}
+
+@keyframes aiGlow{
+
+0%{
+transform:rotate(0deg);
+opacity:.20;
+}
+
+50%{
+opacity:.55;
+}
+
+100%{
+transform:rotate(360deg);
+opacity:.20;
+}
+
+}
+
+/* Face Login */
+
+.tool-card:nth-child(5):hover{
+    border-color:#00bfff;
+    box-shadow:0 0 25px rgba(0,191,255,.35);
+}
+
+/* Fingerprint */
+
+.tool-card:nth-child(6):hover{
+    border-color:#7c3aed;
+    box-shadow:0 0 25px rgba(124,58,237,.35);
+}
+
+/* Smart Certificate */
+
+.tool-card:nth-child(7):hover{
+    border-color:#f59e0b;
+    box-shadow:0 0 25px rgba(245,158,11,.35);
+}
+
+/* Career Center */
+
+.tool-card:nth-child(8):hover{
+    border-color:#10b981;
+    box-shadow:0 0 25px rgba(16,185,129,.35);
+}
+
+/* Icon Animation */
+
+.tool-card h3{
+    transition:.30s;
+}
+
+.tool-card:hover h3{
+    transform:scale(1.05);
+}
+
+/* Coming Soon */
+
+.tool-card p{
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+/* Floating */
+
+.tool-card:hover{
+    animation:floating .8s ease-in-out;
+}
+
+@keyframes floating{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+100%{
+transform:translateY(-8px);
+}
+
+}
+
+/* AI Locked Ribbon */
+
+.tool-card::after{
+
+content:"AI READY";
+
+position:absolute;
+
+top:12px;
+
+left:-35px;
+
+background:#16a34a;
+
+color:#fff;
+
+font-size:10px;
+
+padding:5px 40px;
+
+transform:rotate(-45deg);
+
+font-weight:bold;
+
+letter-spacing:1px;
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.tool-card::after{
+
+left:-42px;
+
+font-size:9px;
+
+}
+
+}
