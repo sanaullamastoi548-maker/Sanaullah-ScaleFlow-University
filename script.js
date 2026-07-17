@@ -130,7 +130,10 @@ function navigateTo(pageId) {
     if (target) target.classList.add('active');
     // سائیڈبار میں فعال لنک کو نمایاں کریں
     navLinks.forEach(link => link.classList.remove('active'));
-    const activeLink = document.querySelector(`.sidebar-menu a[data-page="${pageId}"]`);
+    const activeLink = document.querySelector(
+`.sidebar-menu a[data-page="${pageId}"]`
+);
+);
     if (activeLink) activeLink.classList.add('active');
     // اوپر سکرول کریں
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -662,8 +665,14 @@ document.getElementById('marketplaceCategories')?.addEventListener('click', func
 // 29. PROFILE — ایڈٹ پروفائل
 // ============================================================
 document.getElementById('editProfileBtn')?.addEventListener('click', function() {
-    openModal('✏️ Edit Profile', `
-        <form id="profileEditForm">
+    openModal(
+ '✏️ Edit Profile',
+ `
+ <form>
+   ...
+  </form>
+   `
+    );
             <div class="form-group"><label>Full Name</label><input type="text" value="Sanaullah" id="editName" class="w-full"></div>
             <div class="form-group"><label>Email</label><input type="email" value="sanaullah@university.com" id="editEmail" class="w-full"></div>
             <button type="submit" class="btn-primary w-full">Save Changes</button>
@@ -696,7 +705,9 @@ document.getElementById('settingsLanguage')?.addEventListener('change', function
 });
 
 document.getElementById('settingsChangePassword')?.addEventListener('click', function() {
-    openModal('🔐 Change Password', `
+     openModal(
+'🔐 Change Password',
+<form ...
         <form id="changePwdForm">
             <div class="form-group"><label>Current Password</label><input type="password" placeholder="••••••••" class="w-full"></div>
             <div class="form-group"><label>New Password</label><input type="password" placeholder="••••••••" class="w-full"></div>
@@ -780,7 +791,11 @@ document.getElementById('loginForm')?.addEventListener('submit', function(e) {
 // ============================================================
 document.getElementById('forgotPasswordLink')?.addEventListener('click', function(e) {
     e.preventDefault();
-    openModal('🔑 Forgot Password', `
+    `
+<form>
+...
+</form>
+`
         <p>Enter your email to receive OTP.</p>
         <div class="form-group">
             <input type="email" placeholder="student@university.com" id="otpEmail" class="w-full">
@@ -971,7 +986,13 @@ document.getElementById('loginForm')?.addEventListener('submit', function(e) {
 // ============================================================
 document.getElementById('forgotPasswordLink')?.addEventListener('click', function(e) {
     e.preventDefault();
-    openModal('🔑 Forgot Password', `
+    openModal(
+'Forgot Password',
+`
+<p>....</p>
+...
+`
+);
         <p>Enter your email to receive OTP.</p>
         <div class="form-group">
             <input type="email" placeholder="student@university.com" id="otpEmail" class="w-full">
@@ -1116,5 +1137,5 @@ console.log('✅ ScaleFlow University JavaScript complete!');
 })(window);
 
 window.addEventListener("load", function () {
-    hideLoader();
+window.ScaleFlow?.hideLoader?.();
 });
