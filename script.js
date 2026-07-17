@@ -129,10 +129,11 @@ function navigateTo(pageId) {
     const target = pageSections[pageId];
     if (target) target.classList.add('active');
     // سائیڈبار میں فعال لنک کو نمایاں کریں
-    navLinks.forEach(link => link.classList.remove('active'));
-    const activeLink = document.querySelector(
-`.sidebar-menu a[data-page="${pageId}"]`
-);
+    // سائیڈبار میں فعال لنک کو نمایاں کریں
+navLinks.forEach(link => link.classList.remove('active'));
+
+const activeLink = document.querySelector(
+    `.sidebar-menu a[data-page="${pageId}"]`
 );
     if (activeLink) activeLink.classList.add('active');
     // اوپر سکرول کریں
