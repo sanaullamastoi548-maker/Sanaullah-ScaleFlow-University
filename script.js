@@ -193,6 +193,10 @@ outline-offset: 2px;
 }
 ::selection { background: var(--primary); color: #000; }
 
+
+window.addEventListener("load", function () {
+    hideLoader();
+});
 /*============================================================
 Sanaullah ScaleFlow University
 script.js — Complete JavaScript
