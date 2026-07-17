@@ -106,5 +106,5 @@ SF.failed = function (message) {
 Initialization
 =========================================*/
 document.addEventListener("DOMContentLoaded", () => {
-    SF.log("Helpers Engine Loaded Successfully");
+    alert("✅ Helpers Engine Loaded Successfully");
 });
