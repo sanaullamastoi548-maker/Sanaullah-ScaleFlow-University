@@ -2847,3 +2847,450 @@ body.dark-mode .pricing-card ul li{
     text-transform:uppercase;
 
 }
+
+/* ==========================================
+   CAREER & MARKETPLACE CENTER
+   CSS PART-1
+   Layout + Section Design
+========================================== */
+
+#careerCenter,
+#careerOpportunities,
+#careerGrowth,
+#careerFuture{
+
+    margin-top:40px;
+
+    padding:35px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.18);
+
+}
+
+/* ===========================
+   Section Title
+=========================== */
+
+#careerCenter h2,
+#careerOpportunities h2,
+#careerGrowth h2,
+#careerFuture h2{
+
+    text-align:center;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    margin-bottom:28px;
+
+    color:#ffffff;
+
+    letter-spacing:.5px;
+
+}
+
+/* ===========================
+   Tool Grid
+=========================== */
+
+#careerCenter .tool-grid,
+#careerOpportunities .tool-grid,
+#careerGrowth .tool-grid,
+#careerFuture .tool-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(240px,1fr));
+
+    gap:22px;
+
+    align-items:stretch;
+
+}
+
+/* ==========================================
+   CAREER & MARKETPLACE CENTER
+   CSS PART-2
+   Premium Cards + Glass Effect
+========================================== */
+
+#careerCenter .tool-card,
+#careerOpportunities .tool-card,
+#careerGrowth .tool-card,
+#careerFuture .tool-card{
+
+    position:relative;
+
+    padding:28px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(15px);
+
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+
+        0 10px 25px rgba(0,0,0,.25);
+
+    overflow:hidden;
+
+    transition:all .35s ease;
+
+}
+
+/* ===========================
+   ICON TITLE
+=========================== */
+
+#careerCenter .tool-card h3,
+#careerOpportunities .tool-card h3,
+#careerGrowth .tool-card h3,
+#careerFuture .tool-card h3{
+
+    color:#ffffff;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+/* ===========================
+   DESCRIPTION
+=========================== */
+
+#careerCenter .tool-card p,
+#careerOpportunities .tool-card p,
+#careerGrowth .tool-card p,
+#careerFuture .tool-card p{
+
+    color:#d8d8d8;
+
+    font-size:15px;
+
+    margin-bottom:18px;
+
+}
+
+/* ===========================
+   STATUS BADGE
+=========================== */
+
+#careerCenter .tool-card span,
+#careerOpportunities .tool-card span,
+#careerGrowth .tool-card span,
+#careerFuture .tool-card span{
+
+    display:inline-block;
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+        135deg,
+        #00c853,
+        #00e676
+    );
+
+    color:#ffffff;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.8px;
+
+    text-transform:uppercase;
+
+    box-shadow:
+
+        0 5px 15px rgba(0,200,83,.35);
+
+}
+
+/* ==========================================
+   CAREER & MARKETPLACE CENTER
+   CSS PART-3
+   Premium Hover + Floating + Neon Effects
+========================================== */
+
+/* ===========================
+   Premium Hover Animation
+=========================== */
+
+#careerCenter .tool-card:hover,
+#careerOpportunities .tool-card:hover,
+#careerGrowth .tool-card:hover,
+#careerFuture .tool-card:hover{
+
+    transform:translateY(-12px) scale(1.03);
+
+    border:1px solid rgba(0,255,200,.6);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.35),
+        0 0 20px rgba(0,255,170,.35),
+        0 0 40px rgba(0,255,170,.20);
+
+}
+
+/* ===========================
+   Floating Animation
+=========================== */
+
+@keyframes careerFloating{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-6px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+#careerCenter .tool-card,
+#careerOpportunities .tool-card,
+#careerGrowth .tool-card,
+#careerFuture .tool-card{
+
+    animation:careerFloating 5s ease-in-out infinite;
+
+}
+
+/* ===========================
+   Icon Hover
+=========================== */
+
+#careerCenter .tool-card:hover h3,
+#careerOpportunities .tool-card:hover h3,
+#careerGrowth .tool-card:hover h3,
+#careerFuture .tool-card:hover h3{
+
+    color:#00ffd5;
+
+    transition:.35s;
+
+}
+
+/* ===========================
+   Badge Hover
+=========================== */
+
+#careerCenter .tool-card:hover span,
+#careerOpportunities .tool-card:hover span,
+#careerGrowth .tool-card:hover span,
+#careerFuture .tool-card:hover span{
+
+    background:linear-gradient(
+        135deg,
+        #00e676,
+        #00b0ff
+    );
+
+    box-shadow:
+        0 0 15px rgba(0,255,200,.6),
+        0 0 30px rgba(0,255,200,.3);
+
+}
+
+/* ===========================
+   Smooth Transition
+=========================== */
+
+#careerCenter .tool-card,
+#careerCenter .tool-card h3,
+#careerCenter .tool-card span,
+
+#careerOpportunities .tool-card,
+#careerOpportunities .tool-card h3,
+#careerOpportunities .tool-card span,
+
+#careerGrowth .tool-card,
+#careerGrowth .tool-card h3,
+#careerGrowth .tool-card span,
+
+#careerFuture .tool-card,
+#careerFuture .tool-card h3,
+#careerFuture .tool-card span{
+
+    transition:all .35s ease;
+
+}
+
+/* ==========================================
+   CAREER & MARKETPLACE CENTER
+   CSS PART-4
+   Mobile Responsive
+   Dark Mode
+   Ultra Premium Polish
+========================================== */
+
+/* ===============================
+   Mobile Responsive
+================================ */
+
+@media (max-width:768px){
+
+#careerCenter,
+#careerOpportunities,
+#careerGrowth,
+#careerFuture{
+
+    padding:20px;
+    margin-top:25px;
+
+}
+
+#careerCenter h2,
+#careerOpportunities h2,
+#careerGrowth h2,
+#careerFuture h2{
+
+    font-size:24px;
+
+}
+
+#careerCenter .tool-grid,
+#careerOpportunities .tool-grid,
+#careerGrowth .tool-grid,
+#careerFuture .tool-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+#careerCenter .tool-card,
+#careerOpportunities .tool-card,
+#careerGrowth .tool-card,
+#careerFuture .tool-card{
+
+    padding:22px;
+
+}
+
+}
+
+/* ===============================
+   Tablet Responsive
+================================ */
+
+@media (min-width:769px) and (max-width:1100px){
+
+#careerCenter .tool-grid,
+#careerOpportunities .tool-grid,
+#careerGrowth .tool-grid,
+#careerFuture .tool-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* ===============================
+   Large Desktop
+================================ */
+
+@media (min-width:1400px){
+
+#careerCenter .tool-grid,
+#careerOpportunities .tool-grid,
+#careerGrowth .tool-grid,
+#careerFuture .tool-grid{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+}
+
+/* ===============================
+   Dark Mode Ready
+================================ */
+
+body.dark-mode #careerCenter,
+body.dark-mode #careerOpportunities,
+body.dark-mode #careerGrowth,
+body.dark-mode #careerFuture{
+
+    background:rgba(20,20,25,.85);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+body.dark-mode #careerCenter .tool-card,
+body.dark-mode #careerOpportunities .tool-card,
+body.dark-mode #careerGrowth .tool-card,
+body.dark-mode #careerFuture .tool-card{
+
+    background:rgba(255,255,255,.03);
+
+}
+
+/* ===============================
+   Ultra Premium Scroll Animation
+================================ */
+
+#careerCenter,
+#careerOpportunities,
+#careerGrowth,
+#careerFuture{
+
+    scroll-margin-top:80px;
+
+}
+
+/* ===============================
+   Future Ready Performance
+================================ */
+
+#careerCenter *,
+#careerOpportunities *,
+#careerGrowth *,
+#careerFuture *{
+
+    box-sizing:border-box;
+
+    will-change:transform;
+
+}
+
+/* ===============================
+   Enterprise Ready
+================================ */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
