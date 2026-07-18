@@ -3875,3 +3875,27 @@ window.addEventListener('resize', () => {
 console.log("ScaleFlow Analytics Center: Architecture fully loaded and secured.");
 
 
+// یہ کوڈ آپ کے بٹن کو ایکٹو کرے گا
+document.addEventListener('DOMContentLoaded', () => {
+    const testButton = document.getElementById('continueLearningBtn');
+    
+    testButton.addEventListener('click', () => {
+        // یہاں وہ فنکشن کال ہو رہا ہے جو آپ نے ابھی بنایا تھا
+        testEngineConnection(); 
+    });
+});
+
+// یہ وہ فنکشن ہے جو گوگل اسکرپٹ سے بات کرے گا
+async function testEngineConnection() {
+    const ENGINE_URL = "https://script.google.com/macros/s/AKfycbwl3M6GhlH8ps5DfxTovsOMEtjq-vjO2PucmXfokZSqFwBU59GeLpyhKA0vkE00anEh/exec";
+    
+    alert("Connecting to Engine...");
+    
+    try {
+        const response = await fetch(ENGINE_URL);
+        const data = await response.text();
+        alert("Engine Response: " + data);
+    } catch (error) {
+        alert("Connection failed!");
+    }
+}
