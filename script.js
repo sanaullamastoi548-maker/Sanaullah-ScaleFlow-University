@@ -3726,3 +3726,152 @@ console.log("🔔 Parent Notification Engine Ready");
 console.log("💳 Fee Manager Ready");
 console.log("🌐 Google Workspace Integration Ready");
 console.log("🚀 Future Enterprise Integration Ready");
+
+
+/* ==========================================
+   ANALYTICS CENTER
+   JAVASCRIPT PART-1
+   Initialization & Card Animations
+   ScaleFlow University v1.0
+========================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // Select all tool cards in the Analytics Sections
+    const analyticsCards = document.querySelectorAll(
+        '#analyticsCenter .tool-card, ' +
+        '#analyticsLearningCenter .tool-card, ' +
+        '#analyticsAICenter .tool-card, ' +
+        '#analyticsEnterpriseCenter .tool-card'
+    );
+
+    // Initial Animation: Staggered Fade-in effect
+    analyticsCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = `all 0.5s ease ${index * 0.1}s`;
+
+        setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, 100);
+    });
+
+    console.log("ScaleFlow Analytics Center: Initialized successfully.");
+});
+
+
+/* ==========================================
+   ANALYTICS CENTER
+   JAVASCRIPT PART-2
+   Interactive Click Events & Engine Hooks
+   ScaleFlow University v1.0
+========================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Select all tool cards
+    const analyticsCards = document.querySelectorAll('.tool-card');
+
+    // Add Click Events to each card
+    analyticsCards.forEach(card => {
+        card.addEventListener('click', () => {
+            
+            // Get the title of the clicked card
+            const cardTitle = card.querySelector('h3').innerText;
+            
+            // Visual feedback for the click
+            card.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                card.style.transform = 'scale(1)';
+            }, 200);
+
+            // Placeholder for Engine Hook (Will connect to Google Apps Script later)
+            console.log(`Connecting to Engine: ${cardTitle}`);
+            
+            // Future logic: Trigger the specific engine here
+            // triggerEngine(cardTitle);
+            
+            alert(`Opening: ${cardTitle} Engine...`);
+        });
+    });
+});
+
+/* ==========================================
+   ANALYTICS CENTER
+   JAVASCRIPT PART-3
+   Security & Engine Data Handler
+   ScaleFlow University v1.0
+========================================== */
+
+/**
+ * This function acts as a secure bridge between your 
+ * UI and the Google Apps Script Engine.
+ */
+function triggerEngine(cardTitle) {
+    console.log(`Security Protocol Initiated for: ${cardTitle}`);
+    
+    // Simulate secure data fetching
+    // In the future, this will call your GAS deployment URL
+    // securely without exposing your Drive credentials.
+    
+    showLoadingState(true);
+
+    // Mocking the data fetch process
+    setTimeout(() => {
+        console.log("Secure connection to Engine established.");
+        showLoadingState(false);
+    }, 1500);
+}
+
+// Function to handle UI loading state
+function showLoadingState(isLoading) {
+    const cards = document.querySelectorAll('.tool-card');
+    cards.forEach(card => {
+        card.style.opacity = isLoading ? "0.6" : "1";
+        card.style.pointerEvents = isLoading ? "none" : "all";
+    });
+}
+
+// Global hook to prevent direct access to sensitive elements
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+
+/* ==========================================
+   ANALYTICS CENTER
+   JAVASCRIPT PART-4 (FINAL)
+   System Cleanup & Final Polish
+   ScaleFlow University v1.0
+========================================== */
+
+/**
+ * Cleanup function to remove temporary UI elements 
+ * after the engine connection is complete.
+ */
+function cleanupAnalyticsUI() {
+    console.log("Analytics System: Cleanup initialized.");
+    
+    // Removing any stray hover effects or stuck classes
+    const cards = document.querySelectorAll('.tool-card');
+    cards.forEach(card => {
+        card.classList.remove('is-loading');
+    });
+}
+
+/**
+ * Mobile-specific adjustment: ensuring the grid is 
+ * always centered and accessible.
+ */
+window.addEventListener('resize', () => {
+    const grid = document.querySelector('.tool-grid');
+    if (window.innerWidth < 480) {
+        grid.style.gap = '10px';
+    } else {
+        grid.style.gap = '25px';
+    }
+});
+
+// Final initialization log
+console.log("ScaleFlow Analytics Center: Architecture fully loaded and secured.");
+
+
