@@ -1559,3 +1559,377 @@ document.addEventListener("DOMContentLoaded", () => {
 
 })();
 
+
+/* ==========================================
+   3D LEARNING CENTER
+   Part-1
+   ScaleFlow University
+========================================== */
+
+const Learning3DCenter = {
+
+    initialized: false,
+
+    init() {
+
+        if (this.initialized) return;
+
+        this.initialized = true;
+
+        console.log("✅ 3D Learning Center Initialized");
+
+        this.bindEvents();
+
+    },
+
+    bindEvents() {
+
+        const cards = document.querySelectorAll(
+            "#learning3DCenter .tool-card"
+        );
+
+        cards.forEach(card => {
+
+            card.addEventListener("click", () => {
+
+                this.showComingSoon(card);
+
+            });
+
+        });
+
+    },
+
+    showComingSoon(card) {
+
+        const title = card.querySelector("h3").innerText;
+
+        alert(
+            title +
+            "\n\nCOMING SOON\n\nThis module is AI Ready.\nIt will activate after AI integration."
+        );
+
+    }
+
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    Learning3DCenter.init();
+
+});
+
+/* ==========================================
+   3D LEARNING CENTER
+   Part-2
+   Premium Animation
+========================================== */
+
+Learning3DCenter.animateCards = function () {
+
+    const cards = document.querySelectorAll(
+        "#learning3DCenter .tool-card"
+    );
+
+    cards.forEach((card, index) => {
+
+        /* Initial Animation */
+
+        card.style.opacity = "0";
+        card.style.transform = "translateY(40px)";
+
+        setTimeout(() => {
+
+            card.style.transition =
+                "all .6s ease";
+
+            card.style.opacity = "1";
+            card.style.transform =
+                "translateY(0px)";
+
+        }, index * 120);
+
+        /* Hover Effect */
+
+        card.addEventListener("mouseenter", () => {
+
+            card.style.transform =
+                "translateY(-10px) scale(1.03)";
+
+        });
+
+        card.addEventListener("mouseleave", () => {
+
+            card.style.transform =
+                "translateY(0px) scale(1)";
+
+        });
+
+    });
+
+};
+
+/* READY Badge Animation */
+
+Learning3DCenter.animateStatus = function () {
+
+    const badges = document.querySelectorAll(
+        "#learning3DCenter .tool-card span"
+    );
+
+    setInterval(() => {
+
+        badges.forEach(badge => {
+
+            badge.style.opacity = ".65";
+
+            setTimeout(() => {
+
+                badge.style.opacity = "1";
+
+            }, 450);
+
+        });
+
+    }, 2000);
+
+};
+
+/* Run */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    Learning3DCenter.animateCards();
+
+    Learning3DCenter.animateStatus();
+
+});
+
+/* ==========================================
+   3D LEARNING CENTER
+   Part-3
+   AI READY ENGINE
+========================================== */
+
+Learning3DCenter.launchViewer = function (moduleName) {
+
+    console.log("Launching :", moduleName);
+
+    this.showFutureMessage(moduleName);
+
+};
+
+Learning3DCenter.launchVoiceTeacher = function (lessonName) {
+
+    console.log("Voice Teacher :", lessonName);
+
+    this.showFutureMessage(
+        "AI Voice Teacher\n\nLesson : " + lessonName
+    );
+
+};
+
+Learning3DCenter.startAIEngine = function () {
+
+    console.log("AI Engine Ready");
+
+};
+
+Learning3DCenter.start3DEngine = function () {
+
+    console.log("3D Engine Ready");
+
+};
+
+Learning3DCenter.showFutureMessage = function (title) {
+
+    alert(
+        "🚀 " + title +
+
+        "\n\nCOMING SOON"
+
+        + "\n\n"
+
+        + "This feature is already integrated."
+
+        + "\n"
+
+        + "Only AI / 3D Model"
+
+        + "\n"
+
+        + "needs to be connected."
+
+    );
+
+};
+
+/* Card Launcher */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const cards = document.querySelectorAll(
+        "#learning3DCenter .tool-card"
+    );
+
+    cards.forEach(card => {
+
+        card.addEventListener("dblclick", () => {
+
+            const lesson = card.querySelector("h3").innerText;
+
+            Learning3DCenter.launchViewer(lesson);
+
+        });
+
+    });
+
+});
+
+/* ==========================================
+   3D LEARNING CENTER
+   Part-4
+   Future Integration Manager
+   ScaleFlow University
+========================================== */
+
+Learning3DCenter.integration = {
+
+    aiConnected: false,
+    viewerConnected: false,
+    voiceConnected: false,
+
+    initialize() {
+
+        console.log("================================");
+        console.log("ScaleFlow Future Manager Started");
+        console.log("================================");
+
+        this.checkAI();
+
+        this.checkViewer();
+
+        this.checkVoice();
+
+        this.updateStatus();
+
+    },
+
+    checkAI() {
+
+        if (this.aiConnected) {
+
+            console.log("AI Connected");
+
+        } else {
+
+            console.log("AI Waiting...");
+
+        }
+
+    },
+
+    checkViewer() {
+
+        if (this.viewerConnected) {
+
+            console.log("3D Viewer Connected");
+
+        } else {
+
+            console.log("3D Viewer Waiting...");
+
+        }
+
+    },
+
+    checkVoice() {
+
+        if (this.voiceConnected) {
+
+            console.log("Voice Connected");
+
+        } else {
+
+            console.log("Voice Waiting...");
+
+        }
+
+    },
+
+    updateStatus() {
+
+        const badges =
+            document.querySelectorAll(
+                "#learning3DCenter .tool-card span"
+            );
+
+        badges.forEach(badge => {
+
+            if (
+
+                this.aiConnected ||
+
+                this.viewerConnected ||
+
+                this.voiceConnected
+
+            ) {
+
+                badge.innerHTML = "ONLINE";
+
+                badge.style.background =
+                    "#00c853";
+
+            } else {
+
+                badge.innerHTML = "COMING SOON";
+
+                badge.style.background =
+                    "#ff9800";
+
+            }
+
+        });
+
+    },
+
+    connectAI() {
+
+        this.aiConnected = true;
+
+        this.updateStatus();
+
+        console.log("AI Connected Successfully");
+
+    },
+
+    connectViewer() {
+
+        this.viewerConnected = true;
+
+        this.updateStatus();
+
+        console.log("3D Viewer Connected");
+
+    },
+
+    connectVoice() {
+
+        this.voiceConnected = true;
+
+        this.updateStatus();
+
+        console.log("Voice Teacher Connected");
+
+    }
+
+};
+
+/* Auto Initialize */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    Learning3DCenter.integration.initialize();
+
+});
