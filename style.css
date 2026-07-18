@@ -3792,3 +3792,556 @@ html{
 
 }
 }
+
+/* ==========================================
+   PARENT CENTER
+   CSS PART-1
+   Layout + Section Design
+   ScaleFlow University
+========================================== */
+
+#parentCenter,
+#parentCommunicationCenter,
+#parentAICenter,
+#parentFutureCenter{
+
+    margin-top:40px;
+
+    padding:35px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.18);
+
+}
+
+/* ===============================
+   Section Titles
+================================ */
+
+#parentCenter h2,
+#parentCommunicationCenter h2,
+#parentAICenter h2,
+#parentFutureCenter h2{
+
+    text-align:center;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    margin-bottom:28px;
+
+    letter-spacing:.5px;
+
+}
+
+/* ===============================
+   Tool Grid
+================================ */
+
+#parentCenter .tool-grid,
+#parentCommunicationCenter .tool-grid,
+#parentAICenter .tool-grid,
+#parentFutureCenter .tool-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(240px,1fr));
+
+    gap:22px;
+
+    align-items:stretch;
+
+}
+
+/* ===============================
+   Parent Section Container
+================================ */
+
+#parentCenter,
+#parentCommunicationCenter,
+#parentAICenter,
+#parentFutureCenter{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* ===============================
+   Future Ready
+================================ */
+
+#parentCenter::before,
+#parentCommunicationCenter::before,
+#parentAICenter::before,
+#parentFutureCenter::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:4px;
+
+    background:linear-gradient(
+        90deg,
+        #4caf50,
+        #2196f3,
+        #9c27b0
+    );
+
+}
+
+/* ==========================================
+   PARENT CENTER
+   CSS PART-2
+   Premium Cards + Glass Effect
+   ScaleFlow University
+========================================== */
+
+/* ===============================
+   Premium Parent Cards
+================================ */
+
+#parentCenter .tool-card,
+#parentCommunicationCenter .tool-card,
+#parentAICenter .tool-card,
+#parentFutureCenter .tool-card{
+
+    position:relative;
+
+    padding:28px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(15px);
+
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.25);
+
+    overflow:hidden;
+
+    transition:all .35s ease;
+
+}
+
+/* ===============================
+   Card Titles
+================================ */
+
+#parentCenter .tool-card h3,
+#parentCommunicationCenter .tool-card h3,
+#parentAICenter .tool-card h3,
+#parentFutureCenter .tool-card h3{
+
+    color:#ffffff;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+/* ===============================
+   Description
+================================ */
+
+#parentCenter .tool-card p,
+#parentCommunicationCenter .tool-card p,
+#parentAICenter .tool-card p,
+#parentFutureCenter .tool-card p{
+
+    color:#d8d8d8;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+    margin-bottom:18px;
+
+}
+
+/* ===============================
+   Premium Status Badge
+================================ */
+
+#parentCenter .tool-card span,
+#parentCommunicationCenter .tool-card span,
+#parentAICenter .tool-card span,
+#parentFutureCenter .tool-card span{
+
+    display:inline-block;
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+        135deg,
+        #43a047,
+        #66bb6a
+    );
+
+    color:#ffffff;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.8px;
+
+    text-transform:uppercase;
+
+    box-shadow:
+        0 5px 15px rgba(67,160,71,.35);
+
+}
+
+/* ===============================
+   Icon Spacing
+================================ */
+
+#parentCenter .tool-card h3,
+#parentCommunicationCenter .tool-card h3,
+#parentAICenter .tool-card h3,
+#parentFutureCenter .tool-card h3{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+/* ==========================================
+   PARENT CENTER
+   CSS PART-3
+   Premium Hover + Floating + Neon Effects
+   ScaleFlow University
+========================================== */
+
+/* ===============================
+   Premium Hover Effect
+================================ */
+
+#parentCenter .tool-card:hover,
+#parentCommunicationCenter .tool-card:hover,
+#parentAICenter .tool-card:hover,
+#parentFutureCenter .tool-card:hover{
+
+    transform:translateY(-12px) scale(1.03);
+
+    border:1px solid rgba(76,175,80,.45);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.35),
+        0 0 20px rgba(76,175,80,.35),
+        0 0 45px rgba(76,175,80,.18);
+
+}
+
+/* ===============================
+   Floating Animation
+================================ */
+
+@keyframes parentFloat{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-6px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+#parentCenter .tool-card,
+#parentCommunicationCenter .tool-card,
+#parentAICenter .tool-card,
+#parentFutureCenter .tool-card{
+
+    animation:parentFloat 5s ease-in-out infinite;
+
+}
+
+/* ===============================
+   Title Hover
+================================ */
+
+#parentCenter .tool-card:hover h3,
+#parentCommunicationCenter .tool-card:hover h3,
+#parentAICenter .tool-card:hover h3,
+#parentFutureCenter .tool-card:hover h3{
+
+    color:#66bb6a;
+
+}
+
+/* ===============================
+   Description Hover
+================================ */
+
+#parentCenter .tool-card:hover p,
+#parentCommunicationCenter .tool-card:hover p,
+#parentAICenter .tool-card:hover p,
+#parentFutureCenter .tool-card:hover p{
+
+    color:#ffffff;
+
+}
+
+/* ===============================
+   Badge Hover
+================================ */
+
+#parentCenter .tool-card:hover span,
+#parentCommunicationCenter .tool-card:hover span,
+#parentAICenter .tool-card:hover span,
+#parentFutureCenter .tool-card:hover span{
+
+    background:linear-gradient(
+        135deg,
+        #66bb6a,
+        #00e676
+    );
+
+    box-shadow:
+        0 0 15px rgba(76,175,80,.60),
+        0 0 30px rgba(76,175,80,.30);
+
+}
+
+/* ===============================
+   Smooth Transition
+================================ */
+
+#parentCenter .tool-card,
+#parentCenter .tool-card h3,
+#parentCenter .tool-card p,
+#parentCenter .tool-card span,
+
+#parentCommunicationCenter .tool-card,
+#parentCommunicationCenter .tool-card h3,
+#parentCommunicationCenter .tool-card p,
+#parentCommunicationCenter .tool-card span,
+
+#parentAICenter .tool-card,
+#parentAICenter .tool-card h3,
+#parentAICenter .tool-card p,
+#parentAICenter .tool-card span,
+
+#parentFutureCenter .tool-card,
+#parentFutureCenter .tool-card h3,
+#parentFutureCenter .tool-card p,
+#parentFutureCenter .tool-card span{
+
+    transition:all .35s ease;
+
+}
+
+/* ==========================================
+   PARENT CENTER
+   CSS PART-4
+   Mobile Responsive
+   Dark Mode
+   Ultra Premium Polish
+   ScaleFlow University
+========================================== */
+
+/* ===============================
+   Mobile Responsive
+================================ */
+
+@media (max-width:768px){
+
+#parentCenter,
+#parentCommunicationCenter,
+#parentAICenter,
+#parentFutureCenter{
+
+    padding:20px;
+    margin-top:25px;
+
+}
+
+#parentCenter h2,
+#parentCommunicationCenter h2,
+#parentAICenter h2,
+#parentFutureCenter h2{
+
+    font-size:24px;
+
+}
+
+#parentCenter .tool-grid,
+#parentCommunicationCenter .tool-grid,
+#parentAICenter .tool-grid,
+#parentFutureCenter .tool-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+#parentCenter .tool-card,
+#parentCommunicationCenter .tool-card,
+#parentAICenter .tool-card,
+#parentFutureCenter .tool-card{
+
+    padding:22px;
+
+}
+
+}
+
+/* ===============================
+   Tablet Responsive
+================================ */
+
+@media (min-width:769px) and (max-width:1100px){
+
+#parentCenter .tool-grid,
+#parentCommunicationCenter .tool-grid,
+#parentAICenter .tool-grid,
+#parentFutureCenter .tool-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* ===============================
+   Large Desktop
+================================ */
+
+@media (min-width:1400px){
+
+#parentCenter .tool-grid,
+#parentCommunicationCenter .tool-grid,
+#parentAICenter .tool-grid,
+#parentFutureCenter .tool-grid{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+}
+
+/* ===============================
+   Dark Mode
+================================ */
+
+body.dark-mode #parentCenter,
+body.dark-mode #parentCommunicationCenter,
+body.dark-mode #parentAICenter,
+body.dark-mode #parentFutureCenter{
+
+    background:rgba(20,20,25,.88);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+body.dark-mode #parentCenter .tool-card,
+body.dark-mode #parentCommunicationCenter .tool-card,
+body.dark-mode #parentAICenter .tool-card,
+body.dark-mode #parentFutureCenter .tool-card{
+
+    background:rgba(255,255,255,.03);
+
+}
+
+/* ===============================
+   Scroll Position
+================================ */
+
+#parentCenter,
+#parentCommunicationCenter,
+#parentAICenter,
+#parentFutureCenter{
+
+    scroll-margin-top:80px;
+
+}
+
+/* ===============================
+   Performance Optimization
+================================ */
+
+#parentCenter *,
+#parentCommunicationCenter *,
+#parentAICenter *,
+#parentFutureCenter *{
+
+    box-sizing:border-box;
+
+    will-change:transform;
+
+}
+
+/* ===============================
+   Ultra Premium Polish
+================================ */
+
+#parentCenter .tool-card,
+#parentCommunicationCenter .tool-card,
+#parentAICenter .tool-card,
+#parentFutureCenter .tool-card{
+
+    min-height:220px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+}
+
+/* ===============================
+   Future Ready
+================================ */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
