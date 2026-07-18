@@ -3294,3 +3294,501 @@ html{
     scroll-behavior:smooth;
 
 }
+
+/* ==========================================
+   INSTRUCTOR CENTER
+   CSS PART-1
+   Layout + Section Design
+========================================== */
+
+#instructorCenter,
+#instructorTeachingCenter,
+#instructorAIManagement,
+#instructorFutureCenter{
+
+    margin-top:40px;
+
+    padding:35px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.18);
+
+}
+
+/* ===============================
+   Section Titles
+================================ */
+
+#instructorCenter h2,
+#instructorTeachingCenter h2,
+#instructorAIManagement h2,
+#instructorFutureCenter h2{
+
+    text-align:center;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    margin-bottom:28px;
+
+    letter-spacing:.5px;
+
+}
+
+/* ===============================
+   Tool Grid
+================================ */
+
+#instructorCenter .tool-grid,
+#instructorTeachingCenter .tool-grid,
+#instructorAIManagement .tool-grid,
+#instructorFutureCenter .tool-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(240px,1fr));
+
+    gap:22px;
+
+    align-items:stretch;
+
+}
+
+/* ===============================
+   Future Ready
+================================ */
+
+#instructorCenter,
+#instructorTeachingCenter,
+#instructorAIManagement,
+#instructorFutureCenter{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/* ==========================================
+   INSTRUCTOR CENTER
+   CSS PART-2
+   Premium Cards + Glass Effect
+========================================== */
+
+#instructorCenter .tool-card,
+#instructorTeachingCenter .tool-card,
+#instructorAIManagement .tool-card,
+#instructorFutureCenter .tool-card{
+
+    position:relative;
+
+    padding:28px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(15px);
+
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.25);
+
+    overflow:hidden;
+
+    transition:all .35s ease;
+
+}
+
+/* ===============================
+   Instructor Card Title
+================================ */
+
+#instructorCenter .tool-card h3,
+#instructorTeachingCenter .tool-card h3,
+#instructorAIManagement .tool-card h3,
+#instructorFutureCenter .tool-card h3{
+
+    color:#ffffff;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+/* ===============================
+   Description
+================================ */
+
+#instructorCenter .tool-card p,
+#instructorTeachingCenter .tool-card p,
+#instructorAIManagement .tool-card p,
+#instructorFutureCenter .tool-card p{
+
+    color:#d8d8d8;
+
+    font-size:15px;
+
+    margin-bottom:18px;
+
+    line-height:1.6;
+
+}
+
+/* ===============================
+   Premium Status Badge
+================================ */
+
+#instructorCenter .tool-card span,
+#instructorTeachingCenter .tool-card span,
+#instructorAIManagement .tool-card span,
+#instructorFutureCenter .tool-card span{
+
+    display:inline-block;
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+        135deg,
+        #1976d2,
+        #42a5f5
+    );
+
+    color:#ffffff;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.8px;
+
+    text-transform:uppercase;
+
+    box-shadow:
+        0 5px 15px rgba(25,118,210,.35);
+
+
+    
+/* ==========================================
+   INSTRUCTOR CENTER
+   CSS PART-3
+   Premium Hover + Floating + Neon Effects
+========================================== */
+
+/* ===============================
+   Premium Hover Effect
+================================ */
+
+#instructorCenter .tool-card:hover,
+#instructorTeachingCenter .tool-card:hover,
+#instructorAIManagement .tool-card:hover,
+#instructorFutureCenter .tool-card:hover{
+
+    transform:translateY(-12px) scale(1.03);
+
+    border:1px solid rgba(33,150,243,.45);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.35),
+        0 0 20px rgba(33,150,243,.35),
+        0 0 45px rgba(33,150,243,.18);
+
+}
+
+/* ===============================
+   Floating Animation
+================================ */
+
+@keyframes instructorFloat{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-6px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+#instructorCenter .tool-card,
+#instructorTeachingCenter .tool-card,
+#instructorAIManagement .tool-card,
+#instructorFutureCenter .tool-card{
+
+    animation:instructorFloat 5s ease-in-out infinite;
+
+}
+
+/* ===============================
+   Title Hover
+================================ */
+
+#instructorCenter .tool-card:hover h3,
+#instructorTeachingCenter .tool-card:hover h3,
+#instructorAIManagement .tool-card:hover h3,
+#instructorFutureCenter .tool-card:hover h3{
+
+    color:#42a5f5;
+
+}
+
+/* ===============================
+   Description Hover
+================================ */
+
+#instructorCenter .tool-card:hover p,
+#instructorTeachingCenter .tool-card:hover p,
+#instructorAIManagement .tool-card:hover p,
+#instructorFutureCenter .tool-card:hover p{
+
+    color:#ffffff;
+
+}
+
+/* ===============================
+   Badge Hover
+================================ */
+
+#instructorCenter .tool-card:hover span,
+#instructorTeachingCenter .tool-card:hover span,
+#instructorAIManagement .tool-card:hover span,
+#instructorFutureCenter .tool-card:hover span{
+
+    background:linear-gradient(
+        135deg,
+        #42a5f5,
+        #00b0ff
+    );
+
+    box-shadow:
+        0 0 15px rgba(33,150,243,.60),
+        0 0 30px rgba(33,150,243,.30);
+
+}
+
+/* ===============================
+   Smooth Animation
+================================ */
+
+#instructorCenter .tool-card,
+#instructorCenter .tool-card h3,
+#instructorCenter .tool-card p,
+#instructorCenter .tool-card span,
+
+#instructorTeachingCenter .tool-card,
+#instructorTeachingCenter .tool-card h3,
+#instructorTeachingCenter .tool-card p,
+#instructorTeachingCenter .tool-card span,
+
+#instructorAIManagement .tool-card,
+#instructorAIManagement .tool-card h3,
+#instructorAIManagement .tool-card p,
+#instructorAIManagement .tool-card span,
+
+#instructorFutureCenter .tool-card,
+#instructorFutureCenter .tool-card h3,
+#instructorFutureCenter .tool-card p,
+#instructorFutureCenter .tool-card span{
+
+    transition:all .35s ease;
+
+    /* ==========================================
+   INSTRUCTOR CENTER
+   CSS PART-4
+   Mobile Responsive
+   Dark Mode
+   Ultra Premium Polish
+========================================== */
+
+/* ===============================
+   Mobile Responsive
+================================ */
+
+@media (max-width:768px){
+
+#instructorCenter,
+#instructorTeachingCenter,
+#instructorAIManagement,
+#instructorFutureCenter{
+
+    padding:20px;
+    margin-top:25px;
+
+}
+
+#instructorCenter h2,
+#instructorTeachingCenter h2,
+#instructorAIManagement h2,
+#instructorFutureCenter h2{
+
+    font-size:24px;
+
+}
+
+#instructorCenter .tool-grid,
+#instructorTeachingCenter .tool-grid,
+#instructorAIManagement .tool-grid,
+#instructorFutureCenter .tool-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+#instructorCenter .tool-card,
+#instructorTeachingCenter .tool-card,
+#instructorAIManagement .tool-card,
+#instructorFutureCenter .tool-card{
+
+    padding:22px;
+
+}
+
+}
+
+/* ===============================
+   Tablet Responsive
+================================ */
+
+@media (min-width:769px) and (max-width:1100px){
+
+#instructorCenter .tool-grid,
+#instructorTeachingCenter .tool-grid,
+#instructorAIManagement .tool-grid,
+#instructorFutureCenter .tool-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* ===============================
+   Large Desktop
+================================ */
+
+@media (min-width:1400px){
+
+#instructorCenter .tool-grid,
+#instructorTeachingCenter .tool-grid,
+#instructorAIManagement .tool-grid,
+#instructorFutureCenter .tool-grid{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+}
+
+/* ===============================
+   Dark Mode
+================================ */
+
+body.dark-mode #instructorCenter,
+body.dark-mode #instructorTeachingCenter,
+body.dark-mode #instructorAIManagement,
+body.dark-mode #instructorFutureCenter{
+
+    background:rgba(20,20,25,.88);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+body.dark-mode #instructorCenter .tool-card,
+body.dark-mode #instructorTeachingCenter .tool-card,
+body.dark-mode #instructorAIManagement .tool-card,
+body.dark-mode #instructorFutureCenter .tool-card{
+
+    background:rgba(255,255,255,.03);
+
+}
+
+/* ===============================
+   Scroll Position
+================================ */
+
+#instructorCenter,
+#instructorTeachingCenter,
+#instructorAIManagement,
+#instructorFutureCenter{
+
+    scroll-margin-top:80px;
+
+}
+
+/* ===============================
+   Performance Optimization
+================================ */
+
+#instructorCenter *,
+#instructorTeachingCenter *,
+#instructorAIManagement *,
+#instructorFutureCenter *{
+
+    box-sizing:border-box;
+
+    will-change:transform;
+
+}
+
+/* ===============================
+   Ultra Premium Polish
+================================ */
+
+#instructorCenter .tool-card,
+#instructorTeachingCenter .tool-card,
+#instructorAIManagement .tool-card,
+#instructorFutureCenter .tool-card{
+
+    min-height:220px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+}
+
+/* ===============================
+   Future Ready
+================================ */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+}
+}
