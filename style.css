@@ -1602,3 +1602,301 @@ font-size:9px;
 }
 
 }
+
+/* =====================================================
+   SECURITY CENTER
+   Part 1 : Section Layout
+   ScaleFlow University
+===================================================== */
+
+#securityCenter{
+    margin-top:40px;
+    padding:30px;
+    background:#ffffff;
+    border-radius:20px;
+    border:1px solid #e5e7eb;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+#securityCenter h2{
+    font-size:30px;
+    font-weight:700;
+    color:#0f172a;
+    margin-bottom:25px;
+    text-align:center;
+}
+
+#securityCenter .tool-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+    width:100%;
+}
+
+#securityCenter .tool-card{
+    background:#f8fafc;
+    border:1px solid #dbeafe;
+    border-radius:18px;
+    padding:25px;
+    transition:.30s;
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+}
+
+#securityCenter .tool-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:4px;
+    background:#16a34a;
+}
+
+/* =====================================================
+   SECURITY CENTER
+   Part 2 : Professional Tool Card Design
+===================================================== */
+
+#securityCenter .tool-card h3{
+    font-size:22px;
+    font-weight:700;
+    color:#0f172a;
+    margin-bottom:12px;
+    text-align:center;
+}
+
+#securityCenter .tool-card p{
+    font-size:15px;
+    color:#64748b;
+    text-align:center;
+    margin-bottom:18px;
+    letter-spacing:1px;
+    font-weight:600;
+}
+
+#securityCenter .tool-card span{
+    display:inline-block;
+    width:100%;
+    text-align:center;
+    padding:10px 14px;
+    border-radius:12px;
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+    color:#ffffff;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.5px;
+    box-shadow:0 6px 18px rgba(34,197,94,.25);
+}
+
+#securityCenter .tool-card{
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+}
+
+#securityCenter .tool-card:nth-child(2) span{
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+}
+
+#securityCenter .tool-card:nth-child(3) span{
+    background:linear-gradient(135deg,#f59e0b,#fbbf24);
+}
+
+#securityCenter .tool-card:nth-child(4) span{
+    background:linear-gradient(135deg,#8b5cf6,#a855f7);
+}
+
+#securityCenter .tool-card:nth-child(5) span{
+    background:linear-gradient(135deg,#06b6d4,#0891b2);
+}
+
+#securityCenter .tool-card:nth-child(6) span{
+    background:linear-gradient(135deg,#ef4444,#dc2626);
+}
+
+#securityCenter .tool-card:nth-child(7) span{
+    background:linear-gradient(135deg,#0ea5e9,#0284c7);
+}
+
+#securityCenter .tool-card:nth-child(8) span{
+    background:linear-gradient(135deg,#334155,#0f172a);
+}
+
+/* =====================================================
+   SECURITY CENTER
+   Part 3 : Hover Animation + Premium Effects
+===================================================== */
+
+#securityCenter .tool-card:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 20px 40px rgba(0,0,0,.18);
+    border-color:#22c55e;
+    background:#ffffff;
+}
+
+#securityCenter .tool-card:hover::before{
+    height:6px;
+    background:linear-gradient(90deg,#22c55e,#3b82f6,#8b5cf6);
+}
+
+#securityCenter .tool-card h3,
+#securityCenter .tool-card p,
+#securityCenter .tool-card span{
+    transition:all .35s ease;
+}
+
+#securityCenter .tool-card:hover h3{
+    color:#16a34a;
+}
+
+#securityCenter .tool-card:hover p{
+    color:#334155;
+}
+
+#securityCenter .tool-card:hover span{
+    transform:scale(1.05);
+    letter-spacing:1px;
+}
+
+#securityCenter .tool-card{
+    animation:securityFadeIn .8s ease both;
+}
+
+#securityCenter .tool-card:nth-child(1){animation-delay:.05s;}
+#securityCenter .tool-card:nth-child(2){animation-delay:.10s;}
+#securityCenter .tool-card:nth-child(3){animation-delay:.15s;}
+#securityCenter .tool-card:nth-child(4){animation-delay:.20s;}
+#securityCenter .tool-card:nth-child(5){animation-delay:.25s;}
+#securityCenter .tool-card:nth-child(6){animation-delay:.30s;}
+#securityCenter .tool-card:nth-child(7){animation-delay:.35s;}
+#securityCenter .tool-card:nth-child(8){animation-delay:.40s;}
+
+@keyframes securityFadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   SECURITY CENTER
+   Part 4 : Mobile + Ultra Premium + Dark Mode Ready
+===================================================== */
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:992px){
+
+#securityCenter{
+    padding:25px;
+}
+
+#securityCenter h2{
+    font-size:26px;
+}
+
+#securityCenter .tool-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+}
+
+@media (max-width:768px){
+
+#securityCenter{
+    padding:20px;
+}
+
+#securityCenter h2{
+    font-size:24px;
+}
+
+#securityCenter .tool-grid{
+    grid-template-columns:1fr;
+}
+
+#securityCenter .tool-card{
+    padding:20px;
+}
+
+#securityCenter .tool-card h3{
+    font-size:20px;
+}
+
+}
+
+/* ---------- Ultra Premium ---------- */
+
+#securityCenter .tool-card{
+
+    background:
+    linear-gradient(180deg,#ffffff,#f8fafc);
+
+}
+
+#securityCenter .tool-card:hover{
+
+    background:
+    linear-gradient(180deg,#ffffff,#ecfeff);
+
+}
+
+/* ---------- Scroll Animation Ready ---------- */
+
+#securityCenter{
+
+    scroll-margin-top:90px;
+
+}
+
+/* ---------- Dark Mode Ready ---------- */
+
+body.dark-mode #securityCenter{
+
+    background:#0f172a;
+    border-color:#334155;
+
+}
+
+body.dark-mode #securityCenter h2{
+
+    color:white;
+
+}
+
+body.dark-mode #securityCenter .tool-card{
+
+    background:#1e293b;
+    border-color:#334155;
+
+}
+
+body.dark-mode #securityCenter .tool-card h3{
+
+    color:white;
+
+}
+
+body.dark-mode #securityCenter .tool-card p{
+
+    color:#cbd5e1;
+
+}
+
+/* ---------- Future Ready ---------- */
+
+#securityCenter .tool-card{
+
+    will-change:transform;
+
+}
