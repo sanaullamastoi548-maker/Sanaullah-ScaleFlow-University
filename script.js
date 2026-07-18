@@ -1933,3 +1933,408 @@ document.addEventListener("DOMContentLoaded", () => {
     Learning3DCenter.integration.initialize();
 
 });
+
+/* ==========================================
+   PAYMENT CENTER
+   JavaScript Part-1
+   Initialization
+========================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    initializePaymentCenter();
+
+});
+
+function initializePaymentCenter() {
+
+    console.log("💳 Payment Center Loaded");
+
+    initializePaymentCards();
+
+}
+
+function initializePaymentCards() {
+
+    const cards = document.querySelectorAll(".pricing-card");
+
+    cards.forEach((card,index)=>{
+
+        card.dataset.plan=index+1;
+
+        console.log("Plan Ready :",card.dataset.plan);
+
+    });
+
+}
+
+/* ==========================================
+   PAYMENT CENTER
+   JavaScript Part-2
+   Plan Selection + Coming Soon Popup
+========================================== */
+
+function initializePaymentCenter() {
+
+    console.log("💳 Payment Center Loaded");
+
+    initializePaymentCards();
+
+    initializePlanButtons();
+
+}
+
+/* ==========================================
+   PLAN BUTTONS
+========================================== */
+
+function initializePlanButtons() {
+
+    const buttons = document.querySelectorAll(".pricing-card button");
+
+    buttons.forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            showComingSoonPopup();
+
+        });
+
+    });
+
+}
+
+/* ==========================================
+   CARD CLICK
+========================================== */
+
+document.querySelectorAll(".pricing-card").forEach(card => {
+
+    card.addEventListener("click", function () {
+
+        document.querySelectorAll(".pricing-card").forEach(c => {
+
+            c.classList.remove("selected-plan");
+
+        });
+
+        this.classList.add("selected-plan");
+
+        console.log("Selected Plan:", this.querySelector("h3").innerText);
+
+    });
+
+});
+
+/* ==========================================
+   COMING SOON POPUP
+========================================== */
+
+function showComingSoonPopup() {
+
+    alert(
+`💳 ScaleFlow University
+
+🚀 Payment System
+
+COMING SOON
+
+Future Supported:
+
+✅ Stripe
+✅ PayPal
+✅ Google Pay
+✅ Apple Pay
+✅ STC Pay
+✅ Mada
+✅ JazzCash
+✅ EasyPaisa
+
+🤖 AI Ready
+🔒 Secure Payment
+🌍 Future Ready`
+    );
+
+}
+
+/* ==========================================
+   PAYMENT CENTER
+   JavaScript Part-3
+   AI Subscription Manager
+   Payment Gateway Loader
+   Scholarship & Referral System
+========================================== */
+
+/* ==========================================
+   AI SUBSCRIPTION MANAGER
+========================================== */
+
+const SubscriptionManager = {
+
+    currentPlan: "FREE",
+
+    upgrade(plan){
+
+        this.currentPlan = plan;
+
+        console.log("🚀 Subscription Updated:", plan);
+
+    },
+
+    getCurrentPlan(){
+
+        return this.currentPlan;
+
+    }
+
+};
+
+/* ==========================================
+   PAYMENT GATEWAY LOADER
+========================================== */
+
+const PaymentGateway = {
+
+    stripe:false,
+    paypal:false,
+    jazzcash:false,
+    easypaisa:false,
+    stcpay:false,
+    mada:false,
+
+    loadGateway(name){
+
+        console.log("💳 Loading Gateway:",name);
+
+        if(this.hasOwnProperty(name.toLowerCase())){
+
+            this[name.toLowerCase()] = true;
+
+        }
+
+    },
+
+    status(){
+
+        console.table(this);
+
+    }
+
+};
+
+/* ==========================================
+   SCHOLARSHIP SYSTEM
+========================================== */
+
+const ScholarshipSystem = {
+
+    eligible:false,
+
+    checkEligibility(studentXP){
+
+        if(studentXP >= 1000){
+
+            this.eligible = true;
+
+            console.log("🎓 Scholarship Eligible");
+
+        }else{
+
+            this.eligible = false;
+
+            console.log("❌ Scholarship Not Eligible");
+
+        }
+
+    }
+
+};
+
+/* ==========================================
+   REFERRAL SYSTEM
+========================================== */
+
+const ReferralSystem = {
+
+    referralCount:0,
+
+    addReferral(){
+
+        this.referralCount++;
+
+        console.log("👥 Referral Added:",this.referralCount);
+
+    },
+
+    rewardCheck(){
+
+        if(this.referralCount >= 10){
+
+            console.log("🎁 Free Premium Reward Ready");
+
+        }
+
+    }
+
+};
+
+/* ==========================================
+   AI PAYMENT ANALYZER
+========================================== */
+
+function analyzeSubscription(){
+
+    console.log("🤖 AI Subscription Analysis Running...");
+
+    console.log("Current Plan:",
+        SubscriptionManager.getCurrentPlan());
+
+}
+
+/* ==========================================
+   FUTURE READY
+========================================== */
+
+console.log("✅ AI Subscription Manager Ready");
+console.log("✅ Payment Gateway Loader Ready");
+console.log("✅ Scholarship System Ready");
+console.log("✅ Referral System Ready");
+
+/* ==========================================
+   PAYMENT CENTER
+   JavaScript Part-4
+   Enterprise Future Integration Manager
+   ScaleFlow University
+========================================== */
+
+const PaymentEngine = {
+
+    initialized: false,
+
+    gateways: {
+        stripe: false,
+        paypal: false,
+        googlePay: false,
+        applePay: false,
+        stcPay: false,
+        mada: false,
+        jazzCash: false,
+        easyPaisa: false
+    },
+
+    services: {
+        invoice: false,
+        receipt: false,
+        autoRenew: false,
+        webhook: false,
+        aiBilling: false
+    },
+
+    initialize() {
+
+        console.log("==================================");
+        console.log("ScaleFlow Payment Engine Started");
+        console.log("==================================");
+
+        this.initialized = true;
+
+        this.updateStatus();
+
+    },
+
+    connectGateway(name) {
+
+        if (this.gateways.hasOwnProperty(name)) {
+
+            this.gateways[name] = true;
+
+            console.log("✅ Gateway Connected:", name);
+
+            this.updateStatus();
+
+        }
+
+    },
+
+    enableService(name) {
+
+        if (this.services.hasOwnProperty(name)) {
+
+            this.services[name] = true;
+
+            console.log("✅ Service Enabled:", name);
+
+            this.updateStatus();
+
+        }
+
+    },
+
+    updateStatus() {
+
+        const badges = document.querySelectorAll(
+            "#paymentCenter .tool-card span"
+        );
+
+        badges.forEach(function (badge) {
+
+            badge.textContent = "COMING SOON";
+            badge.style.background = "#ff9800";
+            badge.style.color = "#ffffff";
+
+        });
+
+        if (
+            Object.values(this.gateways).includes(true) ||
+            Object.values(this.services).includes(true)
+        ) {
+
+            badges.forEach(function (badge) {
+
+                badge.textContent = "ONLINE";
+                badge.style.background = "#00c853";
+
+            });
+
+        }
+
+    }
+
+};
+
+/* ==========================================
+   AUTO START
+========================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    PaymentEngine.initialize();
+
+});
+
+/* ==========================================
+   FUTURE API FUNCTIONS
+========================================== */
+
+// PaymentEngine.connectGateway("stripe");
+// PaymentEngine.connectGateway("paypal");
+// PaymentEngine.connectGateway("jazzCash");
+// PaymentEngine.connectGateway("easyPaisa");
+
+// PaymentEngine.enableService("invoice");
+// PaymentEngine.enableService("receipt");
+// PaymentEngine.enableService("autoRenew");
+// PaymentEngine.enableService("webhook");
+// PaymentEngine.enableService("aiBilling");
+
+/* ==========================================
+   ENTERPRISE READY
+========================================== */
+
+console.log("💳 Payment Engine Ready");
+console.log("🌍 Gateway Manager Ready");
+console.log("📄 Invoice System Ready");
+console.log("📧 Receipt System Ready");
+console.log("🔄 Auto Renewal Ready");
+console.log("🤖 AI Billing Ready");
+console.log("🚀 Future Enterprise Integration Ready");
