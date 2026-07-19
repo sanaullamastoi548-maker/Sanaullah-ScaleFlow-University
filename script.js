@@ -6817,15 +6817,19 @@ const HomeworkAssistant = {
     review(title) {
 
         console.log(
-
             "📝 Homework Review:",
-
             title
-
         );
 
-        alert 
+        alert(
+            "📝 Homework Assistant\n\n" +
+            "Homework received successfully.\n\n" +
+            "AI review engine will be connected in the next phase."
+        );
 
+    }
+
+};
     /* ==========================================
    AI MENTOR CENTER
    JavaScript Part-3
