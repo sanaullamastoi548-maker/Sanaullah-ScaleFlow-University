@@ -4671,6 +4671,653 @@ html{
     letter-spacing: 1.5px;
 }
 
+/* ==========================================
+   ACHIEVEMENT & GAMIFICATION CENTER
+   CSS PART-1
+   Layout + Section Design
+   ScaleFlow University
+========================================== */
+
+/* ===============================
+   Achievement Sections
+================================ */
+
+#achievementCenter,
+#achievementRewardCenter,
+#achievementLeaderboardCenter,
+#achievementFutureCenter{
+
+    margin-top:40px;
+
+    padding:35px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.18);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* ===============================
+   Section Titles
+================================ */
+
+#achievementCenter h2,
+#achievementRewardCenter h2,
+#achievementLeaderboardCenter h2,
+#achievementFutureCenter h2{
+
+    text-align:center;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    margin-bottom:28px;
+
+    letter-spacing:.5px;
+
+}
+
+/* ===============================
+   Premium Tool Grid
+================================ */
+
+#achievementCenter .tool-grid,
+#achievementRewardCenter .tool-grid,
+#achievementLeaderboardCenter .tool-grid,
+#achievementFutureCenter .tool-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(240px,1fr));
+
+    gap:22px;
+
+    align-items:stretch;
+
+}
+
+/* ===============================
+   Golden Top Border
+================================ */
+
+#achievementCenter::before,
+#achievementRewardCenter::before,
+#achievementLeaderboardCenter::before,
+#achievementFutureCenter::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:4px;
+
+    background:linear-gradient(
+        90deg,
+        #FFD700,
+        #FFB300,
+        #FFC107,
+        #FFD54F
+    );
+
+}
+
+/* ===============================
+   Future Ready
+================================ */
+
+#achievementCenter,
+#achievementRewardCenter,
+#achievementLeaderboardCenter,
+#achievementFutureCenter{
+
+    scroll-margin-top:80px;
+
+}
+
+/* ==========================================
+   ACHIEVEMENT & GAMIFICATION CENTER
+   CSS PART-2
+   Premium Trophy Cards + Gold Theme
+   ScaleFlow University
+========================================== */
+
+/* ===============================
+   Premium Achievement Cards
+================================ */
+
+#achievementCenter .tool-card,
+#achievementRewardCenter .tool-card,
+#achievementLeaderboardCenter .tool-card,
+#achievementFutureCenter .tool-card{
+
+    position:relative;
+
+    padding:28px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,215,0,.20);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.25);
+
+    overflow:hidden;
+
+    transition:all .35s ease;
+
+}
+
+/* ===============================
+   Trophy Icon Animation
+================================ */
+
+#achievementCenter .tool-card h3,
+#achievementRewardCenter .tool-card h3,
+#achievementLeaderboardCenter .tool-card h3,
+#achievementFutureCenter .tool-card h3{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#FFD54F;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+/* ===============================
+   Card Description
+================================ */
+
+#achievementCenter .tool-card p,
+#achievementRewardCenter .tool-card p,
+#achievementLeaderboardCenter .tool-card p,
+#achievementFutureCenter .tool-card p{
+
+    color:#d8d8d8;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+    margin-bottom:18px;
+
+}
+
+/* ===============================
+   XP Badge
+================================ */
+
+#achievementCenter .tool-card span,
+#achievementRewardCenter .tool-card span,
+#achievementLeaderboardCenter .tool-card span,
+#achievementFutureCenter .tool-card span{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+        135deg,
+        #FFD700,
+        #FFC107
+    );
+
+    color:#111;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.8px;
+
+    text-transform:uppercase;
+
+    box-shadow:
+        0 5px 15px rgba(255,193,7,.45);
+
+}
+
+/* ===============================
+   Gold / Silver / Bronze Classes
+================================ */
+
+.badge-gold{
+
+    background:linear-gradient(135deg,#FFD700,#FFB300);
+
+    color:#111;
+
+}
+
+.badge-silver{
+
+    background:linear-gradient(135deg,#ECEFF1,#B0BEC5);
+
+    color:#111;
+
+}
+
+.badge-bronze{
+
+    background:linear-gradient(135deg,#CD7F32,#A65E2E);
+
+    color:#fff;
+
+}
+
+/* ===============================
+   Premium Shine Effect
+================================ */
+
+#achievementCenter .tool-card::after,
+#achievementRewardCenter .tool-card::after,
+#achievementLeaderboardCenter .tool-card::after,
+#achievementFutureCenter .tool-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+
+    left:-40%;
+
+    width:60%;
+
+    height:250%;
+
+    transform:rotate(25deg);
+
+    background:rgba(255,255,255,.08);
+
+    transition:.6s;
+
+}
+
+#achievementCenter .tool-card:hover::after,
+#achievementRewardCenter .tool-card:hover::after,
+#achievementLeaderboardCenter .tool-card:hover::after,
+#achievementFutureCenter .tool-card:hover::after{
+
+    left:120%;
+
+}
+
+/* ==========================================
+   ACHIEVEMENT & GAMIFICATION CENTER
+   CSS PART-3
+   Premium Hover + Trophy Glow
+   Floating Cards + XP Effects
+   ScaleFlow University
+========================================== */
+
+/* ===============================
+   Premium Hover Animation
+================================ */
+
+#achievementCenter .tool-card:hover,
+#achievementRewardCenter .tool-card:hover,
+#achievementLeaderboardCenter .tool-card:hover,
+#achievementFutureCenter .tool-card:hover{
+
+    transform:translateY(-12px) scale(1.03);
+
+    border:1px solid rgba(255,215,0,.55);
+
+    box-shadow:
+        0 22px 45px rgba(0,0,0,.35),
+        0 0 18px rgba(255,193,7,.40),
+        0 0 40px rgba(255,215,0,.25);
+
+}
+
+/* ===============================
+   Floating Cards
+================================ */
+
+@keyframes achievementFloat{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-6px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+#achievementCenter .tool-card,
+#achievementRewardCenter .tool-card,
+#achievementLeaderboardCenter .tool-card,
+#achievementFutureCenter .tool-card{
+
+    animation:achievementFloat 5s ease-in-out infinite;
+
+}
+
+/* ===============================
+   Trophy Glow
+================================ */
+
+#achievementCenter .tool-card:hover h3,
+#achievementRewardCenter .tool-card:hover h3,
+#achievementLeaderboardCenter .tool-card:hover h3,
+#achievementFutureCenter .tool-card:hover h3{
+
+    color:#FFD700;
+
+    text-shadow:
+        0 0 8px rgba(255,215,0,.65),
+        0 0 18px rgba(255,193,7,.35);
+
+}
+
+/* ===============================
+   Description Highlight
+================================ */
+
+#achievementCenter .tool-card:hover p,
+#achievementRewardCenter .tool-card:hover p,
+#achievementLeaderboardCenter .tool-card:hover p,
+#achievementFutureCenter .tool-card:hover p{
+
+    color:#ffffff;
+
+}
+
+/* ===============================
+   XP Badge Glow
+================================ */
+
+#achievementCenter .tool-card:hover span,
+#achievementRewardCenter .tool-card:hover span,
+#achievementLeaderboardCenter .tool-card:hover span,
+#achievementFutureCenter .tool-card:hover span{
+
+    background:linear-gradient(
+        135deg,
+        #FFE082,
+        #FFD700,
+        #FFC107
+    );
+
+    color:#111;
+
+    box-shadow:
+        0 0 18px rgba(255,215,0,.70),
+        0 0 35px rgba(255,193,7,.35);
+
+}
+
+/* ===============================
+   XP Progress Effect
+================================ */
+
+.xp-progress{
+
+    width:100%;
+
+    height:10px;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.10);
+
+    margin-top:12px;
+
+}
+
+.xp-progress-bar{
+
+    width:0%;
+
+    height:100%;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        90deg,
+        #FFC107,
+        #FFD700,
+        #FFF176
+    );
+
+    transition:width .8s ease;
+
+}
+
+/* ===============================
+   Smooth Transition
+================================ */
+
+#achievementCenter .tool-card,
+#achievementCenter .tool-card h3,
+#achievementCenter .tool-card p,
+#achievementCenter .tool-card span,
+
+#achievementRewardCenter .tool-card,
+#achievementRewardCenter .tool-card h3,
+#achievementRewardCenter .tool-card p,
+#achievementRewardCenter .tool-card span,
+
+#achievementLeaderboardCenter .tool-card,
+#achievementLeaderboardCenter .tool-card h3,
+#achievementLeaderboardCenter .tool-card p,
+#achievementLeaderboardCenter .tool-card span,
+
+#achievementFutureCenter .tool-card,
+#achievementFutureCenter .tool-card h3,
+#achievementFutureCenter .tool-card p,
+#achievementFutureCenter .tool-card span{
+
+    transition:all .35s ease;
+
+}
+
+/* ==========================================
+   ACHIEVEMENT & GAMIFICATION CENTER
+   CSS PART-4
+   Mobile Responsive
+   Dark Mode
+   Ultra Premium Polish
+   ScaleFlow University
+========================================== */
+
+/* ===============================
+   Mobile Responsive
+================================ */
+
+@media (max-width:768px){
+
+#achievementCenter,
+#achievementRewardCenter,
+#achievementLeaderboardCenter,
+#achievementFutureCenter{
+
+    padding:20px;
+    margin-top:25px;
+
+}
+
+#achievementCenter h2,
+#achievementRewardCenter h2,
+#achievementLeaderboardCenter h2,
+#achievementFutureCenter h2{
+
+    font-size:24px;
+
+}
+
+#achievementCenter .tool-grid,
+#achievementRewardCenter .tool-grid,
+#achievementLeaderboardCenter .tool-grid,
+#achievementFutureCenter .tool-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+#achievementCenter .tool-card,
+#achievementRewardCenter .tool-card,
+#achievementLeaderboardCenter .tool-card,
+#achievementFutureCenter .tool-card{
+
+    padding:22px;
+
+}
+
+}
+
+/* ===============================
+   Tablet Responsive
+================================ */
+
+@media (min-width:769px) and (max-width:1100px){
+
+#achievementCenter .tool-grid,
+#achievementRewardCenter .tool-grid,
+#achievementLeaderboardCenter .tool-grid,
+#achievementFutureCenter .tool-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* ===============================
+   Large Desktop
+================================ */
+
+@media (min-width:1400px){
+
+#achievementCenter .tool-grid,
+#achievementRewardCenter .tool-grid,
+#achievementLeaderboardCenter .tool-grid,
+#achievementFutureCenter .tool-grid{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+}
+
+/* ===============================
+   Dark Mode
+================================ */
+
+body.dark-mode #achievementCenter,
+body.dark-mode #achievementRewardCenter,
+body.dark-mode #achievementLeaderboardCenter,
+body.dark-mode #achievementFutureCenter{
+
+    background:rgba(20,20,25,.88);
+
+    border:1px solid rgba(255,215,0,.12);
+
+}
+
+body.dark-mode #achievementCenter .tool-card,
+body.dark-mode #achievementRewardCenter .tool-card,
+body.dark-mode #achievementLeaderboardCenter .tool-card,
+body.dark-mode #achievementFutureCenter .tool-card{
+
+    background:rgba(255,255,255,.03);
+
+}
+
+/* ===============================
+   Premium Card Polish
+================================ */
+
+#achievementCenter .tool-card,
+#achievementRewardCenter .tool-card,
+#achievementLeaderboardCenter .tool-card,
+#achievementFutureCenter .tool-card{
+
+    min-height:220px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    box-sizing:border-box;
+
+}
+
+/* ===============================
+   Performance Optimization
+================================ */
+
+#achievementCenter *,
+#achievementRewardCenter *,
+#achievementLeaderboardCenter *,
+#achievementFutureCenter *{
+
+    will-change:transform;
+
+}
+
+/* ===============================
+   Smooth Scrolling
+================================ */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
 /* ===============================
    End of Analytics Center Styles
 ================================ */
