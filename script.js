@@ -7796,3 +7796,49 @@ console.log("✅ API Integration Layer");
 console.log("✅ Cloud Sync Ready");
 console.log("✅ Production Lock Enabled");
 console.log("🎉 Navigation Controller v1.0 Ready");
+
+/*=========================================
+Course Engine
+Part 3H
+Course Search
+=========================================*/
+
+function initializeCourseSearch() {
+
+    const searchInput = document.getElementById("courseSearchInput");
+
+    if (!searchInput) return;
+
+    searchInput.addEventListener("keyup", function () {
+
+        const keyword = searchInput.value.toLowerCase();
+
+        const cards = document.querySelectorAll("#courseGrid .course-card");
+
+        cards.forEach(function(card){
+
+            const title = card.innerText.toLowerCase();
+
+            if(title.includes(keyword)){
+
+                card.style.display = "";
+
+            }else{
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+    });
+
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    NavigationController.loadFromURL();
+
+    initializeCourseSearch();
+
+});
