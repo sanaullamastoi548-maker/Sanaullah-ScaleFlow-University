@@ -2844,49 +2844,332 @@ PAGE 2: DASHBOARD
 </section>
   
 <!-- ===================================================
-PAGE 3: COURSES
+PAGE 3 : COURSES
+ScaleFlow University
+Enterprise Layout
 =================================================== -->
-<section id="page3" class="page-section" aria-label="All Courses">
-    <h2>📚 All Courses</h2>
-    <div class="learning-header">
-        <input id="courseSearchInput" type="text" placeholder="🔍 Search courses..." aria-label="Search courses">
+
+<section id="page3" class="page-section">
+
+    <h2>📚 Course Center</h2>
+
+    <!-- Search -->
+
+    <div id="courseSearchArea" class="course-search-header">
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="courseSearchInput"
+            placeholder="🔍 Search Courses..."
+        >
+
+        <button id="courseSearchBtn" class="btn-primary">
+            Search
+        </button>
+
+        <button id="courseClearBtn" class="btn-secondary">
+            Clear
+        </button>
+
     </div>
+
+    <div class="course-summary">
+
+        <span id="totalCourses">
+            📚 Total Courses : 0
+        </span>
+
+    </div>
+
+</div>
+
+    <!-- Filters -->
+
+    <div id="courseFilterArea" class="course-filter-section">
+
+    <h3>📂 Course Categories</h3>
+
     <div class="filter-buttons">
-        <button id="filterAll" class="btn-secondary" type="button">All</button>
-        <button id="filterBeginner" class="btn-secondary" type="button">Beginner</button>
-        <button id="filterIntermediate" class="btn-secondary" type="button">Intermediate</button>
-        <button id="filterAdvanced" class="btn-secondary" type="button">Advanced</button>
+
+        <button id="filterAllBtn" class="btn-primary">
+            📚 All Courses
+        </button>
+
+        <button id="filterBeginnerBtn" class="btn-secondary">
+            🟢 Beginner
+        </button>
+
+        <button id="filterIntermediateBtn" class="btn-secondary">
+            🟡 Intermediate
+        </button>
+
+        <button id="filterAdvancedBtn" class="btn-secondary">
+            🔴 Advanced
+        </button>
+
+        <button id="filterFeaturedBtn" class="btn-secondary">
+            ⭐ Featured
+        </button>
+
+        <button id="filterRecommendedBtn" class="btn-secondary">
+            🤖 Recommended
+        </button>
+
     </div>
-    <div class="course-grid" id="courseGrid">
-        <article class="course-card" id="courseCard001" data-difficulty="beginner"><h3>AI Fundamentals</h3><p>Beginner • 12 Lessons</p><button id="startCourse1" class="btn-primary" type="button">Start</button></article>
-        <article class="course-card" id="courseCard002" data-difficulty="intermediate"><h3>JavaScript Masterclass</h3><p>Intermediate • 20 Lessons</p><button id="startCourse2" class="btn-primary" type="button">Start</button></article>
-        <article class="course-card" id="courseCard003" data-difficulty="advanced"><h3>Data Science Pro</h3><p>Advanced • 15 Lessons</p><button id="startCourse3" class="btn-primary" type="button">Start</button></article>
-        <article class="course-card" id="courseCard004" data-difficulty="beginner"><h3>HTML & CSS</h3><p>Beginner • 8 Lessons</p><button id="startCourse4" class="btn-primary" type="button">Start</button></article>
-        <article class="course-card" id="courseCard005" data-difficulty="intermediate"><h3>React Development</h3><p>Intermediate • 18 Lessons</p><button id="startCourse5" class="btn-primary" type="button">Start</button></article>
-        <article class="course-card" id="courseCard006" data-difficulty="advanced"><h3>Machine Learning</h3><p>Advanced • 22 Lessons</p><button id="startCourse6" class="btn-primary" type="button">Start</button></article>
+
+</div>
+
+    <!-- Featured -->
+
+    <div id="featuredCoursesArea" class="featured-courses-section">
+
+    <h3>⭐ Featured Courses</h3>
+
+    <div class="course-grid">
+
+        <article class="course-card">
+
+            <h4>🤖 AI Fundamentals</h4>
+
+            <p>Beginner Level</p>
+
+            <p>12 Lessons</p>
+
+            <button class="btn-primary">
+                Start Learning
+            </button>
+
+        </article>
+
+        <article class="course-card">
+
+            <h4>🌐 Web Development Bootcamp</h4>
+
+            <p>Intermediate Level</p>
+
+            <p>30 Lessons</p>
+
+            <button class="btn-primary">
+                Start Learning
+            </button>
+
+        </article>
+
+        <article class="course-card">
+
+            <h4>📊 Data Science Pro</h4>
+
+            <p>Advanced Level</p>
+
+            <p>22 Lessons</p>
+
+            <button class="btn-primary">
+                Start Learning
+            </button>
+
+        </article>
+
     </div>
-    <div class="pagination">
-        <button id="paginationPrev" class="btn-secondary" type="button">Previous</button>
-        <button id="pagination1" class="btn-primary" type="button">1</button>
-        <button id="pagination2" class="btn-secondary" type="button">2</button>
-        <button id="pagination3" class="btn-secondary" type="button">3</button>
-        <button id="paginationNext" class="btn-secondary" type="button">Next</button>
+
+</div>
+
+    <!-- Recommended -->
+
+    <div id="recommendedCoursesArea" class="recommended-courses-section">
+
+    <h3>🤖 AI Recommended Courses</h3>
+
+    <p class="section-description">
+        Personalized courses recommended for your learning journey.
+    </p>
+
+    <div class="course-grid">
+
+        <article class="course-card">
+
+            <h4>🐍 Python for Data Science</h4>
+
+            <p>Recommended</p>
+
+            <p>14 Lessons</p>
+
+            <button class="btn-primary">
+                Start Learning
+            </button>
+
+        </article>
+
+        <article class="course-card">
+
+            <h4>☁ Cloud Computing</h4>
+
+            <p>Recommended</p>
+
+            <p>12 Lessons</p>
+
+            <button class="btn-primary">
+                Start Learning
+            </button>
+
+        </article>
+
+        <article class="course-card">
+
+            <h4>📱 Mobile App Development</h4>
+
+            <p>Recommended</p>
+
+            <p>18 Lessons</p>
+
+            <button class="btn-primary">
+                Start Learning
+            </button>
+
+        </article>
+
     </div>
-    <section class="featured-courses" aria-label="Featured Courses">
-        <h3>⭐ Featured Courses</h3>
-        <div class="course-grid">
-            <article class="course-card" id="featuredCourse1"><h3>AI for Everyone</h3><p>Featured • 10 Lessons</p><button id="enrollFeatured1" class="btn-primary" type="button">Enroll</button></article>
-            <article class="course-card" id="featuredCourse2"><h3>Web Dev Bootcamp</h3><p>Featured • 30 Lessons</p><button id="enrollFeatured2" class="btn-primary" type="button">Enroll</button></article>
-        </div>
-    </section>
-    <section class="recommended-courses" aria-label="Recommended Courses">
-        <h3>📌 Recommended for You</h3>
-        <div class="course-grid">
-            <article class="course-card" id="recommendedCourse1"><h3>Python for Data Science</h3><p>Recommended • 14 Lessons</p><button id="startRec1" class="btn-primary" type="button">Start</button></article>
-            <article class="course-card" id="recommendedCourse2"><h3>Cloud Computing</h3><p>Recommended • 12 Lessons</p><button id="startRec2" class="btn-primary" type="button">Start</button></article>
-        </div>
-    </section>
+
+</div>
+    <!-- All Courses -->
+
+    <div id="allCoursesArea" class="all-courses-section">
+
+    <h3>📚 All Courses</h3>
+
+    <p class="section-description">
+        Browse all available courses.
+    </p>
+
+    <div id="courseGrid" class="course-grid">
+
+        <article class="course-card">
+
+            <h4>🤖 AI Fundamentals</h4>
+
+            <p>Level : Beginner</p>
+
+            <p>12 Lessons</p>
+
+            <button class="btn-primary">
+                View Course
+            </button>
+
+        </article>
+
+        <article class="course-card">
+
+            <h4>🌐 HTML & CSS</h4>
+
+            <p>Level : Beginner</p>
+
+            <p>8 Lessons</p>
+
+            <button class="btn-primary">
+                View Course
+            </button>
+
+        </article>
+
+        <article class="course-card">
+
+            <h4>⚡ JavaScript Masterclass</h4>
+
+            <p>Level : Intermediate</p>
+
+            <p>20 Lessons</p>
+
+            <button class="btn-primary">
+                View Course
+            </button>
+
+        </article>
+
+        <article class="course-card">
+
+            <h4>⚛ React Development</h4>
+
+            <p>Level : Intermediate</p>
+
+            <p>18 Lessons</p>
+
+            <button class="btn-primary">
+                View Course
+            </button>
+
+        </article>
+
+        <article class="course-card">
+
+            <h4>📊 Data Science Pro</h4>
+
+            <p>Level : Advanced</p>
+
+            <p>15 Lessons</p>
+
+            <button class="btn-primary">
+                View Course
+            </button>
+
+        </article>
+
+        <article class="course-card">
+
+            <h4>🧠 Machine Learning</h4>
+
+            <p>Level : Advanced</p>
+
+            <p>22 Lessons</p>
+
+            <button class="btn-primary">
+                View Course
+            </button>
+
+        </article>
+
+    </div>
+
+</div>
+
+    <!-- Pagination -->
+
+    <div id="paginationArea" class="pagination-section">
+
+    <button id="previousPageBtn" class="btn-secondary">
+        ⬅ Previous
+    </button>
+
+    <button id="page1Btn" class="btn-primary">
+        1
+    </button>
+
+    <button id="page2Btn" class="btn-secondary">
+        2
+    </button>
+
+    <button id="page3Btn" class="btn-secondary">
+        3
+    </button>
+
+    <button id="page4Btn" class="btn-secondary">
+        4
+    </button>
+
+    <button id="page5Btn" class="btn-secondary">
+        5
+    </button>
+
+    <button id="nextPageBtn" class="btn-secondary">
+        Next ➜
+    </button>
+
+</div>
+
 </section>
+
+  
+    
 
 <!-- ===================================================
 PAGE 4: LEARNING
