@@ -7883,3 +7883,44 @@ window.onload = function () {
     renderCourseEngine();       // Part 3I: یہ ابھی بنایا ہے
 };
 
+
+
+/*=========================================
+Course Engine - Final Activation
+=========================================*/
+
+function activateCourseEngine() {
+    // 1. یقینی بنائیں کہ Page 3 نظر آ رہا ہے
+    const page3 = document.getElementById("page3");
+    if (page3) {
+        page3.style.display = "block";
+    }
+
+    // 2. سرچ انجن کو آن کریں
+    initializeCourseSearch();
+
+    console.log("Course Engine Activated!");
+}
+
+// Search Function (یہ پہلے والا ہی ہے)
+function initializeCourseSearch() {
+    const searchInput = document.getElementById("courseSearchInput");
+    if (!searchInput) return;
+
+    searchInput.addEventListener("keyup", function () {
+        const keyword = searchInput.value.toLowerCase();
+        // یہاں ہم مخصوص ID کے اندر کارڈز کو تلاش کر رہے ہیں
+        const cards = document.querySelectorAll("#courseGrid .course-card");
+
+        cards.forEach(function(card){
+            const title = card.innerText.toLowerCase();
+            card.style.display = title.includes(keyword) ? "" : "none";
+        });
+    });
+}
+
+// 3. اب سب سے اہم: ونڈو لوڈ ہوتے ہی اسے چلائیں
+window.onload = function () {
+    // دوسرے فنکشنز اگر ہیں تو...
+    activateCourseEngine(); 
+};
