@@ -6502,6 +6502,624 @@ html{
 #notificationCenter .tool-card span,
 #notificationDeliveryCenter .tool-card span,
 #notificationCommunicationCenter .tool-card span,
+
+/* ==========================================
+   SETTINGS & INTEGRATION CENTER
+   CSS PART-1
+   Premium Dashboard Layout
+   ScaleFlow University
+========================================== */
+
+/* ===============================
+   Main Sections
+================================ */
+
+#settingsCenter,
+#securityCenter,
+#integrationCenter,
+#enterpriseSettingsCenter{
+
+    margin-top:40px;
+
+    padding:35px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.18);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* ===============================
+   Premium Top Border
+================================ */
+
+#settingsCenter::before,
+#securityCenter::before,
+#integrationCenter::before,
+#enterpriseSettingsCenter::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:4px;
+
+    background:linear-gradient(
+        90deg,
+        #00C853,
+        #00E676,
+        #64DD17,
+        #AEEA00
+    );
+
+}
+
+/* ===============================
+   Section Titles
+================================ */
+
+#settingsCenter h2,
+#securityCenter h2,
+#integrationCenter h2,
+#enterpriseSettingsCenter h2{
+
+    text-align:center;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    margin-bottom:30px;
+
+    letter-spacing:.5px;
+
+}
+
+/* ===============================
+   Tool Grid
+================================ */
+
+#settingsCenter .tool-grid,
+#securityCenter .tool-grid,
+#integrationCenter .tool-grid,
+#enterpriseSettingsCenter .tool-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(240px,1fr));
+
+    gap:22px;
+
+}
+
+/* ===============================
+   Smooth Scrolling
+================================ */
+
+#settingsCenter,
+#securityCenter,
+#integrationCenter,
+#enterpriseSettingsCenter{
+
+    scroll-margin-top:80px;
+
+}
+
+/* ==========================================
+   SETTINGS & INTEGRATION CENTER
+   CSS PART-2
+   Premium Cards + Glass Effects
+   ScaleFlow University
+========================================== */
+
+/* ===============================
+   Premium Setting Cards
+================================ */
+
+#settingsCenter .tool-card,
+#securityCenter .tool-card,
+#integrationCenter .tool-card,
+#enterpriseSettingsCenter .tool-card{
+
+    position:relative;
+
+    padding:28px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(0,230,118,.25);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.22);
+
+    overflow:hidden;
+
+    transition:all .35s ease;
+
+}
+
+/* ===============================
+   Card Titles
+================================ */
+
+#settingsCenter .tool-card h3,
+#securityCenter .tool-card h3,
+#integrationCenter .tool-card h3,
+#enterpriseSettingsCenter .tool-card h3{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#69F0AE;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+/* ===============================
+   Description
+================================ */
+
+#settingsCenter .tool-card p,
+#securityCenter .tool-card p,
+#integrationCenter .tool-card p,
+#enterpriseSettingsCenter .tool-card p{
+
+    color:#d8d8d8;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+    margin-bottom:18px;
+
+}
+
+/* ===============================
+   Status Badge
+================================ */
+
+#settingsCenter .tool-card span,
+#securityCenter .tool-card span,
+#integrationCenter .tool-card span,
+#enterpriseSettingsCenter .tool-card span{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+        135deg,
+        #00C853,
+        #00E676
+    );
+
+    color:#ffffff;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.8px;
+
+    text-transform:uppercase;
+
+    box-shadow:
+        0 5px 15px rgba(0,200,83,.35);
+
+}
+
+/* ===============================
+   Integration Badge Colors
+================================ */
+
+.integration-email{
+
+    background:linear-gradient(135deg,#4CAF50,#66BB6A);
+
+}
+
+.integration-whatsapp{
+
+    background:linear-gradient(135deg,#25D366,#4CAF50);
+
+}
+
+.integration-ai{
+
+    background:linear-gradient(135deg,#7C4DFF,#9575CD);
+
+}
+
+.integration-cloud{
+
+    background:linear-gradient(135deg,#03A9F4,#29B6F6);
+
+}
+
+/* ===============================
+   Premium Shine Effect
+================================ */
+
+#settingsCenter .tool-card::after,
+#securityCenter .tool-card::after,
+#integrationCenter .tool-card::after,
+#enterpriseSettingsCenter .tool-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+
+    left:-40%;
+
+    width:60%;
+
+    height:250%;
+
+    transform:rotate(25deg);
+
+    background:rgba(255,255,255,.08);
+
+    transition:.6s;
+
+}
+
+#settingsCenter .tool-card:hover::after,
+#securityCenter .tool-card:hover::after,
+#integrationCenter .tool-card:hover::after,
+#enterpriseSettingsCenter .tool-card:hover::after{
+
+    left:120%;
+
+}
+
+/* ==========================================
+   SETTINGS & INTEGRATION CENTER
+   CSS PART-3
+   Premium Hover + Glow Effects
+   ScaleFlow University
+========================================== */
+
+/* ===============================
+   Premium Hover Animation
+================================ */
+
+#settingsCenter .tool-card:hover,
+#securityCenter .tool-card:hover,
+#integrationCenter .tool-card:hover,
+#enterpriseSettingsCenter .tool-card:hover{
+
+    transform:translateY(-12px) scale(1.03);
+
+    border:1px solid rgba(0,230,118,.55);
+
+    box-shadow:
+        0 22px 45px rgba(0,0,0,.35),
+        0 0 18px rgba(0,230,118,.45),
+        0 0 40px rgba(100,221,23,.30);
+
+}
+
+/* ===============================
+   Floating Cards
+================================ */
+
+@keyframes settingsFloat{
+
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-6px);}
+    100%{transform:translateY(0);}
+
+}
+
+#settingsCenter .tool-card,
+#securityCenter .tool-card,
+#integrationCenter .tool-card,
+#enterpriseSettingsCenter .tool-card{
+
+    animation:settingsFloat 5s ease-in-out infinite;
+
+}
+
+/* ===============================
+   Title Glow
+================================ */
+
+#settingsCenter .tool-card:hover h3,
+#securityCenter .tool-card:hover h3,
+#integrationCenter .tool-card:hover h3,
+#enterpriseSettingsCenter .tool-card:hover h3{
+
+    color:#A5D6A7;
+
+    text-shadow:
+        0 0 10px rgba(0,230,118,.7),
+        0 0 22px rgba(100,221,23,.4);
+
+}
+
+/* ===============================
+   Description Highlight
+================================ */
+
+#settingsCenter .tool-card:hover p,
+#securityCenter .tool-card:hover p,
+#integrationCenter .tool-card:hover p,
+#enterpriseSettingsCenter .tool-card:hover p{
+
+    color:#ffffff;
+
+}
+
+/* ===============================
+   Badge Glow
+================================ */
+
+#settingsCenter .tool-card:hover span,
+#securityCenter .tool-card:hover span,
+#integrationCenter .tool-card:hover span,
+#enterpriseSettingsCenter .tool-card:hover span{
+
+    background:linear-gradient(
+        135deg,
+        #00C853,
+        #00E676,
+        #64DD17
+    );
+
+    box-shadow:
+        0 0 18px rgba(0,230,118,.7),
+        0 0 35px rgba(100,221,23,.4);
+
+}
+
+/* ===============================
+   Pulse Effect
+================================ */
+
+@keyframes settingsPulse{
+
+    0%{ box-shadow:0 0 0 rgba(0,230,118,0); }
+
+    50%{ box-shadow:0 0 20px rgba(0,230,118,.45); }
+
+    100%{ box-shadow:0 0 0 rgba(0,230,118,0); }
+
+}
+
+#settingsCenter .tool-card:hover,
+#securityCenter .tool-card:hover,
+#integrationCenter .tool-card:hover,
+#enterpriseSettingsCenter .tool-card:hover{
+
+    animation:
+        settingsFloat 5s ease-in-out infinite,
+        settingsPulse 2s infinite;
+
+}
+
+/* ===============================
+   Smooth Transition
+================================ */
+
+#settingsCenter .tool-card,
+#settingsCenter .tool-card h3,
+#settingsCenter .tool-card p,
+#settingsCenter .tool-card span,
+
+#securityCenter .tool-card,
+#securityCenter .tool-card h3,
+#securityCenter .tool-card p,
+#securityCenter .tool-card span,
+
+#integrationCenter .tool-card,
+#integrationCenter .tool-card h3,
+#integrationCenter .tool-card p,
+#integrationCenter .tool-card span,
+
+#enterpriseSettingsCenter .tool-card,
+#enterpriseSettingsCenter .tool-card h3,
+#enterpriseSettingsCenter .tool-card p,
+#enterpriseSettingsCenter .tool-card span{
+
+    transition:all .35s ease;
+
+}
+
+/* ==========================================
+   SETTINGS & INTEGRATION CENTER
+   CSS PART-4 (FINAL)
+   Mobile Responsive + Dark Mode
+   Ultra Premium Polish
+   ScaleFlow University
+========================================== */
+
+/* ===============================
+   Mobile Responsive
+================================ */
+
+@media (max-width:768px){
+
+#settingsCenter,
+#securityCenter,
+#integrationCenter,
+#enterpriseSettingsCenter{
+
+    padding:20px;
+    margin-top:25px;
+
+}
+
+#settingsCenter h2,
+#securityCenter h2,
+#integrationCenter h2,
+#enterpriseSettingsCenter h2{
+
+    font-size:24px;
+
+}
+
+#settingsCenter .tool-grid,
+#securityCenter .tool-grid,
+#integrationCenter .tool-grid,
+#enterpriseSettingsCenter .tool-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+#settingsCenter .tool-card,
+#securityCenter .tool-card,
+#integrationCenter .tool-card,
+#enterpriseSettingsCenter .tool-card{
+
+    padding:22px;
+
+}
+
+}
+
+/* ===============================
+   Tablet Responsive
+================================ */
+
+@media (min-width:769px) and (max-width:1100px){
+
+#settingsCenter .tool-grid,
+#securityCenter .tool-grid,
+#integrationCenter .tool-grid,
+#enterpriseSettingsCenter .tool-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* ===============================
+   Large Desktop
+================================ */
+
+@media (min-width:1400px){
+
+#settingsCenter .tool-grid,
+#securityCenter .tool-grid,
+#integrationCenter .tool-grid,
+#enterpriseSettingsCenter .tool-grid{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+}
+
+/* ===============================
+   Dark Mode
+================================ */
+
+body.dark-mode #settingsCenter,
+body.dark-mode #securityCenter,
+body.dark-mode #integrationCenter,
+body.dark-mode #enterpriseSettingsCenter{
+
+    background:rgba(20,20,25,.88);
+
+    border:1px solid rgba(0,230,118,.15);
+
+}
+
+body.dark-mode #settingsCenter .tool-card,
+body.dark-mode #securityCenter .tool-card,
+body.dark-mode #integrationCenter .tool-card,
+body.dark-mode #enterpriseSettingsCenter .tool-card{
+
+    background:rgba(255,255,255,.03);
+
+}
+
+/* ===============================
+   Premium Card Polish
+================================ */
+
+#settingsCenter .tool-card,
+#securityCenter .tool-card,
+#integrationCenter .tool-card,
+#enterpriseSettingsCenter .tool-card{
+
+    min-height:220px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    box-sizing:border-box;
+
+}
+
+/* ===============================
+   Performance Optimization
+================================ */
+
+#settingsCenter *,
+#securityCenter *,
+#integrationCenter *,
+#enterpriseSettingsCenter *{
+
+    will-change:transform;
+
+}
+
+/* ===============================
+   Smooth Scrolling
+================================ */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
 /* ===============================
    End of Analytics Center Styles
 ================================ */
