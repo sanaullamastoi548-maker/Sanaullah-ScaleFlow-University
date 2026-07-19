@@ -5963,6 +5963,545 @@ html{
     scroll-behavior:smooth;
 
 }
+
+/* ==========================================
+   NOTIFICATION CENTER
+   CSS PART-1
+   Premium Layout + Glass Design
+   ScaleFlow University
+========================================== */
+
+/* ===============================
+   Notification Sections
+================================ */
+
+#notificationCenter,
+#notificationDeliveryCenter,
+#notificationCommunicationCenter,
+#notificationSettingsCenter{
+
+    margin-top:40px;
+
+    padding:35px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.18);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* ===============================
+   Section Titles
+================================ */
+
+#notificationCenter h2,
+#notificationDeliveryCenter h2,
+#notificationCommunicationCenter h2,
+#notificationSettingsCenter h2{
+
+    text-align:center;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    margin-bottom:30px;
+
+    letter-spacing:.5px;
+
+}
+
+/* ===============================
+   Tool Grid
+================================ */
+
+#notificationCenter .tool-grid,
+#notificationDeliveryCenter .tool-grid,
+#notificationCommunicationCenter .tool-grid,
+#notificationSettingsCenter .tool-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(240px,1fr));
+
+    gap:22px;
+
+}
+
+/* ===============================
+   Premium Top Border
+================================ */
+
+#notificationCenter::before,
+#notificationDeliveryCenter::before,
+#notificationCommunicationCenter::before,
+#notificationSettingsCenter::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:4px;
+
+    background:linear-gradient(
+        90deg,
+        #00BCD4,
+        #03A9F4,
+        #2196F3,
+        #42A5F5
+    );
+
+}
+
+/* ===============================
+   Future Ready
+================================ */
+
+#notificationCenter,
+#notificationDeliveryCenter,
+#notificationCommunicationCenter,
+#notificationSettingsCenter{
+
+    scroll-margin-top:80px;
+
+}
+
+/* ==========================================
+   NOTIFICATION CENTER
+   CSS PART-2
+   Premium Notification Cards
+   ScaleFlow University
+========================================== */
+
+/* ===============================
+   Premium Notification Cards
+================================ */
+
+#notificationCenter .tool-card,
+#notificationDeliveryCenter .tool-card,
+#notificationCommunicationCenter .tool-card,
+#notificationSettingsCenter .tool-card{
+
+    position:relative;
+
+    padding:28px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(33,150,243,.25);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.22);
+
+    overflow:hidden;
+
+    transition:all .35s ease;
+
+}
+
+/* ===============================
+   Card Titles
+================================ */
+
+#notificationCenter .tool-card h3,
+#notificationDeliveryCenter .tool-card h3,
+#notificationCommunicationCenter .tool-card h3,
+#notificationSettingsCenter .tool-card h3{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#4FC3F7;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+/* ===============================
+   Description
+================================ */
+
+#notificationCenter .tool-card p,
+#notificationDeliveryCenter .tool-card p,
+#notificationCommunicationCenter .tool-card p,
+#notificationSettingsCenter .tool-card p{
+
+    color:#d8d8d8;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+    margin-bottom:18px;
+
+}
+
+/* ==========================================
+   NOTIFICATION CENTER
+   CSS PART-3
+   Premium Hover Animation
+   Bell Glow + Floating Cards
+   ScaleFlow University
+========================================== */
+
+/* ===============================
+   Premium Hover Animation
+================================ */
+
+#notificationCenter .tool-card:hover,
+#notificationDeliveryCenter .tool-card:hover,
+#notificationCommunicationCenter .tool-card:hover,
+#notificationSettingsCenter .tool-card:hover{
+
+    transform:translateY(-10px) scale(1.03);
+
+    border:1px solid rgba(3,169,244,.60);
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.30),
+        0 0 18px rgba(3,169,244,.45),
+        0 0 35px rgba(0,188,212,.25);
+
+}
+
+/* ===============================
+   Floating Cards
+================================ */
+
+@keyframes notificationFloat{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-6px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+#notificationCenter .tool-card,
+#notificationDeliveryCenter .tool-card,
+#notificationCommunicationCenter .tool-card,
+#notificationSettingsCenter .tool-card{
+
+    animation:notificationFloat 5s ease-in-out infinite;
+
+}
+
+/* ===============================
+   Bell Glow Effect
+================================ */
+
+#notificationCenter .tool-card:hover h3,
+#notificationDeliveryCenter .tool-card:hover h3,
+#notificationCommunicationCenter .tool-card:hover h3,
+#notificationSettingsCenter .tool-card:hover h3{
+
+    color:#29B6F6;
+
+    text-shadow:
+        0 0 8px rgba(41,182,246,.70),
+        0 0 18px rgba(3,169,244,.40);
+
+}
+
+/* ===============================
+   Description Highlight
+================================ */
+
+#notificationCenter .tool-card:hover p,
+#notificationDeliveryCenter .tool-card:hover p,
+#notificationCommunicationCenter .tool-card:hover p,
+#notificationSettingsCenter .tool-card:hover p{
+
+    color:#ffffff;
+
+}
+
+/* ===============================
+   Badge Glow
+================================ */
+
+#notificationCenter .tool-card:hover span,
+#notificationDeliveryCenter .tool-card:hover span,
+#notificationCommunicationCenter .tool-card:hover span,
+#notificationSettingsCenter .tool-card:hover span{
+
+    background:linear-gradient(
+        135deg,
+        #4FC3F7,
+        #03A9F4,
+        #00BCD4
+    );
+
+    color:#ffffff;
+
+    box-shadow:
+        0 0 18px rgba(3,169,244,.70),
+        0 0 35px rgba(0,188,212,.35);
+
+}
+
+/* ===============================
+   Pulse Effect
+================================ */
+
+@keyframes notificationPulse{
+
+    0%{
+        box-shadow:0 0 0 rgba(3,169,244,0);
+    }
+
+    50%{
+        box-shadow:0 0 18px rgba(3,169,244,.45);
+    }
+
+    100%{
+        box-shadow:0 0 0 rgba(3,169,244,0);
+    }
+
+}
+
+#notificationDeliveryCenter .tool-card:hover{
+
+    animation:
+        notificationFloat 5s ease-in-out infinite,
+        notificationPulse 1.8s infinite;
+
+}
+
+/* ===============================
+   Smooth Transition
+================================ */
+
+#notificationCenter .tool-card,
+#notificationCenter .tool-card h3,
+#notificationCenter .tool-card p,
+#notificationCenter .tool-card span,
+
+#notificationDeliveryCenter .tool-card,
+#notificationDeliveryCenter .tool-card h3,
+#notificationDeliveryCenter .tool-card p,
+#notificationDeliveryCenter .tool-card span,
+
+#notificationCommunicationCenter .tool-card,
+#notificationCommunicationCenter .tool-card h3,
+#notificationCommunicationCenter .tool-card p,
+#notificationCommunicationCenter .tool-card span,
+
+#notificationSettingsCenter .tool-card,
+#notificationSettingsCenter .tool-card h3,
+#notificationSettingsCenter .tool-card p,
+#notificationSettingsCenter .tool-card span{
+
+    transition:all .35s ease;
+
+}
+
+/* ==========================================
+   NOTIFICATION CENTER
+   CSS PART-4 (FINAL)
+   Mobile Responsive + Dark Mode
+   Ultra Premium Polish
+   ScaleFlow University
+========================================== */
+
+/* ===============================
+   Mobile Responsive
+================================ */
+
+@media (max-width:768px){
+
+#notificationCenter,
+#notificationDeliveryCenter,
+#notificationCommunicationCenter,
+#notificationSettingsCenter{
+
+    padding:20px;
+    margin-top:25px;
+
+}
+
+#notificationCenter h2,
+#notificationDeliveryCenter h2,
+#notificationCommunicationCenter h2,
+#notificationSettingsCenter h2{
+
+    font-size:24px;
+
+}
+
+#notificationCenter .tool-grid,
+#notificationDeliveryCenter .tool-grid,
+#notificationCommunicationCenter .tool-grid,
+#notificationSettingsCenter .tool-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+#notificationCenter .tool-card,
+#notificationDeliveryCenter .tool-card,
+#notificationCommunicationCenter .tool-card,
+#notificationSettingsCenter .tool-card{
+
+    padding:22px;
+
+}
+
+}
+
+/* ===============================
+   Tablet Responsive
+================================ */
+
+@media (min-width:769px) and (max-width:1100px){
+
+#notificationCenter .tool-grid,
+#notificationDeliveryCenter .tool-grid,
+#notificationCommunicationCenter .tool-grid,
+#notificationSettingsCenter .tool-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* ===============================
+   Large Desktop
+================================ */
+
+@media (min-width:1400px){
+
+#notificationCenter .tool-grid,
+#notificationDeliveryCenter .tool-grid,
+#notificationCommunicationCenter .tool-grid,
+#notificationSettingsCenter .tool-grid{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+}
+
+/* ===============================
+   Dark Mode
+================================ */
+
+body.dark-mode #notificationCenter,
+body.dark-mode #notificationDeliveryCenter,
+body.dark-mode #notificationCommunicationCenter,
+body.dark-mode #notificationSettingsCenter{
+
+    background:rgba(20,20,25,.88);
+
+    border:1px solid rgba(3,169,244,.15);
+
+}
+
+body.dark-mode #notificationCenter .tool-card,
+body.dark-mode #notificationDeliveryCenter .tool-card,
+body.dark-mode #notificationCommunicationCenter .tool-card,
+body.dark-mode #notificationSettingsCenter .tool-card{
+
+    background:rgba(255,255,255,.03);
+
+}
+
+/* ===============================
+   Premium Card Polish
+================================ */
+
+#notificationCenter .tool-card,
+#notificationDeliveryCenter .tool-card,
+#notificationCommunicationCenter .tool-card,
+#notificationSettingsCenter .tool-card{
+
+    min-height:220px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    box-sizing:border-box;
+
+}
+
+/* ===============================
+   Performance Optimization
+================================ */
+
+#notificationCenter *,
+#notificationDeliveryCenter *,
+#notificationCommunicationCenter *,
+#notificationSettingsCenter *{
+
+    will-change:transform;
+
+}
+
+/* ===============================
+   Smooth Scrolling
+================================ */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+/* ===============================
+   Notification Status Badge
+================================ */
+
+#notificationCenter .tool-card span,
+#notificationDeliveryCenter .tool-card span,
+#notificationCommunicationCenter .tool-card span,
 /* ===============================
    End of Analytics Center Styles
 ================================ */
