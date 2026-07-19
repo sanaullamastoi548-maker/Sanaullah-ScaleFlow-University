@@ -7842,3 +7842,44 @@ document.addEventListener("DOMContentLoaded", function () {
     initializeCourseSearch();
 
 });
+
+
+/*=========================================
+Course Engine - Part 3I
+Data Rendering Engine
+=========================================*/
+
+function renderCourseEngine() {
+    // 1. Featured Courses کو دکھائیں
+    const featuredArea = document.getElementById("featuredCoursesArea");
+    if (featuredArea) {
+        featuredArea.style.display = "block";
+    }
+
+    // 2. Recommended Courses کو دکھائیں
+    const recommendedArea = document.getElementById("recommendedCoursesArea");
+    if (recommendedArea) {
+        recommendedArea.style.display = "block";
+    }
+
+    // 3. All Courses ایریا کو دکھائیں
+    const allCoursesArea = document.getElementById("allCoursesArea");
+    if (allCoursesArea) {
+        allCoursesArea.style.display = "block";
+    }
+
+    // 4. سرچ اور فلٹر بار کو فعال کریں
+    document.getElementById("courseSearchArea").style.display = "flex";
+    document.getElementById("courseFilterArea").style.display = "block";
+    document.getElementById("paginationArea").style.display = "flex";
+
+    console.log("Course Engine UI Rendered Successfully!");
+}
+
+window.onload = function () {
+    initializeSidebar();        // آپ کا پرانا فنکشن
+    initializeDashboard();      // آپ کا پرانا فنکشن
+    initializeCourseSearch();   // Part 3H والا فنکشن
+    renderCourseEngine();       // Part 3I: یہ ابھی بنایا ہے
+};
+
