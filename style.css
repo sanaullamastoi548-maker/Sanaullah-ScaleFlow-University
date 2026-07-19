@@ -5318,6 +5318,651 @@ html{
 
 }
 
+/* ==========================================
+   CERTIFICATE & VERIFICATION CENTER
+   CSS PART-1
+   Premium Layout + Glass Design
+   ScaleFlow University
+========================================== */
+
+/* ===============================
+   Certificate Sections
+================================ */
+
+#certificateCenter,
+#certificateVerificationCenter,
+#certificateAICenter,
+#certificateFutureCenter{
+
+    margin-top:40px;
+
+    padding:35px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.18);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* ===============================
+   Section Titles
+================================ */
+
+#certificateCenter h2,
+#certificateVerificationCenter h2,
+#certificateAICenter h2,
+#certificateFutureCenter h2{
+
+    text-align:center;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    margin-bottom:30px;
+
+    letter-spacing:.5px;
+
+}
+
+/* ===============================
+   Tool Grid
+================================ */
+
+#certificateCenter .tool-grid,
+#certificateVerificationCenter .tool-grid,
+#certificateAICenter .tool-grid,
+#certificateFutureCenter .tool-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(240px,1fr));
+
+    gap:22px;
+
+}
+
+/* ===============================
+   Premium Top Border
+================================ */
+
+#certificateCenter::before,
+#certificateVerificationCenter::before,
+#certificateAICenter::before,
+#certificateFutureCenter::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:4px;
+
+    background:linear-gradient(
+        90deg,
+        #FFD700,
+        #FFB300,
+        #FFD54F,
+        #FFF176
+    );
+
+}
+
+/* ===============================
+   Future Ready
+================================ */
+
+#certificateCenter,
+#certificateVerificationCenter,
+#certificateAICenter,
+#certificateFutureCenter{
+
+    scroll-margin-top:80px;
+
+}
+
+/* ==========================================
+   CERTIFICATE & VERIFICATION CENTER
+   CSS PART-2
+   Premium Certificate Cards
+   Gold Theme + Glass Effect
+   ScaleFlow University
+========================================== */
+
+/* ===============================
+   Premium Certificate Cards
+================================ */
+
+#certificateCenter .tool-card,
+#certificateVerificationCenter .tool-card,
+#certificateAICenter .tool-card,
+#certificateFutureCenter .tool-card{
+
+    position:relative;
+
+    padding:28px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,215,0,.20);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.25);
+
+    overflow:hidden;
+
+    transition:all .35s ease;
+
+}
+
+/* ===============================
+   Card Titles
+================================ */
+
+#certificateCenter .tool-card h3,
+#certificateVerificationCenter .tool-card h3,
+#certificateAICenter .tool-card h3,
+#certificateFutureCenter .tool-card h3{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#FFD54F;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+/* ===============================
+   Description
+================================ */
+
+#certificateCenter .tool-card p,
+#certificateVerificationCenter .tool-card p,
+#certificateAICenter .tool-card p,
+#certificateFutureCenter .tool-card p{
+
+    color:#d8d8d8;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+    margin-bottom:18px;
+
+}
+
+/* ===============================
+   Verification Status Badge
+================================ */
+
+#certificateCenter .tool-card span,
+#certificateVerificationCenter .tool-card span,
+#certificateAICenter .tool-card span,
+#certificateFutureCenter .tool-card span{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+        135deg,
+        #FFD700,
+        #FFC107
+    );
+
+    color:#111;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.8px;
+
+    text-transform:uppercase;
+
+    box-shadow:
+        0 5px 15px rgba(255,193,7,.45);
+
+}
+
+/* ===============================
+   Status Colors
+================================ */
+
+.status-valid{
+
+    background:linear-gradient(
+        135deg,
+        #00C853,
+        #4CAF50
+    );
+
+    color:#ffffff;
+
+}
+
+.status-pending{
+
+    background:linear-gradient(
+        135deg,
+        #FF9800,
+        #FFC107
+    );
+
+    color:#111;
+
+}
+
+.status-revoked{
+
+    background:linear-gradient(
+        135deg,
+        #D50000,
+        #F44336
+    );
+
+    color:#ffffff;
+
+}
+
+/* ===============================
+   Premium Shine Effect
+================================ */
+
+#certificateCenter .tool-card::after,
+#certificateVerificationCenter .tool-card::after,
+#certificateAICenter .tool-card::after,
+#certificateFutureCenter .tool-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+
+    left:-40%;
+
+    width:60%;
+
+    height:250%;
+
+    transform:rotate(25deg);
+
+    background:rgba(255,255,255,.08);
+
+    transition:.6s;
+
+}
+
+#certificateCenter .tool-card:hover::after,
+#certificateVerificationCenter .tool-card:hover::after,
+#certificateAICenter .tool-card:hover::after,
+#certificateFutureCenter .tool-card:hover::after{
+
+    left:120%;
+
+}
+
+/* ==========================================
+   CERTIFICATE & VERIFICATION CENTER
+   CSS PART-3
+   Premium Hover Animation
+   Certificate Glow + Floating Cards
+   ScaleFlow University
+========================================== */
+
+/* ===============================
+   Premium Hover Animation
+================================ */
+
+#certificateCenter .tool-card:hover,
+#certificateVerificationCenter .tool-card:hover,
+#certificateAICenter .tool-card:hover,
+#certificateFutureCenter .tool-card:hover{
+
+    transform:translateY(-12px) scale(1.03);
+
+    border:1px solid rgba(255,215,0,.55);
+
+    box-shadow:
+        0 22px 45px rgba(0,0,0,.35),
+        0 0 18px rgba(255,193,7,.45),
+        0 0 40px rgba(255,215,0,.28);
+
+}
+
+/* ===============================
+   Floating Cards
+================================ */
+
+@keyframes certificateFloat{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-6px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+#certificateCenter .tool-card,
+#certificateVerificationCenter .tool-card,
+#certificateAICenter .tool-card,
+#certificateFutureCenter .tool-card{
+
+    animation:certificateFloat 5s ease-in-out infinite;
+
+}
+
+/* ===============================
+   Certificate Title Glow
+================================ */
+
+#certificateCenter .tool-card:hover h3,
+#certificateVerificationCenter .tool-card:hover h3,
+#certificateAICenter .tool-card:hover h3,
+#certificateFutureCenter .tool-card:hover h3{
+
+    color:#FFD700;
+
+    text-shadow:
+        0 0 8px rgba(255,215,0,.65),
+        0 0 18px rgba(255,193,7,.35);
+
+}
+
+/* ===============================
+   Description Highlight
+================================ */
+
+#certificateCenter .tool-card:hover p,
+#certificateVerificationCenter .tool-card:hover p,
+#certificateAICenter .tool-card:hover p,
+#certificateFutureCenter .tool-card:hover p{
+
+    color:#ffffff;
+
+}
+
+/* ===============================
+   Badge Glow
+================================ */
+
+#certificateCenter .tool-card:hover span,
+#certificateVerificationCenter .tool-card:hover span,
+#certificateAICenter .tool-card:hover span,
+#certificateFutureCenter .tool-card:hover span{
+
+    background:linear-gradient(
+        135deg,
+        #FFE082,
+        #FFD700,
+        #FFC107
+    );
+
+    color:#111;
+
+    box-shadow:
+        0 0 18px rgba(255,215,0,.70),
+        0 0 35px rgba(255,193,7,.35);
+
+}
+
+/* ===============================
+   Verification Pulse
+================================ */
+
+@keyframes verificationPulse{
+
+    0%{
+        box-shadow:0 0 0 rgba(255,215,0,0);
+    }
+
+    50%{
+        box-shadow:0 0 18px rgba(255,215,0,.45);
+    }
+
+    100%{
+        box-shadow:0 0 0 rgba(255,215,0,0);
+    }
+
+}
+
+#certificateVerificationCenter .tool-card:hover{
+
+    animation:
+        certificateFloat 5s ease-in-out infinite,
+        verificationPulse 1.8s infinite;
+
+}
+
+/* ===============================
+   Smooth Transitions
+================================ */
+
+#certificateCenter .tool-card,
+#certificateCenter .tool-card h3,
+#certificateCenter .tool-card p,
+#certificateCenter .tool-card span,
+
+#certificateVerificationCenter .tool-card,
+#certificateVerificationCenter .tool-card h3,
+#certificateVerificationCenter .tool-card p,
+#certificateVerificationCenter .tool-card span,
+
+#certificateAICenter .tool-card,
+#certificateAICenter .tool-card h3,
+#certificateAICenter .tool-card p,
+#certificateAICenter .tool-card span,
+
+#certificateFutureCenter .tool-card,
+#certificateFutureCenter .tool-card h3,
+#certificateFutureCenter .tool-card p,
+#certificateFutureCenter .tool-card span{
+
+    transition:all .35s ease;
+
+}
+
+/* ==========================================
+   CERTIFICATE & VERIFICATION CENTER
+   CSS PART-4 (FINAL)
+   Mobile Responsive + Dark Mode
+   Ultra Premium Polish
+   ScaleFlow University
+========================================== */
+
+/* ===============================
+   Mobile Responsive
+================================ */
+
+@media (max-width:768px){
+
+#certificateCenter,
+#certificateVerificationCenter,
+#certificateAICenter,
+#certificateFutureCenter{
+
+    padding:20px;
+    margin-top:25px;
+
+}
+
+#certificateCenter h2,
+#certificateVerificationCenter h2,
+#certificateAICenter h2,
+#certificateFutureCenter h2{
+
+    font-size:24px;
+
+}
+
+#certificateCenter .tool-grid,
+#certificateVerificationCenter .tool-grid,
+#certificateAICenter .tool-grid,
+#certificateFutureCenter .tool-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+#certificateCenter .tool-card,
+#certificateVerificationCenter .tool-card,
+#certificateAICenter .tool-card,
+#certificateFutureCenter .tool-card{
+
+    padding:22px;
+
+}
+
+}
+
+/* ===============================
+   Tablet Responsive
+================================ */
+
+@media (min-width:769px) and (max-width:1100px){
+
+#certificateCenter .tool-grid,
+#certificateVerificationCenter .tool-grid,
+#certificateAICenter .tool-grid,
+#certificateFutureCenter .tool-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* ===============================
+   Large Desktop
+================================ */
+
+@media (min-width:1400px){
+
+#certificateCenter .tool-grid,
+#certificateVerificationCenter .tool-grid,
+#certificateAICenter .tool-grid,
+#certificateFutureCenter .tool-grid{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+}
+
+/* ===============================
+   Dark Mode
+================================ */
+
+body.dark-mode #certificateCenter,
+body.dark-mode #certificateVerificationCenter,
+body.dark-mode #certificateAICenter,
+body.dark-mode #certificateFutureCenter{
+
+    background:rgba(20,20,25,.88);
+
+    border:1px solid rgba(255,215,0,.12);
+
+}
+
+body.dark-mode #certificateCenter .tool-card,
+body.dark-mode #certificateVerificationCenter .tool-card,
+body.dark-mode #certificateAICenter .tool-card,
+body.dark-mode #certificateFutureCenter .tool-card{
+
+    background:rgba(255,255,255,.03);
+
+}
+
+/* ===============================
+   Premium Card Polish
+================================ */
+
+#certificateCenter .tool-card,
+#certificateVerificationCenter .tool-card,
+#certificateAICenter .tool-card,
+#certificateFutureCenter .tool-card{
+
+    min-height:220px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    box-sizing:border-box;
+
+}
+
+/* ===============================
+   Performance Optimization
+================================ */
+
+#certificateCenter *,
+#certificateVerificationCenter *,
+#certificateAICenter *,
+#certificateFutureCenter *{
+
+    will-change:transform;
+
+}
+
+/* ===============================
+   Smooth Scrolling
+================================ */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
 /* ===============================
    End of Analytics Center Styles
 ================================ */
