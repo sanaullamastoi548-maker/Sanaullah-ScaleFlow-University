@@ -7955,9 +7955,6 @@ window.addEventListener("load", function(){
 
     renderCourseEngine();
 
-}
-
-});
 
 /*=========================================
 Course Engine - Part 3J
