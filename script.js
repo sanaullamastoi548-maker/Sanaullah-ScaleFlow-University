@@ -7915,18 +7915,21 @@ function initializeCourseSearch() {
 Activate Course Engine
 =========================================*/
 
-function activateCourseEngine(){
+function activateCourseEngine() {
 
     const page3 = document.getElementById("page3");
 
-    if(page3){
+    if (page3) {
         page3.style.display = "block";
     }
-    
+
+    // Page Structure Render
     buildCoursePage();
 
+    // Search Engine
     initializeCourseSearch();
 
+    // Show All Areas
     renderCourseEngine();
 
     console.log("✅ Course Engine Activated");
@@ -7938,20 +7941,19 @@ function activateCourseEngine(){
 Page Load
 =========================================*/
 
-window.addEventListener("load", function(){
+window.addEventListener("load", function () {
 
-    if(typeof initializeSidebar === "function"){
+    if (typeof initializeSidebar === "function") {
         initializeSidebar();
     }
 
-    if(typeof initializeDashboard === "function"){
+    if (typeof initializeDashboard === "function") {
         initializeDashboard();
     }
 
-    
-    activateCourseEngine(){
+    activateCourseEngine();
 
-    });
+});
 
         
 /*=========================================
