@@ -7846,81 +7846,262 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /*=========================================
 Course Engine - Part 3I
-Data Rendering Engine
+ScaleFlow University
+=========================================*/
+
+/*=========================================
+Render Course Engine
 =========================================*/
 
 function renderCourseEngine() {
-    // 1. Featured Courses کو دکھائیں
+
     const featuredArea = document.getElementById("featuredCoursesArea");
-    if (featuredArea) {
-        featuredArea.style.display = "block";
-    }
+    if (featuredArea) featuredArea.style.display = "block";
 
-    // 2. Recommended Courses کو دکھائیں
     const recommendedArea = document.getElementById("recommendedCoursesArea");
-    if (recommendedArea) {
-        recommendedArea.style.display = "block";
-    }
+    if (recommendedArea) recommendedArea.style.display = "block";
 
-    // 3. All Courses ایریا کو دکھائیں
     const allCoursesArea = document.getElementById("allCoursesArea");
-    if (allCoursesArea) {
-        allCoursesArea.style.display = "block";
-    }
+    if (allCoursesArea) allCoursesArea.style.display = "block";
 
-    // 4. سرچ اور فلٹر بار کو فعال کریں
-    document.getElementById("courseSearchArea").style.display = "flex";
-    document.getElementById("courseFilterArea").style.display = "block";
-    document.getElementById("paginationArea").style.display = "flex";
+    const searchArea = document.getElementById("courseSearchArea");
+    if (searchArea) searchArea.style.display = "block";
 
-    console.log("Course Engine UI Rendered Successfully!");
+    const filterArea = document.getElementById("courseFilterArea");
+    if (filterArea) filterArea.style.display = "block";
+
+    const paginationArea = document.getElementById("paginationArea");
+    if (paginationArea) paginationArea.style.display = "block";
+
+    console.log("✅ Course Engine Render Complete");
+
 }
-
-window.onload = function () {
-    initializeSidebar();        // آپ کا پرانا فنکشن
-    initializeDashboard();      // آپ کا پرانا فنکشن
-    initializeCourseSearch();   // Part 3H والا فنکشن
-    renderCourseEngine();       // Part 3I: یہ ابھی بنایا ہے
-};
-
 
 
 /*=========================================
-Course Engine - Final Activation
+Search Engine
 =========================================*/
 
-function activateCourseEngine() {
-    // 1. یقینی بنائیں کہ Page 3 نظر آ رہا ہے
-    const page3 = document.getElementById("page3");
-    if (page3) {
-        page3.style.display = "block";
-    }
-
-    // 2. سرچ انجن کو آن کریں
-    initializeCourseSearch();
-
-    console.log("Course Engine Activated!");
-}
-
-// Search Function (یہ پہلے والا ہی ہے)
 function initializeCourseSearch() {
+
     const searchInput = document.getElementById("courseSearchInput");
+
     if (!searchInput) return;
 
     searchInput.addEventListener("keyup", function () {
-        const keyword = searchInput.value.toLowerCase();
-        // یہاں ہم مخصوص ID کے اندر کارڈز کو تلاش کر رہے ہیں
+
+        const keyword = this.value.toLowerCase();
+
         const cards = document.querySelectorAll("#courseGrid .course-card");
 
         cards.forEach(function(card){
+
             const title = card.innerText.toLowerCase();
-            card.style.display = title.includes(keyword) ? "" : "none";
+
+            if(title.includes(keyword)){
+                card.style.display = "";
+            }else{
+                card.style.display = "none";
+            }
+
         });
+
     });
+
 }
 
-// 3. اب سب سے اہم: ونڈو لوڈ ہوتے ہی اسے چلائیں
-window.onload = function () {
-    // دوسرے فنکشنز اگر ہیں تو...
-    activateCourseEngine(); 
-};
+
+/*=========================================
+Activate Course Engine
+=========================================*/
+
+function activateCourseEngine(){
+
+    const page3 = document.getElementById("page3");
+
+    if(page3){
+        page3.style.display = "block";
+    }
+
+    initializeCourseSearch();
+
+    renderCourseEngine();
+
+    console.log("✅ Course Engine Activated");
+
+}
+
+
+/*=========================================
+Page Load
+=========================================*/
+
+window.addEventListener("load", function(){
+
+    if(typeof initializeSidebar === "function"){
+        initializeSidebar();
+    }
+
+    if(typeof initializeDashboard === "function"){
+        initializeDashboard();
+    }
+
+    
+    activateCourseEngine(){
+
+    buildCoursePage();
+
+    initializeCourseSearch();
+
+    renderCourseEngine();
+
+}
+
+});
+
+/*=========================================
+Course Engine - Part 3J
+HTML Rendering Engine
+ScaleFlow University
+=========================================*/
+
+function buildCoursePage() {
+
+    /* ==========================
+       SEARCH AREA
+    ========================== */
+
+    document.getElementById("courseSearchArea").innerHTML = `
+
+        <input
+            id="courseSearchInput"
+            class="search-box"
+            type="text"
+            placeholder="🔍 Search Courses">
+
+    `;
+
+
+    /* ==========================
+       FILTER AREA
+    ========================== */
+
+    document.getElementById("courseFilterArea").innerHTML = `
+
+        <button class="btn-secondary">All</button>
+
+        <button class="btn-secondary">Beginner</button>
+
+        <button class="btn-secondary">Intermediate</button>
+
+        <button class="btn-secondary">Advanced</button>
+
+    `;
+
+
+    /* ==========================
+       FEATURED COURSES
+    ========================== */
+
+    document.getElementById("featuredCoursesArea").innerHTML = `
+
+        <h3>⭐ Featured Courses</h3>
+
+        <div class="course-card">
+
+            <h4>AI Fundamentals</h4>
+
+            <p>12 Lessons</p>
+
+            <button class="btn-primary">
+                Start Learning
+            </button>
+
+        </div>
+
+    `;
+
+
+    /* ==========================
+       RECOMMENDED COURSES
+    ========================== */
+
+    document.getElementById("recommendedCoursesArea").innerHTML = `
+
+        <h3>📌 Recommended Courses</h3>
+
+        <div class="course-card">
+
+            <h4>JavaScript Masterclass</h4>
+
+            <p>20 Lessons</p>
+
+            <button class="btn-primary">
+                Start Learning
+            </button>
+
+        </div>
+
+    `;
+
+
+    /* ==========================
+       ALL COURSES
+    ========================== */
+
+    document.getElementById("allCoursesArea").innerHTML = `
+
+        <div id="courseGrid">
+
+            <div class="course-card">
+
+                <h4>HTML & CSS</h4>
+
+                <p>Beginner</p>
+
+            </div>
+
+            <div class="course-card">
+
+                <h4>React Development</h4>
+
+                <p>Intermediate</p>
+
+            </div>
+
+            <div class="course-card">
+
+                <h4>Machine Learning</h4>
+
+                <p>Advanced</p>
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    /* ==========================
+       PAGINATION
+    ========================== */
+
+    document.getElementById("paginationArea").innerHTML = `
+
+        <button class="btn-secondary">
+            Previous
+        </button>
+
+        <button class="btn-primary">
+            1
+        </button>
+
+        <button class="btn-secondary">
+            Next
+        </button>
+
+    `;
+
+    console.log("✅ Course Page Rendered");
+
+}
