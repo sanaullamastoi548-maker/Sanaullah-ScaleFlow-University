@@ -431,6 +431,117 @@ HEADER
 
 }
 
+/*============================================================
+SIDEBAR
+============================================================*/
+
+.sidebar{
+
+    position:fixed;
+
+    top:80px;
+
+    left:0;
+
+    width:240px;
+
+    height:calc(100vh - 80px);
+
+    background:#ffffff;
+
+    border-right:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    overflow-y:auto;
+
+    z-index:900;
+
+    padding:20px 0;
+
+}
+
+
+.sidebar-logo{
+
+    text-align:center;
+
+    padding:0 20px 20px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+
+.sidebar-logo h2{
+
+    color:var(--primary);
+
+    font-size:24px;
+
+    margin-bottom:5px;
+
+}
+
+
+.sidebar-logo span{
+
+    color:#666;
+
+    font-size:13px;
+
+}
+
+
+.sidebar-menu{
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:15px;
+
+    gap:8px;
+
+}
+
+
+.sidebar-menu a{
+
+    display:flex;
+
+    align-items:center;
+
+    padding:14px 18px;
+
+    border-radius:12px;
+
+    color:#374151;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+.sidebar-menu a:hover{
+
+    background:#FFC107;
+
+    color:#111827;
+
+}
+
+
+.sidebar-menu a.active{
+
+    background:#FFC107;
+
+    color:#111827;
+
+}
+
 
 /*============================================================
 NOTIFICATION PANEL
@@ -1708,6 +1819,24 @@ RESPONSIVE
 .footer{
 
     border-radius:20px 20px 0 0;
+
+}
+
+}
+
+    @media(max-width:992px){
+
+.sidebar{
+
+    left:-240px;
+
+}
+
+.main-content{
+
+    margin-left:0;
+
+    width:100%;
 
 }
 
