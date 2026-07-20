@@ -7956,97 +7956,104 @@ window.addEventListener("load", function () {
 });
 
         
-/*=========================================
-Course Engine - Part 3J
-HTML Rendering Engine
+    /*=========================================
+Course Engine - Part 3J (Corrected)
+HTML Builder
 ScaleFlow University
 =========================================*/
 
 function buildCoursePage() {
 
-    /* ==========================
-       SEARCH AREA
-    ========================== */
+    /* ---------- SEARCH ---------- */
 
-    document.getElementById("courseSearchArea").innerHTML = `
+    const searchArea = document.getElementById("courseSearchArea");
 
-        <input
-            id="courseSearchInput"
-            class="search-box"
-            type="text"
-            placeholder="🔍 Search Courses">
+    if (searchArea) {
 
-    `;
+        searchArea.innerHTML = `
+            <input
+                id="courseSearchInput"
+                class="search-box"
+                type="text"
+                placeholder="🔍 Search Courses">
+        `;
 
-
-    /* ==========================
-       FILTER AREA
-    ========================== */
-
-    document.getElementById("courseFilterArea").innerHTML = `
-
-        <button class="btn-secondary">All</button>
-
-        <button class="btn-secondary">Beginner</button>
-
-        <button class="btn-secondary">Intermediate</button>
-
-        <button class="btn-secondary">Advanced</button>
-
-    `;
+    }
 
 
-    /* ==========================
-       FEATURED COURSES
-    ========================== */
+    /* ---------- FILTER ---------- */
 
-    document.getElementById("featuredCoursesArea").innerHTML = `
+    const filterArea = document.getElementById("courseFilterArea");
 
-        <h3>⭐ Featured Courses</h3>
+    if (filterArea) {
 
-        <div class="course-card">
+        filterArea.innerHTML = `
+            <button class="btn-secondary">All</button>
+            <button class="btn-secondary">Beginner</button>
+            <button class="btn-secondary">Intermediate</button>
+            <button class="btn-secondary">Advanced</button>
+        `;
 
-            <h4>AI Fundamentals</h4>
-
-            <p>12 Lessons</p>
-
-            <button class="btn-primary">
-                Start Learning
-            </button>
-
-        </div>
-
-    `;
+    }
 
 
-    /* ==========================
-       RECOMMENDED COURSES
-    ========================== */
+    /* ---------- FEATURED ---------- */
 
-    document.getElementById("recommendedCoursesArea").innerHTML = `
+    const featuredArea = document.getElementById("featuredCoursesArea");
 
-        <h3>📌 Recommended Courses</h3>
+    if (featuredArea) {
 
-        <div class="course-card">
+        featuredArea.innerHTML = `
+            <h3>⭐ Featured Courses</h3>
 
-            <h4>JavaScript Masterclass</h4>
+            <div class="course-card">
 
-            <p>20 Lessons</p>
+                <h4>AI Fundamentals</h4>
 
-            <button class="btn-primary">
-                Start Learning
-            </button>
+                <p>12 Lessons</p>
 
-        </div>
+                <button class="btn-primary">
+                    Start Learning
+                </button>
 
-    `;
+            </div>
+        `;
+
+    }
 
 
-    /* ==========================
-       ALL COURSES
-    ========================== */
+    /* ---------- RECOMMENDED ---------- */
 
-    document.getElementById("allCoursesArea").innerHTML = `
+    const recommendedArea = document.getElementById("recommendedCoursesArea");
+
+    if (recommendedArea) {
+
+        recommendedArea.innerHTML = `
+            <h3>📌 Recommended Courses</h3>
+
+            <div class="course-card">
+
+                <h4>JavaScript Masterclass</h4>
+
+                <p>20 Lessons</p>
+
+                <button class="btn-primary">
+                    Start Learning
+                </button>
+
+            </div>
+        `;
+
+    }
+
+
+    /* ---------- ALL COURSES ---------- */
+
+    const allCoursesArea = document.getElementById("allCoursesArea");
+
+    if (allCoursesArea) {
+
+        allCoursesArea.innerHTML = `
 
         <div id="courseGrid">
 
@@ -8076,29 +8083,27 @@ function buildCoursePage() {
 
         </div>
 
-    `;
+        `;
+
+    }
 
 
-    /* ==========================
-       PAGINATION
-    ========================== */
+    /* ---------- PAGINATION ---------- */
 
-    document.getElementById("paginationArea").innerHTML = `
+    const paginationArea = document.getElementById("paginationArea");
 
-        <button class="btn-secondary">
-            Previous
-        </button>
+    if (paginationArea) {
 
-        <button class="btn-primary">
-            1
-        </button>
+        paginationArea.innerHTML = `
+            <button class="btn-secondary">Previous</button>
 
-        <button class="btn-secondary">
-            Next
-        </button>
+            <button class="btn-primary">1</button>
 
-    `;
+            <button class="btn-secondary">Next</button>
+        `;
 
-    console.log("✅ Course Page Rendered");
+    }
+
+    console.log("✅ Course HTML Created");
 
 }
