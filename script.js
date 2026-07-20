@@ -7922,6 +7922,8 @@ function activateCourseEngine(){
     if(page3){
         page3.style.display = "block";
     }
+    
+    buildCoursePage();
 
     initializeCourseSearch();
 
@@ -7949,13 +7951,9 @@ window.addEventListener("load", function(){
     
     activateCourseEngine(){
 
-    buildCoursePage();
+    });
 
-    initializeCourseSearch();
-
-    renderCourseEngine();
-
-
+        
 /*=========================================
 Course Engine - Part 3J
 HTML Rendering Engine
