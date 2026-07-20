@@ -24,9 +24,9 @@ ROOT VARIABLES
 
 :root{
 
-    --primary:#0B7A43;
-    --primary-light:#16A34A;
-    --secondary:#FFC107;
+    --primary:#FFC107;
+--primary-light:#FFD54F;
+--secondary:#FFB300;
 
     --white:#FFFFFF;
     --black:#111827;
@@ -55,7 +55,7 @@ body{
         Arial,
         sans-serif;
 
-    background:#F8FAFC;
+    background:#F5F6FA;
 
     color:var(--black);
 
@@ -287,16 +287,17 @@ Version : 1.0
 APP LAYOUT
 ============================================================*/
 
+
 #app{
-
-    display:flex;
-
-    min-height:100vh;
-
-    background:#F8FAFC;
-
+display:grid;
+grid-template-columns:220px 1fr;
+grid-template-rows:80px 1fr;
+grid-template-areas:
+"header header"
+"sidebar main";
+min-height:100vh;
+background:#F5F6FA;
 }
-
 
 /*============================================================
 HEADER
@@ -323,7 +324,9 @@ HEADER
     align-items:center;
 
     padding:0 25px;
-
+    
+    grid-area:header;
+      
     border-bottom:1px solid var(--border);
 
     box-shadow:var(--shadow);
@@ -522,9 +525,9 @@ HERO SECTION
 
     display:inline-block;
 
-    background:#ECFDF5;
-
-    color:var(--primary);
+    background:#FFF8E1;
+    
+    color:#C79200;
 
     padding:8px 18px;
 
@@ -1190,7 +1193,7 @@ WEEKLY PROGRESS
 
     width:100%;
 
-    background:linear-gradient(180deg,#22C55E,#0B7A43);
+    background:linear-gradient(90deg,#FFC107,#FF9800);
 
     border-radius:12px 12px 0 0;
 
@@ -1459,9 +1462,10 @@ SYSTEM STATUS
 
     border-radius:50px;
 
-    background:#DCFCE7;
-
-    color:#0B7A43;
+    
+     background:#FFF8E1;
+   color:#C79200;
+    
 
     font-weight:700;
 
