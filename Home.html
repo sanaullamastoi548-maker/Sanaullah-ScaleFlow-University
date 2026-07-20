@@ -1,1381 +1,278 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
-
-    <!-- ==========================================
-        sanaullah ScaleFlow University
-         Home.html
-         Part 1A
-    =========================================== -->
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-    <title>
-       sanaullah ScaleFlow University
-    </title>
-
-    <meta
-        name="description"
-        content="Learn • Build • Earn • Grow">
-
-    <meta
-        name="theme-color"
-        content="#0B7A43">
-
-    <link
-        rel="stylesheet"
-        href="style.css">
-
-    <link
-        rel="stylesheet"
-        href="Home.css">
-
-
-    <!-- Google Analytics -->
-
-    <script async
-        src="https://www.googletagmanager.com/gtag/js?id=G-XTRS1KZ3P1">
-    </script>
-
-    <script>
-
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag("js", new Date());
-
-        gtag("config", "G-XTRS1KZ3P1");
-
-    </script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanaullah ScaleFlow University</title>
+    <meta name="description" content="Learn • Build • Earn • Grow">
+    <meta name="theme-color" content="#FFC107">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Home.css">
 </head>
-
 <body>
 
+    <!-- ===== LOADER ===== -->
+    <div id="loader">
+        <div class="loader-spinner"></div>
+        <h2>Loading Sanaullah ScaleFlow University...</h2>
+    </div>
 
+    <!-- ===== TOAST ===== -->
+    <div id="toast-container"></div>
 
-<!-- ==========================================
-     GLOBAL LOADER
-========================================== -->
-
-<div id="loader">
-
-    <div class="loader-spinner"></div>
-
-    <h2>
-
-        Loading sanaullah ScaleFlow University...
-
-    </h2>
-
-</div>
-
-
-
-<!-- ==========================================
-     TOAST CONTAINER
-========================================== -->
-
-<div id="toast-container">
-
-</div>
-
-
-
-<!-- ==========================================
-     MODAL CONTAINER
-========================================== -->
-
-<div id="modal-container">
-
-    <div class="modal">
-
-        <div class="modal-header">
-
-            <h2 id="modalTitle">
-
-     sanaullah ScaleFlow University
-
-            </h2>
-
-            <button
-                id="modalCloseBtn">
-
-                &times;
-
-            </button>
-
+    <!-- ===== MODAL (اصلاح شدہ) ===== -->
+    <div id="modal-container">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modalTitle">Sanaullah ScaleFlow University</h2>
+                <button id="modalCloseBtn" class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+            <div class="modal-footer">
+                <button id="modalCancelBtn" class="btn-secondary">Cancel</button>
+                <button id="modalConfirmBtn" class="btn-primary">Confirm</button>
+            </div>
         </div>
-
-
-        <div
-            class="modal-body"
-            id="modalBody">
-
-        </div>
-
-
-        <div class="modal-footer">
-
-            <button
-                id="modalCancelBtn"
-                class="btn-secondary">
-
-                Cancel
-
-            </button>
-
-            <button
-                id="modalConfirmBtn"
-                class="btn-primary">
-
-                Confirm
-
-            </button>
-
-        </div>
-
     </div>
 
-</div>
-
-
-
-<!-- ==========================================
-     MAIN APPLICATION
-========================================== -->
-
-<div id="app">
-
-
-
-<!-- ==========================================
-     HEADER
-========================================== -->
-
-<header class="header">
-
-    <div class="logo">
-
-        <h1>
-
-            Sanaullah
-
-        </h1>
-
-        <span>
-
-           sanaullah ScaleFlow University
-
-        </span>
-
-    </div>
-
-
-
-    <div class="header-actions">
-
-        <button
-            id="darkModeBtn"
-            class="icon-btn">
-
-            🌙
-
-        </button>
-
-
-        <button
-            id="notificationBell"
-            class="icon-btn">
-
-            🔔
-
-            <span
-                id="notificationCount">
-
-                0
-
-            </span>
-
-        </button>
-
-    </div>
-
-</header>
-
-  <!-- ==========================================
-Sanaullah ScaleFlow University
-Home.html
-Part 1B
-Sidebar + Navigation
-========================================== -->
-
-
-
-<!-- ==========================================
-NOTIFICATION PANEL
-========================================== -->
-
-<div id="notificationPanel" class="notification-panel">
-
-    <div class="notification-header">
-
-        <h3>🔔 Notifications</h3>
-
-        <button
-            id="markAllReadBtn"
-            type="button">
-
-            Mark All Read
-
-        </button>
-
-    </div>
-
-
-    <div class="notification-list">
-
-        <!-- Notifications will load here -->
-
-    </div>
-
-</div>
-
-
-
-<!-- ==========================================
-SIDEBAR
-========================================== -->
-
-<aside
-    class="sidebar"
-    id="sidebar">
-
-    <div class="sidebar-logo">
-
-        <h2>
-
-            Sanaullah
-
-        </h2>
-
-        <span>
-
-            ScaleFlow University
-
-        </span>
-
-    </div>
-
-
-
-    <nav
-        class="sidebar-menu"
-        id="sidebarMenu">
-
-        <a
-            href="#"
-            id="navHome"
-            class="active">
-
-            🏠 Home
-
-        </a>
-
-        <a
-            href="#"
-            id="navDashboard">
-
-            📊 Dashboard
-
-        </a>
-
-        <a
-            href="#"
-            id="navCourses">
-
-            📚 Courses
-
-        </a>
-
-        <a
-            href="#"
-            id="navLearning">
-
-            📖 Learning
-
-        </a>
-
-        <a
-            href="#"
-            id="navCertificates">
-
-            📜 Certificates
-
-        </a>
-
-        <a
-            href="#"
-            id="navAchievements">
-
-            🏆 Achievements
-
-        </a>
-
-        <a
-            href="#"
-            id="navAIMentor">
-
-            🤖 AI Mentor
-
-        </a>
-
-        <a
-            href="#"
-            id="navMarketplace">
-
-            🛒 Marketplace
-
-        </a>
-
-        <a
-            href="#"
-            id="navBusiness">
-
-            💼 Business
-
-        </a>
-
-        <a
-            href="#"
-            id="navProfile">
-
-            👤 Profile
-
-        </a>
-
-        <a
-            href="#"
-            id="navSettings">
-
-            ⚙️ Settings
-
-        </a>
-
-        <a
-            href="#"
-            id="navLogin">
-
-            🔐 Login
-
-        </a>
-
-    </nav>
-
-</aside>
-
-
-
-<!-- ==========================================
-MAIN CONTENT
-========================================== -->
-
-<main
-    class="main-content"
-    id="mainContent">
-
-  <!-- =====================================================
-Sanaullah ScaleFlow University
-Home.html
-Part 1C
-Hero Section
-===================================================== -->
-
-<section id="pageHome" class="page-section active">
-
-    <div class="hero">
-
-        <!-- LEFT -->
-
-        <div class="hero-left">
-
-            <span class="hero-tag">
-
-                👋 Welcome Back
-
-            </span>
-
-            <h1 id="studentName">
-
-                Sanaullah
-
-            </h1>
-
-            <p>
-
-                Learn • Build • Earn • Grow
-
-            </p>
-
-            <p>
-
-                Welcome to Sanaullah ScaleFlow University.
-
-                Continue your learning journey and unlock
-                your next achievement.
-
-            </p>
-
-
-            <div class="hero-buttons">
-
-                <button
-                    id="continueLearningBtn"
-                    class="btn-primary">
-
-                    ▶ Continue Learning
-
+    <!-- ===== MAIN APP ===== -->
+    <div id="app">
+
+        <!-- ===== HEADER ===== -->
+        <header class="header">
+            <div class="logo">
+                <h1>Sanaullah</h1>
+                <span>ScaleFlow University</span>
+            </div>
+            <div class="header-actions">
+                <button id="darkModeBtn" class="icon-btn">🌙</button>
+                <button id="notificationBell" class="icon-btn">
+                    🔔
+                    <!-- ✅ فکس 2: notification-badge کلاس شامل کی -->
+                    <span id="notificationCount" class="notification-badge">0</span>
                 </button>
-
-
-                <button
-                    id="browseCoursesBtn"
-                    class="btn-secondary">
-
-                    📚 Browse Courses
-
-                </button>
-
             </div>
+        </header>
 
-        </div>
-
-
-
-        <!-- RIGHT -->
-
-        <div class="hero-right">
-
-            <div class="hero-stat">
-
-                <span>
-
-                    ⭐ Brain XP
-
-                </span>
-
-                <strong id="brainXP">
-
-                    250 XP
-
-                </strong>
-
+        <!-- ===== SIDEBAR (اصلاح شدہ) ===== -->
+        <aside class="sidebar" id="mainSidebar">
+            <!-- ✅ فکس 4: Sidebar Close Button شامل کیا -->
+            <button id="sidebarClose" class="sidebar-close">&times;</button>
+            <div class="sidebar-logo">
+                <h2>Sanaullah</h2>
+                <span>ScaleFlow University</span>
             </div>
-
-
-
-            <div class="hero-stat">
-
-                <span>
-
-                    🏆 Current Level
-
-                </span>
-
-                <strong id="currentLevel">
-
-                    Level 5
-
-                </strong>
-
-            </div>
-
-
-
-            <div class="hero-stat">
-
-                <span>
-
-                    🔥 Learning Streak
-
-                </span>
-
-                <strong id="learningStreak">
-
-                    7 Days
-
-                </strong>
-
-            </div>
-
-
-
-            <div class="hero-stat">
-
-                <span>
-
-                    📈 Overall Progress
-
-                </span>
-
-                <strong id="overallProgress">
-
-                    75%
-
-                </strong>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- SEARCH -->
-
-    <section class="search-section">
-
-        <input
-
-            id="globalSearchInput"
-
-            type="text"
-
-            placeholder="🔍 Search Courses, AI Tools, Certificates..."
-
-            autocomplete="off"
-
-        >
-
-    </section>
-
-  <!-- =====================================================
-Sanaullah ScaleFlow University
-Home.html
-Part 1D
-Quick Actions Dashboard
-===================================================== -->
-
-
-
-<!-- ==========================================
-QUICK ACTIONS
-========================================== -->
-
-<section class="dashboard-section">
-
-    <h2>
-
-        ⚡ Quick Actions
-
-    </h2>
-
-
-    <div class="tool-grid">
-
-
-        <div class="tool-card" id="quickStartLearning">
-
-            <h3>
-
-                📖 Start Learning
-
-            </h3>
-
-            <p>
-
-                Continue your lessons instantly.
-
-            </p>
-
-            <span>
-
-                OPEN
-
-            </span>
-
-        </div>
-
-
-
-        <div class="tool-card" id="quickBrowseCourses">
-
-            <h3>
-
-                📚 Browse Courses
-
-            </h3>
-
-            <p>
-
-                Explore all available courses.
-
-            </p>
-
-            <span>
-
-                OPEN
-
-            </span>
-
-        </div>
-
-
-
-        <div class="tool-card" id="quickCertificates">
-
-            <h3>
-
-                📜 Certificates
-
-            </h3>
-
-            <p>
-
-                View and download certificates.
-
-            </p>
-
-            <span>
-
-                OPEN
-
-            </span>
-
-        </div>
-
-
-
-        <div class="tool-card" id="quickAchievements">
-
-            <h3>
-
-                🏆 Achievements
-
-            </h3>
-
-            <p>
-
-                Unlock badges and XP rewards.
-
-            </p>
-
-            <span>
-
-                OPEN
-
-            </span>
-
-        </div>
-
-
-
-        <div class="tool-card" id="quickAI">
-
-            <h3>
-
-                🤖 AI Mentor
-
-            </h3>
-
-            <p>
-
-                Ask anything from your AI Teacher.
-
-            </p>
-
-            <span>
-
-                AI READY
-
-            </span>
-
-        </div>
-
-
-
-        <div class="tool-card" id="quickMarketplace">
-
-            <h3>
-
-                🛒 Marketplace
-
-            </h3>
-
-            <p>
-
-                Buy and sell digital products.
-
-            </p>
-
-            <span>
-
-                OPEN
-
-            </span>
-
-        </div>
-
-
-
-        <div class="tool-card" id="quickBusiness">
-
-            <h3>
-
-                💼 Business Hub
-
-            </h3>
-
-            <p>
-
-                CRM, Clients and Automation.
-
-            </p>
-
-            <span>
-
-                OPEN
-
-            </span>
-
-        </div>
-
-
-
-        <div class="tool-card" id="quickProfile">
-
-            <h3>
-
-                👤 My Profile
-
-            </h3>
-
-            <p>
-
-                Manage your account.
-
-            </p>
-
-            <span>
-
-                OPEN
-
-            </span>
-
-        </div>
-
-
-
-    </div>
-
-</section>
-
-  <!-- =====================================================
-Sanaullah ScaleFlow University
-Home.html
-Part 1E
-Continue Learning + Today's Tasks
-===================================================== -->
-
-
-
-<!-- ==========================================
-CONTINUE LEARNING
-========================================== -->
-
-<section class="dashboard-section">
-
-    <h2>
-
-        📖 Continue Learning
-
-    </h2>
-
-    <div class="continue-card">
-
-        <div class="continue-info">
-
-            <h3>
-
-                🤖 AI Fundamentals
-
-            </h3>
-
-            <p>
-
-                Current Lesson
-
-            </p>
-
-            <strong>
-
-                Lesson 5 :
-                Prompt Engineering
-
-            </strong>
-
-        </div>
-
-
-
-        <div class="progress-area">
-
-            <div class="progress-header">
-
-                <span>
-
-                    Progress
-
-                </span>
-
-                <span id="courseProgressText">
-
-                    75%
-
-                </span>
-
-            </div>
-
-            <div class="progress-bar">
-
-                <div
-                    id="courseProgressBar"
-                    class="progress-fill"
-                    style="width:75%;">
-
+            <nav class="sidebar-menu">
+                <a href="#" id="navHome" class="active">🏠 Home</a>
+                <a href="#" id="navDashboard">📊 Dashboard</a>
+                <a href="#" id="navCourses">📚 Courses</a>
+                <a href="#" id="navLearning">📖 Learning</a>
+                <a href="#" id="navCertificates">📜 Certificates</a>
+                <a href="#" id="navAchievements">🏆 Achievements</a>
+                <a href="#" id="navAIMentor">🤖 AI Mentor</a>
+                <a href="#" id="navMarketplace">🛒 Marketplace</a>
+                <a href="#" id="navBusiness">💼 Business</a>
+                <a href="#" id="navProfile">👤 Profile</a>
+                <a href="#" id="navSettings">⚙️ Settings</a>
+                <a href="#" id="navLogin">🔐 Login</a>
+            </nav>
+        </aside>
+
+        <!-- ✅ فکس 5: Overlay شامل کیا -->
+        <div id="sidebarOverlay" class="overlay"></div>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="main-content">
+
+            <!-- ===== HERO ===== -->
+            <section class="hero">
+                <div class="hero-left">
+                    <span class="hero-tag">👋 Welcome Back</span>
+                    <h1 id="studentName">Sanaullah</h1>
+                    <p>Learn • Build • Earn • Grow</p>
+                    <p>Welcome to Sanaullah ScaleFlow University. Continue your learning journey and unlock your next achievement.</p>
+                    <div class="hero-buttons">
+                        <button id="continueLearningBtn" class="btn-primary">▶ Continue Learning</button>
+                        <button id="browseCoursesBtn" class="btn-secondary">📚 Browse Courses</button>
+                    </div>
                 </div>
+                <div class="hero-right">
+                    <div class="hero-stat"><span>⭐ Brain XP</span><strong id="brainXP">250 XP</strong></div>
+                    <div class="hero-stat"><span>🏆 Current Level</span><strong id="currentLevel">Level 5</strong></div>
+                    <div class="hero-stat"><span>🔥 Learning Streak</span><strong id="learningStreak">7 Days</strong></div>
+                    <div class="hero-stat"><span>📈 Overall Progress</span><strong id="overallProgress">75%</strong></div>
+                </div>
+            </section>
 
+            <!-- ===== SEARCH ===== -->
+            <section class="search-section">
+                <input id="globalSearchInput" type="text" placeholder="🔍 Search Courses, AI Tools, Certificates..." autocomplete="off">
+            </section>
+
+            <!-- ===== QUICK ACTIONS (tool-grid اب quick-actions-grid سے بدل دیا) ===== -->
+            <section class="quick-actions-section">
+                <h2>⚡ Quick Actions</h2>
+                <div class="quick-actions-grid">
+                    <div class="quick-action-btn" id="quickStartLearning">
+                        <span class="icon">📖</span>
+                        <span class="label">Start Learning</span>
+                        <span class="desc">Continue your lessons instantly.</span>
+                    </div>
+                    <div class="quick-action-btn" id="quickBrowseCourses">
+                        <span class="icon">📚</span>
+                        <span class="label">Browse Courses</span>
+                        <span class="desc">Explore all available courses.</span>
+                    </div>
+                    <div class="quick-action-btn" id="quickCertificates">
+                        <span class="icon">📜</span>
+                        <span class="label">Certificates</span>
+                        <span class="desc">View and download certificates.</span>
+                    </div>
+                    <div class="quick-action-btn" id="quickAchievements">
+                        <span class="icon">🏆</span>
+                        <span class="label">Achievements</span>
+                        <span class="desc">Unlock badges and XP rewards.</span>
+                    </div>
+                    <div class="quick-action-btn" id="quickAI">
+                        <span class="icon">🤖</span>
+                        <span class="label">AI Mentor</span>
+                        <span class="desc">Ask anything from your AI Teacher.</span>
+                    </div>
+                    <div class="quick-action-btn" id="quickMarketplace">
+                        <span class="icon">🛒</span>
+                        <span class="label">Marketplace</span>
+                        <span class="desc">Buy and sell digital products.</span>
+                    </div>
+                    <div class="quick-action-btn" id="quickBusiness">
+                        <span class="icon">💼</span>
+                        <span class="label">Business Hub</span>
+                        <span class="desc">CRM, Clients and Automation.</span>
+                    </div>
+                    <div class="quick-action-btn" id="quickProfile">
+                        <span class="icon">👤</span>
+                        <span class="label">My Profile</span>
+                        <span class="desc">Manage your account.</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== CONTINUE LEARNING ===== -->
+            <section class="continue-learning">
+                <h2>📖 Continue Learning</h2>
+                <div class="continue-card">
+                    <div class="continue-info">
+                        <h3>🤖 AI Fundamentals</h3>
+                        <p>Current Lesson</p>
+                        <strong>Lesson 5 : Prompt Engineering</strong>
+                    </div>
+                    <div class="progress-area">
+                        <div class="progress-header">
+                            <span>Progress</span>
+                            <span id="courseProgressText">75%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div id="courseProgressBar" class="progress-fill" style="width:75%;"></div>
+                        </div>
+                    </div>
+                    <div class="continue-actions">
+                        <button id="resumeCourseBtn" class="btn-primary">▶ Resume Course</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== TODAY'S TASKS ===== -->
+            <section class="today-tasks">
+                <h2>📝 Today's Tasks</h2>
+                <div class="task-list">
+                    <div class="task-item"><input type="checkbox" id="task1"><label for="task1">Complete Lesson 5</label></div>
+                    <div class="task-item"><input type="checkbox" id="task2"><label for="task2">Submit AI Reflection</label></div>
+                    <div class="task-item"><input type="checkbox" id="task3"><label for="task3">Pass Lesson Quiz</label></div>
+                    <div class="task-item"><input type="checkbox" id="task4"><label for="task4">Earn 50 XP Today</label></div>
+                </div>
+            </section>
+
+            <!-- ===== WEEKLY PROGRESS ===== -->
+            <section class="weekly-progress">
+                <div class="section-header">
+                    <h2>📈 Weekly Progress</h2>
+                    <span>This Week</span>
+                </div>
+                <div class="progress-chart">
+                    <div class="day"><div class="bar" style="height:35%;"></div><p>Mon</p></div>
+                    <div class="day"><div class="bar" style="height:50%;"></div><p>Tue</p></div>
+                    <div class="day"><div class="bar" style="height:70%;"></div><p>Wed</p></div>
+                    <div class="day"><div class="bar" style="height:60%;"></div><p>Thu</p></div>
+                    <div class="day"><div class="bar" style="height:85%;"></div><p>Fri</p></div>
+                    <div class="day"><div class="bar" style="height:95%;"></div><p>Sat</p></div>
+                    <div class="day"><div class="bar" style="height:75%;"></div><p>Sun</p></div>
+                </div>
+            </section>
+
+            <!-- ===== RECENT ACTIVITY ===== -->
+            <section class="activity-timeline">
+                <h2>🕒 Recent Activity</h2>
+                <div class="activity-list">
+                    <div class="activity-item">✅ Completed <strong>Lesson 4</strong> <span>2 Hours Ago</span></div>
+                    <div class="activity-item">🏆 Achievement Unlocked <strong>Fast Learner</strong> <span>Yesterday</span></div>
+                    <div class="activity-item">📜 Certificate Earned <strong>HTML Basics</strong> <span>2 Days Ago</span></div>
+                    <div class="activity-item">🤖 AI Mentor Session <strong>JavaScript</strong> <span>3 Days Ago</span></div>
+                </div>
+            </section>
+
+            <!-- ===== LATEST ACHIEVEMENT ===== -->
+            <section class="achievement-preview">
+                <h2>🏆 Latest Achievement</h2>
+                <div class="achievement-card earned">
+                    <div class="icon">🥇</div>
+                    <h3>Fast Learner</h3>
+                    <p>You completed five lessons in one week.</p>
+                </div>
+            </section>
+
+            <!-- ✅ فکس 8: ڈپلیکیٹ ہٹا دیا — صرف ایک AI Recommendation رکھا -->
+            <section class="ai-recommendation">
+                <h2>🤖 AI Daily Recommendation</h2>
+                <div class="continue-card">
+                    <div class="continue-info">
+                        <h3>Today's Smart Suggestion</h3>
+                        <p>Complete one lesson and finish one quiz today to gain an extra 50 XP bonus.</p>
+                    </div>
+                    <div class="continue-actions">
+                        <button id="startRecommendationBtn" class="btn-primary">🚀 Start Now</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== SYSTEM STATUS ===== -->
+            <section class="system-status">
+                <h2>⚙ System Status</h2>
+                <div class="quick-actions-grid">
+                    <div class="quick-action-btn"><span class="icon">🌐</span><span class="label">Website</span><span class="desc">ONLINE</span></div>
+                    <div class="quick-action-btn"><span class="icon">🤖</span><span class="label">AI Mentor</span><span class="desc">READY</span></div>
+                    <div class="quick-action-btn"><span class="icon">📚</span><span class="label">LMS</span><span class="desc">ACTIVE</span></div>
+                    <div class="quick-action-btn"><span class="icon">🔒</span><span class="label">Security</span><span class="desc">PROTECTED</span></div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- ===== FOOTER (grid-column کام کرنے کے لیے #app کا Direct Child) ===== -->
+        <footer class="footer">
+            <div class="footer-left">
+                <h3>Sanaullah ScaleFlow University</h3>
+                <p>Learn • Build • Earn • Grow</p>
             </div>
-
-        </div>
-
-
-
-        <div class="continue-actions">
-
-            <button
-                id="resumeCourseBtn"
-                class="btn-primary">
-
-                ▶ Resume Course
-
-            </button>
-
-        </div>
+            <div class="footer-center">Version 1.0 Enterprise</div>
+            <div class="footer-right">© 2026 Sanaullah ScaleFlow University</div>
+        </footer>
 
     </div>
+    <!-- ===== END APP ===== -->
 
-</section>
+    <!-- ===== SCROLL TOP ===== -->
+    <button id="scrollTopBtn">⬆</button>
 
-
-
-<!-- ==========================================
-TODAY TASKS
-========================================== -->
-
-<section class="dashboard-section">
-
-    <h2>
-
-        📝 Today's Tasks
-
-    </h2>
-
-    <div class="task-list">
-
-        <div class="task-item">
-
-            <input
-                type="checkbox"
-                id="task1">
-
-            <label for="task1">
-
-                Complete Lesson 5
-
-            </label>
-
-        </div>
-
-
-
-        <div class="task-item">
-
-            <input
-                type="checkbox"
-                id="task2">
-
-            <label for="task2">
-
-                Submit AI Reflection
-
-            </label>
-
-        </div>
-
-
-
-        <div class="task-item">
-
-            <input
-                type="checkbox"
-                id="task3">
-
-            <label for="task3">
-
-                Pass Lesson Quiz
-
-            </label>
-
-        </div>
-
-
-
-        <div class="task-item">
-
-            <input
-                type="checkbox"
-                id="task4">
-
-            <label for="task4">
-
-                Earn 50 XP Today
-
-            </label>
-
-        </div>
-
-    </div>
-
-</section>
-
-  <!-- =====================================================
-Sanaullah ScaleFlow University
-Home.html
-Part 1F
-Weekly Progress + Activity + AI Recommendation
-===================================================== -->
-
-
-
-<!-- ==========================================
-WEEKLY PROGRESS
-========================================== -->
-
-<section class="dashboard-section">
-
-    <h2>
-
-        📈 Weekly Progress
-
-    </h2>
-
-    <div class="weekly-progress">
-
-        <div class="progress-chart">
-
-            <div class="day">
-                <div class="bar" style="height:35%;"></div>
-                <p>Mon</p>
-            </div>
-
-            <div class="day">
-                <div class="bar" style="height:50%;"></div>
-                <p>Tue</p>
-            </div>
-
-            <div class="day">
-                <div class="bar" style="height:70%;"></div>
-                <p>Wed</p>
-            </div>
-
-            <div class="day">
-                <div class="bar" style="height:60%;"></div>
-                <p>Thu</p>
-            </div>
-
-            <div class="day">
-                <div class="bar" style="height:85%;"></div>
-                <p>Fri</p>
-            </div>
-
-            <div class="day">
-                <div class="bar" style="height:95%;"></div>
-                <p>Sat</p>
-            </div>
-
-            <div class="day">
-                <div class="bar" style="height:75%;"></div>
-                <p>Sun</p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ==========================================
-RECENT ACTIVITY
-========================================== -->
-
-<section class="dashboard-section">
-
-    <h2>
-
-        🕒 Recent Activity
-
-    </h2>
-
-    <div class="activity-list">
-
-        <div class="activity-item">
-
-            ✅ Completed
-            <strong>Lesson 4</strong>
-
-            <span>2 Hours Ago</span>
-
-        </div>
-
-        <div class="activity-item">
-
-            🏆 Achievement Unlocked
-
-            <strong>Fast Learner</strong>
-
-            <span>Yesterday</span>
-
-        </div>
-
-        <div class="activity-item">
-
-            📜 Certificate Earned
-
-            <strong>HTML Basics</strong>
-
-            <span>2 Days Ago</span>
-
-        </div>
-
-        <div class="activity-item">
-
-            🤖 AI Mentor Session
-
-            <strong>JavaScript</strong>
-
-            <span>3 Days Ago</span>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ==========================================
-LATEST ACHIEVEMENT
-========================================== -->
-
-<section class="dashboard-section">
-
-    <h2>
-
-        🏆 Latest Achievement
-
-    </h2>
-
-    <div class="achievement-card earned">
-
-        <div class="icon">
-
-            🥇
-
-        </div>
-
-        <h3>
-
-            Fast Learner
-
-        </h3>
-
-        <p>
-
-            You completed five lessons in one week.
-
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- ==========================================
-AI DAILY RECOMMENDATION
-========================================== -->
-
-<section class="dashboard-section">
-
-    <h2>
-
-        🤖 AI Daily Recommendation
-
-    </h2>
-
-    <div class="continue-card">
-
-        <div class="continue-info">
-
-            <h3>
-
-                Today's Recommendation
-
-            </h3>
-
-            <p>
-
-                Based on your progress, continue learning:
-
-            </p>
-
-            <strong>
-
-                JavaScript Functions
-
-            </strong>
-
-        </div>
-
-        <div class="continue-actions">
-
-            <button
-                id="aiRecommendationBtn"
-                class="btn-primary">
-
-                Start Recommendation
-
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-  <!-- =====================================================
-Sanaullah ScaleFlow University
-Home.html
-Part 1G
-AI Daily Recommendation + Footer Dashboard
-===================================================== -->
-
-
-
-<!-- ==========================================
-AI DAILY RECOMMENDATION
-========================================== -->
-
-<section class="dashboard-section">
-
-    <h2>
-
-        🤖 AI Daily Recommendation
-
-    </h2>
-
-    <div class="continue-card">
-
-        <div class="continue-info">
-
-            <h3>
-
-                Today's Smart Suggestion
-
-            </h3>
-
-            <p>
-
-                Complete one lesson and finish one quiz today
-                to gain an extra 50 XP bonus.
-
-            </p>
-
-        </div>
-
-        <div class="continue-actions">
-
-            <button
-                id="startRecommendationBtn"
-                class="btn-primary">
-
-                🚀 Start Now
-
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ==========================================
-SYSTEM STATUS
-========================================== -->
-
-<section class="dashboard-section">
-
-    <h2>
-
-        ⚙ System Status
-
-    </h2>
-
-    <div class="tool-grid">
-
-        <div class="tool-card">
-
-            <h3>
-
-                🌐 Website
-
-            </h3>
-
-            <span>
-
-                ONLINE
-
-            </span>
-
-        </div>
-
-
-
-        <div class="tool-card">
-
-            <h3>
-
-                🤖 AI Mentor
-
-            </h3>
-
-            <span>
-
-                READY
-
-            </span>
-
-        </div>
-
-
-
-        <div class="tool-card">
-
-            <h3>
-
-                📚 LMS
-
-            </h3>
-
-            <span>
-
-                ACTIVE
-
-            </span>
-
-        </div>
-
-
-
-        <div class="tool-card">
-
-            <h3>
-
-                🔒 Security
-
-            </h3>
-
-            <span>
-
-                PROTECTED
-
-            </span>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ==========================================
-HOME FOOTER
-========================================== -->
-
-<footer class="footer">
-
-    <div class="footer-left">
-
-        <h3>
-
-            Sanaullah ScaleFlow University
-
-        </h3>
-
-        <p>
-
-            Learn • Build • Earn • Grow
-
-        </p>
-
-    </div>
-
-
-
-    <div class="footer-center">
-
-        Version 1.0 Enterprise
-
-    </div>
-
-
-
-    <div class="footer-right">
-
-        © 2026
-
-        Sanaullah ScaleFlow University
-
-    </div>
-
-</footer>
-
-
-
-</section>
-
-<!-- ===== END HOME PAGE ===== -->
-
-          </main>
-
-    </div>
-
-    <!-- JavaScript -->
+    <!-- ===== JAVASCRIPT ===== -->
     <script src="Home.js"></script>
 
 </body>
