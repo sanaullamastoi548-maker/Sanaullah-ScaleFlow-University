@@ -1,1 +1,1718 @@
+/*============================================================
+Sanaullah ScaleFlow University
+Home.css
+Part 1A
+Foundation + Variables + Loader + Modal + Toast
+Version : 1.0
+============================================================*/
 
+
+/*============================================================
+RESET
+============================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/*============================================================
+ROOT VARIABLES
+============================================================*/
+
+:root{
+
+    --primary:#0B7A43;
+    --primary-light:#16A34A;
+    --secondary:#FFC107;
+
+    --white:#FFFFFF;
+    --black:#111827;
+
+    --text:#6B7280;
+
+    --border:#E5E7EB;
+
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+
+    --radius:18px;
+
+    --transition:.30s;
+
+}
+
+
+/*============================================================
+BODY
+============================================================*/
+
+body{
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:#F8FAFC;
+
+    color:var(--black);
+
+    overflow-x:hidden;
+
+}
+
+
+/*============================================================
+LINKS
+============================================================*/
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+/*============================================================
+BUTTONS
+============================================================*/
+
+button{
+
+    cursor:pointer;
+
+    border:none;
+
+    outline:none;
+
+    transition:var(--transition);
+
+}
+
+
+/*============================================================
+LOADER
+============================================================*/
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#ffffff;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+}
+
+
+.loader-spinner{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    border:6px solid #eeeeee;
+
+    border-top:6px solid var(--primary);
+
+    animation:spin 1s linear infinite;
+
+}
+
+
+#loader h2{
+
+    margin-top:20px;
+
+    color:var(--primary);
+
+    font-size:20px;
+
+    font-weight:700;
+
+}
+
+
+/*============================================================
+SPINNER
+============================================================*/
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+/*============================================================
+TOAST
+============================================================*/
+
+#toast-container{
+
+    position:fixed;
+
+    top:20px;
+
+    right:20px;
+
+    z-index:9999;
+
+}
+
+
+/*============================================================
+MODAL
+============================================================*/
+
+#modal-container{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99998;
+
+}
+
+
+.modal{
+
+    width:90%;
+
+    max-width:550px;
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.modal-header{
+
+    padding:18px 24px;
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+.modal-body{
+
+    padding:24px;
+
+}
+
+
+.modal-footer{
+
+    padding:18px 24px;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:10px;
+
+}
+
+
+.modal-close{
+
+    background:none;
+
+    color:#ffffff;
+
+    font-size:28px;
+
+}
+
+/*============================================================
+Sanaullah ScaleFlow University
+Home.css
+Part 1B
+Header + Sidebar + Main Layout
+Version : 1.0
+============================================================*/
+
+
+/*============================================================
+APP LAYOUT
+============================================================*/
+
+#app{
+
+    display:flex;
+
+    min-height:100vh;
+
+    background:#F8FAFC;
+
+}
+
+
+/*============================================================
+HEADER
+============================================================*/
+
+.header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    right:0;
+
+    height:80px;
+
+    background:#ffffff;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 25px;
+
+    border-bottom:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    z-index:1000;
+
+}
+
+
+.logo h1{
+
+    font-size:28px;
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+
+.logo span{
+
+    display:block;
+
+    font-size:13px;
+
+    color:var(--text);
+
+    margin-top:4px;
+
+}
+
+
+.header-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+
+.icon-btn{
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:50%;
+
+    background:#F3F4F6;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:20px;
+
+    transition:var(--transition);
+
+}
+
+
+.icon-btn:hover{
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+}
+
+
+#notificationCount{
+
+    position:absolute;
+
+    margin-top:-18px;
+
+    margin-left:18px;
+
+    min-width:18px;
+
+    height:18px;
+
+    background:#EF4444;
+
+    color:#ffffff;
+
+    border-radius:50%;
+
+    font-size:11px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+/*============================================================
+NOTIFICATION PANEL
+============================================================*/
+
+.notification-panel{
+
+    position:fixed;
+
+    top:85px;
+
+    right:20px;
+
+    width:340px;
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow);
+
+    display:none;
+
+    overflow:hidden;
+
+    z-index:999;
+
+}
+
+
+.notification-header{
+
+    padding:18px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+}
+
+
+.notification-list{
+
+    max-height:
+
+  /*============================================================
+Sanaullah ScaleFlow University
+Home.css
+Part 1C
+Hero Section + Search
+Version : 1.0
+============================================================*/
+
+
+/*============================================================
+HERO SECTION
+============================================================*/
+
+.hero{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:30px;
+
+    margin-bottom:35px;
+
+}
+
+
+.hero-left{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.hero-tag{
+
+    display:inline-block;
+
+    background:#ECFDF5;
+
+    color:var(--primary);
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+
+.hero-left h1{
+
+    font-size:42px;
+
+    color:#111827;
+
+    margin-bottom:15px;
+
+    font-weight:700;
+
+}
+
+
+.hero-left p{
+
+    font-size:17px;
+
+    color:#6B7280;
+
+    line-height:1.8;
+
+    margin-bottom:12px;
+
+}
+
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+
+/*============================================================
+RIGHT HERO
+============================================================*/
+
+.hero-right{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:18px;
+
+}
+
+
+.hero-stat{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+
+.hero-stat:hover{
+
+    transform:translateY(-4px);
+
+}
+
+
+.hero-stat span{
+
+    display:block;
+
+    font-size:14px;
+
+    color:#6B7280;
+
+    margin-bottom:10px;
+
+}
+
+
+.hero-stat strong{
+
+    display:block;
+
+    font-size:28px;
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+
+/*============================================================
+SEARCH SECTION
+============================================================*/
+
+.search-section{
+
+    margin-bottom:35px;
+
+}
+
+
+.search-section input{
+
+    width:100%;
+
+    height:60px;
+
+    padding:0 22px;
+
+    border:2px solid var(--border);
+
+    border-radius:16px;
+
+    font-size:16px;
+
+    background:#ffffff;
+
+    transition:var(--transition);
+
+}
+
+
+.search-section input:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 4px rgba(11,122,67,.12);
+
+}
+
+
+/*============================================================
+RESPONSIVE
+============================================================*/
+
+@media (max-width:992px){
+
+.hero{
+
+    grid-template-columns:1fr;
+
+}
+
+.hero-buttons{
+
+    flex-direction:column;
+
+}
+
+}
+
+/*============================================================
+Sanaullah ScaleFlow University
+Home.css
+Part 1D
+Quick Actions Dashboard
+Version : 1.0
+============================================================*/
+
+
+/*============================================================
+DASHBOARD SECTION
+============================================================*/
+
+.dashboard-section{
+
+    margin-bottom:40px;
+
+}
+
+
+.dashboard-section h2{
+
+    font-size:28px;
+
+    color:#111827;
+
+    margin-bottom:22px;
+
+    font-weight:700;
+
+}
+
+
+/*============================================================
+TOOL GRID
+============================================================*/
+
+.tool-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:22px;
+
+}
+
+
+/*============================================================
+TOOL CARD
+============================================================*/
+
+.tool-card{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:28px 22px;
+
+    box-shadow:var(--shadow);
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+    border:2px solid transparent;
+
+}
+
+
+.tool-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--primary);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.10);
+
+}
+
+
+.tool-card h3{
+
+    font-size:20px;
+
+    color:#111827;
+
+    margin-bottom:12px;
+
+    font-weight:700;
+
+}
+
+
+.tool-card p{
+
+    color:#6B7280;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+    min-height:55px;
+
+    margin-bottom:18px;
+
+}
+
+
+.tool-card span{
+
+    display:inline-block;
+
+    padding:8px 16px;
+
+    background:#ECFDF5;
+
+    color:var(--primary);
+
+    border-radius:25px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+
+/*============================================================
+CARD COLORS
+============================================================*/
+
+.tool-card:nth-child(1){
+
+    border-top:4px solid #0B7A43;
+
+}
+
+.tool-card:nth-child(2){
+
+    border-top:4px solid #2563EB;
+
+}
+
+.tool-card:nth-child(3){
+
+    border-top:4px solid #9333EA;
+
+}
+
+.tool-card:nth-child(4){
+
+    border-top:4px solid #F59E0B;
+
+}
+
+.tool-card:nth-child(5){
+
+    border-top:4px solid #DC2626;
+
+}
+
+.tool-card:nth-child(6){
+
+    border-top:4px solid #0891B2;
+
+}
+
+.tool-card:nth-child(7){
+
+    border-top:4px solid #4F46E5;
+
+}
+
+.tool-card:nth-child(8){
+
+    border-top:4px solid #059669;
+
+}
+
+
+/*============================================================
+RESPONSIVE
+============================================================*/
+
+@media (max-width:768px){
+
+.tool-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.dashboard-section h2{
+
+    font-size:24px;
+
+}
+
+}
+
+/*============================================================
+Sanaullah ScaleFlow University
+Home.css
+Part 1E
+Continue Learning + Today's Tasks
+Version : 1.0
+============================================================*/
+
+
+/*============================================================
+CONTINUE LEARNING CARD
+============================================================*/
+
+.continue-card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:28px;
+
+    box-shadow:var(--shadow);
+
+    display:grid;
+
+    grid-template-columns:2fr 1.5fr auto;
+
+    gap:25px;
+
+    align-items:center;
+
+}
+
+
+.continue-info h3{
+
+    font-size:24px;
+
+    color:#111827;
+
+    margin-bottom:10px;
+
+}
+
+
+.continue-info p{
+
+    color:#6B7280;
+
+    margin-bottom:8px;
+
+    font-size:15px;
+
+}
+
+
+.continue-info strong{
+
+    color:var(--primary);
+
+    font-size:18px;
+
+}
+
+
+/*============================================================
+PROGRESS BAR
+============================================================*/
+
+.progress-area{
+
+    width:100%;
+
+}
+
+
+.progress-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:10px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+
+.progress-bar{
+
+    width:100%;
+
+    height:12px;
+
+    background:#E5E7EB;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+
+.progress-fill{
+
+    height:100%;
+
+    background:linear-gradient(90deg,#0B7A43,#22C55E);
+
+    border-radius:20px;
+
+    transition:width .5s ease;
+
+}
+
+
+/*============================================================
+CONTINUE BUTTON
+============================================================*/
+
+.continue-actions{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+}
+
+
+/*============================================================
+TODAY TASKS
+============================================================*/
+
+.task-list{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.task-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:14px 0;
+
+    border-bottom:1px solid #EEEEEE;
+
+}
+
+
+.task-item:last-child{
+
+    border-bottom:none;
+
+}
+
+
+.task-item input[type="checkbox"]{
+
+    width:22px;
+
+    height:22px;
+
+    accent-color:var(--primary);
+
+    cursor:pointer;
+
+}
+
+
+.task-item label{
+
+    flex:1;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    color:#374151;
+
+    transition:.3s;
+
+}
+
+
+.task-item input:checked + label{
+
+    text-decoration:line-through;
+
+    color:#9CA3AF;
+
+}
+
+
+/*============================================================
+RESPONSIVE
+============================================================*/
+
+@media (max-width:992px){
+
+.continue-card{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+.continue-actions{
+
+    justify-content:center;
+
+}
+
+}
+
+/*============================================================
+Sanaullah ScaleFlow University
+Home.css
+Part 1F
+Weekly Progress + Activity + Achievement + AI Recommendation
+Version : 1.0
+============================================================*/
+
+
+/*============================================================
+WEEKLY PROGRESS
+============================================================*/
+
+.weekly-progress{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.progress-chart{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+
+    gap:15px;
+
+    height:220px;
+
+}
+
+
+.day{
+
+    flex:1;
+
+    text-align:center;
+
+}
+
+
+.day .bar{
+
+    width:100%;
+
+    background:linear-gradient(180deg,#22C55E,#0B7A43);
+
+    border-radius:12px 12px 0 0;
+
+    transition:.4s;
+
+}
+
+
+.day .bar:hover{
+
+    opacity:.85;
+
+    transform:scaleY(1.05);
+
+}
+
+
+.day p{
+
+    margin-top:12px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#6B7280;
+
+}
+
+
+/*============================================================
+RECENT ACTIVITY
+============================================================*/
+
+.activity-list{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.activity-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px 0;
+
+    border-bottom:1px solid #EEEEEE;
+
+    font-size:15px;
+
+}
+
+
+.activity-item:last-child{
+
+    border-bottom:none;
+
+}
+
+
+.activity-item strong{
+
+    color:#111827;
+
+    margin-left:6px;
+
+}
+
+
+.activity-item span{
+
+    color:#6B7280;
+
+    font-size:13px;
+
+}
+
+
+/*============================================================
+LATEST ACHIEVEMENT
+============================================================*/
+
+.achievement-card{
+
+    background:linear-gradient(135deg,#0B7A43,#22C55E);
+
+    color:#ffffff;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:0 15px 35px rgba(11,122,67,.25);
+
+}
+
+
+.achievement-card .icon{
+
+    font-size:60px;
+
+    margin-bottom:18px;
+
+}
+
+
+.achievement-card h3{
+
+    font-size:28px;
+
+    margin-bottom:12px;
+
+}
+
+
+.achievement-card p{
+
+    font-size:16px;
+
+    opacity:.95;
+
+    line-height:1.7;
+
+}
+
+
+/*============================================================
+AI RECOMMENDATION
+============================================================*/
+
+.continue-card{
+
+    transition:.3s;
+
+}
+
+
+.continue-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+/*============================================================
+RESPONSIVE
+============================================================*/
+
+@media (max-width:768px){
+
+.progress-chart{
+
+    gap:8px;
+
+    height:170px;
+
+}
+
+.activity-item{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:6px;
+
+}
+
+.achievement-card{
+
+    padding:22px;
+
+}
+
+.achievement-card h3{
+
+    font-size:22px;
+
+}
+
+}
+
+/*============================================================
+Sanaullah ScaleFlow University
+Home.css
+Part 1G
+System Status + Footer + Final Responsive + Animations
+Version : 1.0
+============================================================*/
+
+
+/*============================================================
+SYSTEM STATUS
+============================================================*/
+
+.tool-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+    gap:20px;
+
+}
+
+
+.tool-card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    cursor:pointer;
+
+}
+
+
+.tool-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+}
+
+
+.tool-card h3{
+
+    font-size:22px;
+
+    margin-bottom:15px;
+
+    color:#111827;
+
+}
+
+
+.tool-card span{
+
+    display:inline-block;
+
+    margin-top:10px;
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+    background:#DCFCE7;
+
+    color:#0B7A43;
+
+    font-weight:700;
+
+    font-size:14px;
+
+}
+
+
+/*============================================================
+FOOTER
+============================================================*/
+
+.footer{
+
+    margin-top:60px;
+
+    padding:35px;
+
+    background:#0B7A43;
+
+    color:#ffffff;
+
+    border-radius:25px 25px 0 0;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+
+.footer-left h3{
+
+    margin-bottom:8px;
+
+    font-size:24px;
+
+}
+
+
+.footer-left p{
+
+    opacity:.9;
+
+}
+
+
+.footer-center{
+
+    font-size:15px;
+
+    font-weight:600;
+
+    opacity:.95;
+
+}
+
+
+.footer-right{
+
+    font-size:14px;
+
+    opacity:.9;
+
+}
+
+
+/*============================================================
+GLOBAL HOVER EFFECTS
+============================================================*/
+
+.hero-stat,
+.continue-card,
+.tool-card,
+.achievement-card{
+
+    transition:.35s ease;
+
+}
+
+
+.hero-stat:hover,
+.continue-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+button{
+
+    transition:.25s;
+
+}
+
+
+button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+button:active{
+
+    transform:scale(.96);
+
+}
+
+
+/*============================================================
+SCROLL ANIMATION
+============================================================*/
+
+.page-section{
+
+    animation:fadeUp .6s ease;
+
+}
+
+
+@keyframes fadeUp{
+
+0%{
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+}
+
+100%{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+}
+
+
+/*============================================================
+CUSTOM SCROLLBAR
+============================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#F3F4F6;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#0B7A43;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#0A683A;
+
+}
+
+
+/*============================================================
+RESPONSIVE
+============================================================*/
+
+@media(max-width:992px){
+
+.footer{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+}
+
+
+@media(max-width:768px){
+
+.tool-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.footer{
+
+    padding:25px;
+
+}
+
+.footer-left h3{
+
+    font-size:20px;
+
+}
+
+}
+
+
+@media(max-width:480px){
+
+.hero{
+
+    padding:20px;
+
+}
+
+.dashboard-section{
+
+    margin-top:25px;
+
+}
+
+.tool-card{
+
+    padding:20px;
+
+}
+
+.footer{
+
+    border-radius:20px 20px 0 0;
+
+}
+
+}
+
+
+/*============================================================
+END OF FILE
+Sanaullah ScaleFlow University
+Home.css Complete
+Version 1.0
+============================================================*/
