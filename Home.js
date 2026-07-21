@@ -50,7 +50,7 @@ page12: document.getElementById('page12')
 function showToast(message, type = 'info') {
 if (!toastContainer) return;
 const toast = document.createElement('div');
-toast.className =  toast toast-${type} ;
+toast.className = `toast toast-${type}`;
 toast.textContent = message;
 toastContainer.appendChild(toast);
 setTimeout(() => {
@@ -133,7 +133,7 @@ if (target) target.classList.add('active');
 navLinks.forEach(link => link.classList.remove('active'));
 
 const activeLink = document.querySelector(
- .sidebar-menu a[data-page="${pageId}"] 
+    `.sidebar-menu a[data-page="${pageId}"]`
 );
 if (activeLink) activeLink.classList.add('active');
 // اوپر سکرول کریں
@@ -223,11 +223,8 @@ hideLoader
 
 console.log('📦 [Part 1] Core Foundation loaded');
  
-
-})(window);
-
-
 window.addEventListener("load", function () {
-    hideLoader();
+    ScaleFlow.hideLoader();
 });
+    
 /* ===== Parart1 ===== */
