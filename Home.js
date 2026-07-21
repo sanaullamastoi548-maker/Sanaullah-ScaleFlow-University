@@ -1,3 +1,4 @@
+alert("Home.js Loaded");
 /*============================================================
 Sanaullah ScaleFlow University
 script.js — Complete JavaScript
@@ -223,8 +224,16 @@ hideLoader
 
 console.log('📦 [Part 1] Core Foundation loaded');
  
-window.addEventListener("load", function () {
-    ScaleFlow.hideLoader();
+window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+
+    if (loader) {
+        loader.classList.add("hidden");
+
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 500);
+    }
 });
     
 /* ===== Parart1 ===== */
