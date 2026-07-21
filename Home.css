@@ -52,16 +52,21 @@ body {
 }
 
 /* ---------- SIDEBAR (Locked: Left, Outside, Yellow Active) ---------- */
-.sidebar {
+   .sidebar {
     background: var(--white);
     border-right: 2px solid var(--primary-border);
     padding: 32px 16px;
-    position: sticky;
+
+    position: fixed;
     top: 0;
-    height:calc(100vh - headerHeight)
+    left: 0;
+
+    width: 240px;
+    height: 100vh;
+
     overflow-y: auto;
-    min-width: 200px;
-}
+    z-index: 1000;
+} 
 
 .sidebar-menu {
     display: flex;
@@ -180,8 +185,10 @@ body {
 
 /* ---------- MAIN CONTENT ---------- */
 .main-content {
+    margin-left: 240px;
     padding: 32px 36px;
     background: var(--light-bg);
+    min-height: 100vh;
 }
 
 /* ---------- PAGE SECTIONS ---------- */
