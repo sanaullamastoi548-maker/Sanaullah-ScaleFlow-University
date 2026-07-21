@@ -51,62 +51,37 @@ body {
     min-height: 100vh;
 }
 
-/* ---------- SIDEBAR (Locked: Left, Outside, Yellow Active) ---------- */
-   .sidebar {
-    background: var(--white);
-    border-right: 2px solid var(--primary-border);
-    padding: 32px 16px;
 
-    position: fixed;
-    top: 0;
-    left: 0;
+/* =====================================================
+   SIDEBAR ENGINE — PART A2
+   Fixed Enterprise Sidebar
+===================================================== */
 
-    width: 240px;
-    height: 100vh;
+.sidebar{
 
-    overflow-y: auto;
-    z-index: 1000;
-} 
+    position:fixed;
 
-.sidebar-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+    top:78px;
+
+    left:0;
+
+    width:240px;
+
+    height:calc(100vh - 78px);
+
+    background:#ffffff;
+
+    border-right:2px solid var(--primary-border);
+
+    padding:20px 14px;
+
+    overflow-y:auto;
+
+    z-index:900;
+
+    box-shadow:2px 0 18px rgba(0,0,0,.05);
+
 }
-
-.sidebar-menu a {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 12px 16px;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 15px;
-    text-decoration: none;
-    color: var(--text-gray);
-    transition: var(--transition);
-    cursor: pointer;
-    position: relative;
-}
-
-.sidebar-menu a:hover {
-    background: rgba(255, 193, 7, 0.12);
-    color: var(--text-dark);
-    transform: translateX(4px);
-}
-
-.sidebar-menu a.active {
-    background: var(--primary);
-    color: #000;
-    font-weight: 700;
-    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
-}
-
-.sidebar-menu a.active:hover {
-    background: var(--primary-hover);
-    transform: translateX(4px);
-}
-
 /* ---------- HEADER (Locked: Full Width, Left Logo) ---------- */
 .header {
     grid-column: 1 / -1;
@@ -184,16 +159,18 @@ body {
 }
 
 /* ---------- MAIN CONTENT ---------- */
-.main-content {
-    .main-content{
+
+.main-content{
+
     margin-left:240px;
-    width:calc(100% - 240px);
 
     padding:32px 36px;
-    background:var(--light-bg);
-    min-height:100vh;
-}
 
+    background:var(--light-bg);
+
+    min-height:100vh;
+
+}
 /* ---------- PAGE SECTIONS ---------- */
 .page-section {
     display: none;
@@ -1187,4 +1164,28 @@ body {
         padding: 12px 16px;
         font-size: 14px;
     }
+}
+
+@media(max-width:992px){
+
+.sidebar{
+
+position:relative;
+
+width:100%;
+
+height:auto;
+
+top:0;
+
+left:0;
+
+}
+
+.main-content{
+
+margin-left:0;
+
+}
+
 }
