@@ -1,814 +1,229 @@
-/*============================================================
+/============================================================
 Sanaullah ScaleFlow University
-Home.js
-Part 1A
-Core Initialization
-Version : 1.0
-============================================================*/
+script.js — Complete JavaScript
+Part 1: Core Foundation
+Version: 1.0
+============================================================/
 
-(function () {
-
+(function(global) {
 "use strict";
 
-/*============================================================
-APP INFORMATION
-============================================================*/
+ 
+// ============================================================
+// 1. DOM REFS — تمام اہم عناصر
+// ============================================================
+const loader = document.getElementById('loader');
+const toastContainer = document.getElementById('toast-container');
+const modalContainer = document.getElementById('modal-container');
+const modalTitle = document.getElementById('modalTitle');
+const modalBody = document.getElementById('modalBody');
+const modalCloseBtn = document.getElementById('modalCloseBtn');
+const modalCancelBtn = document.getElementById('modalCancelBtn');
+const modalConfirmBtn = document.getElementById('modalConfirmBtn');
+const darkModeBtn = document.getElementById('darkModeBtn');
+const notificationBell = document.getElementById('notificationBell');
+const notificationPanel = document.getElementById('notificationPanel');
+const notificationCount = document.getElementById('notificationCount');
+const markAllReadBtn = document.getElementById('markAllReadBtn');
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+const currentYear = document.getElementById('currentYear');
+const globalSearch = document.getElementById('globalSearchInput');
+const navLinks = document.querySelectorAll('.sidebar-menu a[data-page]');
+const pageSections = {
+page1: document.getElementById('page1'),
+page2: document.getElementById('page2'),
+page3: document.getElementById('page3'),
+page4: document.getElementById('page4'),
+page5: document.getElementById('page5'),
+page6: document.getElementById('page6'),
+page7: document.getElementById('page7'),
+page8: document.getElementById('page8'),
+page9: document.getElementById('page9'),
+page10: document.getElementById('page10'),
+page11: document.getElementById('page11'),
+page12: document.getElementById('page12')
+};
 
-const APP_NAME = "Sanaullah ScaleFlow University";
-const APP_VERSION = "1.0";
+// ============================================================
+// 2. TOAST — نوٹیفکیشن دکھانے کا فنکشن
+// ============================================================
+function showToast(message, type = 'info') {
+if (!toastContainer) return;
+const toast = document.createElement('div');
+toast.className =  toast toast-${type} ;
+toast.textContent = message;
+toastContainer.appendChild(toast);
+setTimeout(() => {
+toast.style.opacity = '0';
+setTimeout(() => toast.remove(), 300);
+}, 3000);
+}
 
-
-/*============================================================
-GLOBAL ELEMENTS
-============================================================*/
-
-const loader =
-document.getElementById("loader");
-
-const toastContainer =
-document.getElementById("toast-container");
-
-const modal =
-document.getElementById("modal-container");
-
-
-/*============================================================
-APPLICATION START
-============================================================*/
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    console.log(APP_NAME);
-    console.log("Home.js Part 1A Loaded");
-
-    hideLoader();
-
-});
-
-
-/*============================================================
-HIDE LOADER
-============================================================*/
-
+// ============================================================
+// 3. LOADER — صفحہ لوڈ ہونے پر چھپائیں
+// ============================================================
 function hideLoader() {
-
-    if (!loader) return;
-
-    setTimeout(() => {
-
-        loader.style.opacity = "0";
-
-        setTimeout(() => {
-
-            loader.style.display = "none";
-
-        },300);
-
-    },800);
-
+if (loader) {
+loader.classList.add('hidden');
+setTimeout(() => { loader.style.display = 'none'; }, 500);
+}
 }
 
-
-/*============================================================
-SHOW TOAST
-============================================================*/
-
-function showToast(message) {
-
-    if (!toastContainer) return;
-
-    const toast =
-    document.createElement("div");
-
-    toast.className = "toast";
-
-    toast.textContent = message;
-
-    toastContainer.appendChild(toast);
-
-    setTimeout(() => {
-
-        toast.remove();
-
-    },3000);
-
+// ============================================================
+// 4. MODAL — کھلنا / بند ہونا
+// ============================================================
+function openModal(title, bodyHTML, options = {}) {
+modalTitle.textContent = title || 'Modal';
+modalBody.innerHTML = bodyHTML || 'No content';
+modalContainer.classList.add('open');
+document.body.style.overflow = 'hidden';
+if (options.onOpen) options.onOpen();
 }
 
+function closeModal() {
+modalContainer.classList.remove('open');
+document.body.style.overflow = '';
+}
 
-/*============================================================
-GLOBAL EXPORT
-============================================================*/
+modalCloseBtn?.addEventListener('click', closeModal);
+modalCancelBtn?.addEventListener('click', closeModal);
+modalConfirmBtn?.addEventListener('click', function() {
+showToast('✅ Confirmed!', 'success');
+closeModal();
+});
+modalContainer?.addEventListener('click', function(e) {
+if (e.target === modalContainer) closeModal();
+});
 
-window.HomeApp = {
+// ============================================================
+// 5. DARK MODE — تھیم تبدیل کریں اور محفوظ کریں
+// ============================================================
+function toggleDarkMode() {
+document.body.classList.toggle('dark-mode');
+const isDark = document.body.classList.contains('dark-mode');
+darkModeBtn.textContent = isDark ? '☀️' : '🌙';
+localStorage.setItem('theme', isDark ? 'dark' : 'light');
+showToast(isDark ? '🌙 Dark mode enabled' : '☀️ Light mode enabled', 'info');
+}
 
-    showToast,
-    hideLoader
-
-};
-
+// پہلے سے محفوظ تھیم لوڈ کریں
+(function loadTheme() {
+const saved = localStorage.getItem('theme');
+if (saved === 'dark') {
+document.body.classList.add('dark-mode');
+darkModeBtn.textContent = '☀️';
+}
 })();
 
-/*============================================================
-Sanaullah ScaleFlow University
-Home.js
-Part 1B
-Dark Mode + Notification + Sidebar
-Version : 1.0
-============================================================*/
+darkModeBtn?.addEventListener('click', toggleDarkMode);
 
-(function () {
-
-"use strict";
-
-/*============================================================
-ELEMENTS
-============================================================*/
-
-const darkModeBtn =
-document.getElementById("darkModeBtn");
-
-const notificationBell =
-document.getElementById("notificationBell");
-
-const notificationPanel =
-document.getElementById("notificationPanel");
-
-const notificationCount =
-document.getElementById("notificationCount");
-
-const markAllReadBtn =
-document.getElementById("markAllReadBtn");
-
-const sidebar =
-document.getElementById("sidebar");
-
-const sidebarMenu =
-document.getElementById("sidebarMenu");
-
-
-/*============================================================
-LOAD SAVED THEME
-============================================================*/
-
-const savedTheme =
-localStorage.getItem("theme");
-
-if(savedTheme === "dark"){
-
-    document.body.classList.add("dark-mode");
-
-    if(darkModeBtn){
-
-        darkModeBtn.textContent = "☀️";
-
-    }
-
-}
-
-
-/*============================================================
-DARK MODE
-============================================================*/
-
-darkModeBtn?.addEventListener("click",()=>{
-
-    document.body.classList.toggle("dark-mode");
-
-    const isDark =
-    document.body.classList.contains("dark-mode");
-
-    darkModeBtn.textContent =
-    isDark ? "☀️" : "🌙";
-
-    localStorage.setItem(
-        "theme",
-        isDark ? "dark" : "light"
-    );
-
-    if(window.HomeApp){
-
-        window.HomeApp.showToast(
-            isDark ?
-            "Dark Mode Enabled" :
-            "Light Mode Enabled"
-        );
-
-    }
-
+// ============================================================
+// 6. NAVIGATION — صفحات کا تبادلہ
+// ============================================================
+function navigateTo(pageId) {
+// تمام صفحات چھپائیں
+Object.values(pageSections).forEach(section => {
+if (section) section.classList.remove('active');
 });
+// مطلوبہ صفحہ دکھائیں
+const target = pageSections[pageId];
+if (target) target.classList.add('active');
+// سائیڈبار میں فعال لنک کو نمایاں کریں
+// سائیڈبار میں فعال لنک کو نمایاں کریں
+navLinks.forEach(link => link.classList.remove('active'));
 
-
-/*============================================================
-NOTIFICATION PANEL
-============================================================*/
-
-notificationBell?.addEventListener("click",()=>{
-
-    notificationPanel.classList.toggle("open");
-
-});
-
-
-/*============================================================
-MARK ALL READ
-============================================================*/
-
-markAllReadBtn?.addEventListener("click",()=>{
-
-    notificationCount.textContent="0";
-
-    document
-    .querySelectorAll(".notification-item")
-    .forEach(item=>{
-
-        item.classList.remove("unread");
-
-    });
-
-    if(window.HomeApp){
-
-        window.HomeApp.showToast(
-            "All notifications marked as read"
-        );
-
-    }
-
-});
-
-
-/*============================================================
-SIDEBAR ACTIVE MENU
-============================================================*/
-
-sidebarMenu?.querySelectorAll("a")
-.forEach(link=>{
-
-    link.addEventListener("click",function(e){
-
-        e.preventDefault();
-
-        sidebarMenu
-        .querySelectorAll("a")
-        .forEach(item=>{
-
-            item.classList.remove("active");
-
-        });
-
-        this.classList.add("active");
-
-    });
-
-});
-
-
-/*============================================================
-PART LOADED
-============================================================*/
-
-console.log(
-"Home.js Part 1B Loaded"
+const activeLink = document.querySelector(
+ .sidebar-menu a[data-page="${pageId}"] 
 );
-
-})();
-
-/*==========================================================
-Sanaullah ScaleFlow University
-Home.js
-Part 1C
-Quick Actions
-Version 1.0
-==========================================================*/
-
-(function () {
-
-"use strict";
-
-const actions = {
-
-    quickStartLearning() {
-        alert("📖 Opening Learning Center...");
-    },
-
-    quickBrowseCourses() {
-        alert("📚 Opening Courses...");
-    },
-
-    quickCertificates() {
-        alert("📜 Opening Certificates...");
-    },
-
-    quickAchievements() {
-        alert("🏆 Opening Achievements...");
-    },
-
-    quickAI() {
-        alert("🤖 Opening AI Mentor...");
-    },
-
-    quickMarketplace() {
-        alert("🛒 Opening Marketplace...");
-    },
-
-    quickBusiness() {
-        alert("💼 Opening Business Hub...");
-    },
-
-    quickProfile() {
-        alert("👤 Opening Profile...");
-    }
-
-};
-
-// =====================================================
-// Register Buttons
-// =====================================================
-
-Object.keys(actions).forEach(function(id){
-
-    const btn = document.getElementById(id);
-
-    if(btn){
-
-        btn.addEventListener("click", actions[id]);
-
-    }
-
-});
-
-// =====================================================
-// Hover Animation
-// =====================================================
-
-document.querySelectorAll(".tool-card").forEach(function(card){
-
-    card.addEventListener("mouseenter", function(){
-
-        this.style.transform = "translateY(-6px)";
-
-    });
-
-    card.addEventListener("mouseleave", function(){
-
-        this.style.transform = "";
-
-    });
-
-});
-
-console.log("✅ Home.js Part 1C Loaded");
-
-})();
-
-/*============================================================
-Sanaullah ScaleFlow University
-Home.js
-Part 1D
-Continue Learning + Progress
-Version : 1.0
-============================================================*/
-
-(function () {
-
-"use strict";
-
-/*============================================================
-ELEMENTS
-============================================================*/
-
-const resumeCourseBtn =
-document.getElementById("resumeCourseBtn");
-
-const continueLearningBtn =
-document.getElementById("continueLearningBtn");
-
-const browseCoursesBtn =
-document.getElementById("browseCoursesBtn");
-
-const progressBar =
-document.getElementById("courseProgressBar");
-
-const progressText =
-document.getElementById("courseProgressText");
-
-
-/*============================================================
-COURSE PROGRESS
-============================================================*/
-
-let currentProgress = 75;
-
-function updateProgress(value){
-
-    currentProgress = value;
-
-    if(progressBar){
-
-        progressBar.style.width = value + "%";
-
-    }
-
-    if(progressText){
-
-        progressText.textContent = value + "%";
-
-    }
-
+if (activeLink) activeLink.classList.add('active');
+// اوپر سکرول کریں
+window.scrollTo({ top: 0, behavior: 'smooth' });
+// نوٹیفکیشن پینل بند کریں
+if (notificationPanel) notificationPanel.classList.remove('open');
 }
 
-
-/*============================================================
-RESUME COURSE
-============================================================*/
-
-resumeCourseBtn?.addEventListener("click",function(){
-
-    if(window.HomeApp){
-
-        window.HomeApp.showToast(
-            "📖 Resuming your last lesson..."
-        );
-
-    }
-
+navLinks.forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const page = this.dataset.page;
+if (page && pageSections[page]) {
+navigateTo(page);
+}
+});
 });
 
-
-/*============================================================
-CONTINUE LEARNING
-============================================================*/
-
-continueLearningBtn?.addEventListener("click",function(){
-
-    if(window.HomeApp){
-
-        window.HomeApp.showToast(
-            "🚀 Opening Learning Center..."
-        );
-
-    }
-
+// ============================================================
+// 7. NOTIFICATION PANEL — گھنٹی کا پینل
+// ============================================================
+notificationBell?.addEventListener('click', function(e) {
+e.stopPropagation();
+notificationPanel.classList.toggle('open');
 });
 
-
-/*============================================================
-BROWSE COURSES
-============================================================*/
-
-browseCoursesBtn?.addEventListener("click",function(){
-
-    if(window.HomeApp){
-
-        window.HomeApp.showToast(
-            "📚 Opening Courses..."
-        );
-
-    }
-
+document.addEventListener('click', function(e) {
+if (notificationPanel && !notificationPanel.contains(e.target) && !notificationBell.contains(e.target)) {
+notificationPanel.classList.remove('open');
+}
 });
 
-
-/*============================================================
-DEMO PROGRESS UPDATE
-============================================================*/
-
-setTimeout(function(){
-
-    updateProgress(currentProgress);
-
-},300);
-
-
-/*============================================================
-EXPORT
-============================================================*/
-
-window.HomeProgress = {
-
-    updateProgress
-
-};
-
-
-console.log("✅ Home.js Part 1D Loaded");
-
-})();
-
-/* ==========================================================
-   Sanaullah ScaleFlow University
-   Home.js — Part 1E
-   Today's Tasks + Progress
-========================================================== */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const taskBoxes = document.querySelectorAll(".task-item input[type='checkbox']");
-    const progressBar = document.getElementById("courseProgressBar");
-    const progressText = document.getElementById("courseProgressText");
-
-    if (!taskBoxes.length) return;
-
-    function updateTaskProgress() {
-
-        const total = taskBoxes.length;
-        let completed = 0;
-
-        taskBoxes.forEach(task => {
-            if (task.checked) completed++;
-        });
-
-        const percent = Math.round((completed / total) * 100);
-
-        if (progressBar) {
-            progressBar.style.width = percent + "%";
-        }
-
-        if (progressText) {
-            progressText.textContent = percent + "%";
-        }
-
-        localStorage.setItem(
-            "sf_home_tasks",
-            JSON.stringify(
-                [...taskBoxes].map(task => task.checked)
-            )
-        );
-
-    }
-
-    // Restore Saved Tasks
-
-    const saved = localStorage.getItem("sf_home_tasks");
-
-    if (saved) {
-
-        try {
-
-            const values = JSON.parse(saved);
-
-            taskBoxes.forEach((task, index) => {
-
-                if (values[index] !== undefined) {
-
-                    task.checked = values[index];
-
-                }
-
-            });
-
-        } catch (e) {
-
-            console.log("Task restore skipped");
-
-        }
-
-    }
-
-    taskBoxes.forEach(task => {
-
-        task.addEventListener("change", updateTaskProgress);
-
-    });
-
-    updateTaskProgress();
-
+markAllReadBtn?.addEventListener('click', function() {
+document.querySelectorAll('.notification-item.unread').forEach(item => {
+item.classList.remove('unread');
+});
+if (notificationCount) notificationCount.textContent = '0';
+showToast('✅ All notifications marked as read', 'success');
 });
 
-/*============================================================
-Sanaullah ScaleFlow University
-Home.js
-Part 1F
-Weekly Progress + Activity + AI Recommendation
-Version : 1.0
-============================================================*/
+// ============================================================
+// 8. SCROLL TOP — بٹن ظاہر/چھپائیں
+// ============================================================
+window.addEventListener('scroll', function() {
+if (scrollTopBtn) {
+scrollTopBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+}
+});
+scrollTopBtn?.addEventListener('click', function() {
+window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
-(function () {
+// ============================================================
+// 9. KEYBOARD SHORTCUTS — Ctrl+K سرچ، Escape موڈل/پینل بند
+// ============================================================
+document.addEventListener('keydown', function(e) {
+if (e.ctrlKey && e.key.toLowerCase() === 'k') {
+e.preventDefault();
+if (globalSearch) globalSearch.focus();
+}
+if (e.key === 'Escape') {
+if (modalContainer && modalContainer.classList.contains('open')) closeModal();
+if (notificationPanel && notificationPanel.classList.contains('open')) {
+notificationPanel.classList.remove('open');
+}
+}
+});
 
-"use strict";
-
-/*============================================================
-ELEMENTS
-============================================================*/
-
-const weeklyBars =
-document.querySelectorAll(".progress-chart .bar");
-
-const activityItems =
-document.querySelectorAll(".activity-item");
-
-const achievementCard =
-document.querySelector(".achievement-card");
-
-const aiRecommendationBtn =
-document.getElementById("aiRecommendationBtn");
-
-
-/*============================================================
-ANIMATE WEEKLY PROGRESS
-============================================================*/
-
-function animateWeeklyProgress(){
-
-    weeklyBars.forEach(function(bar){
-
-        const targetHeight = bar.style.height;
-
-        bar.style.height = "0%";
-
-        setTimeout(function(){
-
-            bar.style.height = targetHeight;
-
-        },300);
-
-    });
-
+// ============================================================
+// 10. CURRENT YEAR — فوٹر میں سال
+// ============================================================
+if (currentYear) {
+currentYear.textContent = new Date().getFullYear();
 }
 
-
-/*============================================================
-RECENT ACTIVITY EFFECT
-============================================================*/
-
-activityItems.forEach(function(item,index){
-
-    item.style.opacity = "0";
-    item.style.transform = "translateY(20px)";
-
-    setTimeout(function(){
-
-        item.style.transition = "0.5s";
-        item.style.opacity = "1";
-        item.style.transform = "translateY(0)";
-
-    },index*150);
-
-});
-
-
-/*============================================================
-LATEST ACHIEVEMENT
-============================================================*/
-
-achievementCard?.addEventListener("click",function(){
-
-    if(window.HomeApp){
-
-        window.HomeApp.showToast(
-            "🏆 Fast Learner Achievement"
-        );
-
-    }
-
-});
-
-
-/*============================================================
-AI RECOMMENDATION
-============================================================*/
-
-aiRecommendationBtn?.addEventListener("click",function(){
-
-    if(window.HomeApp){
-
-        window.HomeApp.showToast(
-            "🤖 Opening AI Recommendation..."
-        );
-
-    }
-
-});
-
-
-/*============================================================
-START
-============================================================*/
-
-document.addEventListener("DOMContentLoaded",function(){
-
-    animateWeeklyProgress();
-
-});
-
-
-console.log("✅ Home.js Part 1F Loaded");
-
-})();
-
-/*============================================================
-Sanaullah ScaleFlow University
-Home.js
-Part 1G
-Final Boot + System Status + Footer
-Version : 1.0
-============================================================*/
-
-(function () {
-
-"use strict";
-
-/*============================================================
-SYSTEM STATUS CARDS
-============================================================*/
-
-document.querySelectorAll(".tool-card").forEach(function(card){
-
-    card.addEventListener("click",function(){
-
-        const title =
-        this.querySelector("h3")?.textContent || "Module";
-
-        if(window.HomeApp){
-
-            window.HomeApp.showToast(
-                "Opening " + title
-            );
-
-        }
-
-    });
-
-});
-
-
-/*============================================================
-START AI RECOMMENDATION
-============================================================*/
-
-const startRecommendationBtn =
-document.getElementById("startRecommendationBtn");
-
-startRecommendationBtn?.addEventListener("click",function(){
-
-    if(window.HomeApp){
-
-        window.HomeApp.showToast(
-            "🤖 AI Recommendation Started"
-        );
-
-    }
-
-});
-
-
-/*============================================================
-FOOTER YEAR
-============================================================*/
-
-const footer =
-document.querySelector(".footer-right");
-
-if(footer){
-
-    footer.innerHTML =
-    "© " +
-    new Date().getFullYear() +
-    " Sanaullah ScaleFlow University";
-
-}
-
-
-/*============================================================
-HOME MODULE READY
-============================================================*/
-
-document.addEventListener("DOMContentLoaded",function(){
-
-    console.log("===================================");
-
-    console.log("Sanaullah ScaleFlow University");
-
-    console.log("Home Module Loaded Successfully");
-
-    console.log("Version : 1.0");
-
-    console.log("Status  : READY");
-
-    console.log("===================================");
-
-    if(window.HomeApp){
-
-        window.HomeApp.showToast(
-            "🎓 Home Module Ready"
-        );
-
-    }
-
-});
-
-
-/*============================================================
-GLOBAL EXPORT
-============================================================*/
-
-window.HomeModule = {
-
-    version : "1.0",
-
-    status : "READY",
-
-    author : "Sanaullah"
-
+// ============================================================
+// 11. GLOBAL EXPOSE — دوسرے حصوں کے لیے
+// ============================================================
+global.ScaleFlow = {
+showToast,
+openModal,
+closeModal,
+navigateTo,
+toggleDarkMode,
+hideLoader
 };
 
-})();
+console.log('📦 [Part 1] Core Foundation loaded');
+ 
+
+})(window);
+
+/* ===== Parart1 ===== */
