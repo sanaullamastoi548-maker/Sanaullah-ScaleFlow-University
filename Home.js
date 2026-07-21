@@ -226,4 +226,8 @@ console.log('📦 [Part 1] Core Foundation loaded');
 
 })(window);
 
+
+window.addEventListener("load", function () {
+    hideLoader();
+});
 /* ===== Parart1 ===== */
