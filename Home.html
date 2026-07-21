@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ScaleFlow University – All Pages</title>
+    <title>ScaleFlow University — Home</title>
     <meta name="description" content="Learn • Build • Earn • Grow">
 
+    <!-- ===== EXTERNAL CSS FILES (You will provide these later) ===== -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="Home.css">
 </head>
-
 <body>
 
     <!-- ===== LOADER ===== -->
@@ -42,7 +41,7 @@
     <!-- ===== MAIN APP ===== -->
     <div id="app" data-page="home">
 
-        <!-- ===== NOTIFICATION PANEL ===== -->
+        <!-- ===== NOTIFICATION PANEL (Optional overlay) ===== -->
         <div id="notificationPanel" class="notification-panel">
             <div class="notification-header">
                 <h3>🔔 Notifications</h3>
@@ -66,7 +65,7 @@
             </div>
         </div>
 
-        <!-- ===== HEADER ===== -->
+        <!-- ===== HEADER (Locked: Full Width, Left Logo, Right Actions) ===== -->
         <header class="header" role="banner">
             <div class="logo">
                 <h1>Sanaullah</h1>
@@ -81,7 +80,7 @@
             </div>
         </header>
 
-        <!-- ===== SIDEBAR ===== -->
+        <!-- ===== SIDEBAR (Locked: Left, Outside Main Content, Sticky) ===== -->
         <aside class="sidebar" role="navigation" aria-label="Main Navigation">
             <nav class="sidebar-menu">
                 <a href="#" data-page="page1" class="active" id="navPage1">🏠 Home</a>
@@ -103,74 +102,153 @@
         <main class="main-content" role="main">
 
             <!-- =========================
-                 PAGE 1 : HOME
+                 PAGE 1 : HOME (Locked Roadmap)
             ========================== -->
             <section id="page1" class="page-section active">
 
+                <!-- 🏠 Heading with Yellow Underline (Locked) -->
+                <h2>🏠 Home</h2>
+
+                <!-- ===== HERO SECTION ===== -->
                 <div class="hero">
 
                     <div class="hero-left">
-
-                        <span class="hero-tag">
-                            🚀 Welcome
-                        </span>
-
-                        <h1>
-                            Sanaullah ScaleFlow University
-                        </h1>
-
-                        <p>
-                            Learn • Build • Earn • Grow
-                        </p>
-
+                        <span class="hero-tag">👋 Welcome Back</span>
+                        <h1>Sanaullah</h1>
+                        <p>Learn • Build • Earn • Grow</p>
+                        <p>Welcome to Sanaullah ScaleFlow University. Continue your learning journey and unlock your next achievement.</p>
                         <div class="hero-buttons">
-
-                            <button class="btn-primary">
-                                Start Learning
-                            </button>
-
-                            <button class="btn-secondary">
-                                Explore Courses
-                            </button>
-
+                            <button id="continueLearningBtn" class="btn-primary">▶ Continue Learning</button>
+                            <button id="browseCoursesBtn" class="btn-secondary">📚 Browse Courses</button>
                         </div>
-
                     </div>
 
                     <div class="hero-right">
-
-                        <div class="hero-stat">
-                            <span>Total Courses</span>
-                            <strong>0</strong>
-                        </div>
-
-                        <div class="hero-stat">
-                            <span>Students</span>
-                            <strong>0</strong>
-                        </div>
-
-                        <div class="hero-stat">
-                            <span>Certificates</span>
-                            <strong>0</strong>
-                        </div>
-
+                        <div class="hero-stat"><span>⭐ Brain XP</span><strong id="brainXP">250 XP</strong></div>
+                        <div class="hero-stat"><span>🏆 Current Level</span><strong id="currentLevel">Level 5</strong></div>
+                        <div class="hero-stat"><span>🔥 Learning Streak</span><strong id="learningStreak">7 Days</strong></div>
+                        <div class="hero-stat"><span>📈 Overall Progress</span><strong id="overallProgress">75%</strong></div>
                     </div>
 
                 </div>
 
+                <!-- ===== SEARCH SECTION ===== -->
+                <div class="search-section">
+                    <input id="globalSearchInput" type="text" placeholder="🔍 Search courses, tools, mentors..." autocomplete="off">
+                </div>
+
+                <!-- ===== LEARNING DASHBOARD (4 Cards) ===== -->
+                <div class="stats-grid">
+                    <div class="stat-card"><span class="icon">📚</span><h3>Courses</h3><div class="number">12</div></div>
+                    <div class="stat-card"><span class="icon">📜</span><h3>Certificates</h3><div class="number">4</div></div>
+                    <div class="stat-card"><span class="icon">🏆</span><h3>Achievements</h3><div class="number">8</div></div>
+                    <div class="stat-card"><span class="icon">📁</span><h3>Projects</h3><div class="number">3</div></div>
+                </div>
+
+                <!-- ===== CONTINUE LEARNING CARD ===== -->
+                <div class="continue-card">
+                    <div class="continue-info">
+                        <h3>🤖 AI Fundamentals</h3>
+                        <p>Current Lesson</p>
+                        <strong>Lesson 5 : Prompt Engineering</strong>
+                    </div>
+                    <div class="progress-area">
+                        <div class="progress-header">
+                            <span>Progress</span>
+                            <span id="courseProgressText">75%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div id="courseProgressBar" class="progress-fill" style="width:75%;"></div>
+                        </div>
+                    </div>
+                    <div class="continue-actions">
+                        <button id="resumeCourseBtn" class="btn-primary">▶ Resume Course</button>
+                    </div>
+                </div>
+
+                <!-- ===== TODAY'S TASKS ===== -->
+                <div class="task-list">
+                    <div class="task-item"><input type="checkbox" id="task1"><label for="task1">Complete Lesson 5</label></div>
+                    <div class="task-item"><input type="checkbox" id="task2"><label for="task2">Submit AI Reflection</label></div>
+                    <div class="task-item"><input type="checkbox" id="task3"><label for="task3">Pass Lesson Quiz</label></div>
+                    <div class="task-item"><input type="checkbox" id="task4"><label for="task4">Earn 50 XP Today</label></div>
+                </div>
+
+                <!-- ===== QUICK ACTIONS (4 Cards) ===== -->
+                <div class="quick-actions-grid">
+                    <div class="quick-action-btn"><span class="icon">📖</span><span class="label">Start Learning</span><span class="desc">Continue your lessons instantly.</span></div>
+                    <div class="quick-action-btn"><span class="icon">🤖</span><span class="label">Ask AI Mentor</span><span class="desc">Get instant help.</span></div>
+                    <div class="quick-action-btn"><span class="icon">📚</span><span class="label">Browse Courses</span><span class="desc">Explore new topics.</span></div>
+                    <div class="quick-action-btn"><span class="icon">📜</span><span class="label">My Certificates</span><span class="desc">View your achievements.</span></div>
+                </div>
+
+                <!-- ===== WEEKLY PROGRESS ===== -->
+                <div class="weekly-progress">
+                    <div class="section-header">
+                        <h2>📈 Weekly Progress</h2>
+                        <span>This Week</span>
+                    </div>
+                    <div class="progress-chart">
+                        <div class="day"><div class="bar" style="height:35%;"></div><p>Mon</p></div>
+                        <div class="day"><div class="bar" style="height:50%;"></div><p>Tue</p></div>
+                        <div class="day"><div class="bar" style="height:70%;"></div><p>Wed</p></div>
+                        <div class="day"><div class="bar" style="height:60%;"></div><p>Thu</p></div>
+                        <div class="day"><div class="bar" style="height:85%;"></div><p>Fri</p></div>
+                        <div class="day"><div class="bar" style="height:95%;"></div><p>Sat</p></div>
+                        <div class="day"><div class="bar" style="height:75%;"></div><p>Sun</p></div>
+                    </div>
+                </div>
+
+                <!-- ===== RECENT ACTIVITY (Timeline) ===== -->
+                <div class="activity-timeline">
+                    <h2>🕒 Recent Activity</h2>
+                    <div class="activity-item">✅ Completed <strong>Lesson 4</strong> <span>2 Hours Ago</span></div>
+                    <div class="activity-item">🏆 Achievement Unlocked <strong>Fast Learner</strong> <span>Yesterday</span></div>
+                    <div class="activity-item">📜 Certificate Earned <strong>HTML Basics</strong> <span>2 Days Ago</span></div>
+                    <div class="activity-item">🤖 AI Mentor Session <strong>JavaScript</strong> <span>3 Days Ago</span></div>
+                </div>
+
+                <!-- ===== DIGITAL ECOSYSTEM CARDS (8 Cards) ===== -->
+                <div class="ecosystem-grid">
+                    <div class="ecosystem-card"><span class="icon">📚</span><h4>Learning Hub</h4><p>Professional courses</p></div>
+                    <div class="ecosystem-card"><span class="icon">🤖</span><h4>AI Mentor</h4><p>Personal AI teacher</p></div>
+                    <div class="ecosystem-card"><span class="icon">⚙️</span><h4>Automation Hub</h4><p>Google Workspace</p></div>
+                    <div class="ecosystem-card"><span class="icon">🛠️</span><h4>Tools Hub</h4><p>Free professional tools</p></div>
+                    <div class="ecosystem-card"><span class="icon">💼</span><h4>Business Hub</h4><p>Digital business</p></div>
+                    <div class="ecosystem-card"><span class="icon">💻</span><h4>Freelancing</h4><p>Fiverr, Upwork</p></div>
+                    <div class="ecosystem-card"><span class="icon">📜</span><h4>Certificates</h4><p>Verify & download</p></div>
+                    <div class="ecosystem-card"><span class="icon">📊</span><h4>Dashboard</h4><p>Track progress</p></div>
+                </div>
+
             </section>
+            <!-- ===== END PAGE 1 ===== -->
 
         </main>
+        <!-- ===== END MAIN CONTENT ===== -->
+
+        <!-- ===== FOOTER (Locked: Only Theme, Language, Support) ===== -->
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="#">Theme</a>
+                <a href="#">Language</a>
+                <a href="#">Support</a>
+            </div>
+            <div class="footer-copyright">
+                © 2026 <strong>Sanaullah ScaleFlow University</strong>
+            </div>
+        </footer>
+        <div class="footer-bottom">
+            Learn • Build • Earn • Grow
+        </div>
 
     </div>
     <!-- ===== END APP ===== -->
 
-    <!-- ===== SCROLL TOP ===== -->
+    <!-- ===== SCROLL TOP BUTTON ===== -->
     <button id="scrollTopBtn">⬆</button>
 
-    <!-- ===== JAVASCRIPT ===== -->
+    <!-- ===== EXTERNAL JAVASCRIPT FILE (You will provide this later) ===== -->
     <script src="Home.js"></script>
 
 </body>
-
 </html>
