@@ -1,16 +1,16 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
-        
+
 <head>
-     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ScaleFlow University – All Pages</title>
     <meta name="description" content="Learn • Build • Earn • Grow">
-    
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="Home.css">
 </head>
+
 <body>
 
     <!-- ===== LOADER ===== -->
@@ -38,37 +38,35 @@
             </div>
         </div>
     </div>
-    
 
     <!-- ===== MAIN APP ===== -->
     <div id="app" data-page="home">
 
-        <!-- ===== HEADER ===== -->
-        
-          <!-- ===== NOTIFICATION PANEL ===== -->
+        <!-- ===== NOTIFICATION PANEL ===== -->
         <div id="notificationPanel" class="notification-panel">
-        <div class="notification-header">
-            <h3>🔔 Notifications</h3>
-            <button id="markAllReadBtn" type="button">Mark all as read</button>
-        </div>
-        <div class="notification-list">
-            <div class="notification-item unread">
-                <span class="icon">📘</span>
-                <div class="content">
-                    <p><strong>New course:</strong> AI Fundamentals</p>
-                    <span class="time">2 min ago</span>
+            <div class="notification-header">
+                <h3>🔔 Notifications</h3>
+                <button id="markAllReadBtn" type="button">Mark all as read</button>
+            </div>
+            <div class="notification-list">
+                <div class="notification-item unread">
+                    <span class="icon">📘</span>
+                    <div class="content">
+                        <p><strong>New course:</strong> AI Fundamentals</p>
+                        <span class="time">2 min ago</span>
+                    </div>
+                </div>
+                <div class="notification-item unread">
+                    <span class="icon">🏆</span>
+                    <div class="content">
+                        <p><strong>Achievement:</strong> 5 Day Streak</p>
+                        <span class="time">1 hour ago</span>
+                    </div>
                 </div>
             </div>
-            <div class="notification-item unread">
-                <span class="icon">🏆</span>
-                <div class="content">
-                    <p><strong>Achievement:</strong> 5 Day Streak</p>
-                    <span class="time">1 hour ago</span>
-                </div>
-            </div>
         </div>
-    </div>
-        
+
+        <!-- ===== HEADER ===== -->
         <header class="header" role="banner">
             <div class="logo">
                 <h1>Sanaullah</h1>
@@ -101,78 +99,78 @@
             </nav>
         </aside>
 
-        
+        <!-- ===== MAIN CONTENT ===== -->
         <main class="main-content" role="main">
 
-    <!-- =========================
-         PAGE 1 : HOME
-    ========================== -->
+            <!-- =========================
+                 PAGE 1 : HOME
+            ========================== -->
+            <section id="page1" class="page-section active">
 
-    <section id="page1" class="page-section active">
+                <div class="hero">
 
-        <div class="hero">
+                    <div class="hero-left">
 
-            <div class="hero-left">
+                        <span class="hero-tag">
+                            🚀 Welcome
+                        </span>
 
-                <span class="hero-tag">
-                    🚀 Welcome
-                </span>
+                        <h1>
+                            Sanaullah ScaleFlow University
+                        </h1>
 
-                <h1>
-                    Sanaullah ScaleFlow University
-                </h1>
+                        <p>
+                            Learn • Build • Earn • Grow
+                        </p>
 
-                <p>
-                    Learn • Build • Earn • Grow
-                </p>
+                        <div class="hero-buttons">
 
-                <div class="hero-buttons">
+                            <button class="btn-primary">
+                                Start Learning
+                            </button>
 
-                    <button class="btn-primary">
-                        Start Learning
-                    </button>
+                            <button class="btn-secondary">
+                                Explore Courses
+                            </button>
 
-                    <button class="btn-secondary">
-                        Explore Courses
-                    </button>
+                        </div>
+
+                    </div>
+
+                    <div class="hero-right">
+
+                        <div class="hero-stat">
+                            <span>Total Courses</span>
+                            <strong>0</strong>
+                        </div>
+
+                        <div class="hero-stat">
+                            <span>Students</span>
+                            <strong>0</strong>
+                        </div>
+
+                        <div class="hero-stat">
+                            <span>Certificates</span>
+                            <strong>0</strong>
+                        </div>
+
+                    </div>
 
                 </div>
 
-            </div>
+            </section>
 
-            <div class="hero-right">
+        </main>
 
-                <div class="hero-stat">
-                    <span>Total Courses</span>
-                    <strong>0</strong>
-                </div>
+    </div>
+    <!-- ===== END APP ===== -->
 
-                <div class="hero-stat">
-                    <span>Students</span>
-                    <strong>0</strong>
-                </div>
+    <!-- ===== SCROLL TOP ===== -->
+    <button id="scrollTopBtn">⬆</button>
 
-                <div class="hero-stat">
-                    <span>Certificates</span>
-                    <strong>0</strong>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-</main>
-
-</div>
-<!-- ===== END APP ===== -->
-
-<!-- ===== SCROLL TOP ===== -->
-<button id="scrollTopBtn">⬆</button>
-
-<!-- ===== JAVASCRIPT ===== -->
-<script src="Home.js"></script>
+    <!-- ===== JAVASCRIPT ===== -->
+    <script src="Home.js"></script>
 
 </body>
+
 </html>
