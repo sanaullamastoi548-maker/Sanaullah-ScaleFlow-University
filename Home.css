@@ -754,48 +754,58 @@ body {
     font-weight: 600;
 }
 
-/* ---------- ECOSYSTEM GRID (Digital Ecosystem) ---------- */
-.ecosystem-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    margin-bottom: 32px;
+  /* ---------- ECOSYSTEM GRID (Digital Ecosystem) ---------- */
+
+.ecosystem-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(320px,1fr));
+    gap:24px;
+    margin:32px 0;
+    align-items:stretch;
 }
 
-.ecosystem-card {
-    background: var(--white);
-    border: 2px solid var(--primary-border);
-    border-radius: var(--radius);
-    padding: 24px 16px;
-    text-align: center;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
-    cursor: pointer;
+.ecosystem-card{
+    background:var(--white);
+    border:2px solid var(--primary-border);
+    border-radius:var(--radius);
+    padding:28px;
+    min-height:170px;
+    text-align:left;
+    box-shadow:var(--shadow-sm);
+    transition:var(--transition);
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 }
 
-.ecosystem-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-hover);
-    border-color: var(--primary);
+.ecosystem-card:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow-hover);
+    border-color:var(--primary);
 }
 
-.ecosystem-card .icon {
-    font-size: 36px;
-    display: block;
-    margin-bottom: 10px;
+.ecosystem-card .icon{
+    font-size:42px;
+    margin-bottom:12px;
 }
 
-.ecosystem-card h4 {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 4px;
+.ecosystem-card h4{
+    font-size:20px;
+    font-weight:700;
+    margin-bottom:8px;
 }
 
-.ecosystem-card p {
-    font-size: 13px;
-    color: var(--text-muted);
-    margin: 0;
+.ecosystem-card p{
+    font-size:15px;
+    line-height:1.5;
+    margin:0;
+}
+
+@media(max-width:768px){
+    .ecosystem-grid{
+        grid-template-columns:1fr;
+    }
 }
 
 /* ---------- FOOTER (Locked) ---------- */
