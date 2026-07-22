@@ -362,25 +362,67 @@ if (els.progressText) els.progressText.textContent = progress + '% Complete';
 }
 
 // ============================================================
-// 14. CONTINUE LEARNING — پروگریس بڑھائیں
+
+    // ============================================================
+// 14. CONTINUE LEARNING — Enterprise Version (LOCK)
 // ============================================================
+
 const continueProgressBtn = document.getElementById('continueProgressBtn');
 const continueProgress = document.getElementById('continueProgress');
 const progressText = document.getElementById('progressText');
 
+function updateContinueLearningProgress(value) {
+
+    if (!continueProgress) return;
+
+    const progress = Math.max(0, Math.min(100, Number(value) || 0));
+
+    continueProgress.style.width = progress + "%";
+
+    continueProgress.setAttribute("aria-valuenow", progress);
+
+    if (progressText) {
+        progressText.textContent = progress + "% Complete";
+    }
+
+    return progress;
+}
+
 if (continueProgressBtn) {
-continueProgressBtn.addEventListener('click', function() {
-let progress = parseInt(continueProgress.style.width) || 65;
-if (progress >= 100) {
-showToast('🎉 Course Complete!', 'success');
-return;
+
+    continueProgressBtn.addEventListener("click", function () {
+
+        let currentProgress = 0;
+
+        if (continueProgress) {
+            currentProgress = parseInt(continueProgress.style.width) || 65;
+        }
+
+        if (currentProgress >= 100) {
+
+            updateContinueLearningProgress(100);
+
+            showToast("🎉 Course Completed Successfully!", "success");
+
+            return;
+        }
+
+        currentProgress += 5;
+
+        currentProgress = updateContinueLearningProgress(currentProgress);
+
+        showToast(
+            "📈 Learning Progress Updated (" + currentProgress + "%)",
+            "info"
+        );
+
+    });
+
 }
-progress = Math.min(progress + 5, 100);
-continueProgress.style.width = progress + '%';
-if (progressText) progressText.textContent = progress + '% Complete';
-showToast('📈 Progress updated to ' + progress + '%', 'info');
-});
-}
+
+// Default Progress
+updateContinueLearningProgress(65);
+    
 
 // ============================================================
 // 15. TODAY'S TASKS — چیک باکس پر کلک
@@ -422,28 +464,120 @@ navigateTo(quickActions[id]);
 }
 });
 
+
+    // ============================================================
+// 17. QUICK ACTIONS BOTTOM — Enterprise Version (LOCK)
 // ============================================================
-// 17. QUICK ACTIONS BOTTOM — تھیم، لینگویج، سپورٹ
-// ============================================================
-document.getElementById('btnTheme')?.addEventListener('click', function() {
-if (typeof global.ScaleFlow?.toggleDarkMode === 'function') {
-global.ScaleFlow.toggleDarkMode();
-} else {
-document.body.classList.toggle('dark-mode');
-const isDark = document.body.classList.contains('dark-mode');
-document.getElementById('darkModeBtn').textContent = isDark ? '☀️' : '🌙';
-localStorage.setItem('theme', isDark ? 'dark' : 'light');
-showToast(isDark ? '🌙 Dark mode enabled' : '☀️ Light mode enabled', 'info');
+
+// Theme Button
+const btnTheme = document.getElementById("btnTheme");
+
+if (btnTheme) {
+
+    btnTheme.addEventListener("click", function () {
+
+        if (
+            global.ScaleFlow &&
+            typeof global.ScaleFlow.toggleDarkMode === "function"
+        ) {
+
+            global.ScaleFlow.toggleDarkMode();
+
+        } else {
+
+            const body = document.body;
+
+            body.classList.toggle("dark-mode");
+
+            const isDark = body.classList.contains("dark-mode");
+
+            const darkBtn = document.getElementById("darkModeBtn");
+
+            if (darkBtn) {
+                darkBtn.textContent = isDark ? "☀️" : "🌙";
+            }
+
+            localStorage.setItem(
+                "theme",
+                isDark ? "dark" : "light"
+            );
+
+            showToast(
+                isDark
+                    ? "🌙 Dark Mode Enabled"
+                    : "☀️ Light Mode Enabled",
+                "info"
+            );
+
+        }
+
+    });
+
 }
-});
 
-document.getElementById('btnLanguage')?.addEventListener('click', function() {
-showToast('🌐 Language settings opened', 'info');
-});
 
-document.getElementById('btnSupport')?.addEventListener('click', function() {
-showToast('📞 Support opened', 'info');
-});
+// Language Button
+const btnLanguage = document.getElementById("btnLanguage");
+
+if (btnLanguage) {
+
+    btnLanguage.addEventListener("click", function () {
+
+        showToast(
+            "🌐 Language Settings will be available soon.",
+            "info"
+        );
+
+    });
+
+}
+
+
+// Support Button
+const btnSupport = document.getElementById("btnSupport");
+
+if (btnSupport) {
+
+    btnSupport.addEventListener("click", function () {
+
+        showToast(
+            "📞 Opening Support Center...",
+            "info"
+        );
+
+        setTimeout(function () {
+
+            if (
+                global.ScaleFlow &&
+                typeof global.ScaleFlow.openModal === "function"
+            ) {
+
+                global.ScaleFlow.openModal(
+                    "Support Center",
+                    `
+                    <p>
+                        Need help?
+                    </p>
+
+                    <p>
+                        📧 support@scaleflowuniversity.com
+                    </p>
+
+                    <p>
+                        💬 AI Support is available 24/7.
+                    </p>
+                    `
+                );
+
+            }
+
+        }, 300);
+
+    });
+
+}
+    
+    
 
 // ============================================================
 // 18. GATEWAY CARDS — کلک پر ٹوسٹ
@@ -926,18 +1060,52 @@ if (document.documentElement.getAttribute('dir') === 'rtl') {
 console.log('📄 RTL mode detected');
 }
 
+    // ============================================================
+// 37. BOOT — Application Startup (LOCK)
 // ============================================================
-// 37. BOOT — سب کچھ شروع کریں
-// ============================================================
-document.addEventListener('DOMContentLoaded', function() {
-// لوڈر چھپائیں
-hideLoader();
-// خوش آمدید
-showToast('🎓 Welcome to ScaleFlow University', 'success');
-// ڈیفالٹ پیج (page1) کو یقینی بنائیں
-navigateTo('page1');
-console.log('🚀 ScaleFlow University loaded successfully');
+document.addEventListener("DOMContentLoaded", function () {
+
+    console.log("🚀 DOM Loaded");
+
+    try {
+
+        // Default Page
+        navigateTo("page1");
+
+        // Welcome Toast
+        showToast("🎓 Welcome to ScaleFlow University", "success");
+
+    } catch (error) {
+
+        console.error("Startup Error:", error);
+
+    }
+
+    // Loader ہمیشہ Hide ہوگا چاہے اوپر Error آ جائے
+    setTimeout(function () {
+
+        try {
+
+            hideLoader();
+
+        } catch (error) {
+
+            console.error("Loader Error:", error);
+
+            const loader = document.getElementById("loader");
+
+            if (loader) {
+                loader.style.display = "none";
+            }
+
+        }
+
+    }, 300);
+
+    console.log("✅ ScaleFlow University Started");
+
 });
+    
 
 // ============================================================
 // 38. GLOBAL — اگر کسی اور فائل کو ضرورت ہو
