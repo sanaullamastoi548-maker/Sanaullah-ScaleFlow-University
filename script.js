@@ -44,21 +44,36 @@ page11: document.getElementById('page11'),
 page12: document.getElementById('page12')
 };
 
-// ============================================================
+  // ============================================================
 // 2. TOAST — نوٹیفکیشن دکھانے کا فنکشن
+// Version 1.0 FINAL (LOCKED)
 // ============================================================
-function showToast(message, type = 'info') {
-if (!toastContainer) return;
-const toast = document.createElement('div');
-toast.className =  toast toast-${type} ;
-toast.textContent = message;
-toastContainer.appendChild(toast);
-setTimeout(() => {
-toast.style.opacity = '0';
-setTimeout(() => toast.remove(), 300);
-}, 3000);
-}
 
+function showToast(message, type = "info") {
+
+    if (!toastContainer) return;
+
+    const toast = document.createElement("div");
+
+    toast.className = `toast toast-${type}`;
+
+    toast.textContent = message;
+
+    toastContainer.appendChild(toast);
+
+    setTimeout(() => {
+
+        toast.style.opacity = "0";
+
+        setTimeout(() => {
+
+            toast.remove();
+
+        }, 300);
+
+    }, 3000);
+
+}
 
 // ============================================================
 // 3. LOADER — صفحہ لوڈ ہونے پر چھپائیں
