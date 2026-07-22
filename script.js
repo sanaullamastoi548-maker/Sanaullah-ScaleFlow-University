@@ -59,16 +59,33 @@ setTimeout(() => toast.remove(), 300);
 }, 3000);
 }
 
+
 // ============================================================
 // 3. LOADER — صفحہ لوڈ ہونے پر چھپائیں
+// Version 1.0 FINAL (LOCKED)
 // ============================================================
 function hideLoader() {
-if (loader) {
-loader.classList.add('hidden');
-setTimeout(() => { loader.style.display = 'none'; }, 500);
-}
+
+    // اگر Loader موجود ہی نہیں تو خاموشی سے واپس آ جائیں
+    if (!loader) return;
+
+    // اگر پہلے ہی Hide ہو چکا ہے تو دوبارہ کچھ نہ کریں
+    if (loader.classList.contains('hidden')) return;
+
+    // Hide Animation
+    loader.classList.add('hidden');
+
+    // Animation مکمل ہونے کے بعد Remove
+    setTimeout(() => {
+
+        loader.style.display = 'none';
+        loader.setAttribute('aria-hidden', 'true');
+
+    }, 500);
+
 }
 
+    
 // ============================================================
 // 4. MODAL — کھلنا / بند ہونا
 // ============================================================
@@ -119,61 +136,75 @@ darkModeBtn?.addEventListener('click', toggleDarkMode);
 
 // ============================================================
 // 6. NAVIGATION — صفحات کا تبادلہ
+// Version 1.0 FINAL (LOCKED)
 // ============================================================
-function navigateTo(pageId) {
-// تمام صفحات چھپائیں
-Object.values(pageSections).forEach(section => {
-if (section) section.classList.remove('active');
-});
-// مطلوبہ صفحہ دکھائیں
-const target = pageSections[pageId];
-if (target) target.classList.add('active');
-// سائیڈبار میں فعال لنک کو نمایاں کریں
-// سائیڈبار میں فعال لنک کو نمایاں کریں
-navLinks.forEach(link => link.classList.remove('active'));
 
-const activeLink = document.querySelector(
- .sidebar-menu a[data-page="${pageId}"] 
-);
-if (activeLink) activeLink.classList.add('active');
-// اوپر سکرول کریں
-window.scrollTo({ top: 0, behavior: 'smooth' });
-// نوٹیفکیشن پینل بند کریں
-if (notificationPanel) notificationPanel.classList.remove('open');
+function navigateTo(pageId) {
+
+    // اگر Page موجود نہیں تو کچھ نہ کریں
+    if (!pageSections || !pageSections[pageId]) {
+        console.warn("Page not found:", pageId);
+        return;
+    }
+
+    // تمام صفحات Hide کریں
+    Object.values(pageSections).forEach(section => {
+        if (section) {
+            section.classList.remove("active");
+        }
+    });
+
+    // مطلوبہ Page Show کریں
+    pageSections[pageId].classList.add("active");
+
+    // Sidebar Active Link Update
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+    });
+
+    const activeLink = document.querySelector(
+        `.sidebar-menu a[data-page="${pageId}"]`
+    );
+
+    if (activeLink) {
+        activeLink.classList.add("active");
+    }
+
+    // Notification Panel بند کریں
+    if (notificationPanel) {
+        notificationPanel.classList.remove("open");
+    }
+
+    // Smooth Scroll Top
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
 }
+
+
+
+// ============================================================
+// Sidebar Navigation Events
+// ============================================================
 
 navLinks.forEach(link => {
-link.addEventListener('click', function(e) {
-e.preventDefault();
-const page = this.dataset.page;
-if (page && pageSections[page]) {
-navigateTo(page);
-}
-});
-});
 
-// ============================================================
-// 7. NOTIFICATION PANEL — گھنٹی کا پینل
-// ============================================================
-notificationBell?.addEventListener('click', function(e) {
-e.stopPropagation();
-notificationPanel.classList.toggle('open');
-});
+    link.addEventListener("click", function (e) {
 
-document.addEventListener('click', function(e) {
-if (notificationPanel && !notificationPanel.contains(e.target) && !notificationBell.contains(e.target)) {
-notificationPanel.classList.remove('open');
-}
-});
+        e.preventDefault();
 
-markAllReadBtn?.addEventListener('click', function() {
-document.querySelectorAll('.notification-item.unread').forEach(item => {
-item.classList.remove('unread');
-});
-if (notificationCount) notificationCount.textContent = '0';
-showToast('✅ All notifications marked as read', 'success');
-});
+        const pageId = this.dataset.page;
 
+        if (!pageId) return;
+
+        navigateTo(pageId);
+
+    });
+
+});
+    
 // ============================================================
 // 8. SCROLL TOP — بٹن ظاہر/چھپائیں
 // ============================================================
